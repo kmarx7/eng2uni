@@ -1,0 +1,4 @@
+[
+  { "id": "FIXTURE_opposite_claim", "name": "반대 진술", "description": "지문의 주장과 반대되는 선택지." },
+  { "id": "FIXTURE_keyword_reuse", "name": "지문 단어 재사용", "description": "지문 단어를 그대로 썼지만 뜻이 다른 선택지." }
+]

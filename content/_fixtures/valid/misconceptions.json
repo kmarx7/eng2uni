@@ -1,0 +1,5 @@
+[
+  { "id": "FIXTURE_article_as_verb", "skillId": "FIXTURE_verb_identification", "category": "SYN", "description": "관사를 동사로 고른다." },
+  { "id": "FIXTURE_subject_as_verb", "skillId": "FIXTURE_verb_identification", "category": "SYN", "description": "주어를 동사로 고른다.", "remedialBlockId": "FIXTURE-U01-B04" },
+  { "id": "FIXTURE_object_as_verb", "skillId": "FIXTURE_verb_identification", "category": "SYN", "description": "목적어를 동사로 고른다." }
+]

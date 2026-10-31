@@ -1,0 +1,5 @@
+[
+  { "id": "FIXTURE_subject_identification", "name": "주어 찾기", "category": "syntax", "prerequisiteIds": [] },
+  { "id": "FIXTURE_verb_identification", "name": "동사 찾기", "category": "syntax", "prerequisiteIds": ["FIXTURE_subject_identification"] },
+  { "id": "FIXTURE_main_idea", "name": "중심 내용 파악", "category": "reading", "prerequisiteIds": ["FIXTURE_verb_identification"] }
+]

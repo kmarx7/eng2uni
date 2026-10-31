@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FIXTURE-V-001",
+    "lemma": "drink",
+    "pos": "verb",
+    "meanings": ["마시다"],
+    "example": { "en": "The cat drinks milk.", "ko": "고양이가 우유를 마신다." },
+    "audio": "/audio/words/FIXTURE-V-001.mp3",
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 1200,
+    "reviewStatus": "approved"
+  }
+]

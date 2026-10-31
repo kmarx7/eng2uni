@@ -1,0 +1,21 @@
+[
+  {
+    "id": "FIXTURE-BP-001",
+    "type": "blank_inference",
+    "items": "31-34",
+    "passage": {
+      "wordCount": { "min": 120, "max": 160 },
+      "avgSentenceLength": 18,
+      "maxClauseDepth": { "min": 1, "max": 3 },
+      "vocabBand": { "source": "csat_frequency", "topN": 3000 },
+      "topicDomains": { "social_science": 0.5, "natural_science": 0.5 }
+    },
+    "blank": {
+      "positionDistribution": [{ "position": "topic_sentence", "ratio": 0.6 }, { "position": "conclusion", "ratio": 0.4 }],
+      "answerBasis": "핵심 주장을 다른 표현으로 바꿔 쓴 것",
+      "minEvidenceSpans": 2
+    },
+    "distractors": { "count": 4, "traps": ["FIXTURE_opposite_claim", "FIXTURE_keyword_reuse"] },
+    "requiredSkills": ["FIXTURE_main_idea"]
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "FIXTURE-Q-001",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-001",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      { "id": "A", "text": "The", "misconception": "FIXTURE_article_as_verb" },
+      { "id": "B", "text": "cat", "misconception": "FIXTURE_subject_as_verb" },
+      { "id": "C", "text": "drinks" },
+      { "id": "D", "text": "milk", "misconception": "FIXTURE_object_as_verb" }
+    ],
+    "answer": "C",
+    "skills": ["FIXTURE_verb_identification"],
+    "explanation": {
+      "summary": "drinks가 '마신다'는 동작을 나타내는 동사입니다.",
+      "byOption": { "B": "cat은 동작을 하는 주어입니다.", "D": "milk는 마시는 대상인 목적어입니다." }
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": { "type": "original", "generatedBy": "human", "reviewedBy": "fixture" },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-002",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-002",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      { "id": "A", "text": "sister", "misconception": "FIXTURE_subject_as_verb" },
+      { "id": "B", "text": "plays" },
+      { "id": "C", "text": "piano", "misconception": "FIXTURE_object_as_verb" }
+    ],
+    "answer": "B",
+    "skills": ["FIXTURE_verb_identification"],
+    "explanation": { "summary": "plays가 '친다'는 동작을 나타내는 동사입니다." },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": { "type": "original", "generatedBy": "ai_draft", "reviewedBy": "fixture" },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-003",
+    "type": "multiple_choice",
+    "readingType": "content_match",
+    "difficulty": 2,
+    "passageId": "FIXTURE-P-001",
+    "prompt": "글의 내용과 일치하는 것은?",
+    "options": [
+      { "id": "1", "text": "여동생은 방과 후에 피아노를 친다." },
+      { "id": "2", "text": "여동생은 피아노를 치지 않는다.", "trap": "FIXTURE_opposite_claim" },
+      { "id": "3", "text": "고양이가 피아노를 친다.", "trap": "FIXTURE_keyword_reuse" }
+    ],
+    "answer": "1",
+    "skills": ["FIXTURE_main_idea"],
+    "explanation": { "summary": "두 번째 문장이 근거입니다." },
+    "source": { "type": "original", "generatedBy": "human", "reviewedBy": "fixture" },
+    "reviewStatus": "approved",
+    "version": 1
+  }
+]

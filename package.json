@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "validate:content": "tsx scripts/validate-content.ts"
+    "validate:content": "tsx scripts/validate-content.ts",
+    "prebuild": "npm run validate:content"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "FIXTURE-S-001",
+    "level": "L0",
+    "text": "The cat drinks milk.",
+    "tokens": ["The", "cat", "drinks", "milk", "."],
+    "spans": [
+      { "id": "subj", "role": "SUBJECT", "range": [0, 1] },
+      { "id": "head", "role": "HEAD_NOUN", "range": [1, 1], "parent": "subj" },
+      { "id": "verb", "role": "MAIN_VERB", "range": [2, 2] },
+      { "id": "obj", "role": "OBJECT", "range": [3, 3] }
+    ],
+    "chunks": [2],
+    "expansionSteps": [
+      { "text": "The cat drinks." },
+      { "text": "The cat drinks milk.", "addedRole": "OBJECT", "translation": "고양이가 우유를 마신다." }
+    ],
+    "translation": "고양이가 우유를 마신다.",
+    "chunkedTranslation": ["고양이가", "우유를 마신다"],
+    "skills": ["FIXTURE_verb_identification"],
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-S-002",
+    "level": "L0",
+    "text": "My sister plays the piano after school.",
+    "tokens": ["My", "sister", "plays", "the", "piano", "after", "school", "."],
+    "spans": [
+      { "id": "subj", "role": "SUBJECT", "range": [0, 1] },
+      { "id": "verb", "role": "MAIN_VERB", "range": [2, 2] },
+      { "id": "obj", "role": "OBJECT", "range": [3, 4] },
+      { "id": "time", "role": "PREP_PHRASE", "range": [5, 6], "modifies": "verb" }
+    ],
+    "translation": "내 여동생은 방과 후에 피아노를 친다.",
+    "skills": ["FIXTURE_verb_identification"],
+    "reviewStatus": "approved"
+  }
+]

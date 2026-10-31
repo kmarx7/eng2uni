@@ -1,0 +1,11 @@
+[
+  {
+    "id": "FIXTURE-P-001",
+    "level": "L0",
+    "text": "The cat drinks milk. My sister plays the piano after school.",
+    "sentences": ["FIXTURE-S-001", "FIXTURE-S-002"],
+    "evidenceSpans": [{ "questionId": "FIXTURE-Q-003", "sentenceRange": [1, 1] }],
+    "topicDomain": "daily_life",
+    "reviewStatus": "approved"
+  }
+]
