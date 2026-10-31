@@ -219,8 +219,7 @@ corpus/raw/2026_m09_q.pdf       2026학년도 9월 모평 문제지
 
 ## 단계 5: AI 태깅과 블루프린트
 
-준비: `.env.local`에 `ANTHROPIC_API_KEY`와 `ANTHROPIC_MODEL`을 넣는다. 이 단계는 기출 원문을 API로 보내므로, 설계서 14-7에 따라 이용 범위를 먼저 확인한 뒤 실행한다.
-
+준비: `.env.local`에 `ANTHROPIC_API_KEY`와 `ANTHROPIC_MODEL`을 넣는다.
 완료 기준: 유형별 블루프린트 JSON이 `content/blueprints/`에 생기고, 태깅 정확도를 사람이 표본 검수한 기록이 남는다.
 
 ```markdown
