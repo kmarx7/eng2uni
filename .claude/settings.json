@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && npm run validate:content --silent 1>&2 || exit 2",
+            "timeout": 60,
+            "statusMessage": "콘텐츠 검증 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
