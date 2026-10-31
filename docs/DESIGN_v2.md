@@ -256,7 +256,7 @@ v2는 첫 개발 범위를 "어휘 복습 + 문장 구조 분석기 + 실사용 
 | 복습 | ts-fsrs | 어휘·skill 복습 카드 공통 |
 | 진도 저장 | P1 localStorage → P2 Supabase | `ProgressRepository` 인터페이스로 교체 |
 | 학습 로그 | Supabase `learning_events` (P1부터) | 익명 ID, 쓰기 전용 정책(RLS) |
-| 음성 | TTS 사전 생성 파일 | 보류 (듣기 모듈 개발 시 도입) |
+| 음성 | TTS 사전 생성 파일 | P1은 어휘 카드의 단어 발음만. 대화·문장 음성은 듣기 모듈 개발 시 도입 |
 | 콘텐츠 생성 | Claude API 배치 스크립트 | 로컬 실행, 학생 앱과 분리 |
 | 테스트 | Vitest + Playwright | 채점·엔진 단위 테스트, 학습 흐름 E2E |
 | 배포 | Vercel |  |
