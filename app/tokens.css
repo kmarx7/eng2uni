@@ -1,0 +1,75 @@
+/*
+ * Design tokens — the single place for color, spacing, and type scale.
+ * globals.css maps these into Tailwind utilities via @theme inline.
+ *
+ * Accent color is intentionally undecided (neutral primary for now);
+ * pick it when the first real student screen is built (stage 6).
+ */
+
+:root {
+  /* Spacing scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Type scale (mobile-first; Korean body text needs a generous line height) */
+  --type-caption: 0.8125rem; /* 13px */
+  --type-body: 1rem; /* 16px */
+  --type-sentence: 1.1875rem; /* 19px — English sentences under analysis */
+  --type-title: 1.375rem; /* 22px */
+  --type-display: 1.75rem; /* 28px */
+  --type-leading-body: 1.65;
+  --type-leading-tight: 1.25;
+
+  /* Layout */
+  --content-max: 40rem;
+  --gutter: 1rem;
+
+  /*
+   * Sentence-role colors (S·V·O·C·M), based on the Okabe-Ito palette, which
+   * stays distinguishable under protanopia, deuteranopia, and tritanopia.
+   * Color is never the only signal: every role is rendered with its letter
+   * (see lib/design/roles.ts).
+   *   --role-x      : underline / border / symbol badge
+   *   --role-x-soft : token background tint
+   *   --role-x-ink  : text on the soft tint (>= 4.5:1)
+   */
+  --role-s: #0072b2; /* blue */
+  --role-s-soft: #e1eef7;
+  --role-s-ink: #00507d;
+  --role-v: #d55e00; /* vermillion */
+  --role-v-soft: #fbe9dc;
+  --role-v-ink: #8f3f00;
+  --role-o: #009e73; /* bluish green */
+  --role-o-soft: #dcf2ea;
+  --role-o-ink: #005c43;
+  --role-c: #cc79a7; /* reddish purple */
+  --role-c-soft: #f7e8f0;
+  --role-c-ink: #7f3760;
+  --role-m: #737373; /* neutral gray — modifiers recede */
+  --role-m-soft: #eeeeee;
+  --role-m-ink: #404040;
+}
+
+.dark {
+  --role-s: #56b4e9;
+  --role-s-soft: #11293a;
+  --role-s-ink: #a9d8f4;
+  --role-v: #e69f00;
+  --role-v-soft: #352409;
+  --role-v-ink: #f3cd7a;
+  --role-o: #2fc59a;
+  --role-o-soft: #0d3027;
+  --role-o-ink: #94e2c9;
+  --role-c: #e29bc2;
+  --role-c-soft: #3a1d2d;
+  --role-c-ink: #f1cbe0;
+  --role-m: #a3a3a3;
+  --role-m-soft: #2a2a2a;
+  --role-m-ink: #d4d4d4;
+}

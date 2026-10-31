@@ -4,3 +4,17 @@ corpus/
 node_modules/
 .next/
 .DS_Store
+
+# added in stage 1 (Next.js / test tooling)
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/out/
+/build
+*.pem
+npm-debug.log*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
