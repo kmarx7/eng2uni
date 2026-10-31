@@ -112,7 +112,7 @@ CLAUDE.md와 docs/DESIGN_v2.md의 7장(기술 아키텍처)을 따른다.
 5. package.json 스크립트: dev, build, lint, typecheck(tsc --noEmit), test(vitest run), test:e2e(playwright), validate:content(아직은 "no content yet" 출력 후 0 종료).
 6. 공통 레이아웃: 한국어 폰트, 모바일 우선, 상단 앱 이름 "English 90", 빈 /dashboard 페이지.
 7. 디자인 토큰(색상·간격·글자 크기)을 한 곳에 정의한다. 문장 역할 색상(S·V·O·C·M)도 여기에 넣되, 색맹을 고려해 구분이 잘 되는 조합으로 고른다.
-8. .env.example에 ANTHROPIC_API_KEY, ANTHROPIC_MODEL, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY를 빈 값으로 적는다.
+8. .env.example에 ANTHROPIC_API_KEY, ANTHROPIC_MODEL, ANTHROPIC_CROSSCHECK_MODEL, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY를 빈 값으로 적는다.
 9. 테스트가 실제로 도는지 확인할 샘플 테스트 1개씩(Vitest, Playwright)을 만든다.
 
 기능은 만들지 않는다. 끝나면 완료 기준에 따라 보고하라.
@@ -272,7 +272,10 @@ docs/DESIGN_v2.md 3-3, 5-4, 9-2, 13-2(단어 카드 4단), 14-5를 따른다.
    - /dashboard: "오늘 학습 시작" 버튼 하나, 오늘 할 일과 예상 시간, 커버리지 지표(있을 때만)
    - /vocab: VocabularyCard. 지금은 뜻 확인 카드만 활성화하고, 예문 빈칸·문맥 판별 카드는 예문이 있는 단어에만 나타난다. 평가 4단계(다시·어려움·보통·쉬움). 키보드(1~4, Space)와 탭 모두 지원.
    - 완료 화면: 오늘 학습량, 내일 복습 예정 수
-8. 발음 듣기: 모든 단어 카드에 발음 재생 버튼을 둔다(키보드 P). 오디오 파일(Vocabulary.audio)이 있으면 그 파일을 재생하고, 없거나 재생에 실패하면 버튼을 숨기거나 "발음 준비 중"으로 표시한다. 작동하지 않는 버튼을 보이지 않는다. 오디오 제공 방식(사전 생성 TTS 파일 / 브라우저 음성 합성)은 구현 전에 제안하고 승인을 받는다.
+8. 발음 듣기(사전 생성 TTS):
+   - scripts/generate-audio.ts: content/vocabulary/의 단어마다 TTS로 발음 파일을 한 번 생성해 저장하고 Vocabulary.audio에 경로를 기록한다. 이미 있는 파일은 다시 만들지 않는다. --limit, --dry-run, 예상 호출 수·비용 출력. API 키는 환경 변수로만 읽는다.
+   - TTS 공급자와 파일 저장 위치는 구현 전에 비교표(비용·음질·라이선스·상업적 이용)로 제안하고 승인을 받는다.
+   - 모든 단어 카드에 발음 재생 버튼을 둔다(키보드 P). audio가 없거나 재생에 실패하면 버튼을 숨긴다. 브라우저 음성 합성으로 대체하지 않는다.
 9. 테스트: planToday, coverage, 저장소 복구, Playwright로 "시작 → 어휘 10개 → 새로고침 → 이어하기".
 
 끝나면 완료 기준에 따라 보고하라.
@@ -323,7 +326,7 @@ docs/DESIGN_v2.md 6장, 14-4, 14-7을 따른다.
    - 허용 어휘 범위 초과 단어 검사(content/vocabulary + 빈도표 기준)
    - 오답 선택지의 misconception/trap 누락
    - 기출 유사도: corpus/structured 지문과 8-gram 이상 겹치면 flagged (corpus가 없으면 건너뛰고 경고)
-4. 교차 풀이: 정답을 가린 문항을 별도 API 호출로 풀게 해서 정답이 다르면 flagged.
+4. 교차 풀이: 정답을 가린 문항을 별도 API 호출(ANTHROPIC_CROSSCHECK_MODEL, 비어 있으면 ANTHROPIC_MODEL)로 풀게 해서 정답이 다르면 flagged.
 5. 같은 개념의 동형 문항은 같은 variantGroup으로 묶고, 그룹당 최소 6문항을 목표로 생성한다.
 6. 비용 통제: --limit, --dry-run, 예상 호출 수 출력, 결과 캐시.
 7. /admin/review-queue:
