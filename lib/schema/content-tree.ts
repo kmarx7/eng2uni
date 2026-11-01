@@ -10,6 +10,9 @@ import {
 
 export const DRAFTS_DIR = "drafts";
 export const FIXTURES_DIR = "_fixtures";
+// Agent hand-off documents (unit specs, unit status). Not student content and no
+// schema yet (see docs/specifications/DATA_CONTRACT_ADDENDUM.md), so not validated.
+export const HANDOFF_DIRS = ["specs", "curriculum"];
 
 const ROOT_FILES: Record<string, ContentKind> = {
   "levels.json": "level",
@@ -91,13 +94,13 @@ function checkRoot(root: string, label: string, displayBase: string, skipDirs: s
 }
 
 // Validates a whole content/ tree:
-// - the student root (everything except drafts/ and _fixtures/) gets every rule, approved only;
+// - the student root (everything except drafts/, _fixtures/ and the hand-off dirs) gets every rule, approved only;
 // - drafts/ gets schema checks only;
 // - each _fixtures/<set>/ is a self-contained set checked for integrity and FIXTURE ids.
 export function validateContentTree(contentDir: string): RootReport[] {
   const displayBase = path.dirname(contentDir);
   const reports = [
-    checkRoot(contentDir, path.basename(contentDir), displayBase, [DRAFTS_DIR, FIXTURES_DIR], {
+    checkRoot(contentDir, path.basename(contentDir), displayBase, [DRAFTS_DIR, FIXTURES_DIR, ...HANDOFF_DIRS], {
       mode: "full",
       requireApproved: true,
       requireFixtureIds: false,

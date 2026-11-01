@@ -1,0 +1,36 @@
+{
+  "unitId": "L0-U05",
+  "levelId": "L0",
+  "title": "단원 제목(한국어)",
+  "objectives": [
+    "학생이 이 단원을 마치면 할 수 있는 것(관찰 가능한 행동으로)"
+  ],
+  "prerequisiteSkills": ["skill_id"],
+  "targetSkills": ["skill_id"],
+  "misconceptions": [
+    {
+      "id": "misconception_id",
+      "description": "학생이 잘못 이해하는 내용",
+      "remediation": "보충 방법(대조 블록, 다시 볼 설명, 연습 종류)"
+    }
+  ],
+  "vocabRange": {
+    "maxLevel": "L0",
+    "note": "허용 어휘 범위 설명(예: 3-3 어휘 트랙 L0 목표 400개 이내)"
+  },
+  "families": [
+    {
+      "familyId": "family_id",
+      "questionCount": 0,
+      "note": "이 Family로 확인하려는 것"
+    }
+  ],
+  "interactions": ["13장 인터랙션 id"],
+  "assessmentCriteria": [
+    "단원 통과 기준(예: 목표 skill별 정답률, 최소 증거 수)"
+  ],
+  "status": "specified",
+  "unverified": [
+    "공식 교육과정 등으로 확인하지 못한 판단과 그 이유"
+  ]
+}

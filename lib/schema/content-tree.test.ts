@@ -118,6 +118,14 @@ describe("validateContentTree", () => {
     ]);
   });
 
+  it("skips agent hand-off folders specs/ and curriculum/ until they get schemas", () => {
+    write("specs/L0-U05.json", { unitId: "L0-U05", status: "specified" });
+    write("curriculum/unit-status.json", { units: {} });
+    const reports = validateContentTree(content);
+    expect(reports).toHaveLength(1);
+    expect(reports[0].issues).toEqual([]);
+  });
+
   it("ignores non-JSON files such as README.md", () => {
     write("questions/README.md", "질문");
     expect(validateContentTree(content)[0].issues).toEqual([]);
