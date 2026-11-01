@@ -2,7 +2,20 @@ import path from "node:path";
 
 // Approved student content. Changes go through the review screen, never through
 // an agent's Edit/Write or a shell command.
-export const PROTECTED_DIRS = ["content/units/", "content/sentences/", "content/questions/", "content/vocabulary/"];
+export const PROTECTED_DIRS = [
+  "content/units/",
+  "content/sentences/",
+  "content/passages/",
+  "content/questions/",
+  "content/vocabulary/",
+];
+// Approved definition files at the content root (see lib/schema/content-tree.ts ROOT_FILES).
+export const PROTECTED_FILES = [
+  "content/levels.json",
+  "content/skills.json",
+  "content/misconceptions.json",
+  "content/traps.json",
+];
 
 export const BLOCK_MESSAGE = "승인본은 검수 화면으로만 변경";
 
@@ -28,7 +41,8 @@ export function projectRelative(filePath: string, projectDir: string): string | 
 export function isProtected(filePath: string, projectDir: string): boolean {
   const relative = projectRelative(filePath, projectDir);
   // Trailing "/" so the folder itself ("cp x content/units/") counts too.
-  return relative !== null && PROTECTED_DIRS.some((dir) => `${relative}/`.startsWith(dir));
+  if (relative === null) return false;
+  return PROTECTED_FILES.includes(relative) || PROTECTED_DIRS.some((dir) => `${relative}/`.startsWith(dir));
 }
 
 export function checkFileWrite(filePath: string, projectDir: string): Verdict {

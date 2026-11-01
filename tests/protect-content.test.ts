@@ -11,7 +11,17 @@ import {
 const root = "/proj";
 
 describe("checkFileWrite", () => {
-  it.each(["content/units/L0-U05.json", "content/sentences/s.json", "content/questions/q.json", "content/vocabulary/v.json"])(
+  it.each([
+    "content/units/L0-U05.json",
+    "content/sentences/s.json",
+    "content/questions/q.json",
+    "content/vocabulary/v.json",
+    "content/passages/p.json",
+    "content/levels.json",
+    "content/skills.json",
+    "content/misconceptions.json",
+    "content/traps.json",
+  ])(
     "blocks %s",
     (file) => {
       const verdict = checkFileWrite(path.join(root, file), root);
@@ -27,6 +37,9 @@ describe("checkFileWrite", () => {
     "content/blueprints/blank.json",
     "content/curriculum/unit-status.json",
     "content/README.md",
+    "content/_fixtures/valid/skills.json",
+    "content/drafts/L0-U05/traps.json",
+    "content/levels.json.bak",
     "lib/schema/question.ts",
   ])("allows %s", (file) => {
     expect(checkFileWrite(path.join(root, file), root).blocked).toBe(false);
@@ -50,6 +63,10 @@ describe("checkBashCommand", () => {
     "jq . a.json | tee content/units/u.json",
     "npm run x && touch content/questions/new.json",
     "git checkout -- content/questions/q.json",
+    "cp /tmp/p.json content/passages/p.json",
+    "echo '[]' > content/skills.json",
+    "sed -i '' 's/a/b/' content/misconceptions.json",
+    "rm content/traps.json",
   ])("blocks %s", (command) => {
     expect(checkBashCommand(command, root).blocked).toBe(true);
   });
@@ -61,6 +78,8 @@ describe("checkBashCommand", () => {
     "npm run validate:content 2>&1 | tail",
     "echo hi > content/drafts/L0-U05/note.json",
     "ls content/units > /tmp/list.txt",
+    "cat content/levels.json",
+    "cp content/skills.json /tmp/skills.json",
   ])("allows %s", (command) => {
     expect(checkBashCommand(command, root).blocked).toBe(false);
   });

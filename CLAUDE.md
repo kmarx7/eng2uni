@@ -43,4 +43,4 @@
 - 의견 충돌은 docs/decisions/ 에 ADR 형식(배경, 선택지, 결정, 근거)으로 기록한다.
 - 보고 시 코드 품질(테스트 결과)과 콘텐츠 품질(검수 현황)을 따로 쓴다.
 - 사용자 승인 필요: 콘텐츠 approved 전환, 단원 ID 변경, 스키마 변경, 외부 API 비용이 드는 대량 생성, 의존성 추가.
-- 승인본(content/units·sentences·questions·vocabulary)은 PreToolUse 훅(scripts/hooks/protect-content.ts)이 Edit·Write와 Bash 쓰기 명령을 막는다. content/specs/, content/curriculum/ 은 스키마가 생길 때까지 validate:content 검사에서 빠진다.
+- 승인본(content/units·sentences·passages·questions·vocabulary, content/levels·skills·misconceptions·traps.json)은 PreToolUse 훅(scripts/hooks/protect-content.ts)이 Edit·Write와 Bash 쓰기 명령을 막는다. content/specs/, content/curriculum/ 은 스키마가 생길 때까지 validate:content 검사에서 빠진다.

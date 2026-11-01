@@ -25,7 +25,7 @@ curriculum-architect      research-content       자동 검증           content
 
 | 규칙 | 강제 수단 | 한계 |
 | --- | --- | --- |
-| 승인본(content/units·sentences·questions·vocabulary) 수정 금지 | PreToolUse 훅 `scripts/hooks/protect-content.ts`(Edit·Write·NotebookEdit 경로, Bash 명령 문자열 검사) | Bash 안에서 다른 프로그램(Python·Node 한 줄 등)이 쓰는 것은 못 막는다 |
+| 승인본(content/units·sentences·passages·questions·vocabulary, content/levels·skills·misconceptions·traps.json) 수정 금지 | PreToolUse 훅 `scripts/hooks/protect-content.ts`(Edit·Write·NotebookEdit 경로, Bash 명령 문자열 검사) | Bash 안에서 다른 프로그램(Python·Node 한 줄 등)이 쓰는 것은 못 막는다 |
 | 콘텐츠 형식 | PostToolUse 훅 `validate:content`, prebuild | — |
 | 에이전트별 쓰기 폴더 | 에이전트 프롬프트 지시 | 도구 수준 강제 없음. 위반은 검수와 git diff로 잡는다 |
 | approved 전환은 사람만 | 프롬프트 지시 + 검사기(approved에는 reviewedBy 필요) | reviewedBy 값 자체는 검증하지 않는다 |
