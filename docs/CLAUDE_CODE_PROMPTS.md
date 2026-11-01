@@ -219,7 +219,7 @@ corpus/raw/2026_m09_q.pdf       2026학년도 9월 모평 문제지
 
 ## 단계 5: AI 태깅과 블루프린트
 
-준비: `.env.local`에 `ANTHROPIC_API_KEY`와 `ANTHROPIC_MODEL`을 넣는다.
+준비: 2026-11-01 변경 — API 키 없이 claude.ai 구독 로그인의 `claude -p`로 태깅한다(`npm run tag:items`, `docs/progress/stage-5.md`). 아래 1번의 "Claude API"는 이 방식으로 읽는다.
 완료 기준: 유형별 블루프린트 JSON이 `content/blueprints/`에 생기고, 태깅 정확도를 사람이 표본 검수한 기록이 남는다.
 
 ```markdown

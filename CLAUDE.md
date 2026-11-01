@@ -7,6 +7,7 @@
 
 ## 명령
 - npm run dev / lint / typecheck / test / validate:content / build
+- npm run tag:items -- --exam {examId} [--dry-run|--limit N]: 기출 태깅(구독 사용량 차감) → corpus/tagged/
 - npm run analyze: 기출 통계 재계산(corpus/ 필요) → analysis/, docs/analysis/REPORT.md, 원문 8-gram 유출 검사, 스키마 검증
 
 ## 규칙
@@ -20,6 +21,7 @@
 - 제출 전에는 정답·해설을 DOM에 렌더링하지 않는다.
 - 작동하지 않는 기능을 완성된 것처럼 표시하지 않는다.
 - API 키는 환경 변수로만 읽고, 모델 이름은 ANTHROPIC_MODEL 환경 변수로 받는다. 교차 풀이는 ANTHROPIC_CROSSCHECK_MODEL(선택)을 쓰고, 비어 있으면 ANTHROPIC_MODEL로 별도 호출한다.
+- 예외(2026-11-01 사용자 승인): 기출 태깅(단계 5, `npm run tag:items`)은 API가 아니라 claude.ai 구독 로그인의 `claude -p`로 돌린다. API 키를 쓰지 않고(자식 프로세스에서 ANTHROPIC_* 제거, 구독 로그인이 아니면 중단), `--bare`를 쓰지 않는다(API 키만 읽어 과금으로 바뀜). 모델은 CLAUDE_TAGGING_MODEL(기본 sonnet).
 - UI 문구는 한국어, 코드·커밋 메시지는 영어.
 
 ## 완료 기준

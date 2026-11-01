@@ -8,3 +8,4 @@ export * from "./vocabulary";
 export * from "./progress";
 export * from "./blueprint";
 export * from "./analysis";
+export * from "./tagging";
