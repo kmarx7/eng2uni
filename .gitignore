@@ -18,3 +18,8 @@ npm-debug.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Python analysis env (stage 3)
+.venv/
+__pycache__/
+.pytest_cache/
