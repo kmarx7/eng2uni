@@ -32,7 +32,7 @@ from csat.answers import (
 from csat.layout import layout_page
 from csat.pdf_io import read_page_texts, read_question_pages
 from csat.questions import assess, parse_questions
-from csat.types import READING_FIRST, READING_LAST
+from csat.types import READING_LAST, reading_first
 
 ROOT = Path(__file__).resolve().parents[2]
 FILE_NAME = re.compile(r"^(\d{4})_(csat|m06|m09)_(q|a)\.(pdf|json)$")
@@ -50,6 +50,10 @@ class ExamFiles:
     question: Path | None = None
     answer_pdf: Path | None = None
     answer_json: Path | None = None
+
+    @property
+    def year(self) -> int:
+        return int(self.exam_id[:4])
 
 
 @dataclass
@@ -101,7 +105,7 @@ def load_answers(
                 notes.append(f"{files.answer_pdf.name}: no text layer or no answers parsed")
     if files.answer_json:
         from_json = load_answer_json(files.answer_json)
-        reading = [n for n in range(READING_FIRST, READING_LAST + 1)]
+        reading = [n for n in range(reading_first(files.year), READING_LAST + 1)]
         if not all(n in answers for n in reading):
             notes.append(f"answers taken from {files.answer_json.name}")
             answers = {**answers, **from_json}
@@ -148,11 +152,11 @@ def structure_exam(files: ExamFiles, out_dir: Path, csv_answers: dict[int, int] 
     for page in pages:
         page_lines, _ = layout_page(page)
         lines.extend(page_lines)
-    questions = parse_questions(lines)
+    questions = parse_questions(lines, files.year)
     answers = load_answers(files, csv_answers or {}, result)
 
     found = {q["number"] for q in questions}
-    missing = [n for n in range(READING_FIRST, READING_LAST + 1) if n not in found]
+    missing = [n for n in range(reading_first(files.year), READING_LAST + 1) if n not in found]
     if missing:
         result.notes.append(f"items not found: {missing}")
 
@@ -221,7 +225,7 @@ def render_report(results: list[ExamResult], skipped: list[str], csv_problems: l
         (r.exam_id, q)
         for r in results
         for q in r.questions
-        if q["typeByInstruction"] and q["typeByInstruction"] != q["typeByNumber"]
+        if q["typeByInstruction"] and q["typeByNumber"] and q["typeByInstruction"] != q["typeByNumber"]
     ]
     out += [f"- {e} {q['number']}번: 번호={q['typeByNumber']}, 발문={q['typeByInstruction']}" for e, q in mismatches] or ["없음"]
     out += ["", "## 정답표와 answers.csv 불일치", ""]

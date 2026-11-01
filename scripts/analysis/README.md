@@ -24,12 +24,15 @@ uv run pytest -q                            # 테스트(가짜 2단 페이지만
 | `{학년도}_{csat|m06|m09}_a.json` | 텍스트가 없는 정답표 PDF를 손으로 옮긴 것(예: 2025) |
 | `answers.csv` | 직접 입력하는 정답. 열: `examId,number,answer`(answer는 1~5 또는 ①~⑤) |
 
-규칙에 맞지 않는 파일과 하위 폴더(`_unused/`, `_pre2018/`)는 읽지 않는다. 정답 우선순위는 정답표 PDF → JSON → `answers.csv`이고, 정답표와 CSV가 둘 다 있으면 대조해 불일치를 보고서에 적는다. CSV만 있는 문항은 배점(answerPoints)이 비어 있다.
+규칙에 맞지 않는 파일과 하위 폴더(`_unused/`)는 읽지 않는다. 2014학년도(A/B형)는 B형을 쓴다. 정답 우선순위는 정답표 PDF → JSON → `answers.csv`이고, 정답표와 CSV가 둘 다 있으면 대조해 불일치를 보고서에 적는다. CSV만 있는 문항은 배점(answerPoints)이 비어 있다.
 
 ## 출력 (`corpus/structured/`)
 
-- `{examId}.json`: 18~45번 문항. 주요 필드: `type`(발문 기준, `lib/schema/common.ts`의 ReadingType과 같은 이름. 예외로 2018 30번 같은 단일 지문 지칭 문항은 `reference`), `typeByNumber`, `instruction`, `passage`, `options[{label,text,kind}]`, `points`, `answer`, `answerPoints`, `underlines[{text,start,end}]`, `blanks[{in,start,label}]`, `givenSentence`, `orderParts`, `summary`, `sharedPassageGroup`, `footnotes`, `extractionConfidence`, `issues`.
+- `{examId}.json`: 18~45번 문항. 2014학년도는 듣기·말하기가 1~22번이어서 23~45번만 읽고 `typeByNumber`는 비운다. 주요 필드: `type`(발문 기준, `lib/schema/common.ts`의 ReadingType과 같은 이름. 예외로 2018 30번 같은 단일 지문 지칭 문항은 `reference`. 41~42번은 `long_title_vocab`, 43~45번은 `long_narrative`로 번호가 정한다), `typeByNumber`, `instruction`, `passage`, `options[{label,text,kind}]`, `points`, `answer`, `answerPoints`, `underlines[{text,start,end}]`, `blanks[{in,start,label}]`, `givenSentence`, `orderParts`, `summary`, `sharedPassageGroup`, `footnotes`, `extractionConfidence`, `issues`.
   - `start`/`end`는 `passage`(또는 `summary`) 문자열 안의 위치다.
+  - 빈칸은 그려진 빈 밑줄과 글자로 친 밑줄(`____` 4자 이상) 둘 다 찾는다.
+  - 네모 선택형 어법·낱말 문항("각 네모 안에서")은 선택지가 지문 아래 목록이고 밑줄이 없다.
+  - 복수 정답 문항은 `answer`를 비우고 `fixes/`에 `acceptedAnswers`를 적는다(예: 2015 수능 25번 ④·⑤).
   - `options.kind`: `listed`(지문 아래 목록), `underlined`(지문 속 밑줄), `position`(삽입 위치), `inline`(지문 속 문장).
 - `REPORT.md`: 시험별 문항 수·신뢰도·정답 연결, low/medium 목록, 번호 기준과 발문 기준 유형 불일치, CSV 대조 결과. 원문 문장은 넣지 않는다.
 - `fixes/{examId}.json`: 직접 고칠 내용. `{"questions": {"29": {"options": [...], "extractionConfidence": "high"}}}`처럼 문항 번호별로 덮어쓸 필드를 적으면 다음 실행 때 반영된다. `_`로 시작하는 키는 무시한다.

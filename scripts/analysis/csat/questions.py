@@ -13,9 +13,10 @@ from .layout import BLANK_TEXT, line_text
 from .model import Char, Line
 from .types import (
     INLINE_OPTION_TYPES,
-    READING_FIRST,
     READING_LAST,
     UNDERLINE_TYPES,
+    is_boxed_choice,
+    reading_first,
     type_by_instruction,
     type_by_number,
 )
@@ -327,6 +328,11 @@ def _marks(builder: TextBuilder, where: str) -> tuple[list[dict], list[dict]]:
             blanks.append({"in": where, "start": start, "label": label.group(1)})
         else:
             underlines.append({"text": covered, "start": start, "end": end})
+    # Some papers type the blank as underscores instead of drawing a line.
+    drawn = [b["start"] for b in blanks]
+    for m in re.finditer(r"_{4,}", text):
+        if not any(abs(m.start() - at) <= len(BLANK_TEXT) for at in drawn):
+            blanks.append({"in": where, "start": m.start(), "label": None})
     blanks.sort(key=lambda b: b["start"])
     return blanks, underlines
 
@@ -358,7 +364,7 @@ def _parse_group(block: Block) -> Shared:
     )
 
 
-def parse_question(block: Block, shared: Shared | None) -> dict:
+def parse_question(block: Block, shared: Shared | None, year: int | None = None) -> dict:
     number = block.number
     points = 2
     lines: list[Line] = []
@@ -384,11 +390,11 @@ def parse_question(block: Block, shared: Shared | None) -> dict:
 
     # Number layouts changed over the years (e.g. no implication item before
     # 2019), so the instruction decides the type and the number is kept as a check.
-    by_number = type_by_number(number)
+    by_number = type_by_number(number, year)
     by_instruction = type_by_instruction(instruction, number)
     qtype = by_instruction or by_number
 
-    inline = qtype in INLINE_OPTION_TYPES
+    inline = qtype in INLINE_OPTION_TYPES and not is_boxed_choice(instruction)
     cut = None if inline else _option_block_start(lines)
     body = lines if cut is None else lines[:cut]
     option_lines = [] if cut is None else lines[cut:]
@@ -455,8 +461,8 @@ def parse_question(block: Block, shared: Shared | None) -> dict:
     }
 
 
-def parse_questions(lines: list[Line]) -> list[dict]:
-    """Return reading questions 18~45 found in the line stream, in number order."""
+def parse_questions(lines: list[Line], year: int | None = None) -> list[dict]:
+    """Return the reading questions (18~45, or 23~45 in 2014) found in the line stream, in number order."""
     blocks = split_blocks(lines)
     shared_for: dict[int, Shared] = {}
     for b in blocks:
@@ -466,8 +472,8 @@ def parse_questions(lines: list[Line]) -> list[dict]:
                 shared_for[n] = s
     out = []
     for b in blocks:
-        if b.kind == "question" and READING_FIRST <= b.number <= READING_LAST:
-            out.append(parse_question(b, shared_for.get(b.number)))
+        if b.kind == "question" and reading_first(year) <= b.number <= READING_LAST:
+            out.append(parse_question(b, shared_for.get(b.number), year))
     return out
 
 
@@ -505,7 +511,7 @@ def assess(q: dict) -> tuple[str, list[str]]:
         medium.append("no given sentence")
     if q["type"] == "ordering" and not (q["orderParts"] and {"A", "B", "C"} <= set(q["orderParts"])):
         medium.append("order parts missing")
-    if q["type"] in UNDERLINE_TYPES and not q["underlines"]:
+    if q["type"] in UNDERLINE_TYPES and not q["underlines"] and not is_boxed_choice(q["instruction"]):
         medium.append("no underline found")
     if low:
         return "low", low + medium

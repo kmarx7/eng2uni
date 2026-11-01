@@ -207,3 +207,29 @@ def test_underline_wrapping_onto_the_next_line_is_one_underline():
     options(page, LEFT_X, 250, ["fake a", "fake b", "fake c", "fake d", "fake e"])
     q = parse_questions(lines_of(page))[0]
     assert [u["text"] for u in q["underlines"]] == ["long phrase here"]
+
+
+def test_2014_layout_skips_listening_items_and_number_types():
+    qs = by_number(parse_questions(lines_of(single_and_shared_page()), year=2014))
+    assert sorted(qs) == [41, 42]
+    assert qs[41]["typeByNumber"] is None
+
+
+def test_boxed_choices_do_not_need_underlines():
+    page = FakePage()
+    page.number_line(LEFT_X, 160, 29, "(A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?")
+    page.text(LEFT_X + 11, 200, "Fake text with [go / went] and [a / b] and [c / d].")
+    options(page, LEFT_X, 250, ["fake a", "fake b", "fake c", "fake d", "fake e"])
+    q = parse_questions(lines_of(page))[0]
+    assert q["type"] == "grammar"
+    assert "no underline found" not in assess(q)[1]
+
+
+def test_typed_underscore_blank_counts_as_a_blank():
+    page = FakePage()
+    page.number_line(LEFT_X, 160, 31, "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.")
+    page.text(LEFT_X + 11, 200, "Fake text with a __________ in it.")
+    options(page, LEFT_X, 250, ["fake a", "fake b", "fake c", "fake d", "fake e"])
+    q = parse_questions(lines_of(page))[0]
+    assert len(q["blanks"]) == 1
+    assert q["passage"][q["blanks"][0]["start"]:].startswith("____")
