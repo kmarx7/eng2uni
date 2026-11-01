@@ -114,6 +114,10 @@ describe("parseClaudeResult", () => {
   it("recognises the usage limit so the run can stop instead of retrying", () => {
     const out = JSON.stringify({ is_error: true, result: "Claude AI usage limit reached|1762000000" });
     expect(parseClaudeResult(out)).toMatchObject({ ok: false, limitReached: true });
+    // Seen on 2026-11-02: the spend-limit message was missed and the run kept going.
+    const spend = "You've hit your monthly spend limit · raise it at https://claude.ai/settings/usage · your 5-hour limit resets 1:50am";
+    expect(parseClaudeResult(spend)).toMatchObject({ ok: false, limitReached: true });
+    expect(parseClaudeResult(JSON.stringify({ is_error: true, result: spend }))).toMatchObject({ limitReached: true });
   });
 
   it("reports unparsable output", () => {

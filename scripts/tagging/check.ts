@@ -13,7 +13,8 @@ export type ClaudeResult =
   | { ok: true; tagging: ItemTagging; model: string; usage: Usage }
   | { ok: false; error: string; limitReached: boolean; usage?: Usage };
 
-const LIMIT = /usage limit|rate limit|limit reached|limit will reset|\b429\b/i;
+// Any "limit" message from claude (usage, rate, 5-hour, weekly, spend) stops the run.
+const LIMIT = /\blimit\b|\b429\b|settings\/usage/i;
 
 function usageOf(raw: Record<string, number> | undefined): Usage {
   return {
