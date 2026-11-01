@@ -99,8 +99,8 @@ def type_by_instruction(instruction: str, number: int) -> str | None:
 
 
 # Types whose ①~⑤ markers sit inside the passage instead of in a list below it.
-INLINE_OPTION_TYPES = {"chart", "grammar", "contextual_vocab", "irrelevant_sentence", "insertion"}
-UNDERLINE_TYPES = {"implication", "grammar", "contextual_vocab"}
+INLINE_OPTION_TYPES = {"chart", "grammar", "contextual_vocab", "irrelevant_sentence", "insertion", "reference"}
+UNDERLINE_TYPES = {"implication", "grammar", "contextual_vocab", "reference"}
 
 
 def is_boxed_choice(instruction: str) -> bool:

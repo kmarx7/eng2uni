@@ -233,3 +233,15 @@ def test_typed_underscore_blank_counts_as_a_blank():
     q = parse_questions(lines_of(page))[0]
     assert len(q["blanks"]) == 1
     assert q["passage"][q["blanks"][0]["start"]:].startswith("____")
+
+
+def test_reference_item_keeps_a_line_that_starts_with_a_marker_in_the_passage():
+    page = FakePage()
+    page.number_line(LEFT_X, 160, 30, "밑줄 친 ①～⑤ 중에서 가리키는 대상이 나머지 넷과 다른 것은?")
+    page.text(LEFT_X + 11, 200, "Fake story where the boy")
+    page.text(LEFT_X, 216, "①he walked and ②he ran so ③he sat")
+    page.text(LEFT_X, 232, "while ④he slept and finally ⑤she left the fake room.")
+    q = parse_questions(lines_of(page))[0]
+    assert q["type"] == "reference"
+    assert q["passage"].endswith("fake room.")
+    assert [o["kind"] for o in q["options"]] == ["inline"] * 5
