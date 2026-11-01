@@ -7,6 +7,7 @@
 
 ## 명령
 - npm run dev / lint / typecheck / test / validate:content / build
+- npm run analyze: 기출 통계 재계산(corpus/ 필요) → analysis/, docs/analysis/REPORT.md, 원문 8-gram 유출 검사, 스키마 검증
 
 ## 규칙
 - 스키마의 단일 원천은 lib/schema (Zod). 타입은 z.infer로만 만든다.

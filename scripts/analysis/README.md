@@ -51,3 +51,24 @@ uv run pytest -q                            # 테스트(가짜 2단 페이지만
 
 - 원문은 `corpus/` 밖으로 나가지 않는다. 테스트(`tests/`)는 `fake_page.py`로 만든 가짜 글자만 쓴다.
 - 디버깅으로 구조를 볼 때도 영어 단어를 가린 출력만 쓴다.
+
+## 단계 4: 기출 통계 (`analyze_corpus.py`, `check_leaks.py`)
+
+```bash
+npm run analyze        # 저장소 루트에서: 통계 → 유출 검사 → 스키마 검증
+```
+
+- 입력: `corpus/structured/`. 출력: `analysis/vocab_frequency.json`, `syntax_stats.json`, `passage_stats.json`, `docs/analysis/REPORT.md`. 출력은 커밋한다. 원문 문장은 넣지 않는다.
+- spaCy `en_core_web_sm`(uv 환경에 고정). 표제어·커버리지 규칙은 `docs/analysis/LEMMA_RULES.md`. 앱의 `lib/engine/coverage.ts`와 같은 사례 파일로 테스트한다.
+- 범위: 전체(`all`)와 2018학년도 이후(`since2018`)를 따로 낸다.
+- `check_leaks.py`: `analysis/*.json`, `docs/analysis/*.md`가 기출과 8단어 이상 연속으로 겹치면 실패한다. 위치와 겹친 개수만 출력하고 원문은 출력하지 않는다.
+
+| 모듈 | 역할 |
+| --- | --- |
+| `csat_stats/texts.py` | 구조화 JSON → 지문 단위(장문 묶음은 한 번), 표시 기호 제거 |
+| `csat_stats/lexicon.py` | lemma 정규화, kind, 커버리지 |
+| `csat_stats/syntax.py` | 절 수·깊이·구문 판정 규칙 |
+| `csat_stats/passages.py` | 문단, 담화 표지어, 36~39 단서 |
+| `csat_stats/summary.py` | 분포·히스토그램 |
+| `csat_stats/report.py` | REPORT.md |
+| `csat_stats/leak.py` | 8-gram 유출 검사 |

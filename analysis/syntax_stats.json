@@ -1,0 +1,5337 @@
+{
+ "meta": {
+  "generator": "scripts/analysis/analyze_corpus.py",
+  "spacy": "3.8.18",
+  "model": "en_core_web_sm-3.8.0",
+  "exams": [
+   "2014_csat",
+   "2014_m06",
+   "2014_m09",
+   "2015_csat",
+   "2015_m06",
+   "2015_m09",
+   "2016_csat",
+   "2016_m06",
+   "2016_m09",
+   "2017_csat",
+   "2017_m06",
+   "2017_m09",
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ],
+  "since2018Exams": [
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ]
+ },
+ "byScope": {
+  "all": {
+   "all": {
+    "sentences": 8841,
+    "sentenceLength": {
+     "n": 8841,
+     "mean": 18.65,
+     "median": 17.0,
+     "p10": 7.0,
+     "p25": 12.0,
+     "p75": 24.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 96.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 1850
+     },
+     {
+      "bin": "11-20",
+      "count": 3685
+     },
+     {
+      "bin": "21-30",
+      "count": 2273
+     },
+     {
+      "bin": "31-40",
+      "count": 782
+     },
+     {
+      "bin": "41-50",
+      "count": 204
+     },
+     {
+      "bin": "51+",
+      "count": 47
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 8841,
+     "mean": 1.87,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 4005
+     },
+     {
+      "bin": "2",
+      "count": 2906
+     },
+     {
+      "bin": "3",
+      "count": 1267
+     },
+     {
+      "bin": "4",
+      "count": 474
+     },
+     {
+      "bin": "5+",
+      "count": 189
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 4350
+     },
+     {
+      "bin": "2",
+      "count": 3377
+     },
+     {
+      "bin": "3",
+      "count": 936
+     },
+     {
+      "bin": "4",
+      "count": 158
+     },
+     {
+      "bin": "5+",
+      "count": 20
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 1890,
+      "per100Sentences": 21.38
+     },
+     "participlePhrase": {
+      "count": 1320,
+      "per100Sentences": 14.93
+     },
+     "toInfinitive": {
+      "count": 2915,
+      "per100Sentences": 32.97
+     },
+     "nounClause": {
+      "count": 2801,
+      "per100Sentences": 31.68
+     },
+     "inversion": {
+      "count": 122,
+      "per100Sentences": 1.38
+     }
+    }
+   },
+   "blank_inference": {
+    "sentences": 1275,
+    "sentenceLength": {
+     "n": 1275,
+     "mean": 21.02,
+     "median": 20.0,
+     "p10": 8.0,
+     "p25": 14.0,
+     "p75": 27.0,
+     "p90": 35.0,
+     "min": 1.0,
+     "max": 60.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 205
+     },
+     {
+      "bin": "11-20",
+      "count": 450
+     },
+     {
+      "bin": "21-30",
+      "count": 402
+     },
+     {
+      "bin": "31-40",
+      "count": 160
+     },
+     {
+      "bin": "41-50",
+      "count": 48
+     },
+     {
+      "bin": "51+",
+      "count": 10
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 1275,
+     "mean": 2.08,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 455
+     },
+     {
+      "bin": "2",
+      "count": 460
+     },
+     {
+      "bin": "3",
+      "count": 221
+     },
+     {
+      "bin": "4",
+      "count": 98
+     },
+     {
+      "bin": "5+",
+      "count": 41
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 508
+     },
+     {
+      "bin": "2",
+      "count": 568
+     },
+     {
+      "bin": "3",
+      "count": 160
+     },
+     {
+      "bin": "4",
+      "count": 34
+     },
+     {
+      "bin": "5+",
+      "count": 5
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 349,
+      "per100Sentences": 27.37
+     },
+     "participlePhrase": {
+      "count": 208,
+      "per100Sentences": 16.31
+     },
+     "toInfinitive": {
+      "count": 460,
+      "per100Sentences": 36.08
+     },
+     "nounClause": {
+      "count": 490,
+      "per100Sentences": 38.43
+     },
+     "inversion": {
+      "count": 15,
+      "per100Sentences": 1.18
+     }
+    }
+   },
+   "chart": {
+    "sentences": 256,
+    "sentenceLength": {
+     "n": 256,
+     "mean": 23.87,
+     "median": 23.0,
+     "p10": 15.0,
+     "p25": 19.0,
+     "p75": 27.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 96.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 5
+     },
+     {
+      "bin": "11-20",
+      "count": 88
+     },
+     {
+      "bin": "21-30",
+      "count": 124
+     },
+     {
+      "bin": "31-40",
+      "count": 33
+     },
+     {
+      "bin": "41-50",
+      "count": 2
+     },
+     {
+      "bin": "51+",
+      "count": 4
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 256,
+     "mean": 1.61,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 145
+     },
+     {
+      "bin": "2",
+      "count": 76
+     },
+     {
+      "bin": "3",
+      "count": 28
+     },
+     {
+      "bin": "4",
+      "count": 4
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 153
+     },
+     {
+      "bin": "2",
+      "count": 89
+     },
+     {
+      "bin": "3",
+      "count": 14
+     },
+     {
+      "bin": "4",
+      "count": 0
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 83,
+      "per100Sentences": 32.42
+     },
+     "participlePhrase": {
+      "count": 73,
+      "per100Sentences": 28.52
+     },
+     "toInfinitive": {
+      "count": 22,
+      "per100Sentences": 8.59
+     },
+     "nounClause": {
+      "count": 38,
+      "per100Sentences": 14.84
+     },
+     "inversion": {
+      "count": 0,
+      "per100Sentences": 0.0
+     }
+    }
+   },
+   "claim": {
+    "sentences": 265,
+    "sentenceLength": {
+     "n": 265,
+     "mean": 19.44,
+     "median": 18.0,
+     "p10": 9.0,
+     "p25": 13.0,
+     "p75": 25.0,
+     "p90": 33.0,
+     "min": 1.0,
+     "max": 49.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 46
+     },
+     {
+      "bin": "11-20",
+      "count": 114
+     },
+     {
+      "bin": "21-30",
+      "count": 67
+     },
+     {
+      "bin": "31-40",
+      "count": 29
+     },
+     {
+      "bin": "41-50",
+      "count": 9
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 265,
+     "mean": 2.08,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 92
+     },
+     {
+      "bin": "2",
+      "count": 96
+     },
+     {
+      "bin": "3",
+      "count": 51
+     },
+     {
+      "bin": "4",
+      "count": 18
+     },
+     {
+      "bin": "5+",
+      "count": 8
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 95
+     },
+     {
+      "bin": "2",
+      "count": 125
+     },
+     {
+      "bin": "3",
+      "count": 35
+     },
+     {
+      "bin": "4",
+      "count": 9
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 74,
+      "per100Sentences": 27.92
+     },
+     "participlePhrase": {
+      "count": 34,
+      "per100Sentences": 12.83
+     },
+     "toInfinitive": {
+      "count": 150,
+      "per100Sentences": 56.6
+     },
+     "nounClause": {
+      "count": 118,
+      "per100Sentences": 44.53
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.75
+     }
+    }
+   },
+   "content_match": {
+    "sentences": 358,
+    "sentenceLength": {
+     "n": 358,
+     "mean": 15.93,
+     "median": 15.5,
+     "p10": 9.0,
+     "p25": 12.0,
+     "p75": 19.0,
+     "p90": 23.0,
+     "min": 1.0,
+     "max": 52.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 53
+     },
+     {
+      "bin": "11-20",
+      "count": 235
+     },
+     {
+      "bin": "21-30",
+      "count": 65
+     },
+     {
+      "bin": "31-40",
+      "count": 4
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 358,
+     "mean": 1.38,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 246
+     },
+     {
+      "bin": "2",
+      "count": 94
+     },
+     {
+      "bin": "3",
+      "count": 15
+     },
+     {
+      "bin": "4",
+      "count": 2
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 262
+     },
+     {
+      "bin": "2",
+      "count": 89
+     },
+     {
+      "bin": "3",
+      "count": 6
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 52,
+      "per100Sentences": 14.53
+     },
+     "participlePhrase": {
+      "count": 50,
+      "per100Sentences": 13.97
+     },
+     "toInfinitive": {
+      "count": 45,
+      "per100Sentences": 12.57
+     },
+     "nounClause": {
+      "count": 20,
+      "per100Sentences": 5.59
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.56
+     }
+    }
+   },
+   "contextual_vocab": {
+    "sentences": 316,
+    "sentenceLength": {
+     "n": 316,
+     "mean": 21.46,
+     "median": 21.0,
+     "p10": 9.0,
+     "p25": 16.0,
+     "p75": 28.0,
+     "p90": 34.0,
+     "min": 1.0,
+     "max": 53.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 37
+     },
+     {
+      "bin": "11-20",
+      "count": 113
+     },
+     {
+      "bin": "21-30",
+      "count": 114
+     },
+     {
+      "bin": "31-40",
+      "count": 43
+     },
+     {
+      "bin": "41-50",
+      "count": 8
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 316,
+     "mean": 2.03,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 118
+     },
+     {
+      "bin": "2",
+      "count": 112
+     },
+     {
+      "bin": "3",
+      "count": 56
+     },
+     {
+      "bin": "4",
+      "count": 22
+     },
+     {
+      "bin": "5+",
+      "count": 8
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 126
+     },
+     {
+      "bin": "2",
+      "count": 138
+     },
+     {
+      "bin": "3",
+      "count": 45
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 85,
+      "per100Sentences": 26.9
+     },
+     "participlePhrase": {
+      "count": 51,
+      "per100Sentences": 16.14
+     },
+     "toInfinitive": {
+      "count": 133,
+      "per100Sentences": 42.09
+     },
+     "nounClause": {
+      "count": 114,
+      "per100Sentences": 36.08
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.32
+     }
+    }
+   },
+   "gist": {
+    "sentences": 274,
+    "sentenceLength": {
+     "n": 274,
+     "mean": 22.33,
+     "median": 21.0,
+     "p10": 11.0,
+     "p25": 15.0,
+     "p75": 27.0,
+     "p90": 37.0,
+     "min": 1.0,
+     "max": 58.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 23
+     },
+     {
+      "bin": "11-20",
+      "count": 106
+     },
+     {
+      "bin": "21-30",
+      "count": 96
+     },
+     {
+      "bin": "31-40",
+      "count": 32
+     },
+     {
+      "bin": "41-50",
+      "count": 13
+     },
+     {
+      "bin": "51+",
+      "count": 4
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 274,
+     "mean": 2.18,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 90
+     },
+     {
+      "bin": "2",
+      "count": 91
+     },
+     {
+      "bin": "3",
+      "count": 59
+     },
+     {
+      "bin": "4",
+      "count": 23
+     },
+     {
+      "bin": "5+",
+      "count": 11
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 99
+     },
+     {
+      "bin": "2",
+      "count": 118
+     },
+     {
+      "bin": "3",
+      "count": 49
+     },
+     {
+      "bin": "4",
+      "count": 5
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 87,
+      "per100Sentences": 31.75
+     },
+     "participlePhrase": {
+      "count": 37,
+      "per100Sentences": 13.5
+     },
+     "toInfinitive": {
+      "count": 138,
+      "per100Sentences": 50.36
+     },
+     "nounClause": {
+      "count": 112,
+      "per100Sentences": 40.88
+     },
+     "inversion": {
+      "count": 4,
+      "per100Sentences": 1.46
+     }
+    }
+   },
+   "grammar": {
+    "sentences": 315,
+    "sentenceLength": {
+     "n": 315,
+     "mean": 20.32,
+     "median": 20.0,
+     "p10": 9.0,
+     "p25": 14.0,
+     "p75": 25.5,
+     "p90": 33.6,
+     "min": 1.0,
+     "max": 47.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 44
+     },
+     {
+      "bin": "11-20",
+      "count": 128
+     },
+     {
+      "bin": "21-30",
+      "count": 95
+     },
+     {
+      "bin": "31-40",
+      "count": 42
+     },
+     {
+      "bin": "41-50",
+      "count": 6
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 315,
+     "mean": 2.07,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 122
+     },
+     {
+      "bin": "2",
+      "count": 98
+     },
+     {
+      "bin": "3",
+      "count": 60
+     },
+     {
+      "bin": "4",
+      "count": 26
+     },
+     {
+      "bin": "5+",
+      "count": 9
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 132
+     },
+     {
+      "bin": "2",
+      "count": 125
+     },
+     {
+      "bin": "3",
+      "count": 47
+     },
+     {
+      "bin": "4",
+      "count": 10
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 101,
+      "per100Sentences": 32.06
+     },
+     "participlePhrase": {
+      "count": 69,
+      "per100Sentences": 21.9
+     },
+     "toInfinitive": {
+      "count": 130,
+      "per100Sentences": 41.27
+     },
+     "nounClause": {
+      "count": 123,
+      "per100Sentences": 39.05
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.63
+     }
+    }
+   },
+   "implication": {
+    "sentences": 219,
+    "sentenceLength": {
+     "n": 219,
+     "mean": 19.78,
+     "median": 18.0,
+     "p10": 7.0,
+     "p25": 11.0,
+     "p75": 25.0,
+     "p90": 35.0,
+     "min": 1.0,
+     "max": 54.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 49
+     },
+     {
+      "bin": "11-20",
+      "count": 73
+     },
+     {
+      "bin": "21-30",
+      "count": 63
+     },
+     {
+      "bin": "31-40",
+      "count": 22
+     },
+     {
+      "bin": "41-50",
+      "count": 9
+     },
+     {
+      "bin": "51+",
+      "count": 3
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 219,
+     "mean": 2.07,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 87
+     },
+     {
+      "bin": "2",
+      "count": 69
+     },
+     {
+      "bin": "3",
+      "count": 38
+     },
+     {
+      "bin": "4",
+      "count": 15
+     },
+     {
+      "bin": "5+",
+      "count": 10
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 93
+     },
+     {
+      "bin": "2",
+      "count": 85
+     },
+     {
+      "bin": "3",
+      "count": 34
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 67,
+      "per100Sentences": 30.59
+     },
+     "participlePhrase": {
+      "count": 25,
+      "per100Sentences": 11.42
+     },
+     "toInfinitive": {
+      "count": 73,
+      "per100Sentences": 33.33
+     },
+     "nounClause": {
+      "count": 81,
+      "per100Sentences": 36.99
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.46
+     }
+    }
+   },
+   "insertion": {
+    "sentences": 620,
+    "sentenceLength": {
+     "n": 620,
+     "mean": 20.97,
+     "median": 20.5,
+     "p10": 11.0,
+     "p25": 14.0,
+     "p75": 27.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 56.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 59
+     },
+     {
+      "bin": "11-20",
+      "count": 251
+     },
+     {
+      "bin": "21-30",
+      "count": 224
+     },
+     {
+      "bin": "31-40",
+      "count": 74
+     },
+     {
+      "bin": "41-50",
+      "count": 11
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 620,
+     "mean": 2.01,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 221
+     },
+     {
+      "bin": "2",
+      "count": 237
+     },
+     {
+      "bin": "3",
+      "count": 113
+     },
+     {
+      "bin": "4",
+      "count": 38
+     },
+     {
+      "bin": "5+",
+      "count": 11
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 242
+     },
+     {
+      "bin": "2",
+      "count": 290
+     },
+     {
+      "bin": "3",
+      "count": 76
+     },
+     {
+      "bin": "4",
+      "count": 11
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 158,
+      "per100Sentences": 25.48
+     },
+     "participlePhrase": {
+      "count": 109,
+      "per100Sentences": 17.58
+     },
+     "toInfinitive": {
+      "count": 232,
+      "per100Sentences": 37.42
+     },
+     "nounClause": {
+      "count": 217,
+      "per100Sentences": 35.0
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.32
+     }
+    }
+   },
+   "irrelevant_sentence": {
+    "sentences": 280,
+    "sentenceLength": {
+     "n": 280,
+     "mean": 22.91,
+     "median": 23.0,
+     "p10": 12.0,
+     "p25": 17.0,
+     "p75": 28.25,
+     "p90": 35.0,
+     "min": 1.0,
+     "max": 51.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 17
+     },
+     {
+      "bin": "11-20",
+      "count": 100
+     },
+     {
+      "bin": "21-30",
+      "count": 109
+     },
+     {
+      "bin": "31-40",
+      "count": 47
+     },
+     {
+      "bin": "41-50",
+      "count": 6
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 280,
+     "mean": 2.04,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.1,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 108
+     },
+     {
+      "bin": "2",
+      "count": 97
+     },
+     {
+      "bin": "3",
+      "count": 47
+     },
+     {
+      "bin": "4",
+      "count": 18
+     },
+     {
+      "bin": "5+",
+      "count": 10
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 115
+     },
+     {
+      "bin": "2",
+      "count": 121
+     },
+     {
+      "bin": "3",
+      "count": 40
+     },
+     {
+      "bin": "4",
+      "count": 4
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 71,
+      "per100Sentences": 25.36
+     },
+     "participlePhrase": {
+      "count": 44,
+      "per100Sentences": 15.71
+     },
+     "toInfinitive": {
+      "count": 130,
+      "per100Sentences": 46.43
+     },
+     "nounClause": {
+      "count": 92,
+      "per100Sentences": 32.86
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.36
+     }
+    }
+   },
+   "long_narrative": {
+    "sentences": 1168,
+    "sentenceLength": {
+     "n": 1168,
+     "mean": 12.47,
+     "median": 12.0,
+     "p10": 5.0,
+     "p25": 8.0,
+     "p75": 16.0,
+     "p90": 21.0,
+     "min": 1.0,
+     "max": 48.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 489
+     },
+     {
+      "bin": "11-20",
+      "count": 560
+     },
+     {
+      "bin": "21-30",
+      "count": 106
+     },
+     {
+      "bin": "31-40",
+      "count": 9
+     },
+     {
+      "bin": "41-50",
+      "count": 4
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 1168,
+     "mean": 1.68,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 589
+     },
+     {
+      "bin": "2",
+      "count": 403
+     },
+     {
+      "bin": "3",
+      "count": 142
+     },
+     {
+      "bin": "4",
+      "count": 29
+     },
+     {
+      "bin": "5+",
+      "count": 5
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 653
+     },
+     {
+      "bin": "2",
+      "count": 414
+     },
+     {
+      "bin": "3",
+      "count": 94
+     },
+     {
+      "bin": "4",
+      "count": 7
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 86,
+      "per100Sentences": 7.36
+     },
+     "participlePhrase": {
+      "count": 154,
+      "per100Sentences": 13.18
+     },
+     "toInfinitive": {
+      "count": 260,
+      "per100Sentences": 22.26
+     },
+     "nounClause": {
+      "count": 374,
+      "per100Sentences": 32.02
+     },
+     "inversion": {
+      "count": 49,
+      "per100Sentences": 4.2
+     }
+    }
+   },
+   "long_title_vocab": {
+    "sentences": 464,
+    "sentenceLength": {
+     "n": 464,
+     "mean": 22.02,
+     "median": 20.0,
+     "p10": 10.0,
+     "p25": 14.0,
+     "p75": 28.0,
+     "p90": 36.7,
+     "min": 1.0,
+     "max": 64.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 55
+     },
+     {
+      "bin": "11-20",
+      "count": 178
+     },
+     {
+      "bin": "21-30",
+      "count": 137
+     },
+     {
+      "bin": "31-40",
+      "count": 69
+     },
+     {
+      "bin": "41-50",
+      "count": 18
+     },
+     {
+      "bin": "51+",
+      "count": 7
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 464,
+     "mean": 2.17,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 157
+     },
+     {
+      "bin": "2",
+      "count": 159
+     },
+     {
+      "bin": "3",
+      "count": 85
+     },
+     {
+      "bin": "4",
+      "count": 50
+     },
+     {
+      "bin": "5+",
+      "count": 13
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 179
+     },
+     {
+      "bin": "2",
+      "count": 196
+     },
+     {
+      "bin": "3",
+      "count": 68
+     },
+     {
+      "bin": "4",
+      "count": 19
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 123,
+      "per100Sentences": 26.51
+     },
+     "participlePhrase": {
+      "count": 68,
+      "per100Sentences": 14.66
+     },
+     "toInfinitive": {
+      "count": 176,
+      "per100Sentences": 37.93
+     },
+     "nounClause": {
+      "count": 207,
+      "per100Sentences": 44.61
+     },
+     "inversion": {
+      "count": 8,
+      "per100Sentences": 1.72
+     }
+    }
+   },
+   "mood": {
+    "sentences": 420,
+    "sentenceLength": {
+     "n": 420,
+     "mean": 11.49,
+     "median": 11.0,
+     "p10": 4.0,
+     "p25": 7.0,
+     "p75": 15.0,
+     "p90": 20.0,
+     "min": 1.0,
+     "max": 35.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 195
+     },
+     {
+      "bin": "11-20",
+      "count": 191
+     },
+     {
+      "bin": "21-30",
+      "count": 30
+     },
+     {
+      "bin": "31-40",
+      "count": 4
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 420,
+     "mean": 1.6,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 225
+     },
+     {
+      "bin": "2",
+      "count": 150
+     },
+     {
+      "bin": "3",
+      "count": 34
+     },
+     {
+      "bin": "4",
+      "count": 9
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 250
+     },
+     {
+      "bin": "2",
+      "count": 144
+     },
+     {
+      "bin": "3",
+      "count": 23
+     },
+     {
+      "bin": "4",
+      "count": 3
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 29,
+      "per100Sentences": 6.9
+     },
+     "participlePhrase": {
+      "count": 49,
+      "per100Sentences": 11.67
+     },
+     "toInfinitive": {
+      "count": 78,
+      "per100Sentences": 18.57
+     },
+     "nounClause": {
+      "count": 119,
+      "per100Sentences": 28.33
+     },
+     "inversion": {
+      "count": 13,
+      "per100Sentences": 3.1
+     }
+    }
+   },
+   "notice": {
+    "sentences": 550,
+    "sentenceLength": {
+     "n": 550,
+     "mean": 14.33,
+     "median": 12.0,
+     "p10": 6.0,
+     "p25": 8.0,
+     "p75": 18.0,
+     "p90": 25.0,
+     "min": 1.0,
+     "max": 80.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 231
+     },
+     {
+      "bin": "11-20",
+      "count": 228
+     },
+     {
+      "bin": "21-30",
+      "count": 57
+     },
+     {
+      "bin": "31-40",
+      "count": 23
+     },
+     {
+      "bin": "41-50",
+      "count": 7
+     },
+     {
+      "bin": "51+",
+      "count": 4
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 550,
+     "mean": 1.19,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 458
+     },
+     {
+      "bin": "2",
+      "count": 82
+     },
+     {
+      "bin": "3",
+      "count": 6
+     },
+     {
+      "bin": "4",
+      "count": 4
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 469
+     },
+     {
+      "bin": "2",
+      "count": 72
+     },
+     {
+      "bin": "3",
+      "count": 8
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 22,
+      "per100Sentences": 4.0
+     },
+     "participlePhrase": {
+      "count": 60,
+      "per100Sentences": 10.91
+     },
+     "toInfinitive": {
+      "count": 98,
+      "per100Sentences": 17.82
+     },
+     "nounClause": {
+      "count": 32,
+      "per100Sentences": 5.82
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.36
+     }
+    }
+   },
+   "ordering": {
+    "sentences": 647,
+    "sentenceLength": {
+     "n": 647,
+     "mean": 19.74,
+     "median": 19.0,
+     "p10": 9.6,
+     "p25": 13.0,
+     "p75": 25.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 55.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 90
+     },
+     {
+      "bin": "11-20",
+      "count": 292
+     },
+     {
+      "bin": "21-30",
+      "count": 186
+     },
+     {
+      "bin": "31-40",
+      "count": 61
+     },
+     {
+      "bin": "41-50",
+      "count": 17
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 647,
+     "mean": 2.01,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 259
+     },
+     {
+      "bin": "2",
+      "count": 217
+     },
+     {
+      "bin": "3",
+      "count": 103
+     },
+     {
+      "bin": "4",
+      "count": 46
+     },
+     {
+      "bin": "5+",
+      "count": 22
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 285
+     },
+     {
+      "bin": "2",
+      "count": 254
+     },
+     {
+      "bin": "3",
+      "count": 89
+     },
+     {
+      "bin": "4",
+      "count": 19
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 183,
+      "per100Sentences": 28.28
+     },
+     "participlePhrase": {
+      "count": 96,
+      "per100Sentences": 14.84
+     },
+     "toInfinitive": {
+      "count": 233,
+      "per100Sentences": 36.01
+     },
+     "nounClause": {
+      "count": 229,
+      "per100Sentences": 35.39
+     },
+     "inversion": {
+      "count": 5,
+      "per100Sentences": 0.77
+     }
+    }
+   },
+   "purpose": {
+    "sentences": 306,
+    "sentenceLength": {
+     "n": 306,
+     "mean": 13.51,
+     "median": 13.0,
+     "p10": 4.0,
+     "p25": 9.0,
+     "p75": 18.0,
+     "p90": 22.0,
+     "min": 2.0,
+     "max": 40.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 104
+     },
+     {
+      "bin": "11-20",
+      "count": 160
+     },
+     {
+      "bin": "21-30",
+      "count": 39
+     },
+     {
+      "bin": "31-40",
+      "count": 3
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 306,
+     "mean": 1.5,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 191
+     },
+     {
+      "bin": "2",
+      "count": 83
+     },
+     {
+      "bin": "3",
+      "count": 27
+     },
+     {
+      "bin": "4",
+      "count": 4
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 203
+     },
+     {
+      "bin": "2",
+      "count": 83
+     },
+     {
+      "bin": "3",
+      "count": 20
+     },
+     {
+      "bin": "4",
+      "count": 0
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 28,
+      "per100Sentences": 9.15
+     },
+     "participlePhrase": {
+      "count": 13,
+      "per100Sentences": 4.25
+     },
+     "toInfinitive": {
+      "count": 107,
+      "per100Sentences": 34.97
+     },
+     "nounClause": {
+      "count": 63,
+      "per100Sentences": 20.59
+     },
+     "inversion": {
+      "count": 0,
+      "per100Sentences": 0.0
+     }
+    }
+   },
+   "reference": {
+    "sentences": 162,
+    "sentenceLength": {
+     "n": 162,
+     "mean": 15.53,
+     "median": 14.5,
+     "p10": 7.0,
+     "p25": 10.0,
+     "p75": 21.0,
+     "p90": 25.0,
+     "min": 1.0,
+     "max": 51.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 45
+     },
+     {
+      "bin": "11-20",
+      "count": 74
+     },
+     {
+      "bin": "21-30",
+      "count": 36
+     },
+     {
+      "bin": "31-40",
+      "count": 6
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 162,
+     "mean": 1.78,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 73
+     },
+     {
+      "bin": "2",
+      "count": 58
+     },
+     {
+      "bin": "3",
+      "count": 24
+     },
+     {
+      "bin": "4",
+      "count": 7
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 82
+     },
+     {
+      "bin": "2",
+      "count": 61
+     },
+     {
+      "bin": "3",
+      "count": 18
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 24,
+      "per100Sentences": 14.81
+     },
+     "participlePhrase": {
+      "count": 19,
+      "per100Sentences": 11.73
+     },
+     "toInfinitive": {
+      "count": 48,
+      "per100Sentences": 29.63
+     },
+     "nounClause": {
+      "count": 50,
+      "per100Sentences": 30.86
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.62
+     }
+    }
+   },
+   "summary": {
+    "sentences": 328,
+    "sentenceLength": {
+     "n": 328,
+     "mean": 23.67,
+     "median": 23.0,
+     "p10": 11.7,
+     "p25": 16.0,
+     "p75": 29.0,
+     "p90": 38.0,
+     "min": 4.0,
+     "max": 65.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 25
+     },
+     {
+      "bin": "11-20",
+      "count": 111
+     },
+     {
+      "bin": "21-30",
+      "count": 127
+     },
+     {
+      "bin": "31-40",
+      "count": 42
+     },
+     {
+      "bin": "41-50",
+      "count": 16
+     },
+     {
+      "bin": "51+",
+      "count": 7
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 328,
+     "mean": 2.08,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 109
+     },
+     {
+      "bin": "2",
+      "count": 128
+     },
+     {
+      "bin": "3",
+      "count": 62
+     },
+     {
+      "bin": "4",
+      "count": 16
+     },
+     {
+      "bin": "5+",
+      "count": 13
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 120
+     },
+     {
+      "bin": "2",
+      "count": 159
+     },
+     {
+      "bin": "3",
+      "count": 38
+     },
+     {
+      "bin": "4",
+      "count": 9
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 96,
+      "per100Sentences": 29.27
+     },
+     "participlePhrase": {
+      "count": 51,
+      "per100Sentences": 15.55
+     },
+     "toInfinitive": {
+      "count": 110,
+      "per100Sentences": 33.54
+     },
+     "nounClause": {
+      "count": 115,
+      "per100Sentences": 35.06
+     },
+     "inversion": {
+      "count": 5,
+      "per100Sentences": 1.52
+     }
+    }
+   },
+   "title": {
+    "sentences": 330,
+    "sentenceLength": {
+     "n": 330,
+     "mean": 21.29,
+     "median": 20.0,
+     "p10": 10.0,
+     "p25": 14.0,
+     "p75": 28.0,
+     "p90": 35.1,
+     "min": 1.0,
+     "max": 55.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 47
+     },
+     {
+      "bin": "11-20",
+      "count": 122
+     },
+     {
+      "bin": "21-30",
+      "count": 107
+     },
+     {
+      "bin": "31-40",
+      "count": 38
+     },
+     {
+      "bin": "41-50",
+      "count": 15
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 330,
+     "mean": 1.95,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.75,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 137
+     },
+     {
+      "bin": "2",
+      "count": 110
+     },
+     {
+      "bin": "3",
+      "count": 52
+     },
+     {
+      "bin": "4",
+      "count": 25
+     },
+     {
+      "bin": "5+",
+      "count": 6
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 152
+     },
+     {
+      "bin": "2",
+      "count": 136
+     },
+     {
+      "bin": "3",
+      "count": 36
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 77,
+      "per100Sentences": 23.33
+     },
+     "participlePhrase": {
+      "count": 53,
+      "per100Sentences": 16.06
+     },
+     "toInfinitive": {
+      "count": 156,
+      "per100Sentences": 47.27
+     },
+     "nounClause": {
+      "count": 114,
+      "per100Sentences": 34.55
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.61
+     }
+    }
+   },
+   "topic": {
+    "sentences": 288,
+    "sentenceLength": {
+     "n": 288,
+     "mean": 22.06,
+     "median": 21.0,
+     "p10": 10.0,
+     "p25": 14.0,
+     "p75": 29.0,
+     "p90": 35.0,
+     "min": 1.0,
+     "max": 51.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 31
+     },
+     {
+      "bin": "11-20",
+      "count": 111
+     },
+     {
+      "bin": "21-30",
+      "count": 89
+     },
+     {
+      "bin": "31-40",
+      "count": 41
+     },
+     {
+      "bin": "41-50",
+      "count": 15
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 288,
+     "mean": 2.03,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 123
+     },
+     {
+      "bin": "2",
+      "count": 86
+     },
+     {
+      "bin": "3",
+      "count": 44
+     },
+     {
+      "bin": "4",
+      "count": 20
+     },
+     {
+      "bin": "5+",
+      "count": 15
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 132
+     },
+     {
+      "bin": "2",
+      "count": 110
+     },
+     {
+      "bin": "3",
+      "count": 36
+     },
+     {
+      "bin": "4",
+      "count": 7
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 95,
+      "per100Sentences": 32.99
+     },
+     "participlePhrase": {
+      "count": 57,
+      "per100Sentences": 19.79
+     },
+     "toInfinitive": {
+      "count": 136,
+      "per100Sentences": 47.22
+     },
+     "nounClause": {
+      "count": 93,
+      "per100Sentences": 32.29
+     },
+     "inversion": {
+      "count": 7,
+      "per100Sentences": 2.43
+     }
+    }
+   }
+  },
+  "since2018": {
+   "all": {
+    "sentences": 6301,
+    "sentenceLength": {
+     "n": 6301,
+     "mean": 18.98,
+     "median": 18.0,
+     "p10": 7.0,
+     "p25": 12.0,
+     "p75": 25.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 96.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 1287
+     },
+     {
+      "bin": "11-20",
+      "count": 2579
+     },
+     {
+      "bin": "21-30",
+      "count": 1645
+     },
+     {
+      "bin": "31-40",
+      "count": 588
+     },
+     {
+      "bin": "41-50",
+      "count": 166
+     },
+     {
+      "bin": "51+",
+      "count": 36
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 6301,
+     "mean": 1.86,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 2858
+     },
+     {
+      "bin": "2",
+      "count": 2080
+     },
+     {
+      "bin": "3",
+      "count": 897
+     },
+     {
+      "bin": "4",
+      "count": 331
+     },
+     {
+      "bin": "5+",
+      "count": 135
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 3095
+     },
+     {
+      "bin": "2",
+      "count": 2440
+     },
+     {
+      "bin": "3",
+      "count": 644
+     },
+     {
+      "bin": "4",
+      "count": 109
+     },
+     {
+      "bin": "5+",
+      "count": 13
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 1402,
+      "per100Sentences": 22.25
+     },
+     "participlePhrase": {
+      "count": 976,
+      "per100Sentences": 15.49
+     },
+     "toInfinitive": {
+      "count": 2117,
+      "per100Sentences": 33.6
+     },
+     "nounClause": {
+      "count": 1965,
+      "per100Sentences": 31.19
+     },
+     "inversion": {
+      "count": 90,
+      "per100Sentences": 1.43
+     }
+    }
+   },
+   "blank_inference": {
+    "sentences": 834,
+    "sentenceLength": {
+     "n": 834,
+     "mean": 21.76,
+     "median": 21.0,
+     "p10": 8.0,
+     "p25": 15.0,
+     "p75": 28.0,
+     "p90": 36.0,
+     "min": 1.0,
+     "max": 59.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 123
+     },
+     {
+      "bin": "11-20",
+      "count": 284
+     },
+     {
+      "bin": "21-30",
+      "count": 271
+     },
+     {
+      "bin": "31-40",
+      "count": 110
+     },
+     {
+      "bin": "41-50",
+      "count": 40
+     },
+     {
+      "bin": "51+",
+      "count": 6
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 834,
+     "mean": 2.1,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 285
+     },
+     {
+      "bin": "2",
+      "count": 311
+     },
+     {
+      "bin": "3",
+      "count": 145
+     },
+     {
+      "bin": "4",
+      "count": 65
+     },
+     {
+      "bin": "5+",
+      "count": 28
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 318
+     },
+     {
+      "bin": "2",
+      "count": 387
+     },
+     {
+      "bin": "3",
+      "count": 105
+     },
+     {
+      "bin": "4",
+      "count": 22
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 245,
+      "per100Sentences": 29.38
+     },
+     "participlePhrase": {
+      "count": 134,
+      "per100Sentences": 16.07
+     },
+     "toInfinitive": {
+      "count": 307,
+      "per100Sentences": 36.81
+     },
+     "nounClause": {
+      "count": 327,
+      "per100Sentences": 39.21
+     },
+     "inversion": {
+      "count": 13,
+      "per100Sentences": 1.56
+     }
+    }
+   },
+   "chart": {
+    "sentences": 181,
+    "sentenceLength": {
+     "n": 181,
+     "mean": 24.56,
+     "median": 23.0,
+     "p10": 15.0,
+     "p25": 19.0,
+     "p75": 28.0,
+     "p90": 32.0,
+     "min": 2.0,
+     "max": 96.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 3
+     },
+     {
+      "bin": "11-20",
+      "count": 60
+     },
+     {
+      "bin": "21-30",
+      "count": 91
+     },
+     {
+      "bin": "31-40",
+      "count": 21
+     },
+     {
+      "bin": "41-50",
+      "count": 2
+     },
+     {
+      "bin": "51+",
+      "count": 4
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 181,
+     "mean": 1.64,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 101
+     },
+     {
+      "bin": "2",
+      "count": 54
+     },
+     {
+      "bin": "3",
+      "count": 20
+     },
+     {
+      "bin": "4",
+      "count": 3
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 107
+     },
+     {
+      "bin": "2",
+      "count": 64
+     },
+     {
+      "bin": "3",
+      "count": 10
+     },
+     {
+      "bin": "4",
+      "count": 0
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 65,
+      "per100Sentences": 35.91
+     },
+     "participlePhrase": {
+      "count": 49,
+      "per100Sentences": 27.07
+     },
+     "toInfinitive": {
+      "count": 18,
+      "per100Sentences": 9.94
+     },
+     "nounClause": {
+      "count": 25,
+      "per100Sentences": 13.81
+     },
+     "inversion": {
+      "count": 0,
+      "per100Sentences": 0.0
+     }
+    }
+   },
+   "claim": {
+    "sentences": 206,
+    "sentenceLength": {
+     "n": 206,
+     "mean": 20.35,
+     "median": 19.0,
+     "p10": 9.0,
+     "p25": 13.25,
+     "p75": 26.0,
+     "p90": 33.5,
+     "min": 1.0,
+     "max": 49.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 32
+     },
+     {
+      "bin": "11-20",
+      "count": 80
+     },
+     {
+      "bin": "21-30",
+      "count": 61
+     },
+     {
+      "bin": "31-40",
+      "count": 25
+     },
+     {
+      "bin": "41-50",
+      "count": 8
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 206,
+     "mean": 2.08,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.5,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 71
+     },
+     {
+      "bin": "2",
+      "count": 76
+     },
+     {
+      "bin": "3",
+      "count": 38
+     },
+     {
+      "bin": "4",
+      "count": 15
+     },
+     {
+      "bin": "5+",
+      "count": 6
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 72
+     },
+     {
+      "bin": "2",
+      "count": 99
+     },
+     {
+      "bin": "3",
+      "count": 26
+     },
+     {
+      "bin": "4",
+      "count": 8
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 59,
+      "per100Sentences": 28.64
+     },
+     "participlePhrase": {
+      "count": 30,
+      "per100Sentences": 14.56
+     },
+     "toInfinitive": {
+      "count": 127,
+      "per100Sentences": 61.65
+     },
+     "nounClause": {
+      "count": 88,
+      "per100Sentences": 42.72
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.49
+     }
+    }
+   },
+   "content_match": {
+    "sentences": 263,
+    "sentenceLength": {
+     "n": 263,
+     "mean": 15.57,
+     "median": 15.0,
+     "p10": 9.0,
+     "p25": 12.0,
+     "p75": 19.0,
+     "p90": 22.0,
+     "min": 1.0,
+     "max": 32.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 37
+     },
+     {
+      "bin": "11-20",
+      "count": 179
+     },
+     {
+      "bin": "21-30",
+      "count": 45
+     },
+     {
+      "bin": "31-40",
+      "count": 2
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 263,
+     "mean": 1.33,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 189
+     },
+     {
+      "bin": "2",
+      "count": 63
+     },
+     {
+      "bin": "3",
+      "count": 10
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 201
+     },
+     {
+      "bin": "2",
+      "count": 59
+     },
+     {
+      "bin": "3",
+      "count": 3
+     },
+     {
+      "bin": "4",
+      "count": 0
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 35,
+      "per100Sentences": 13.31
+     },
+     "participlePhrase": {
+      "count": 38,
+      "per100Sentences": 14.45
+     },
+     "toInfinitive": {
+      "count": 34,
+      "per100Sentences": 12.93
+     },
+     "nounClause": {
+      "count": 12,
+      "per100Sentences": 4.56
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.38
+     }
+    }
+   },
+   "contextual_vocab": {
+    "sentences": 215,
+    "sentenceLength": {
+     "n": 215,
+     "mean": 22.82,
+     "median": 22.0,
+     "p10": 11.0,
+     "p25": 17.0,
+     "p75": 29.0,
+     "p90": 34.0,
+     "min": 2.0,
+     "max": 53.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 21
+     },
+     {
+      "bin": "11-20",
+      "count": 69
+     },
+     {
+      "bin": "21-30",
+      "count": 80
+     },
+     {
+      "bin": "31-40",
+      "count": 37
+     },
+     {
+      "bin": "41-50",
+      "count": 7
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 215,
+     "mean": 2.11,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 71
+     },
+     {
+      "bin": "2",
+      "count": 79
+     },
+     {
+      "bin": "3",
+      "count": 44
+     },
+     {
+      "bin": "4",
+      "count": 15
+     },
+     {
+      "bin": "5+",
+      "count": 6
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 76
+     },
+     {
+      "bin": "2",
+      "count": 97
+     },
+     {
+      "bin": "3",
+      "count": 36
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 67,
+      "per100Sentences": 31.16
+     },
+     "participlePhrase": {
+      "count": 36,
+      "per100Sentences": 16.74
+     },
+     "toInfinitive": {
+      "count": 98,
+      "per100Sentences": 45.58
+     },
+     "nounClause": {
+      "count": 84,
+      "per100Sentences": 39.07
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.47
+     }
+    }
+   },
+   "gist": {
+    "sentences": 205,
+    "sentenceLength": {
+     "n": 205,
+     "mean": 22.72,
+     "median": 22.0,
+     "p10": 12.0,
+     "p25": 16.0,
+     "p75": 27.0,
+     "p90": 37.0,
+     "min": 1.0,
+     "max": 58.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 14
+     },
+     {
+      "bin": "11-20",
+      "count": 76
+     },
+     {
+      "bin": "21-30",
+      "count": 80
+     },
+     {
+      "bin": "31-40",
+      "count": 23
+     },
+     {
+      "bin": "41-50",
+      "count": 8
+     },
+     {
+      "bin": "51+",
+      "count": 4
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 205,
+     "mean": 2.2,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 64
+     },
+     {
+      "bin": "2",
+      "count": 71
+     },
+     {
+      "bin": "3",
+      "count": 44
+     },
+     {
+      "bin": "4",
+      "count": 17
+     },
+     {
+      "bin": "5+",
+      "count": 9
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 69
+     },
+     {
+      "bin": "2",
+      "count": 97
+     },
+     {
+      "bin": "3",
+      "count": 32
+     },
+     {
+      "bin": "4",
+      "count": 5
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 76,
+      "per100Sentences": 37.07
+     },
+     "participlePhrase": {
+      "count": 29,
+      "per100Sentences": 14.15
+     },
+     "toInfinitive": {
+      "count": 96,
+      "per100Sentences": 46.83
+     },
+     "nounClause": {
+      "count": 82,
+      "per100Sentences": 40.0
+     },
+     "inversion": {
+      "count": 4,
+      "per100Sentences": 1.95
+     }
+    }
+   },
+   "grammar": {
+    "sentences": 221,
+    "sentenceLength": {
+     "n": 221,
+     "mean": 20.86,
+     "median": 20.0,
+     "p10": 10.0,
+     "p25": 14.0,
+     "p75": 26.0,
+     "p90": 34.0,
+     "min": 2.0,
+     "max": 44.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 26
+     },
+     {
+      "bin": "11-20",
+      "count": 89
+     },
+     {
+      "bin": "21-30",
+      "count": 69
+     },
+     {
+      "bin": "31-40",
+      "count": 32
+     },
+     {
+      "bin": "41-50",
+      "count": 5
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 221,
+     "mean": 2.12,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 85
+     },
+     {
+      "bin": "2",
+      "count": 64
+     },
+     {
+      "bin": "3",
+      "count": 42
+     },
+     {
+      "bin": "4",
+      "count": 24
+     },
+     {
+      "bin": "5+",
+      "count": 6
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 91
+     },
+     {
+      "bin": "2",
+      "count": 86
+     },
+     {
+      "bin": "3",
+      "count": 34
+     },
+     {
+      "bin": "4",
+      "count": 9
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 78,
+      "per100Sentences": 35.29
+     },
+     "participlePhrase": {
+      "count": 54,
+      "per100Sentences": 24.43
+     },
+     "toInfinitive": {
+      "count": 98,
+      "per100Sentences": 44.34
+     },
+     "nounClause": {
+      "count": 94,
+      "per100Sentences": 42.53
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.9
+     }
+    }
+   },
+   "implication": {
+    "sentences": 219,
+    "sentenceLength": {
+     "n": 219,
+     "mean": 19.78,
+     "median": 18.0,
+     "p10": 7.0,
+     "p25": 11.0,
+     "p75": 25.0,
+     "p90": 35.0,
+     "min": 1.0,
+     "max": 54.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 49
+     },
+     {
+      "bin": "11-20",
+      "count": 73
+     },
+     {
+      "bin": "21-30",
+      "count": 63
+     },
+     {
+      "bin": "31-40",
+      "count": 22
+     },
+     {
+      "bin": "41-50",
+      "count": 9
+     },
+     {
+      "bin": "51+",
+      "count": 3
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 219,
+     "mean": 2.07,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 87
+     },
+     {
+      "bin": "2",
+      "count": 69
+     },
+     {
+      "bin": "3",
+      "count": 38
+     },
+     {
+      "bin": "4",
+      "count": 15
+     },
+     {
+      "bin": "5+",
+      "count": 10
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 93
+     },
+     {
+      "bin": "2",
+      "count": 85
+     },
+     {
+      "bin": "3",
+      "count": 34
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 67,
+      "per100Sentences": 30.59
+     },
+     "participlePhrase": {
+      "count": 25,
+      "per100Sentences": 11.42
+     },
+     "toInfinitive": {
+      "count": 73,
+      "per100Sentences": 33.33
+     },
+     "nounClause": {
+      "count": 81,
+      "per100Sentences": 36.99
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 0.46
+     }
+    }
+   },
+   "insertion": {
+    "sentences": 449,
+    "sentenceLength": {
+     "n": 449,
+     "mean": 21.94,
+     "median": 22.0,
+     "p10": 11.0,
+     "p25": 16.0,
+     "p75": 28.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 56.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 34
+     },
+     {
+      "bin": "11-20",
+      "count": 170
+     },
+     {
+      "bin": "21-30",
+      "count": 173
+     },
+     {
+      "bin": "31-40",
+      "count": 61
+     },
+     {
+      "bin": "41-50",
+      "count": 10
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 449,
+     "mean": 2.01,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 164
+     },
+     {
+      "bin": "2",
+      "count": 167
+     },
+     {
+      "bin": "3",
+      "count": 81
+     },
+     {
+      "bin": "4",
+      "count": 28
+     },
+     {
+      "bin": "5+",
+      "count": 9
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 178
+     },
+     {
+      "bin": "2",
+      "count": 206
+     },
+     {
+      "bin": "3",
+      "count": 56
+     },
+     {
+      "bin": "4",
+      "count": 9
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 127,
+      "per100Sentences": 28.29
+     },
+     "participlePhrase": {
+      "count": 83,
+      "per100Sentences": 18.49
+     },
+     "toInfinitive": {
+      "count": 172,
+      "per100Sentences": 38.31
+     },
+     "nounClause": {
+      "count": 147,
+      "per100Sentences": 32.74
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.45
+     }
+    }
+   },
+   "irrelevant_sentence": {
+    "sentences": 203,
+    "sentenceLength": {
+     "n": 203,
+     "mean": 23.58,
+     "median": 23.0,
+     "p10": 13.2,
+     "p25": 17.0,
+     "p75": 29.0,
+     "p90": 36.0,
+     "min": 2.0,
+     "max": 51.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 10
+     },
+     {
+      "bin": "11-20",
+      "count": 69
+     },
+     {
+      "bin": "21-30",
+      "count": 81
+     },
+     {
+      "bin": "31-40",
+      "count": 37
+     },
+     {
+      "bin": "41-50",
+      "count": 5
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 203,
+     "mean": 2.0,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 77
+     },
+     {
+      "bin": "2",
+      "count": 73
+     },
+     {
+      "bin": "3",
+      "count": 35
+     },
+     {
+      "bin": "4",
+      "count": 14
+     },
+     {
+      "bin": "5+",
+      "count": 4
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 82
+     },
+     {
+      "bin": "2",
+      "count": 92
+     },
+     {
+      "bin": "3",
+      "count": 28
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 45,
+      "per100Sentences": 22.17
+     },
+     "participlePhrase": {
+      "count": 38,
+      "per100Sentences": 18.72
+     },
+     "toInfinitive": {
+      "count": 92,
+      "per100Sentences": 45.32
+     },
+     "nounClause": {
+      "count": 60,
+      "per100Sentences": 29.56
+     },
+     "inversion": {
+      "count": 0,
+      "per100Sentences": 0.0
+     }
+    }
+   },
+   "long_narrative": {
+    "sentences": 854,
+    "sentenceLength": {
+     "n": 854,
+     "mean": 12.04,
+     "median": 11.0,
+     "p10": 5.0,
+     "p25": 8.0,
+     "p75": 16.0,
+     "p90": 20.0,
+     "min": 1.0,
+     "max": 48.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 376
+     },
+     {
+      "bin": "11-20",
+      "count": 403
+     },
+     {
+      "bin": "21-30",
+      "count": 70
+     },
+     {
+      "bin": "31-40",
+      "count": 3
+     },
+     {
+      "bin": "41-50",
+      "count": 2
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 854,
+     "mean": 1.67,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 426
+     },
+     {
+      "bin": "2",
+      "count": 308
+     },
+     {
+      "bin": "3",
+      "count": 98
+     },
+     {
+      "bin": "4",
+      "count": 19
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 474
+     },
+     {
+      "bin": "2",
+      "count": 311
+     },
+     {
+      "bin": "3",
+      "count": 63
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 62,
+      "per100Sentences": 7.26
+     },
+     "participlePhrase": {
+      "count": 118,
+      "per100Sentences": 13.82
+     },
+     "toInfinitive": {
+      "count": 181,
+      "per100Sentences": 21.19
+     },
+     "nounClause": {
+      "count": 280,
+      "per100Sentences": 32.79
+     },
+     "inversion": {
+      "count": 37,
+      "per100Sentences": 4.33
+     }
+    }
+   },
+   "long_title_vocab": {
+    "sentences": 304,
+    "sentenceLength": {
+     "n": 304,
+     "mean": 23.89,
+     "median": 22.0,
+     "p10": 11.3,
+     "p25": 16.0,
+     "p75": 31.0,
+     "p90": 38.0,
+     "min": 1.0,
+     "max": 64.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 27
+     },
+     {
+      "bin": "11-20",
+      "count": 103
+     },
+     {
+      "bin": "21-30",
+      "count": 97
+     },
+     {
+      "bin": "31-40",
+      "count": 55
+     },
+     {
+      "bin": "41-50",
+      "count": 17
+     },
+     {
+      "bin": "51+",
+      "count": 5
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 304,
+     "mean": 2.22,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 8.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 94
+     },
+     {
+      "bin": "2",
+      "count": 107
+     },
+     {
+      "bin": "3",
+      "count": 62
+     },
+     {
+      "bin": "4",
+      "count": 32
+     },
+     {
+      "bin": "5+",
+      "count": 9
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 111
+     },
+     {
+      "bin": "2",
+      "count": 135
+     },
+     {
+      "bin": "3",
+      "count": 44
+     },
+     {
+      "bin": "4",
+      "count": 12
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 96,
+      "per100Sentences": 31.58
+     },
+     "participlePhrase": {
+      "count": 50,
+      "per100Sentences": 16.45
+     },
+     "toInfinitive": {
+      "count": 132,
+      "per100Sentences": 43.42
+     },
+     "nounClause": {
+      "count": 136,
+      "per100Sentences": 44.74
+     },
+     "inversion": {
+      "count": 3,
+      "per100Sentences": 0.99
+     }
+    }
+   },
+   "mood": {
+    "sentences": 322,
+    "sentenceLength": {
+     "n": 322,
+     "mean": 11.38,
+     "median": 11.0,
+     "p10": 4.0,
+     "p25": 7.0,
+     "p75": 15.0,
+     "p90": 19.0,
+     "min": 1.0,
+     "max": 33.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 148
+     },
+     {
+      "bin": "11-20",
+      "count": 152
+     },
+     {
+      "bin": "21-30",
+      "count": 20
+     },
+     {
+      "bin": "31-40",
+      "count": 2
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 322,
+     "mean": 1.59,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.9,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 176
+     },
+     {
+      "bin": "2",
+      "count": 113
+     },
+     {
+      "bin": "3",
+      "count": 25
+     },
+     {
+      "bin": "4",
+      "count": 6
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 192
+     },
+     {
+      "bin": "2",
+      "count": 113
+     },
+     {
+      "bin": "3",
+      "count": 16
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 25,
+      "per100Sentences": 7.76
+     },
+     "participlePhrase": {
+      "count": 37,
+      "per100Sentences": 11.49
+     },
+     "toInfinitive": {
+      "count": 54,
+      "per100Sentences": 16.77
+     },
+     "nounClause": {
+      "count": 90,
+      "per100Sentences": 27.95
+     },
+     "inversion": {
+      "count": 8,
+      "per100Sentences": 2.48
+     }
+    }
+   },
+   "notice": {
+    "sentences": 425,
+    "sentenceLength": {
+     "n": 425,
+     "mean": 13.95,
+     "median": 11.0,
+     "p10": 6.0,
+     "p25": 8.0,
+     "p75": 18.0,
+     "p90": 24.0,
+     "min": 1.0,
+     "max": 80.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 186
+     },
+     {
+      "bin": "11-20",
+      "count": 174
+     },
+     {
+      "bin": "21-30",
+      "count": 39
+     },
+     {
+      "bin": "31-40",
+      "count": 19
+     },
+     {
+      "bin": "41-50",
+      "count": 4
+     },
+     {
+      "bin": "51+",
+      "count": 3
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 425,
+     "mean": 1.18,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 357
+     },
+     {
+      "bin": "2",
+      "count": 61
+     },
+     {
+      "bin": "3",
+      "count": 5
+     },
+     {
+      "bin": "4",
+      "count": 2
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 364
+     },
+     {
+      "bin": "2",
+      "count": 54
+     },
+     {
+      "bin": "3",
+      "count": 6
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 18,
+      "per100Sentences": 4.24
+     },
+     "participlePhrase": {
+      "count": 45,
+      "per100Sentences": 10.59
+     },
+     "toInfinitive": {
+      "count": 79,
+      "per100Sentences": 18.59
+     },
+     "nounClause": {
+      "count": 25,
+      "per100Sentences": 5.88
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.47
+     }
+    }
+   },
+   "ordering": {
+    "sentences": 479,
+    "sentenceLength": {
+     "n": 479,
+     "mean": 20.11,
+     "median": 19.0,
+     "p10": 10.0,
+     "p25": 14.0,
+     "p75": 25.0,
+     "p90": 32.0,
+     "min": 1.0,
+     "max": 55.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 57
+     },
+     {
+      "bin": "11-20",
+      "count": 223
+     },
+     {
+      "bin": "21-30",
+      "count": 135
+     },
+     {
+      "bin": "31-40",
+      "count": 47
+     },
+     {
+      "bin": "41-50",
+      "count": 16
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 479,
+     "mean": 2.04,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 7.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 187
+     },
+     {
+      "bin": "2",
+      "count": 164
+     },
+     {
+      "bin": "3",
+      "count": 73
+     },
+     {
+      "bin": "4",
+      "count": 36
+     },
+     {
+      "bin": "5+",
+      "count": 19
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 207
+     },
+     {
+      "bin": "2",
+      "count": 192
+     },
+     {
+      "bin": "3",
+      "count": 64
+     },
+     {
+      "bin": "4",
+      "count": 16
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 136,
+      "per100Sentences": 28.39
+     },
+     "participlePhrase": {
+      "count": 70,
+      "per100Sentences": 14.61
+     },
+     "toInfinitive": {
+      "count": 184,
+      "per100Sentences": 38.41
+     },
+     "nounClause": {
+      "count": 169,
+      "per100Sentences": 35.28
+     },
+     "inversion": {
+      "count": 5,
+      "per100Sentences": 1.04
+     }
+    }
+   },
+   "purpose": {
+    "sentences": 245,
+    "sentenceLength": {
+     "n": 245,
+     "mean": 13.44,
+     "median": 13.0,
+     "p10": 4.0,
+     "p25": 9.0,
+     "p75": 18.0,
+     "p90": 22.0,
+     "min": 2.0,
+     "max": 33.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 81
+     },
+     {
+      "bin": "11-20",
+      "count": 131
+     },
+     {
+      "bin": "21-30",
+      "count": 32
+     },
+     {
+      "bin": "31-40",
+      "count": 1
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 245,
+     "mean": 1.47,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 157
+     },
+     {
+      "bin": "2",
+      "count": 64
+     },
+     {
+      "bin": "3",
+      "count": 21
+     },
+     {
+      "bin": "4",
+      "count": 2
+     },
+     {
+      "bin": "5+",
+      "count": 1
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 166
+     },
+     {
+      "bin": "2",
+      "count": 65
+     },
+     {
+      "bin": "3",
+      "count": 14
+     },
+     {
+      "bin": "4",
+      "count": 0
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 20,
+      "per100Sentences": 8.16
+     },
+     "participlePhrase": {
+      "count": 12,
+      "per100Sentences": 4.9
+     },
+     "toInfinitive": {
+      "count": 83,
+      "per100Sentences": 33.88
+     },
+     "nounClause": {
+      "count": 47,
+      "per100Sentences": 19.18
+     },
+     "inversion": {
+      "count": 0,
+      "per100Sentences": 0.0
+     }
+    }
+   },
+   "reference": {
+    "sentences": 32,
+    "sentenceLength": {
+     "n": 32,
+     "mean": 19.34,
+     "median": 19.5,
+     "p10": 10.0,
+     "p25": 12.75,
+     "p75": 25.0,
+     "p90": 27.0,
+     "min": 7.0,
+     "max": 38.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 6
+     },
+     {
+      "bin": "11-20",
+      "count": 12
+     },
+     {
+      "bin": "21-30",
+      "count": 12
+     },
+     {
+      "bin": "31-40",
+      "count": 2
+     },
+     {
+      "bin": "41-50",
+      "count": 0
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 32,
+     "mean": 2.06,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 9
+     },
+     {
+      "bin": "2",
+      "count": 14
+     },
+     {
+      "bin": "3",
+      "count": 7
+     },
+     {
+      "bin": "4",
+      "count": 2
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 12
+     },
+     {
+      "bin": "2",
+      "count": 14
+     },
+     {
+      "bin": "3",
+      "count": 5
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 7,
+      "per100Sentences": 21.88
+     },
+     "participlePhrase": {
+      "count": 5,
+      "per100Sentences": 15.62
+     },
+     "toInfinitive": {
+      "count": 15,
+      "per100Sentences": 46.88
+     },
+     "nounClause": {
+      "count": 13,
+      "per100Sentences": 40.62
+     },
+     "inversion": {
+      "count": 1,
+      "per100Sentences": 3.12
+     }
+    }
+   },
+   "summary": {
+    "sentences": 226,
+    "sentenceLength": {
+     "n": 226,
+     "mean": 24.63,
+     "median": 24.0,
+     "p10": 12.0,
+     "p25": 17.0,
+     "p75": 30.0,
+     "p90": 38.0,
+     "min": 4.0,
+     "max": 65.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 15
+     },
+     {
+      "bin": "11-20",
+      "count": 70
+     },
+     {
+      "bin": "21-30",
+      "count": 91
+     },
+     {
+      "bin": "31-40",
+      "count": 32
+     },
+     {
+      "bin": "41-50",
+      "count": 12
+     },
+     {
+      "bin": "51+",
+      "count": 6
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 226,
+     "mean": 2.04,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 5.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 81
+     },
+     {
+      "bin": "2",
+      "count": 81
+     },
+     {
+      "bin": "3",
+      "count": 46
+     },
+     {
+      "bin": "4",
+      "count": 11
+     },
+     {
+      "bin": "5+",
+      "count": 7
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 87
+     },
+     {
+      "bin": "2",
+      "count": 109
+     },
+     {
+      "bin": "3",
+      "count": 25
+     },
+     {
+      "bin": "4",
+      "count": 3
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 68,
+      "per100Sentences": 30.09
+     },
+     "participlePhrase": {
+      "count": 38,
+      "per100Sentences": 16.81
+     },
+     "toInfinitive": {
+      "count": 78,
+      "per100Sentences": 34.51
+     },
+     "nounClause": {
+      "count": 70,
+      "per100Sentences": 30.97
+     },
+     "inversion": {
+      "count": 4,
+      "per100Sentences": 1.77
+     }
+    }
+   },
+   "title": {
+    "sentences": 220,
+    "sentenceLength": {
+     "n": 220,
+     "mean": 21.52,
+     "median": 20.0,
+     "p10": 10.0,
+     "p25": 15.0,
+     "p75": 28.0,
+     "p90": 35.0,
+     "min": 2.0,
+     "max": 55.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 24
+     },
+     {
+      "bin": "11-20",
+      "count": 90
+     },
+     {
+      "bin": "21-30",
+      "count": 73
+     },
+     {
+      "bin": "31-40",
+      "count": 23
+     },
+     {
+      "bin": "41-50",
+      "count": 9
+     },
+     {
+      "bin": "51+",
+      "count": 1
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 220,
+     "mean": 1.86,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 97
+     },
+     {
+      "bin": "2",
+      "count": 76
+     },
+     {
+      "bin": "3",
+      "count": 31
+     },
+     {
+      "bin": "4",
+      "count": 13
+     },
+     {
+      "bin": "5+",
+      "count": 3
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 106
+     },
+     {
+      "bin": "2",
+      "count": 93
+     },
+     {
+      "bin": "3",
+      "count": 19
+     },
+     {
+      "bin": "4",
+      "count": 2
+     },
+     {
+      "bin": "5+",
+      "count": 0
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 42,
+      "per100Sentences": 19.09
+     },
+     "participlePhrase": {
+      "count": 40,
+      "per100Sentences": 18.18
+     },
+     "toInfinitive": {
+      "count": 96,
+      "per100Sentences": 43.64
+     },
+     "nounClause": {
+      "count": 73,
+      "per100Sentences": 33.18
+     },
+     "inversion": {
+      "count": 2,
+      "per100Sentences": 0.91
+     }
+    }
+   },
+   "topic": {
+    "sentences": 198,
+    "sentenceLength": {
+     "n": 198,
+     "mean": 23.12,
+     "median": 22.0,
+     "p10": 11.0,
+     "p25": 16.0,
+     "p75": 30.0,
+     "p90": 36.0,
+     "min": 2.0,
+     "max": 50.0
+    },
+    "sentenceLengthHistogram": [
+     {
+      "bin": "1-10",
+      "count": 18
+     },
+     {
+      "bin": "11-20",
+      "count": 72
+     },
+     {
+      "bin": "21-30",
+      "count": 62
+     },
+     {
+      "bin": "31-40",
+      "count": 34
+     },
+     {
+      "bin": "41-50",
+      "count": 12
+     },
+     {
+      "bin": "51+",
+      "count": 0
+     }
+    ],
+    "clausesPerSentence": {
+     "n": 198,
+     "mean": 2.03,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 3.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "clauseCountHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 80
+     },
+     {
+      "bin": "2",
+      "count": 65
+     },
+     {
+      "bin": "3",
+      "count": 32
+     },
+     {
+      "bin": "4",
+      "count": 11
+     },
+     {
+      "bin": "5+",
+      "count": 10
+     }
+    ],
+    "clauseDepthHistogram": [
+     {
+      "bin": "0",
+      "count": 0
+     },
+     {
+      "bin": "1",
+      "count": 89
+     },
+     {
+      "bin": "2",
+      "count": 82
+     },
+     {
+      "bin": "3",
+      "count": 24
+     },
+     {
+      "bin": "4",
+      "count": 1
+     },
+     {
+      "bin": "5+",
+      "count": 2
+     }
+    ],
+    "constructions": {
+     "relativeClause": {
+      "count": 64,
+      "per100Sentences": 32.32
+     },
+     "participlePhrase": {
+      "count": 45,
+      "per100Sentences": 22.73
+     },
+     "toInfinitive": {
+      "count": 100,
+      "per100Sentences": 50.51
+     },
+     "nounClause": {
+      "count": 62,
+      "per100Sentences": 31.31
+     },
+     "inversion": {
+      "count": 3,
+      "per100Sentences": 1.52
+     }
+    }
+   }
+  }
+ }
+}

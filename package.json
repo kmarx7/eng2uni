@@ -12,7 +12,11 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "validate:content": "tsx scripts/validate-content.ts",
-    "prebuild": "npm run validate:content"
+    "prebuild": "npm run validate:content",
+    "analyze": "npm run analyze:stats && npm run analyze:leaks && npm run validate:analysis",
+    "analyze:stats": "cd scripts/analysis && uv run python analyze_corpus.py",
+    "analyze:leaks": "cd scripts/analysis && uv run python check_leaks.py",
+    "validate:analysis": "tsx scripts/validate-analysis.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",

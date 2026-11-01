@@ -1,0 +1,4400 @@
+{
+ "meta": {
+  "generator": "scripts/analysis/analyze_corpus.py",
+  "spacy": "3.8.18",
+  "model": "en_core_web_sm-3.8.0",
+  "exams": [
+   "2014_csat",
+   "2014_m06",
+   "2014_m09",
+   "2015_csat",
+   "2015_m06",
+   "2015_m09",
+   "2016_csat",
+   "2016_m06",
+   "2016_m09",
+   "2017_csat",
+   "2017_m06",
+   "2017_m09",
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ],
+  "since2018Exams": [
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ]
+ },
+ "byScope": {
+  "all": {
+   "all": {
+    "passages": 1010,
+    "wordCount": {
+     "n": 1010,
+     "mean": 163.23,
+     "median": 156.0,
+     "p10": 115.8,
+     "p25": 139.0,
+     "p75": 173.0,
+     "p90": 197.0,
+     "min": 75.0,
+     "max": 415.0
+    },
+    "paragraphs": {
+     "n": 1010,
+     "mean": 1.98,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 195,
+      "per1000Words": 1.183
+     },
+     {
+      "marker": "for example",
+      "count": 127,
+      "per1000Words": 0.77
+     },
+     {
+      "marker": "rather",
+      "count": 109,
+      "per1000Words": 0.661
+     },
+     {
+      "marker": "thus",
+      "count": 91,
+      "per1000Words": 0.552
+     },
+     {
+      "marker": "that is",
+      "count": 82,
+      "per1000Words": 0.497
+     },
+     {
+      "marker": "therefore",
+      "count": 66,
+      "per1000Words": 0.4
+     },
+     {
+      "marker": "instead",
+      "count": 53,
+      "per1000Words": 0.321
+     },
+     {
+      "marker": "in fact",
+      "count": 49,
+      "per1000Words": 0.297
+     },
+     {
+      "marker": "indeed",
+      "count": 37,
+      "per1000Words": 0.224
+     },
+     {
+      "marker": "for instance",
+      "count": 29,
+      "per1000Words": 0.176
+     },
+     {
+      "marker": "as a result",
+      "count": 28,
+      "per1000Words": 0.17
+     },
+     {
+      "marker": "in addition",
+      "count": 28,
+      "per1000Words": 0.17
+     },
+     {
+      "marker": "in other words",
+      "count": 24,
+      "per1000Words": 0.146
+     },
+     {
+      "marker": "on the other hand",
+      "count": 24,
+      "per1000Words": 0.146
+     },
+     {
+      "marker": "similarly",
+      "count": 18,
+      "per1000Words": 0.109
+     },
+     {
+      "marker": "furthermore",
+      "count": 14,
+      "per1000Words": 0.085
+     },
+     {
+      "marker": "moreover",
+      "count": 14,
+      "per1000Words": 0.085
+     },
+     {
+      "marker": "in particular",
+      "count": 13,
+      "per1000Words": 0.079
+     },
+     {
+      "marker": "likewise",
+      "count": 12,
+      "per1000Words": 0.073
+     },
+     {
+      "marker": "hence",
+      "count": 11,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "in contrast",
+      "count": 11,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "otherwise",
+      "count": 11,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "after all",
+      "count": 9,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "consequently",
+      "count": 9,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "nevertheless",
+      "count": 8,
+      "per1000Words": 0.049
+     },
+     {
+      "marker": "on the contrary",
+      "count": 7,
+      "per1000Words": 0.042
+     },
+     {
+      "marker": "nonetheless",
+      "count": 6,
+      "per1000Words": 0.036
+     },
+     {
+      "marker": "meanwhile",
+      "count": 4,
+      "per1000Words": 0.024
+     },
+     {
+      "marker": "in short",
+      "count": 3,
+      "per1000Words": 0.018
+     },
+     {
+      "marker": "besides",
+      "count": 1,
+      "per1000Words": 0.006
+     }
+    ]
+   },
+   "blank_inference": {
+    "passages": 173,
+    "wordCount": {
+     "n": 173,
+     "mean": 154.91,
+     "median": 155.0,
+     "p10": 136.0,
+     "p25": 146.0,
+     "p75": 164.0,
+     "p90": 174.0,
+     "min": 120.0,
+     "max": 195.0
+    },
+    "paragraphs": {
+     "n": 173,
+     "mean": 1.21,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 31,
+      "per1000Words": 1.157
+     },
+     {
+      "marker": "however",
+      "count": 28,
+      "per1000Words": 1.045
+     },
+     {
+      "marker": "rather",
+      "count": 25,
+      "per1000Words": 0.933
+     },
+     {
+      "marker": "thus",
+      "count": 23,
+      "per1000Words": 0.858
+     },
+     {
+      "marker": "that is",
+      "count": 17,
+      "per1000Words": 0.634
+     },
+     {
+      "marker": "in fact",
+      "count": 13,
+      "per1000Words": 0.485
+     },
+     {
+      "marker": "indeed",
+      "count": 11,
+      "per1000Words": 0.41
+     },
+     {
+      "marker": "therefore",
+      "count": 11,
+      "per1000Words": 0.41
+     },
+     {
+      "marker": "in other words",
+      "count": 9,
+      "per1000Words": 0.336
+     },
+     {
+      "marker": "instead",
+      "count": 8,
+      "per1000Words": 0.299
+     },
+     {
+      "marker": "for instance",
+      "count": 7,
+      "per1000Words": 0.261
+     },
+     {
+      "marker": "similarly",
+      "count": 7,
+      "per1000Words": 0.261
+     },
+     {
+      "marker": "hence",
+      "count": 5,
+      "per1000Words": 0.187
+     },
+     {
+      "marker": "in addition",
+      "count": 4,
+      "per1000Words": 0.149
+     },
+     {
+      "marker": "nonetheless",
+      "count": 4,
+      "per1000Words": 0.149
+     },
+     {
+      "marker": "on the other hand",
+      "count": 4,
+      "per1000Words": 0.149
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.112
+     },
+     {
+      "marker": "in contrast",
+      "count": 3,
+      "per1000Words": 0.112
+     },
+     {
+      "marker": "likewise",
+      "count": 3,
+      "per1000Words": 0.112
+     },
+     {
+      "marker": "moreover",
+      "count": 2,
+      "per1000Words": 0.075
+     },
+     {
+      "marker": "nevertheless",
+      "count": 2,
+      "per1000Words": 0.075
+     },
+     {
+      "marker": "on the contrary",
+      "count": 2,
+      "per1000Words": 0.075
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.037
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.037
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.037
+     },
+     {
+      "marker": "in short",
+      "count": 1,
+      "per1000Words": 0.037
+     },
+     {
+      "marker": "meanwhile",
+      "count": 1,
+      "per1000Words": 0.037
+     }
+    ]
+   },
+   "chart": {
+    "passages": 41,
+    "wordCount": {
+     "n": 41,
+     "mean": 149.02,
+     "median": 149.0,
+     "p10": 118.0,
+     "p25": 127.0,
+     "p75": 160.0,
+     "p90": 182.0,
+     "min": 107.0,
+     "max": 243.0
+    },
+    "paragraphs": {
+     "n": 41,
+     "mean": 2.41,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "on the other hand",
+      "count": 3,
+      "per1000Words": 0.491
+     },
+     {
+      "marker": "however",
+      "count": 1,
+      "per1000Words": 0.164
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.164
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.164
+     }
+    ]
+   },
+   "claim": {
+    "passages": 36,
+    "wordCount": {
+     "n": 36,
+     "mean": 143.08,
+     "median": 142.5,
+     "p10": 127.0,
+     "p25": 134.0,
+     "p75": 151.25,
+     "p90": 160.5,
+     "min": 117.0,
+     "max": 171.0
+    },
+    "paragraphs": {
+     "n": 36,
+     "mean": 1.11,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.5,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 13,
+      "per1000Words": 2.524
+     },
+     {
+      "marker": "that is",
+      "count": 5,
+      "per1000Words": 0.971
+     },
+     {
+      "marker": "for example",
+      "count": 3,
+      "per1000Words": 0.582
+     },
+     {
+      "marker": "rather",
+      "count": 3,
+      "per1000Words": 0.582
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.388
+     },
+     {
+      "marker": "instead",
+      "count": 2,
+      "per1000Words": 0.388
+     },
+     {
+      "marker": "therefore",
+      "count": 2,
+      "per1000Words": 0.388
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.194
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.194
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.194
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.194
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.194
+     },
+     {
+      "marker": "thus",
+      "count": 1,
+      "per1000Words": 0.194
+     }
+    ]
+   },
+   "content_match": {
+    "passages": 40,
+    "wordCount": {
+     "n": 40,
+     "mean": 142.55,
+     "median": 144.5,
+     "p10": 129.0,
+     "p25": 138.5,
+     "p75": 149.0,
+     "p90": 156.2,
+     "min": 112.0,
+     "max": 163.0
+    },
+    "paragraphs": {
+     "n": 40,
+     "mean": 1.12,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 4,
+      "per1000Words": 0.702
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.175
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.175
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.175
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.175
+     }
+    ]
+   },
+   "contextual_vocab": {
+    "passages": 40,
+    "wordCount": {
+     "n": 40,
+     "mean": 169.55,
+     "median": 173.0,
+     "p10": 149.0,
+     "p25": 163.75,
+     "p75": 179.25,
+     "p90": 185.4,
+     "min": 130.0,
+     "max": 192.0
+    },
+    "paragraphs": {
+     "n": 40,
+     "mean": 1.4,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.25,
+     "p90": 2.1,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 11,
+      "per1000Words": 1.622
+     },
+     {
+      "marker": "rather",
+      "count": 9,
+      "per1000Words": 1.327
+     },
+     {
+      "marker": "instead",
+      "count": 7,
+      "per1000Words": 1.032
+     },
+     {
+      "marker": "for example",
+      "count": 6,
+      "per1000Words": 0.885
+     },
+     {
+      "marker": "in fact",
+      "count": 6,
+      "per1000Words": 0.885
+     },
+     {
+      "marker": "as a result",
+      "count": 5,
+      "per1000Words": 0.737
+     },
+     {
+      "marker": "consequently",
+      "count": 3,
+      "per1000Words": 0.442
+     },
+     {
+      "marker": "that is",
+      "count": 3,
+      "per1000Words": 0.442
+     },
+     {
+      "marker": "thus",
+      "count": 3,
+      "per1000Words": 0.442
+     },
+     {
+      "marker": "after all",
+      "count": 2,
+      "per1000Words": 0.295
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.295
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.295
+     },
+     {
+      "marker": "on the contrary",
+      "count": 2,
+      "per1000Words": 0.295
+     },
+     {
+      "marker": "therefore",
+      "count": 2,
+      "per1000Words": 0.295
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "in short",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.147
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.147
+     }
+    ]
+   },
+   "gist": {
+    "passages": 40,
+    "wordCount": {
+     "n": 40,
+     "mean": 152.97,
+     "median": 153.0,
+     "p10": 132.8,
+     "p25": 143.0,
+     "p75": 164.0,
+     "p90": 175.1,
+     "min": 108.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 40,
+     "mean": 1.12,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "rather",
+      "count": 7,
+      "per1000Words": 1.144
+     },
+     {
+      "marker": "for example",
+      "count": 5,
+      "per1000Words": 0.817
+     },
+     {
+      "marker": "however",
+      "count": 5,
+      "per1000Words": 0.817
+     },
+     {
+      "marker": "indeed",
+      "count": 4,
+      "per1000Words": 0.654
+     },
+     {
+      "marker": "that is",
+      "count": 4,
+      "per1000Words": 0.654
+     },
+     {
+      "marker": "thus",
+      "count": 4,
+      "per1000Words": 0.654
+     },
+     {
+      "marker": "in fact",
+      "count": 3,
+      "per1000Words": 0.49
+     },
+     {
+      "marker": "in particular",
+      "count": 2,
+      "per1000Words": 0.327
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "on the contrary",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.163
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.163
+     }
+    ]
+   },
+   "grammar": {
+    "passages": 41,
+    "wordCount": {
+     "n": 41,
+     "mean": 156.12,
+     "median": 158.0,
+     "p10": 147.0,
+     "p25": 149.0,
+     "p75": 165.0,
+     "p90": 167.0,
+     "min": 116.0,
+     "max": 173.0
+    },
+    "paragraphs": {
+     "n": 41,
+     "mean": 1.2,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 7,
+      "per1000Words": 1.094
+     },
+     {
+      "marker": "however",
+      "count": 6,
+      "per1000Words": 0.937
+     },
+     {
+      "marker": "therefore",
+      "count": 4,
+      "per1000Words": 0.625
+     },
+     {
+      "marker": "thus",
+      "count": 4,
+      "per1000Words": 0.625
+     },
+     {
+      "marker": "rather",
+      "count": 3,
+      "per1000Words": 0.469
+     },
+     {
+      "marker": "that is",
+      "count": 3,
+      "per1000Words": 0.469
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "in other words",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "instead",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "nonetheless",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.156
+     }
+    ]
+   },
+   "implication": {
+    "passages": 26,
+    "wordCount": {
+     "n": 26,
+     "mean": 166.62,
+     "median": 168.0,
+     "p10": 147.0,
+     "p25": 159.75,
+     "p75": 171.75,
+     "p90": 191.0,
+     "min": 130.0,
+     "max": 198.0
+    },
+    "paragraphs": {
+     "n": 26,
+     "mean": 1.04,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "in fact",
+      "count": 4,
+      "per1000Words": 0.923
+     },
+     {
+      "marker": "therefore",
+      "count": 3,
+      "per1000Words": 0.693
+     },
+     {
+      "marker": "in other words",
+      "count": 2,
+      "per1000Words": 0.462
+     },
+     {
+      "marker": "thus",
+      "count": 2,
+      "per1000Words": 0.462
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "for example",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "however",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "rather",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.231
+     }
+    ]
+   },
+   "insertion": {
+    "passages": 78,
+    "wordCount": {
+     "n": 78,
+     "mean": 166.65,
+     "median": 168.0,
+     "p10": 146.0,
+     "p25": 156.0,
+     "p75": 177.0,
+     "p90": 183.0,
+     "min": 130.0,
+     "max": 198.0
+    },
+    "paragraphs": {
+     "n": 78,
+     "mean": 1.17,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 21,
+      "per1000Words": 1.616
+     },
+     {
+      "marker": "rather",
+      "count": 16,
+      "per1000Words": 1.231
+     },
+     {
+      "marker": "for example",
+      "count": 15,
+      "per1000Words": 1.154
+     },
+     {
+      "marker": "that is",
+      "count": 8,
+      "per1000Words": 0.615
+     },
+     {
+      "marker": "thus",
+      "count": 8,
+      "per1000Words": 0.615
+     },
+     {
+      "marker": "instead",
+      "count": 6,
+      "per1000Words": 0.462
+     },
+     {
+      "marker": "for instance",
+      "count": 5,
+      "per1000Words": 0.385
+     },
+     {
+      "marker": "in addition",
+      "count": 3,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "moreover",
+      "count": 3,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "nevertheless",
+      "count": 3,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "otherwise",
+      "count": 3,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "therefore",
+      "count": 3,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "as a result",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "in contrast",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "likewise",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "on the other hand",
+      "count": 2,
+      "per1000Words": 0.154
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.077
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.077
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.077
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.077
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.077
+     }
+    ]
+   },
+   "irrelevant_sentence": {
+    "passages": 40,
+    "wordCount": {
+     "n": 40,
+     "mean": 160.38,
+     "median": 158.5,
+     "p10": 143.9,
+     "p25": 151.0,
+     "p75": 172.0,
+     "p90": 177.0,
+     "min": 133.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 40,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 1.403
+     },
+     {
+      "marker": "for example",
+      "count": 6,
+      "per1000Words": 0.935
+     },
+     {
+      "marker": "thus",
+      "count": 6,
+      "per1000Words": 0.935
+     },
+     {
+      "marker": "rather",
+      "count": 5,
+      "per1000Words": 0.779
+     },
+     {
+      "marker": "therefore",
+      "count": 5,
+      "per1000Words": 0.779
+     },
+     {
+      "marker": "as a result",
+      "count": 4,
+      "per1000Words": 0.624
+     },
+     {
+      "marker": "on the other hand",
+      "count": 4,
+      "per1000Words": 0.624
+     },
+     {
+      "marker": "in addition",
+      "count": 3,
+      "per1000Words": 0.468
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "in particular",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "that is",
+      "count": 2,
+      "per1000Words": 0.312
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.156
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.156
+     }
+    ]
+   },
+   "long_narrative": {
+    "passages": 41,
+    "wordCount": {
+     "n": 41,
+     "mean": 355.2,
+     "median": 353.0,
+     "p10": 331.0,
+     "p25": 339.0,
+     "p75": 369.0,
+     "p90": 389.0,
+     "min": 309.0,
+     "max": 415.0
+    },
+    "paragraphs": {
+     "n": 41,
+     "mean": 4.02,
+     "median": 4.0,
+     "p10": 4.0,
+     "p25": 4.0,
+     "p75": 4.0,
+     "p90": 4.0,
+     "min": 4.0,
+     "max": 5.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 15,
+      "per1000Words": 1.03
+     },
+     {
+      "marker": "instead",
+      "count": 9,
+      "per1000Words": 0.618
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.137
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.137
+     },
+     {
+      "marker": "meanwhile",
+      "count": 2,
+      "per1000Words": 0.137
+     },
+     {
+      "marker": "besides",
+      "count": 1,
+      "per1000Words": 0.069
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.069
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.069
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.069
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.069
+     }
+    ]
+   },
+   "long_title_vocab": {
+    "passages": 41,
+    "wordCount": {
+     "n": 41,
+     "mean": 249.22,
+     "median": 249.0,
+     "p10": 224.0,
+     "p25": 231.0,
+     "p75": 262.0,
+     "p90": 273.0,
+     "min": 195.0,
+     "max": 292.0
+    },
+    "paragraphs": {
+     "n": 41,
+     "mean": 1.8,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 3.0,
+     "min": 1.0,
+     "max": 4.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 17,
+      "per1000Words": 1.664
+     },
+     {
+      "marker": "however",
+      "count": 12,
+      "per1000Words": 1.174
+     },
+     {
+      "marker": "rather",
+      "count": 10,
+      "per1000Words": 0.979
+     },
+     {
+      "marker": "that is",
+      "count": 9,
+      "per1000Words": 0.881
+     },
+     {
+      "marker": "therefore",
+      "count": 8,
+      "per1000Words": 0.783
+     },
+     {
+      "marker": "in fact",
+      "count": 6,
+      "per1000Words": 0.587
+     },
+     {
+      "marker": "thus",
+      "count": 5,
+      "per1000Words": 0.489
+     },
+     {
+      "marker": "after all",
+      "count": 3,
+      "per1000Words": 0.294
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.294
+     },
+     {
+      "marker": "instead",
+      "count": 3,
+      "per1000Words": 0.294
+     },
+     {
+      "marker": "similarly",
+      "count": 3,
+      "per1000Words": 0.294
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.196
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.196
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.196
+     },
+     {
+      "marker": "in particular",
+      "count": 2,
+      "per1000Words": 0.196
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.098
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.098
+     }
+    ]
+   },
+   "mood": {
+    "passages": 38,
+    "wordCount": {
+     "n": 38,
+     "mean": 127.03,
+     "median": 126.5,
+     "p10": 113.7,
+     "p25": 123.0,
+     "p75": 132.0,
+     "p90": 139.3,
+     "min": 108.0,
+     "max": 144.0
+    },
+    "paragraphs": {
+     "n": 38,
+     "mean": 1.0,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 1.865
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.207
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.207
+     }
+    ]
+   },
+   "notice": {
+    "passages": 77,
+    "wordCount": {
+     "n": 77,
+     "mean": 102.36,
+     "median": 102.0,
+     "p10": 88.0,
+     "p25": 95.0,
+     "p75": 111.0,
+     "p90": 116.4,
+     "min": 79.0,
+     "max": 137.0
+    },
+    "paragraphs": {
+     "n": 77,
+     "mean": 6.23,
+     "median": 6.0,
+     "p10": 3.0,
+     "p25": 4.0,
+     "p75": 8.0,
+     "p90": 11.0,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.127
+     }
+    ]
+   },
+   "ordering": {
+    "passages": 78,
+    "wordCount": {
+     "n": 78,
+     "mean": 163.72,
+     "median": 165.0,
+     "p10": 147.4,
+     "p25": 156.25,
+     "p75": 172.75,
+     "p90": 179.0,
+     "min": 128.0,
+     "max": 191.0
+    },
+    "paragraphs": {
+     "n": 78,
+     "mean": 4.0,
+     "median": 4.0,
+     "p10": 4.0,
+     "p25": 4.0,
+     "p75": 4.0,
+     "p90": 4.0,
+     "min": 4.0,
+     "max": 4.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 26,
+      "per1000Words": 2.036
+     },
+     {
+      "marker": "for example",
+      "count": 12,
+      "per1000Words": 0.94
+     },
+     {
+      "marker": "that is",
+      "count": 12,
+      "per1000Words": 0.94
+     },
+     {
+      "marker": "rather",
+      "count": 11,
+      "per1000Words": 0.861
+     },
+     {
+      "marker": "therefore",
+      "count": 8,
+      "per1000Words": 0.626
+     },
+     {
+      "marker": "thus",
+      "count": 6,
+      "per1000Words": 0.47
+     },
+     {
+      "marker": "in addition",
+      "count": 5,
+      "per1000Words": 0.392
+     },
+     {
+      "marker": "for instance",
+      "count": 4,
+      "per1000Words": 0.313
+     },
+     {
+      "marker": "in fact",
+      "count": 4,
+      "per1000Words": 0.313
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.235
+     },
+     {
+      "marker": "indeed",
+      "count": 3,
+      "per1000Words": 0.235
+     },
+     {
+      "marker": "instead",
+      "count": 3,
+      "per1000Words": 0.235
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "in contrast",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "in other words",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "on the other hand",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "otherwise",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "similarly",
+      "count": 2,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.078
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.078
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.078
+     }
+    ]
+   },
+   "purpose": {
+    "passages": 37,
+    "wordCount": {
+     "n": 37,
+     "mean": 111.7,
+     "median": 113.0,
+     "p10": 99.2,
+     "p25": 106.0,
+     "p75": 120.0,
+     "p90": 124.4,
+     "min": 75.0,
+     "max": 134.0
+    },
+    "paragraphs": {
+     "n": 37,
+     "mean": 1.65,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 7,
+      "per1000Words": 1.694
+     },
+     {
+      "marker": "therefore",
+      "count": 4,
+      "per1000Words": 0.968
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.242
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.242
+     },
+     {
+      "marker": "rather",
+      "count": 1,
+      "per1000Words": 0.242
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.242
+     },
+     {
+      "marker": "thus",
+      "count": 1,
+      "per1000Words": 0.242
+     }
+    ]
+   },
+   "reference": {
+    "passages": 16,
+    "wordCount": {
+     "n": 16,
+     "mean": 157.25,
+     "median": 156.0,
+     "p10": 139.0,
+     "p25": 152.5,
+     "p75": 168.25,
+     "p90": 176.0,
+     "min": 105.0,
+     "max": 193.0
+    },
+    "paragraphs": {
+     "n": 16,
+     "mean": 1.25,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.25,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.795
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "however",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "meanwhile",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "nonetheless",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.397
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.397
+     }
+    ]
+   },
+   "summary": {
+    "passages": 41,
+    "wordCount": {
+     "n": 41,
+     "mean": 189.37,
+     "median": 189.0,
+     "p10": 174.0,
+     "p25": 180.0,
+     "p75": 200.0,
+     "p90": 209.0,
+     "min": 151.0,
+     "max": 217.0
+    },
+    "paragraphs": {
+     "n": 41,
+     "mean": 1.1,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "thus",
+      "count": 13,
+      "per1000Words": 1.674
+     },
+     {
+      "marker": "however",
+      "count": 12,
+      "per1000Words": 1.546
+     },
+     {
+      "marker": "rather",
+      "count": 11,
+      "per1000Words": 1.417
+     },
+     {
+      "marker": "for example",
+      "count": 9,
+      "per1000Words": 1.159
+     },
+     {
+      "marker": "that is",
+      "count": 8,
+      "per1000Words": 1.03
+     },
+     {
+      "marker": "therefore",
+      "count": 5,
+      "per1000Words": 0.644
+     },
+     {
+      "marker": "instead",
+      "count": 4,
+      "per1000Words": 0.515
+     },
+     {
+      "marker": "in fact",
+      "count": 3,
+      "per1000Words": 0.386
+     },
+     {
+      "marker": "on the other hand",
+      "count": 3,
+      "per1000Words": 0.386
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.258
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.258
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "on the contrary",
+      "count": 1,
+      "per1000Words": 0.129
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.129
+     }
+    ]
+   },
+   "title": {
+    "passages": 44,
+    "wordCount": {
+     "n": 44,
+     "mean": 159.66,
+     "median": 161.0,
+     "p10": 143.3,
+     "p25": 148.75,
+     "p75": 168.0,
+     "p90": 178.4,
+     "min": 135.0,
+     "max": 191.0
+    },
+    "paragraphs": {
+     "n": 44,
+     "mean": 1.18,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 8,
+      "per1000Words": 1.139
+     },
+     {
+      "marker": "for example",
+      "count": 6,
+      "per1000Words": 0.854
+     },
+     {
+      "marker": "therefore",
+      "count": 6,
+      "per1000Words": 0.854
+     },
+     {
+      "marker": "indeed",
+      "count": 4,
+      "per1000Words": 0.569
+     },
+     {
+      "marker": "rather",
+      "count": 4,
+      "per1000Words": 0.569
+     },
+     {
+      "marker": "thus",
+      "count": 4,
+      "per1000Words": 0.569
+     },
+     {
+      "marker": "as a result",
+      "count": 2,
+      "per1000Words": 0.285
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.285
+     },
+     {
+      "marker": "instead",
+      "count": 2,
+      "per1000Words": 0.285
+     },
+     {
+      "marker": "that is",
+      "count": 2,
+      "per1000Words": 0.285
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "in short",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.142
+     }
+    ]
+   },
+   "topic": {
+    "passages": 42,
+    "wordCount": {
+     "n": 42,
+     "mean": 151.29,
+     "median": 152.0,
+     "p10": 128.3,
+     "p25": 143.25,
+     "p75": 162.0,
+     "p90": 175.8,
+     "min": 110.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 42,
+     "mean": 1.14,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.9,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "thus",
+      "count": 11,
+      "per1000Words": 1.731
+     },
+     {
+      "marker": "for example",
+      "count": 9,
+      "per1000Words": 1.416
+     },
+     {
+      "marker": "however",
+      "count": 6,
+      "per1000Words": 0.944
+     },
+     {
+      "marker": "that is",
+      "count": 5,
+      "per1000Words": 0.787
+     },
+     {
+      "marker": "in other words",
+      "count": 4,
+      "per1000Words": 0.63
+     },
+     {
+      "marker": "indeed",
+      "count": 4,
+      "per1000Words": 0.63
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.472
+     },
+     {
+      "marker": "instead",
+      "count": 3,
+      "per1000Words": 0.472
+     },
+     {
+      "marker": "on the other hand",
+      "count": 3,
+      "per1000Words": 0.472
+     },
+     {
+      "marker": "rather",
+      "count": 3,
+      "per1000Words": 0.472
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.315
+     },
+     {
+      "marker": "otherwise",
+      "count": 2,
+      "per1000Words": 0.315
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "on the contrary",
+      "count": 1,
+      "per1000Words": 0.157
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.157
+     }
+    ]
+   }
+  },
+  "since2018": {
+   "all": {
+    "passages": 725,
+    "wordCount": {
+     "n": 725,
+     "mean": 164.95,
+     "median": 160.0,
+     "p10": 114.8,
+     "p25": 142.0,
+     "p75": 174.0,
+     "p90": 198.0,
+     "min": 83.0,
+     "max": 415.0
+    },
+    "paragraphs": {
+     "n": 725,
+     "mean": 1.93,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 4.0,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 141,
+      "per1000Words": 1.179
+     },
+     {
+      "marker": "for example",
+      "count": 90,
+      "per1000Words": 0.753
+     },
+     {
+      "marker": "rather",
+      "count": 83,
+      "per1000Words": 0.694
+     },
+     {
+      "marker": "thus",
+      "count": 73,
+      "per1000Words": 0.61
+     },
+     {
+      "marker": "that is",
+      "count": 61,
+      "per1000Words": 0.51
+     },
+     {
+      "marker": "therefore",
+      "count": 49,
+      "per1000Words": 0.41
+     },
+     {
+      "marker": "in fact",
+      "count": 36,
+      "per1000Words": 0.301
+     },
+     {
+      "marker": "instead",
+      "count": 33,
+      "per1000Words": 0.276
+     },
+     {
+      "marker": "indeed",
+      "count": 28,
+      "per1000Words": 0.234
+     },
+     {
+      "marker": "as a result",
+      "count": 22,
+      "per1000Words": 0.184
+     },
+     {
+      "marker": "for instance",
+      "count": 22,
+      "per1000Words": 0.184
+     },
+     {
+      "marker": "in addition",
+      "count": 19,
+      "per1000Words": 0.159
+     },
+     {
+      "marker": "in other words",
+      "count": 17,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "on the other hand",
+      "count": 17,
+      "per1000Words": 0.142
+     },
+     {
+      "marker": "furthermore",
+      "count": 11,
+      "per1000Words": 0.092
+     },
+     {
+      "marker": "in particular",
+      "count": 11,
+      "per1000Words": 0.092
+     },
+     {
+      "marker": "likewise",
+      "count": 11,
+      "per1000Words": 0.092
+     },
+     {
+      "marker": "moreover",
+      "count": 11,
+      "per1000Words": 0.092
+     },
+     {
+      "marker": "hence",
+      "count": 10,
+      "per1000Words": 0.084
+     },
+     {
+      "marker": "in contrast",
+      "count": 10,
+      "per1000Words": 0.084
+     },
+     {
+      "marker": "similarly",
+      "count": 10,
+      "per1000Words": 0.084
+     },
+     {
+      "marker": "otherwise",
+      "count": 9,
+      "per1000Words": 0.075
+     },
+     {
+      "marker": "after all",
+      "count": 8,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "consequently",
+      "count": 8,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "nevertheless",
+      "count": 8,
+      "per1000Words": 0.067
+     },
+     {
+      "marker": "nonetheless",
+      "count": 5,
+      "per1000Words": 0.042
+     },
+     {
+      "marker": "on the contrary",
+      "count": 5,
+      "per1000Words": 0.042
+     },
+     {
+      "marker": "in short",
+      "count": 2,
+      "per1000Words": 0.017
+     },
+     {
+      "marker": "meanwhile",
+      "count": 2,
+      "per1000Words": 0.017
+     }
+    ]
+   },
+   "blank_inference": {
+    "passages": 116,
+    "wordCount": {
+     "n": 116,
+     "mean": 156.46,
+     "median": 156.5,
+     "p10": 137.0,
+     "p25": 147.75,
+     "p75": 166.0,
+     "p90": 174.0,
+     "min": 121.0,
+     "max": 187.0
+    },
+    "paragraphs": {
+     "n": 116,
+     "mean": 1.03,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 21,
+      "per1000Words": 1.157
+     },
+     {
+      "marker": "rather",
+      "count": 19,
+      "per1000Words": 1.047
+     },
+     {
+      "marker": "thus",
+      "count": 19,
+      "per1000Words": 1.047
+     },
+     {
+      "marker": "however",
+      "count": 16,
+      "per1000Words": 0.882
+     },
+     {
+      "marker": "that is",
+      "count": 12,
+      "per1000Words": 0.661
+     },
+     {
+      "marker": "in fact",
+      "count": 11,
+      "per1000Words": 0.606
+     },
+     {
+      "marker": "indeed",
+      "count": 10,
+      "per1000Words": 0.551
+     },
+     {
+      "marker": "in other words",
+      "count": 8,
+      "per1000Words": 0.441
+     },
+     {
+      "marker": "therefore",
+      "count": 7,
+      "per1000Words": 0.386
+     },
+     {
+      "marker": "for instance",
+      "count": 6,
+      "per1000Words": 0.331
+     },
+     {
+      "marker": "hence",
+      "count": 4,
+      "per1000Words": 0.22
+     },
+     {
+      "marker": "instead",
+      "count": 4,
+      "per1000Words": 0.22
+     },
+     {
+      "marker": "nonetheless",
+      "count": 4,
+      "per1000Words": 0.22
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.165
+     },
+     {
+      "marker": "in addition",
+      "count": 3,
+      "per1000Words": 0.165
+     },
+     {
+      "marker": "likewise",
+      "count": 3,
+      "per1000Words": 0.165
+     },
+     {
+      "marker": "on the other hand",
+      "count": 3,
+      "per1000Words": 0.165
+     },
+     {
+      "marker": "in contrast",
+      "count": 2,
+      "per1000Words": 0.11
+     },
+     {
+      "marker": "moreover",
+      "count": 2,
+      "per1000Words": 0.11
+     },
+     {
+      "marker": "nevertheless",
+      "count": 2,
+      "per1000Words": 0.11
+     },
+     {
+      "marker": "on the contrary",
+      "count": 2,
+      "per1000Words": 0.11
+     },
+     {
+      "marker": "similarly",
+      "count": 2,
+      "per1000Words": 0.11
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "in short",
+      "count": 1,
+      "per1000Words": 0.055
+     },
+     {
+      "marker": "meanwhile",
+      "count": 1,
+      "per1000Words": 0.055
+     }
+    ]
+   },
+   "chart": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 153.31,
+     "median": 150.0,
+     "p10": 124.6,
+     "p25": 127.0,
+     "p75": 160.0,
+     "p90": 190.0,
+     "min": 118.0,
+     "max": 243.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 2.83,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 12.2,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.225
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.225
+     }
+    ]
+   },
+   "claim": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 144.59,
+     "median": 144.0,
+     "p10": 130.0,
+     "p25": 135.0,
+     "p75": 152.0,
+     "p90": 163.4,
+     "min": 122.0,
+     "max": 171.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 10,
+      "per1000Words": 2.385
+     },
+     {
+      "marker": "that is",
+      "count": 4,
+      "per1000Words": 0.954
+     },
+     {
+      "marker": "rather",
+      "count": 3,
+      "per1000Words": 0.715
+     },
+     {
+      "marker": "for example",
+      "count": 2,
+      "per1000Words": 0.477
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.477
+     },
+     {
+      "marker": "instead",
+      "count": 2,
+      "per1000Words": 0.477
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.238
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.238
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.238
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.238
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.238
+     },
+     {
+      "marker": "thus",
+      "count": 1,
+      "per1000Words": 0.238
+     }
+    ]
+   },
+   "content_match": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 141.21,
+     "median": 142.0,
+     "p10": 129.0,
+     "p25": 135.0,
+     "p75": 148.0,
+     "p90": 150.4,
+     "min": 122.0,
+     "max": 161.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.03,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 3,
+      "per1000Words": 0.733
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.244
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.244
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.244
+     }
+    ]
+   },
+   "contextual_vocab": {
+    "passages": 28,
+    "wordCount": {
+     "n": 28,
+     "mean": 175.21,
+     "median": 175.0,
+     "p10": 162.7,
+     "p25": 171.5,
+     "p75": 183.25,
+     "p90": 189.3,
+     "min": 140.0,
+     "max": 192.0
+    },
+    "paragraphs": {
+     "n": 28,
+     "mean": 1.04,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 1.834
+     },
+     {
+      "marker": "for example",
+      "count": 5,
+      "per1000Words": 1.019
+     },
+     {
+      "marker": "rather",
+      "count": 5,
+      "per1000Words": 1.019
+     },
+     {
+      "marker": "as a result",
+      "count": 4,
+      "per1000Words": 0.815
+     },
+     {
+      "marker": "instead",
+      "count": 4,
+      "per1000Words": 0.815
+     },
+     {
+      "marker": "consequently",
+      "count": 3,
+      "per1000Words": 0.611
+     },
+     {
+      "marker": "in fact",
+      "count": 3,
+      "per1000Words": 0.611
+     },
+     {
+      "marker": "after all",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "on the contrary",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "that is",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "therefore",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "thus",
+      "count": 2,
+      "per1000Words": 0.408
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.204
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.204
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.204
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.204
+     }
+    ]
+   },
+   "gist": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 160.62,
+     "median": 159.0,
+     "p10": 148.4,
+     "p25": 151.0,
+     "p75": 174.0,
+     "p90": 176.2,
+     "min": 142.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 5,
+      "per1000Words": 1.073
+     },
+     {
+      "marker": "rather",
+      "count": 5,
+      "per1000Words": 1.073
+     },
+     {
+      "marker": "that is",
+      "count": 4,
+      "per1000Words": 0.859
+     },
+     {
+      "marker": "for example",
+      "count": 3,
+      "per1000Words": 0.644
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.429
+     },
+     {
+      "marker": "in particular",
+      "count": 2,
+      "per1000Words": 0.429
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.429
+     },
+     {
+      "marker": "thus",
+      "count": 2,
+      "per1000Words": 0.429
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.215
+     },
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.215
+     }
+    ]
+   },
+   "grammar": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 159.0,
+     "median": 161.0,
+     "p10": 149.0,
+     "p25": 152.0,
+     "p75": 165.0,
+     "p90": 167.6,
+     "min": 147.0,
+     "max": 173.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.03,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 4,
+      "per1000Words": 0.867
+     },
+     {
+      "marker": "however",
+      "count": 3,
+      "per1000Words": 0.651
+     },
+     {
+      "marker": "thus",
+      "count": 3,
+      "per1000Words": 0.651
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.434
+     },
+     {
+      "marker": "rather",
+      "count": 2,
+      "per1000Words": 0.434
+     },
+     {
+      "marker": "that is",
+      "count": 2,
+      "per1000Words": 0.434
+     },
+     {
+      "marker": "therefore",
+      "count": 2,
+      "per1000Words": 0.434
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.217
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.217
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.217
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.217
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.217
+     },
+     {
+      "marker": "nonetheless",
+      "count": 1,
+      "per1000Words": 0.217
+     }
+    ]
+   },
+   "implication": {
+    "passages": 26,
+    "wordCount": {
+     "n": 26,
+     "mean": 166.62,
+     "median": 168.0,
+     "p10": 147.0,
+     "p25": 159.75,
+     "p75": 171.75,
+     "p90": 191.0,
+     "min": 130.0,
+     "max": 198.0
+    },
+    "paragraphs": {
+     "n": 26,
+     "mean": 1.04,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "in fact",
+      "count": 4,
+      "per1000Words": 0.923
+     },
+     {
+      "marker": "therefore",
+      "count": 3,
+      "per1000Words": 0.693
+     },
+     {
+      "marker": "in other words",
+      "count": 2,
+      "per1000Words": 0.462
+     },
+     {
+      "marker": "thus",
+      "count": 2,
+      "per1000Words": 0.462
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "for example",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "however",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "rather",
+      "count": 1,
+      "per1000Words": 0.231
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.231
+     }
+    ]
+   },
+   "insertion": {
+    "passages": 58,
+    "wordCount": {
+     "n": 58,
+     "mean": 169.88,
+     "median": 172.0,
+     "p10": 151.9,
+     "p25": 163.5,
+     "p75": 177.0,
+     "p90": 186.0,
+     "min": 134.0,
+     "max": 198.0
+    },
+    "paragraphs": {
+     "n": 58,
+     "mean": 1.05,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 19,
+      "per1000Words": 1.928
+     },
+     {
+      "marker": "for example",
+      "count": 13,
+      "per1000Words": 1.319
+     },
+     {
+      "marker": "rather",
+      "count": 12,
+      "per1000Words": 1.218
+     },
+     {
+      "marker": "thus",
+      "count": 7,
+      "per1000Words": 0.71
+     },
+     {
+      "marker": "instead",
+      "count": 5,
+      "per1000Words": 0.507
+     },
+     {
+      "marker": "that is",
+      "count": 5,
+      "per1000Words": 0.507
+     },
+     {
+      "marker": "for instance",
+      "count": 4,
+      "per1000Words": 0.406
+     },
+     {
+      "marker": "nevertheless",
+      "count": 3,
+      "per1000Words": 0.304
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "in contrast",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "likewise",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "moreover",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "on the other hand",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "therefore",
+      "count": 2,
+      "per1000Words": 0.203
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.101
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.101
+     }
+    ]
+   },
+   "irrelevant_sentence": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 165.07,
+     "median": 169.0,
+     "p10": 152.6,
+     "p25": 156.0,
+     "p75": 173.0,
+     "p90": 178.0,
+     "min": 133.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "thus",
+      "count": 5,
+      "per1000Words": 1.044
+     },
+     {
+      "marker": "as a result",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "for example",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "however",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "on the other hand",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "rather",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "therefore",
+      "count": 4,
+      "per1000Words": 0.836
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.418
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "otherwise",
+      "count": 1,
+      "per1000Words": 0.209
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.209
+     }
+    ]
+   },
+   "long_narrative": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 354.41,
+     "median": 349.0,
+     "p10": 332.0,
+     "p25": 339.0,
+     "p75": 365.0,
+     "p90": 375.0,
+     "min": 331.0,
+     "max": 415.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 4.0,
+     "median": 4.0,
+     "p10": 4.0,
+     "p25": 4.0,
+     "p75": 4.0,
+     "p90": 4.0,
+     "min": 4.0,
+     "max": 4.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 0.876
+     },
+     {
+      "marker": "instead",
+      "count": 4,
+      "per1000Words": 0.389
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.195
+     },
+     {
+      "marker": "indeed",
+      "count": 2,
+      "per1000Words": 0.195
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.097
+     },
+     {
+      "marker": "meanwhile",
+      "count": 1,
+      "per1000Words": 0.097
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.097
+     }
+    ]
+   },
+   "long_title_vocab": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 250.45,
+     "median": 253.0,
+     "p10": 226.8,
+     "p25": 231.0,
+     "p75": 264.0,
+     "p90": 273.4,
+     "min": 224.0,
+     "max": 290.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.45,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 3.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "for example",
+      "count": 14,
+      "per1000Words": 1.928
+     },
+     {
+      "marker": "however",
+      "count": 10,
+      "per1000Words": 1.377
+     },
+     {
+      "marker": "rather",
+      "count": 8,
+      "per1000Words": 1.101
+     },
+     {
+      "marker": "that is",
+      "count": 8,
+      "per1000Words": 1.101
+     },
+     {
+      "marker": "therefore",
+      "count": 7,
+      "per1000Words": 0.964
+     },
+     {
+      "marker": "in fact",
+      "count": 5,
+      "per1000Words": 0.688
+     },
+     {
+      "marker": "thus",
+      "count": 4,
+      "per1000Words": 0.551
+     },
+     {
+      "marker": "similarly",
+      "count": 3,
+      "per1000Words": 0.413
+     },
+     {
+      "marker": "after all",
+      "count": 2,
+      "per1000Words": 0.275
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.275
+     },
+     {
+      "marker": "in particular",
+      "count": 2,
+      "per1000Words": 0.275
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "for instance",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.138
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.138
+     }
+    ]
+   },
+   "mood": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 126.34,
+     "median": 126.0,
+     "p10": 113.8,
+     "p25": 122.0,
+     "p75": 132.0,
+     "p90": 137.6,
+     "min": 108.0,
+     "max": 144.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.0,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 2.456
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.273
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.273
+     }
+    ]
+   },
+   "notice": {
+    "passages": 58,
+    "wordCount": {
+     "n": 58,
+     "mean": 102.19,
+     "median": 102.0,
+     "p10": 88.0,
+     "p25": 95.0,
+     "p75": 110.5,
+     "p90": 114.6,
+     "min": 83.0,
+     "max": 126.0
+    },
+    "paragraphs": {
+     "n": 58,
+     "mean": 6.29,
+     "median": 6.0,
+     "p10": 3.0,
+     "p25": 4.0,
+     "p75": 8.0,
+     "p90": 11.0,
+     "min": 1.0,
+     "max": 15.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "therefore",
+      "count": 1,
+      "per1000Words": 0.169
+     }
+    ]
+   },
+   "ordering": {
+    "passages": 58,
+    "wordCount": {
+     "n": 58,
+     "mean": 166.12,
+     "median": 167.0,
+     "p10": 149.0,
+     "p25": 158.5,
+     "p75": 173.75,
+     "p90": 179.3,
+     "min": 140.0,
+     "max": 191.0
+    },
+    "paragraphs": {
+     "n": 58,
+     "mean": 4.0,
+     "median": 4.0,
+     "p10": 4.0,
+     "p25": 4.0,
+     "p75": 4.0,
+     "p90": 4.0,
+     "min": 4.0,
+     "max": 4.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 20,
+      "per1000Words": 2.076
+     },
+     {
+      "marker": "rather",
+      "count": 10,
+      "per1000Words": 1.038
+     },
+     {
+      "marker": "that is",
+      "count": 9,
+      "per1000Words": 0.934
+     },
+     {
+      "marker": "for example",
+      "count": 7,
+      "per1000Words": 0.727
+     },
+     {
+      "marker": "therefore",
+      "count": 7,
+      "per1000Words": 0.727
+     },
+     {
+      "marker": "thus",
+      "count": 6,
+      "per1000Words": 0.623
+     },
+     {
+      "marker": "for instance",
+      "count": 3,
+      "per1000Words": 0.311
+     },
+     {
+      "marker": "in addition",
+      "count": 3,
+      "per1000Words": 0.311
+     },
+     {
+      "marker": "in fact",
+      "count": 3,
+      "per1000Words": 0.311
+     },
+     {
+      "marker": "indeed",
+      "count": 3,
+      "per1000Words": 0.311
+     },
+     {
+      "marker": "as a result",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "furthermore",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "in contrast",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "in other words",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "instead",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "otherwise",
+      "count": 2,
+      "per1000Words": 0.208
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.104
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.104
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.104
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.104
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.104
+     }
+    ]
+   },
+   "purpose": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 113.59,
+     "median": 113.0,
+     "p10": 105.0,
+     "p25": 107.0,
+     "p75": 119.0,
+     "p90": 124.0,
+     "min": 102.0,
+     "max": 134.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.55,
+     "median": 2.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 2.0,
+     "p90": 2.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 5,
+      "per1000Words": 1.518
+     },
+     {
+      "marker": "therefore",
+      "count": 4,
+      "per1000Words": 1.214
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.304
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.304
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.304
+     },
+     {
+      "marker": "thus",
+      "count": 1,
+      "per1000Words": 0.304
+     }
+    ]
+   },
+   "reference": {
+    "passages": 4,
+    "wordCount": {
+     "n": 4,
+     "mean": 154.75,
+     "median": 158.5,
+     "p10": 141.6,
+     "p25": 151.5,
+     "p75": 161.75,
+     "p90": 164.9,
+     "min": 135.0,
+     "max": 167.0
+    },
+    "paragraphs": {
+     "n": 4,
+     "mean": 1.25,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.25,
+     "p90": 1.7,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 1.616
+     }
+    ]
+   },
+   "summary": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 191.93,
+     "median": 197.0,
+     "p10": 176.6,
+     "p25": 181.0,
+     "p75": 201.0,
+     "p90": 209.0,
+     "min": 165.0,
+     "max": 217.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.03,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 9,
+      "per1000Words": 1.617
+     },
+     {
+      "marker": "thus",
+      "count": 9,
+      "per1000Words": 1.617
+     },
+     {
+      "marker": "rather",
+      "count": 7,
+      "per1000Words": 1.258
+     },
+     {
+      "marker": "that is",
+      "count": 7,
+      "per1000Words": 1.258
+     },
+     {
+      "marker": "for example",
+      "count": 6,
+      "per1000Words": 1.078
+     },
+     {
+      "marker": "therefore",
+      "count": 4,
+      "per1000Words": 0.719
+     },
+     {
+      "marker": "instead",
+      "count": 3,
+      "per1000Words": 0.539
+     },
+     {
+      "marker": "for instance",
+      "count": 2,
+      "per1000Words": 0.359
+     },
+     {
+      "marker": "in addition",
+      "count": 2,
+      "per1000Words": 0.359
+     },
+     {
+      "marker": "in fact",
+      "count": 2,
+      "per1000Words": 0.359
+     },
+     {
+      "marker": "on the other hand",
+      "count": 2,
+      "per1000Words": 0.359
+     },
+     {
+      "marker": "after all",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "as a result",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "in contrast",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "indeed",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.18
+     },
+     {
+      "marker": "similarly",
+      "count": 1,
+      "per1000Words": 0.18
+     }
+    ]
+   },
+   "title": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 163.28,
+     "median": 162.0,
+     "p10": 146.0,
+     "p25": 151.0,
+     "p75": 175.0,
+     "p90": 180.0,
+     "min": 142.0,
+     "max": 191.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "however",
+      "count": 5,
+      "per1000Words": 1.056
+     },
+     {
+      "marker": "for example",
+      "count": 4,
+      "per1000Words": 0.845
+     },
+     {
+      "marker": "rather",
+      "count": 4,
+      "per1000Words": 0.845
+     },
+     {
+      "marker": "indeed",
+      "count": 3,
+      "per1000Words": 0.634
+     },
+     {
+      "marker": "therefore",
+      "count": 3,
+      "per1000Words": 0.634
+     },
+     {
+      "marker": "thus",
+      "count": 3,
+      "per1000Words": 0.634
+     },
+     {
+      "marker": "as a result",
+      "count": 2,
+      "per1000Words": 0.422
+     },
+     {
+      "marker": "consequently",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "in fact",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "in short",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "instead",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "on the other hand",
+      "count": 1,
+      "per1000Words": 0.211
+     },
+     {
+      "marker": "that is",
+      "count": 1,
+      "per1000Words": 0.211
+     }
+    ]
+   },
+   "topic": {
+    "passages": 29,
+    "wordCount": {
+     "n": 29,
+     "mean": 157.83,
+     "median": 155.0,
+     "p10": 143.8,
+     "p25": 149.0,
+     "p75": 164.0,
+     "p90": 180.0,
+     "min": 132.0,
+     "max": 185.0
+    },
+    "paragraphs": {
+     "n": 29,
+     "mean": 1.07,
+     "median": 1.0,
+     "p10": 1.0,
+     "p25": 1.0,
+     "p75": 1.0,
+     "p90": 1.0,
+     "min": 1.0,
+     "max": 2.0
+    },
+    "discourseMarkers": [
+     {
+      "marker": "thus",
+      "count": 9,
+      "per1000Words": 1.966
+     },
+     {
+      "marker": "for example",
+      "count": 6,
+      "per1000Words": 1.311
+     },
+     {
+      "marker": "however",
+      "count": 4,
+      "per1000Words": 0.874
+     },
+     {
+      "marker": "as a result",
+      "count": 3,
+      "per1000Words": 0.655
+     },
+     {
+      "marker": "indeed",
+      "count": 3,
+      "per1000Words": 0.655
+     },
+     {
+      "marker": "instead",
+      "count": 3,
+      "per1000Words": 0.655
+     },
+     {
+      "marker": "rather",
+      "count": 3,
+      "per1000Words": 0.655
+     },
+     {
+      "marker": "that is",
+      "count": 3,
+      "per1000Words": 0.655
+     },
+     {
+      "marker": "on the other hand",
+      "count": 2,
+      "per1000Words": 0.437
+     },
+     {
+      "marker": "otherwise",
+      "count": 2,
+      "per1000Words": 0.437
+     },
+     {
+      "marker": "furthermore",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "hence",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "in addition",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "in other words",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "in particular",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "likewise",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "moreover",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "nevertheless",
+      "count": 1,
+      "per1000Words": 0.218
+     },
+     {
+      "marker": "on the contrary",
+      "count": 1,
+      "per1000Words": 0.218
+     }
+    ]
+   }
+  }
+ },
+ "cues": {
+  "all": {
+   "insertion": {
+    "segments": 78,
+    "words": 12999,
+    "overall": {
+     "demonstrative": {
+      "count": 198,
+      "per1000Words": 15.232
+     },
+     "article": {
+      "count": 1118,
+      "per1000Words": 86.007
+     },
+     "connective": {
+      "count": 206,
+      "per1000Words": 15.847
+     }
+    },
+    "atSegmentStart": {
+     "demonstrative": {
+      "count": 11,
+      "perSegment": 0.141
+     },
+     "article": {
+      "count": 42,
+      "perSegment": 0.538
+     },
+     "connective": {
+      "count": 24,
+      "perSegment": 0.308
+     }
+    }
+   },
+   "ordering": {
+    "segments": 234,
+    "words": 12770,
+    "overall": {
+     "demonstrative": {
+      "count": 183,
+      "per1000Words": 14.33
+     },
+     "article": {
+      "count": 1033,
+      "per1000Words": 80.893
+     },
+     "connective": {
+      "count": 201,
+      "per1000Words": 15.74
+     }
+    },
+    "atSegmentStart": {
+     "demonstrative": {
+      "count": 45,
+      "perSegment": 0.192
+     },
+     "article": {
+      "count": 101,
+      "perSegment": 0.432
+     },
+     "connective": {
+      "count": 44,
+      "perSegment": 0.188
+     }
+    }
+   }
+  },
+  "since2018": {
+   "insertion": {
+    "segments": 58,
+    "words": 9853,
+    "overall": {
+     "demonstrative": {
+      "count": 153,
+      "per1000Words": 15.528
+     },
+     "article": {
+      "count": 866,
+      "per1000Words": 87.892
+     },
+     "connective": {
+      "count": 147,
+      "per1000Words": 14.919
+     }
+    },
+    "atSegmentStart": {
+     "demonstrative": {
+      "count": 8,
+      "perSegment": 0.138
+     },
+     "article": {
+      "count": 30,
+      "perSegment": 0.517
+     },
+     "connective": {
+      "count": 14,
+      "perSegment": 0.241
+     }
+    }
+   },
+   "ordering": {
+    "segments": 174,
+    "words": 9635,
+    "overall": {
+     "demonstrative": {
+      "count": 134,
+      "per1000Words": 13.908
+     },
+     "article": {
+      "count": 764,
+      "per1000Words": 79.294
+     },
+     "connective": {
+      "count": 154,
+      "per1000Words": 15.983
+     }
+    },
+    "atSegmentStart": {
+     "demonstrative": {
+      "count": 29,
+      "perSegment": 0.167
+     },
+     "article": {
+      "count": 79,
+      "perSegment": 0.454
+     },
+     "connective": {
+      "count": 34,
+      "perSegment": 0.195
+     }
+    }
+   }
+  }
+ }
+}

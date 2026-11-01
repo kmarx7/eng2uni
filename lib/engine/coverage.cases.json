@@ -1,0 +1,40 @@
+{
+  "_note": "Shared by lib/engine/coverage.test.ts and scripts/analysis/tests/test_lexicon.py so the app and the analysis scripts apply the same rules (docs/analysis/LEMMA_RULES.md).",
+  "normalize": [
+    ["Run", "run"],
+    ["  well-being ", "well-being"],
+    ["don’t", "don't"],
+    ["ＡＢＣ", "abc"],
+    ["", ""]
+  ],
+  "coverage": [
+    {
+      "name": "proper nouns and numbers are left out of the denominator",
+      "known": ["the", "cat"],
+      "entries": [
+        { "lemma": "the", "kind": "function", "totalCount": 6 },
+        { "lemma": "cat", "kind": "content", "totalCount": 2 },
+        { "lemma": "dog", "kind": "content", "totalCount": 2 },
+        { "lemma": "paris", "kind": "proper", "totalCount": 5 },
+        { "lemma": "1990", "kind": "number", "totalCount": 3 }
+      ],
+      "expected": 0.8
+    },
+    {
+      "name": "known lemmas are normalised before matching",
+      "known": ["  Cat ", "DOG"],
+      "entries": [
+        { "lemma": "cat", "kind": "content", "totalCount": 1 },
+        { "lemma": "dog", "kind": "content", "totalCount": 1 },
+        { "lemma": "bird", "kind": "content", "totalCount": 2 }
+      ],
+      "expected": 0.5
+    },
+    {
+      "name": "nothing countable gives zero",
+      "known": ["paris"],
+      "entries": [{ "lemma": "paris", "kind": "proper", "totalCount": 4 }],
+      "expected": 0
+    }
+  ]
+}
