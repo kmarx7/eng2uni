@@ -17,7 +17,8 @@
     "analyze:stats": "cd scripts/analysis && uv run python analyze_corpus.py",
     "analyze:leaks": "cd scripts/analysis && uv run python check_leaks.py",
     "validate:analysis": "tsx scripts/validate-analysis.ts",
-    "tag:items": "tsx scripts/tag-items.ts"
+    "tag:items": "tsx scripts/tag-items.ts",
+    "tag:review": "tsx scripts/tag-review.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
