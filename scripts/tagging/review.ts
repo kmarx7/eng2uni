@@ -1,6 +1,7 @@
 // Human spot check of AI tags (stage 5 item 4). The CSV carries labels only;
 // the reviewer checks them against the exam PDF, not against text in the file.
 import type { TaggedItem } from "@/lib/schema/tagging";
+import { splitCsvLine } from "../csv";
 
 export interface ReviewRow {
   examId: string;
@@ -63,28 +64,6 @@ export function reviewCsv(records: readonly TaggedItem[]): string {
     ].map(cell).join(",");
   });
   return [REVIEW_HEADER.join(","), ...rows].join("\n") + "\n";
-}
-
-function splitCsvLine(line: string): string[] {
-  const cells: string[] = [];
-  let current = "";
-  let quoted = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (quoted) {
-      if (ch === '"' && line[i + 1] === '"') {
-        current += '"';
-        i++;
-      } else if (ch === '"') quoted = false;
-      else current += ch;
-    } else if (ch === '"') quoted = true;
-    else if (ch === ",") {
-      cells.push(current);
-      current = "";
-    } else current += ch;
-  }
-  cells.push(current);
-  return cells;
 }
 
 export function parseReviewCsv(text: string): ReviewRow[] {

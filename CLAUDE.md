@@ -8,6 +8,7 @@
 ## 명령
 - npm run dev / lint / typecheck / test / validate:content / build
 - npm run tag:items -- --exam {examId} [--dry-run|--limit N]: 기출 태깅(구독 사용량 차감) → corpus/tagged/
+- npm run vocab:import -- --source {이름} --level L0: data/vocab-source/{이름}.csv를 content/drafts/vocabulary/에 draft로 / npm run vocab:approve -- {이름}: 사람만 실행하는 승인(Claude Code 안에서는 거부됨)
 - npm run analyze:tags: 태그 집계 → analysis/tagging_stats.json, docs/analysis/GRAMMAR_PRIORITY.md / npm run blueprints:draft: 블루프린트 초안 → content/drafts/blueprint-drafts/
 - npm run analyze: 기출 통계 재계산(corpus/ 필요) → analysis/, docs/analysis/REPORT.md, 원문 8-gram 유출 검사, 스키마 검증
 
