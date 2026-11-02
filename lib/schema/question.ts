@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Id, ReadingType, ReviewStatus } from "./common";
+import { Id, ReadingType, ReviewStatus, TokenRange } from "./common";
 
 export const QuestionOption = z.object({
   id: Id,
@@ -12,6 +12,13 @@ export const QuestionSource = z.object({
   type: z.enum(["original", "licensed"]),
   generatedBy: z.enum(["ai_draft", "human"]),
   reviewedBy: z.string().min(1).optional(),
+});
+
+// Hints from DESIGN 13-3. Level 1 is the direction text, level 2 highlights a
+// token range of the question's sentence; level 3 (answer and reason) needs no data.
+export const QuestionHints = z.object({
+  direction: z.string().min(1).optional(),
+  range: TokenRange.optional(),
 });
 
 export const Question = z.object({
@@ -30,6 +37,7 @@ export const Question = z.object({
     summary: z.string().min(1),
     byOption: z.record(z.string(), z.string().min(1)).default({}),
   }),
+  hints: QuestionHints.optional(),
   variantGroup: Id.optional(),
   source: QuestionSource,
   reviewStatus: ReviewStatus,
@@ -37,4 +45,5 @@ export const Question = z.object({
 });
 
 export type QuestionOption = z.infer<typeof QuestionOption>;
+export type QuestionHints = z.infer<typeof QuestionHints>;
 export type Question = z.infer<typeof Question>;

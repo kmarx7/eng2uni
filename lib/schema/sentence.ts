@@ -27,6 +27,8 @@ export const Span = z.object({
   parent: Id.optional(),
   modifies: Id.optional(),
   function: SpanFunction.optional(),
+  // Korean piece of the translation shown once the role is tagged (DESIGN 13-3).
+  gloss: z.string().min(1).optional(),
 });
 
 // One rung of the sentence expansion ladder (DESIGN 13-2, 13-5).

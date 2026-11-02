@@ -10,6 +10,8 @@ import {
   SkillMastery,
   SkillPrerequisite,
   Vocabulary,
+  AnnotatedSentence,
+  Question,
 } from "./index";
 
 const at = "2026-11-01T09:00:00+09:00";
@@ -126,7 +128,7 @@ describe("Vocabulary example", () => {
 
 describe("LocalProgress", () => {
   const progress = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     profile: { anonId: "0b7e9c1e-2f4a-4c1d-9a8b-1c2d3e4f5a6b", nickname: "학생", dailyMinutes: 30, createdAt: at },
     cards: [{ userId: "0b7e9c1e-2f4a-4c1d-9a8b-1c2d3e4f5a6b", itemType: "word", itemId: "FIXTURE-V-001", fsrs }],
     days: { "2026-11-02": { reviewed: 3, learned: 10 } },
@@ -139,8 +141,85 @@ describe("LocalProgress", () => {
 
   it("rejects other daily goals, other schema versions, long nicknames and bad day keys", () => {
     expect(LocalProgress.safeParse({ ...progress, profile: { ...progress.profile, dailyMinutes: 45 } }).success).toBe(false);
-    expect(LocalProgress.safeParse({ ...progress, schemaVersion: 2 }).success).toBe(false);
+    expect(LocalProgress.safeParse({ ...progress, schemaVersion: 1 }).success).toBe(false);
+    expect(LocalProgress.safeParse({ ...progress, schemaVersion: 3 }).success).toBe(false);
     expect(LocalProgress.safeParse({ ...progress, profile: { ...progress.profile, nickname: "가".repeat(21) } }).success).toBe(false);
     expect(LocalProgress.safeParse({ ...progress, days: { "11/02": { reviewed: 0, learned: 0 } } }).success).toBe(false);
+  });
+});
+
+describe("LocalProgress v2 learning state", () => {
+  const base = { schemaVersion: 2, profile: null, cards: [], days: {} };
+
+  it("defaults lessons, skills and shortages to empty", () => {
+    const parsed = LocalProgress.parse(base);
+    expect(parsed.lessons).toEqual({});
+    expect(parsed.skills).toEqual({});
+    expect(parsed.shortages).toEqual([]);
+  });
+
+  it("parses a lesson in progress with attempts", () => {
+    const lesson = {
+      unitId: "FIXTURE-U01",
+      status: "in_progress",
+      phase: "main",
+      blockIndex: 3,
+      queue: ["FIXTURE-Q-001"],
+      round: 0,
+      attempts: [{ questionId: "FIXTURE-Q-001", correct: false, hintLevel: 2, misconception: "FIXTURE_subject_as_verb", phase: "main", round: 0, at }],
+      analyzerPassed: true,
+      updatedAt: at,
+    };
+    const parsed = LocalProgress.parse({
+      ...base,
+      lessons: { "FIXTURE-U01": lesson },
+      skills: { FIXTURE_verb_identification: { delayedCheckPassed: false, misconceptionCounts: { FIXTURE_subject_as_verb: 1 } } },
+      shortages: [{ at, unitId: "FIXTURE-U01", variantGroup: "FIXTURE-VG-verb" }],
+    });
+    expect(parsed.lessons["FIXTURE-U01"].attempts[0].hintLevel).toBe(2);
+  });
+
+  it("rejects an unknown lesson phase and a hint level above 3", () => {
+    const lesson = { unitId: "U", status: "in_progress", phase: "main", blockIndex: 0, queue: [], round: 0, attempts: [], analyzerPassed: false, updatedAt: at };
+    expect(LocalProgress.safeParse({ ...base, lessons: { U: { ...lesson, phase: "warmup" } } }).success).toBe(false);
+    const attempt = { questionId: "Q", correct: true, hintLevel: 4, phase: "main", round: 0, at };
+    expect(LocalProgress.safeParse({ ...base, lessons: { U: { ...lesson, attempts: [attempt] } } }).success).toBe(false);
+  });
+});
+
+describe("hints and glosses", () => {
+  const question = {
+    id: "FIXTURE-Q-900",
+    type: "multiple_choice",
+    difficulty: 1,
+    prompt: "동사는?",
+    options: [{ id: "A", text: "a" }, { id: "B", text: "b" }],
+    answer: "A",
+    skills: ["s"],
+    explanation: { summary: "요약" },
+    source: { type: "original", generatedBy: "human" },
+    reviewStatus: "draft",
+    version: 1,
+  };
+
+  it("accepts a question with or without hints", () => {
+    expect(Question.safeParse(question).success).toBe(true);
+    expect(Question.safeParse({ ...question, hints: { direction: "동작을 찾아보세요.", range: [1, 2] } }).success).toBe(true);
+    expect(Question.safeParse({ ...question, hints: { direction: "" } }).success).toBe(false);
+  });
+
+  it("accepts a span gloss and rejects an empty one", () => {
+    const sentence = {
+      id: "FIXTURE-S-900",
+      level: "L0",
+      text: "Cats run.",
+      tokens: ["Cats", "run", "."],
+      spans: [{ id: "subj", role: "SUBJECT", range: [0, 0], gloss: "고양이들이" }],
+      translation: "고양이들이 달린다.",
+      skills: ["s"],
+      reviewStatus: "draft",
+    };
+    expect(AnnotatedSentence.safeParse(sentence).success).toBe(true);
+    expect(AnnotatedSentence.safeParse({ ...sentence, spans: [{ ...sentence.spans[0], gloss: "" }] }).success).toBe(false);
   });
 });

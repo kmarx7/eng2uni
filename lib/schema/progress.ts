@@ -68,10 +68,43 @@ export const SkillMastery = z.object({
 // Daily goal in minutes (DESIGN 9-2).
 export const DailyMinutes = z.union([z.literal(15), z.literal(30), z.literal(60)]);
 
-// Progress kept in the student's browser (stage 6). Bump schemaVersion on any
-// change; older data is backed up and reset by the repository.
-export const LocalProgress = z.object({
-  schemaVersion: z.literal(1),
+// Where a lesson is in its flow (stage 7): the linear blocks, then the steps a
+// judgment can send the student to.
+export const LessonPhase = z.enum(["main", "contrast", "remedial", "foundation", "reassessment"]);
+
+export const LessonAttempt = z.object({
+  questionId: Id,
+  correct: z.boolean(),
+  hintLevel: HintLevel,
+  misconception: Id.optional(),
+  phase: LessonPhase,
+  round: z.number().int().min(0),
+  at: IsoDateTime,
+});
+
+export const LessonState = z.object({
+  unitId: Id,
+  status: LessonProgress.shape.status,
+  phase: z.union([LessonPhase, z.literal("result")]),
+  blockIndex: z.number().int().min(0),
+  queue: z.array(Id),
+  round: z.number().int().min(0),
+  attempts: z.array(LessonAttempt),
+  analyzerPassed: z.boolean(),
+  judgment: MasteryStatus.optional(),
+  focusMisconception: Id.optional(),
+  updatedAt: IsoDateTime,
+});
+
+// A variant question was needed but none was left (DESIGN 5-2 "문항 부족").
+export const Shortage = z.object({
+  at: IsoDateTime,
+  unitId: Id.optional(),
+  skillId: Id.optional(),
+  variantGroup: Id.optional(),
+});
+
+const LocalProgressV1Fields = {
   profile: z
     .object({
       anonId: z.uuid(),
@@ -86,7 +119,29 @@ export const LocalProgress = z.object({
     z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     z.object({ reviewed: z.number().int().min(0), learned: z.number().int().min(0) }),
   ),
+};
+
+// Stage 6 progress; the repository moves it to the current version.
+export const LocalProgressV1 = z.object({ schemaVersion: z.literal(1), ...LocalProgressV1Fields });
+
+// Progress kept in the student's browser. Bump schemaVersion on any change and
+// add a migration in the repository; data it cannot read is backed up and reset.
+export const LocalProgress = z.object({
+  schemaVersion: z.literal(2),
+  ...LocalProgressV1Fields,
+  lessons: z.record(Id, LessonState).default({}),
+  skills: z
+    .record(
+      Id,
+      z.object({
+        delayedCheckPassed: z.boolean(),
+        misconceptionCounts: z.record(Id, z.number().int().min(0)),
+      }),
+    )
+    .default({}),
+  shortages: z.array(Shortage).default([]),
 });
+
 
 // Event types from DESIGN 9-3.
 export const LearningEventType = z.enum([
@@ -118,3 +173,7 @@ export type LearningEventType = z.infer<typeof LearningEventType>;
 export type LearningEvent = z.infer<typeof LearningEvent>;
 export type DailyMinutes = z.infer<typeof DailyMinutes>;
 export type LocalProgress = z.infer<typeof LocalProgress>;
+export type LessonPhase = z.infer<typeof LessonPhase>;
+export type LessonAttempt = z.infer<typeof LessonAttempt>;
+export type LessonState = z.infer<typeof LessonState>;
+export type Shortage = z.infer<typeof Shortage>;

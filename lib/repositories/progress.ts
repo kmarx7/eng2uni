@@ -1,6 +1,6 @@
 // Student progress storage. The browser's Storage is passed in, so this module
 // never touches window and runs in tests with a stand-in.
-import { LocalProgress } from "@/lib/schema/progress";
+import { LocalProgress, LocalProgressV1 } from "@/lib/schema/progress";
 
 export interface ProgressRepository {
   load(): LocalProgress;
@@ -10,7 +10,7 @@ export interface ProgressRepository {
 }
 
 export function emptyProgress(): LocalProgress {
-  return { schemaVersion: 1, profile: null, cards: [], days: {} };
+  return { schemaVersion: 2, profile: null, cards: [], days: {}, lessons: {}, skills: {}, shortages: [] };
 }
 
 export class LocalStorageProgressRepository implements ProgressRepository {
@@ -39,7 +39,13 @@ export class LocalStorageProgressRepository implements ProgressRepository {
       return this.reset(raw);
     }
     const result = LocalProgress.safeParse(parsed);
-    return result.success ? result.data : this.reset(raw);
+    if (result.success) return result.data;
+    const v1 = LocalProgressV1.safeParse(parsed);
+    if (!v1.success) return this.reset(raw);
+    // Stage 6 progress: keep words and days, start learning state empty.
+    const migrated: LocalProgress = { ...v1.data, schemaVersion: 2, lessons: {}, skills: {}, shortages: [] };
+    this.save(migrated);
+    return migrated;
   }
 
   save(progress: LocalProgress): void {

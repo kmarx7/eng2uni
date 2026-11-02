@@ -287,3 +287,15 @@ describe("fixture ids", () => {
     expectIssue(/V-001: fixture ids must contain FIXTURE/);
   });
 });
+
+describe("question hints", () => {
+  it("rejects a hint range past the sentence's last token", () => {
+    find("question", "FIXTURE-Q-001").hints = { range: [3, 9] };
+    expectIssue(/FIXTURE-Q-001: hint range \[3,9\] exceeds/);
+  });
+
+  it("rejects a hint range on a question without a sentence", () => {
+    find("question", "FIXTURE-Q-003").hints = { range: [0, 1] };
+    expectIssue(/FIXTURE-Q-003: hint range needs a sentence/);
+  });
+});

@@ -197,6 +197,14 @@ function checkIntegrity(parsed: ParsedByKind, issues: ContentIssue[]): void {
     const { path, item } = entry;
     if (item.lessonId) requireRef(path, item.id, units, item.lessonId, "lesson");
     if (item.sentenceId) requireRef(path, item.id, sentences, item.sentenceId, "sentence");
+    if (item.hints?.range) {
+      const sentence = parsed.sentence.find((s) => s.item.id === item.sentenceId)?.item;
+      const [start, end] = item.hints.range;
+      if (!item.sentenceId) add(path, item.id, "hint range needs a sentence");
+      else if (sentence && end >= sentence.tokens.length) {
+        add(path, item.id, `hint range [${start},${end}] exceeds last token index ${sentence.tokens.length - 1}`);
+      }
+    }
     if (item.passageId) requireRef(path, item.id, passages, item.passageId, "passage");
     for (const ref of item.skills) requireRef(path, item.id, skills, ref, "skill");
     checkQuestionOptions(item, misconceptions, traps, (message) => add(path, item.id, message));

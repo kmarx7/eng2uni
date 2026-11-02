@@ -47,7 +47,7 @@ describe("LocalStorageProgressRepository", () => {
   it.each([
     ["text that is not JSON", "{not json"],
     ["data that fails the schema", JSON.stringify({ schemaVersion: 1, profile: 5 })],
-    ["an older or newer schema version", JSON.stringify({ ...saved, schemaVersion: 2 })],
+    ["a newer schema version", JSON.stringify({ ...saved, schemaVersion: 3 })],
   ])("backs up %s and starts over", (_label, raw) => {
     const { storage, data } = fakeStorage({ [KEY]: raw });
     const repo = new LocalStorageProgressRepository(storage);
@@ -56,6 +56,20 @@ describe("LocalStorageProgressRepository", () => {
     expect(backups).toHaveLength(1);
     expect(data.get(backups[0])).toBe(raw);
     expect(data.has(KEY)).toBe(false);
+  });
+
+  it("moves stage 6 (v1) progress to v2 without losing word cards", () => {
+    const v1 = {
+      schemaVersion: 1,
+      profile: saved.profile,
+      cards: [{ userId: "u", itemType: "word", itemId: "W1", fsrs: { due: "2026-11-02T09:00:00.000Z", stability: 1, difficulty: 5, scheduled_days: 1, learning_steps: 0, reps: 1, lapses: 0, state: "Review" } }],
+      days: saved.days,
+    };
+    const { storage, data } = fakeStorage({ [KEY]: JSON.stringify(v1) });
+    const loaded = new LocalStorageProgressRepository(storage).load();
+    expect(loaded).toEqual({ ...v1, schemaVersion: 2, lessons: {}, skills: {}, shortages: [] });
+    expect([...data.keys()].some((k) => k.includes(".corrupt."))).toBe(false);
+    expect(JSON.parse(data.get(KEY)!).schemaVersion).toBe(2);
   });
 
   it("keeps working in memory when there is no storage", () => {
