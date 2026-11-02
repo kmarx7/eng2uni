@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import cases from "./coverage.cases.json";
-import { coverage, coverageCurve, normalizeLemma, type CoverageEntry } from "./coverage";
+import { coverage, coverageCurve, masteredCoverage, normalizeLemma, type CoverageEntry } from "./coverage";
 
 describe("normalizeLemma", () => {
   it.each(cases.normalize)("%j -> %j", (input, expected) => {
@@ -27,5 +27,20 @@ describe("coverageCurve", () => {
       { topN: 2, coverage: 0.8 },
       { topN: 10, coverage: 1 },
     ]);
+  });
+});
+
+describe("masteredCoverage", () => {
+  const card = (itemId: string, state: "Review" | "Learning", stability: number) => ({
+    userId: "u", itemType: "word" as const, itemId,
+    fsrs: { due: "2026-11-02T00:00:00.000Z", stability, difficulty: 5, scheduled_days: 0, learning_steps: 0, reps: 3, lapses: 0, state },
+  });
+  it("counts only mastered word cards, by their lemma", () => {
+    const entries: CoverageEntry[] = [
+      { lemma: "cat", kind: "content", totalCount: 3 },
+      { lemma: "dog", kind: "content", totalCount: 1 },
+    ];
+    const cards = [card("V1", "Review", 30), card("V2", "Learning", 30)];
+    expect(masteredCoverage(cards, { V1: "Cat", V2: "dog" }, entries)).toBe(0.75);
   });
 });

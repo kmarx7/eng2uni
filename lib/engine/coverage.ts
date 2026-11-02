@@ -1,4 +1,6 @@
 import type { CoverageEntry, LemmaKind } from "@/lib/schema/analysis";
+import type { ReviewCard } from "@/lib/schema/progress";
+import { isMastered } from "@/lib/srs";
 
 // Same rules as scripts/analysis/csat_stats/lexicon.py; both are checked
 // against coverage.cases.json. See docs/analysis/LEMMA_RULES.md.
@@ -35,4 +37,16 @@ export function coverageCurve(
     topN,
     coverage: coverage(new Set(ranked.slice(0, topN).map((e) => e.lemma)), ranked),
   }));
+}
+
+// Coverage from the words a student has mastered (lib/srs isMastered).
+export function masteredCoverage(
+  cards: readonly ReviewCard[],
+  lemmaById: Readonly<Record<string, string>>,
+  entries: readonly CoverageEntry[],
+): number {
+  const known = cards
+    .filter((c) => c.itemType === "word" && isMastered(c.fsrs) && lemmaById[c.itemId])
+    .map((c) => lemmaById[c.itemId]);
+  return coverage(new Set(known), entries);
 }

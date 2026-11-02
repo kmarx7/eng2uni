@@ -10,7 +10,7 @@ export default defineConfig({
     exclude: ["node_modules/**", "e2e/**"],
     coverage: {
       provider: "v8",
-      include: ["lib/schema/**", "lib/engine/**", "lib/srs/**", "lib/repositories/**"],
+      include: ["lib/schema/**", "lib/engine/**", "lib/srs/**", "lib/repositories/**", "lib/content/**"],
       exclude: ["**/*.test.*", "**/README.md"],
       thresholds: { lines: 80 },
     },
