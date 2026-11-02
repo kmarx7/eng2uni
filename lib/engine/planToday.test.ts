@@ -26,7 +26,7 @@ describe("planToday", () => {
 
   it("reviews only due cards, oldest due first", () => {
     const cards = [card("late", -1000), card("future", 1000), card("early", -5000)];
-    expect(planToday({ dailyMinutes: 15, now, cards, wordOrder: [], learnedToday: 0 }).reviews).toEqual(["early", "late"]);
+    expect(planToday({ dailyMinutes: 15, now, cards, wordOrder: ["late", "future", "early"], learnedToday: 0 }).reviews).toEqual(["early", "late"]);
   });
 
   it("counts words already learned today against the daily new-word limit", () => {
@@ -35,14 +35,14 @@ describe("planToday", () => {
   });
 
   it("shrinks new words when reviews fill the vocabulary time (15 min -> 450 s)", () => {
-    const plan = (due: number) => planToday({ dailyMinutes: 15, now, cards: dueCards(due), wordOrder: words(30), learnedToday: 0 });
+    const plan = (due: number) => planToday({ dailyMinutes: 15, now, cards: dueCards(due), wordOrder: [...words(due, "R"), ...words(30)], learnedToday: 0 });
     expect(plan(42).newWords).toHaveLength(1); // 420 s of reviews + one 30 s word = exactly 450 s
     expect(plan(43).newWords).toHaveLength(0);
     expect(plan(60).reviews).toHaveLength(60); // reviews are never dropped
   });
 
   it("uses what is left when the list runs short, and rounds the estimate up", () => {
-    const plan = planToday({ dailyMinutes: 30, now, cards: dueCards(1), wordOrder: words(3), learnedToday: 0 });
+    const plan = planToday({ dailyMinutes: 30, now, cards: dueCards(1), wordOrder: ["R1", ...words(3)], learnedToday: 0 });
     expect(plan.newWords).toHaveLength(3);
     expect(plan.estimatedMinutes).toBe(2); // 10 s + 90 s = 100 s
   });
@@ -52,5 +52,12 @@ describe("localDayKey", () => {
   it("uses the device's local calendar date", () => {
     expect(localDayKey(new Date(2026, 10, 2, 23, 59))).toBe("2026-11-02");
     expect(localDayKey(new Date(2026, 10, 3, 0, 0))).toBe("2026-11-03");
+  });
+
+  it("ignores cards for words no longer in the student list (unapproved or renamed)", () => {
+    const plan = planToday({ dailyMinutes: 15, now, cards: [...dueCards(43), card("W1", -1000)], wordOrder: words(12), learnedToday: 0 });
+    expect(plan.reviews).toEqual(["W1"]);
+    expect(plan.newWords).toHaveLength(10); // the 43 stale reviews do not use up the time
+    expect(planToday({ dailyMinutes: 15, now, cards: dueCards(3), wordOrder: [], learnedToday: 0 })).toEqual({ reviews: [], newWords: [], estimatedMinutes: 0 });
   });
 });

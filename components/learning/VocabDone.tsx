@@ -7,9 +7,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { localDayKey } from "@/lib/engine/planToday";
 import { cn } from "@/lib/utils";
 import { NotSavedNotice, useProgress } from "./ProgressProvider";
+import { useNow } from "./useNow";
 
 export function VocabDone() {
   const state = useProgress();
+  const now = useNow();
   const router = useRouter();
   const profile = state?.progress.profile ?? null;
 
@@ -17,9 +19,8 @@ export function VocabDone() {
     if (state && !profile) router.replace("/start");
   }, [state, profile, router]);
 
-  if (!state || !profile) return null;
+  if (!state || !profile || !now) return null;
 
-  const now = new Date();
   const today = state.progress.days[localDayKey(now)] ?? { reviewed: 0, learned: 0 };
   // Due before the local midnight that ends tomorrow.
   const endOfTomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 2).getTime();

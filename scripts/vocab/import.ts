@@ -51,15 +51,27 @@ export function parseVocabCsv(text: string): { rows: VocabRow[]; errors: string[
   return { rows, errors };
 }
 
+// Stable id from the word and part of speech: re-importing an edited CSV keeps
+// every other word's id, so students' review history stays on the same word.
+function wordId(source: string, row: VocabRow): string {
+  const slug = row.word.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `V-${source}-${slug}-${row.pos}`;
+}
+
 export function toDraftVocabulary(
   rows: readonly VocabRow[],
   opts: { source: string; level: LevelId; rankByLemma: ReadonlyMap<string, number> },
 ): Vocabulary[] {
-  return rows.map((row, i) => {
+  const lines = new Map<string, number>();
+  return rows.map((row) => {
+    const id = wordId(opts.source, row);
+    const other = lines.get(id);
+    if (other !== undefined) throw new Error(`line ${row.line}: same id as line ${other} (${id})`);
+    lines.set(id, row.line);
     const meanings = row.meaning.split(/[;,]/).map((m) => m.trim()).filter(Boolean);
     const rank = opts.rankByLemma.get(row.word.toLowerCase());
     return {
-      id: `V-${opts.source}-${String(i + 1).padStart(4, "0")}`,
+      id,
       lemma: row.word,
       pos: row.pos,
       meanings,

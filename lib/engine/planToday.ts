@@ -1,5 +1,6 @@
 // Today's vocabulary plan (DESIGN 3-3, 5-4, 9-2): due reviews first, then new
-// words within the time goal. The current unit joins the plan in stage 7.
+// words within the time goal. Cards for words missing from wordOrder (no longer
+// approved) are left out. The current unit joins the plan in stage 7.
 import type { DailyMinutes, ReviewCard } from "@/lib/schema/progress";
 import { isDue } from "@/lib/srs";
 
@@ -23,7 +24,8 @@ export function planToday(input: {
   wordOrder: readonly string[];
   learnedToday: number;
 }): TodayPlan {
-  const words = input.cards.filter((c) => c.itemType === "word");
+  const listed = new Set(input.wordOrder);
+  const words = input.cards.filter((c) => c.itemType === "word" && listed.has(c.itemId));
   const reviews = words
     .filter((c) => isDue(c.fsrs, input.now))
     .sort((a, b) => Date.parse(a.fsrs.due) - Date.parse(b.fsrs.due))

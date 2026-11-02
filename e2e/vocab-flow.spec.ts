@@ -89,3 +89,40 @@ test.describe("when the browser blocks storage", () => {
     await expect(remaining(page)).toHaveText("남은 카드 9");
   });
 });
+
+test.describe("past local midnight", () => {
+  async function gradeByKeyboard(page: import("@playwright/test").Page, count: number) {
+    for (let i = 0; i < count; i++) {
+      await expect(page.getByRole("button", { name: /^(뜻|단어) 보기/ })).toBeVisible();
+      await page.keyboard.press("Space");
+      await expect(page.getByRole("list", { name: "뜻" })).toBeVisible();
+      await page.keyboard.press("3");
+    }
+  }
+
+  test("a dashboard left open overnight shows the new day's plan", async ({ page }) => {
+    await page.clock.install({ time: new Date(2026, 10, 2, 23, 40) });
+    await startAs(page, "테스트", 15);
+    await page.getByRole("link", { name: "오늘 학습 시작" }).click();
+    await gradeByKeyboard(page, 10);
+    await expect(page).toHaveURL(/\/vocab\/done$/);
+    await page.getByRole("link", { name: "대시보드로" }).click();
+    await expect(page.getByRole("button", { name: "오늘 학습 시작" })).toBeDisabled();
+
+    await page.clock.fastForward("40:00"); // 00:20 the next day
+    await expect(page.getByRole("link", { name: "오늘 학습 시작" })).toBeVisible();
+  });
+
+  test("a session that crosses midnight re-plans for the new day", async ({ page }) => {
+    await page.clock.install({ time: new Date(2026, 10, 2, 23, 58) });
+    await startAs(page, "테스트", 15);
+    await page.getByRole("link", { name: "오늘 학습 시작" }).click();
+    await gradeByKeyboard(page, 2);
+    await expect(remaining(page)).toHaveText("남은 카드 8");
+
+    await page.clock.fastForward("03:00"); // 00:01 the next day
+    await gradeByKeyboard(page, 1);
+    // New day: 1 learned so far, 9 more new words (12 fixture words - 3 seen).
+    await expect(remaining(page)).toHaveText("남은 카드 9");
+  });
+});

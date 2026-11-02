@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { NotSavedNotice, useProgress } from "@/components/learning/ProgressProvider";
+import { useNow } from "@/components/learning/useNow";
 import { buttonVariants } from "@/components/ui/button";
 import { type CoverageWeights, masteredShare } from "@/lib/engine/coverage";
 import { localDayKey, planToday } from "@/lib/engine/planToday";
@@ -18,6 +19,7 @@ interface TodayPlanProps {
 
 export function TodayPlan({ wordOrder, lemmaById, coverage }: TodayPlanProps) {
   const state = useProgress();
+  const now = useNow();
   const router = useRouter();
   const profile = state?.progress.profile ?? null;
 
@@ -25,11 +27,10 @@ export function TodayPlan({ wordOrder, lemmaById, coverage }: TodayPlanProps) {
     if (state && !profile) router.replace("/start");
   }, [state, profile, router]);
 
-  if (!state || !profile) {
+  if (!state || !profile || !now) {
     return <h1 className="text-title font-bold tracking-tight">오늘의 학습</h1>;
   }
 
-  const now = new Date();
   const { progress } = state;
   const today = progress.days[localDayKey(now)] ?? { reviewed: 0, learned: 0 };
   const plan = planToday({ dailyMinutes: profile.dailyMinutes, now, cards: progress.cards, wordOrder, learnedToday: today.learned });
@@ -64,7 +65,7 @@ export function TodayPlan({ wordOrder, lemmaById, coverage }: TodayPlanProps) {
 
       <NotSavedNotice persistent={state.persistent} />
 
-      {total > 0 ? (
+      {total > 0 && !noWords ? (
         <Link href="/vocab" className={cn(buttonVariants(), "h-12 text-base")}>
           오늘 학습 시작
         </Link>

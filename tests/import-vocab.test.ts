@@ -31,10 +31,23 @@ describe("toDraftVocabulary", () => {
     const { rows } = parseVocabCsv(csv);
     const words = toDraftVocabulary(rows, { source: "middle", level: "L0", rankByLemma: new Map([["rest", 120]]) });
     expect(words.map((w) => [w.id, w.meanings, w.isPolysemous, w.csatFrequencyRank, w.reviewStatus, w.example])).toEqual([
-      ["V-middle-0001", ["가짜"], false, undefined, "draft", undefined],
-      ["V-middle-0002", ["쉬다", "휴식하다"], true, 120, "draft", undefined],
-      ["V-middle-0003", ["밝은", "영리한"], true, undefined, "draft", undefined],
+      ["V-middle-fake-noun", ["가짜"], false, undefined, "draft", undefined],
+      ["V-middle-rest-verb", ["쉬다", "휴식하다"], true, 120, "draft", undefined],
+      ["V-middle-bright-adjective", ["밝은", "영리한"], true, undefined, "draft", undefined],
     ]);
     for (const w of words) expect(Vocabulary.safeParse(w).success).toBe(true);
+  });
+
+  it("gives ids from the word and part of speech, so editing other rows never moves them", () => {
+    const opts = { source: "middle", level: "L0" as const, rankByLemma: new Map<string, number>() };
+    const before = toDraftVocabulary(parseVocabCsv(csv).rows, opts);
+    const after = toDraftVocabulary(parseVocabCsv("word,pos,meaning\nnew,adj,새로운\n" + csv.split("\n").slice(1).join("\n")).rows, opts);
+    expect(after.slice(1).map((w) => w.id)).toEqual(before.map((w) => w.id));
+    expect(toDraftVocabulary(parseVocabCsv("word,pos,meaning\nDon't,phr,하지 마\n").rows, opts)[0].id).toBe("V-middle-don-t-phrase");
+  });
+
+  it("refuses two words that would share an id", () => {
+    const { rows } = parseVocabCsv("word,pos,meaning\nwell-being,n,행복\nwell being,n,행복\n");
+    expect(() => toDraftVocabulary(rows, { source: "middle", level: "L0", rankByLemma: new Map() })).toThrow(/same id/);
   });
 });

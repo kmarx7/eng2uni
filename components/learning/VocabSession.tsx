@@ -1,7 +1,8 @@
 "use client";
 
 // Today's vocabulary run: due reviews, then new words. The queue is planned once
-// from stored progress when the page opens, so a reload resumes with what is left.
+// from stored progress when the page opens, so a reload resumes with what is left,
+// and planned again when a rating lands on a new local day.
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { applyGrade } from "@/lib/engine/applyGrade";
@@ -14,7 +15,7 @@ import { VocabularyCard } from "./VocabularyCard";
 export function VocabSession({ words }: { words: Vocabulary[] }) {
   const state = useProgress();
   const router = useRouter();
-  const [queue, setQueue] = useState<{ ids: string[]; total: number } | null>(null);
+  const [queue, setQueue] = useState<{ ids: string[]; total: number; day: string } | null>(null);
   const profile = state?.progress.profile ?? null;
 
   if (state && profile && queue === null) {
@@ -27,7 +28,7 @@ export function VocabSession({ words }: { words: Vocabulary[] }) {
       learnedToday: state.progress.days[localDayKey(now)]?.learned ?? 0,
     });
     const ids = [...plan.reviews, ...plan.newWords].filter((id) => words.some((w) => w.id === id));
-    setQueue({ ids, total: ids.length });
+    setQueue({ ids, total: ids.length, day: localDayKey(now) });
   }
 
   const finished = queue !== null && queue.ids.length === 0;
@@ -40,8 +41,9 @@ export function VocabSession({ words }: { words: Vocabulary[] }) {
   const onGrade = useCallback(
     (grade: Grade) => {
       if (!currentId) return;
-      updateProgress((p) => applyGrade(p, currentId, grade, new Date()));
-      setQueue((q) => (q ? { ...q, ids: q.ids.slice(1) } : q));
+      const now = new Date();
+      updateProgress((p) => applyGrade(p, currentId, grade, now));
+      setQueue((q) => (!q || q.day !== localDayKey(now) ? null : { ...q, ids: q.ids.slice(1) }));
     },
     [currentId],
   );
