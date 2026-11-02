@@ -54,8 +54,9 @@ describe("schema validity", () => {
   });
 
   it("falls back to the array index when the item has no id", () => {
-    (files.find((file) => file.kind === "vocabulary")!.data as Item[]).push({ lemma: "run" });
-    expectIssue(/^#1: schema:/);
+    const words = files.find((file) => file.kind === "vocabulary")!.data as Item[];
+    words.push({ lemma: "run" });
+    expectIssue(new RegExp(`^#${words.length - 1}: schema:`));
   });
 
   it("rejects a file that is not an array", () => {
