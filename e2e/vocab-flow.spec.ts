@@ -1,0 +1,91 @@
+import { expect, test } from "@playwright/test";
+import { expectNoHorizontalOverflow, remaining, startAs } from "./helpers";
+
+test("start, learn 5 words by keyboard, reload, finish 5 by tap", async ({ page }) => {
+  await startAs(page, "테스트", 15);
+  const newWords = page.getByRole("definition").filter({ hasText: "개" }).nth(1);
+  await expect(newWords).toHaveText("10개");
+
+  await page.getByRole("link", { name: "오늘 학습 시작" }).click();
+  await expect(page).toHaveURL(/\/vocab$/);
+  await expect(remaining(page)).toHaveText("남은 카드 10");
+  // Meanings are not in the DOM before the card is revealed.
+  await expect(page.getByRole("list", { name: "뜻" })).toHaveCount(0);
+  await expectNoHorizontalOverflow(page);
+
+  for (let left = 10; left > 5; left--) {
+    await expect(remaining(page)).toHaveText(`남은 카드 ${left}`);
+    await page.keyboard.press("Space");
+    await expect(page.getByRole("list", { name: "뜻" })).toBeVisible();
+    await page.keyboard.press("3");
+  }
+  await expect(remaining(page)).toHaveText("남은 카드 5");
+
+  await page.reload();
+  await expect(remaining(page)).toHaveText("남은 카드 5");
+
+  for (let left = 5; left > 0; left--) {
+    await expect(remaining(page)).toHaveText(`남은 카드 ${left}`);
+    await page.getByRole("button", { name: /^(뜻|단어) 보기/ }).click();
+    await page.getByRole("button", { name: /^보통/ }).click();
+  }
+
+  await expect(page).toHaveURL(/\/vocab\/done$/);
+  await expect(page.getByText("오늘 새 단어")).toBeVisible();
+  await expect(page.getByRole("definition").nth(1)).toHaveText("10개");
+  await expectNoHorizontalOverflow(page);
+
+  await page.getByRole("link", { name: "대시보드로" }).click();
+  await expect(page.getByText("오늘 할 일을 모두 마쳤습니다.", { exact: false })).toBeVisible();
+  await expect(page.getByRole("button", { name: "오늘 학습 시작" })).toBeDisabled();
+});
+
+test("a burst of rating keys rates one card once", async ({ page }) => {
+  await startAs(page, "테스트", 15);
+  await page.goto("/vocab");
+  await expect(remaining(page)).toHaveText("남은 카드 10");
+  await page.keyboard.press("Space");
+  await expect(page.getByRole("list", { name: "뜻" })).toBeVisible();
+  // Two key events in the same task, before React re-renders.
+  await page.evaluate(() => {
+    for (const key of ["1", "4", "1"]) window.dispatchEvent(new KeyboardEvent("keydown", { key }));
+  });
+  await expect(remaining(page)).toHaveText("남은 카드 9");
+  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("english90.progress") ?? "{}"));
+  expect(stored.cards).toHaveLength(1);
+});
+
+test("a word whose audio file fails to load shows no audio button", async ({ page }) => {
+  await startAs(page, "테스트", 15);
+  await page.goto("/vocab");
+  // FIXTURE-V-001 "drink" names an audio file that does not exist.
+  for (let i = 0; i < 10; i++) {
+    if (await page.getByRole("heading", { name: "drink" }).isVisible()) break;
+    await page.keyboard.press("Space");
+    await page.keyboard.press("3");
+  }
+  await expect(page.getByRole("heading", { name: "drink" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "발음 듣기" })).toHaveCount(0);
+});
+
+test.describe("when the browser blocks storage", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(window, "localStorage", {
+        get() {
+          throw new DOMException("blocked", "SecurityError");
+        },
+      });
+    });
+  });
+
+  test("learning still works and says progress is not saved", async ({ page }) => {
+    await startAs(page, "테스트", 15);
+    await expect(page.getByRole("status")).toHaveText(/진도가 저장되지 않습니다/);
+    await page.getByRole("link", { name: "오늘 학습 시작" }).click();
+    await expect(remaining(page)).toHaveText("남은 카드 10");
+    await page.keyboard.press("Space");
+    await page.keyboard.press("3");
+    await expect(remaining(page)).toHaveText("남은 카드 9");
+  });
+});

@@ -3,6 +3,7 @@ corpus/
 !.env.example
 node_modules/
 .next/
+.next-e2e*/
 .DS_Store
 
 # added in stage 1 (Next.js / test tooling)
