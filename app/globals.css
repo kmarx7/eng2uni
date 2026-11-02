@@ -6,6 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --animate-shake: shake 0.32s ease-in-out;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-noto-sans-kr), ui-sans-serif, system-ui, sans-serif;
@@ -151,5 +152,18 @@
   }
   body {
     line-height: var(--type-leading-body);
+  }
+}
+/* A wrong tag or chip shakes once (DESIGN 13-3); off under reduced motion via motion-reduce:animate-none. */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
   }
 }
