@@ -7,21 +7,52 @@
     "sentenceId": "FIXTURE-S-001",
     "prompt": "이 문장의 동사는 무엇인가요?",
     "options": [
-      { "id": "A", "text": "The", "misconception": "FIXTURE_article_as_verb" },
-      { "id": "B", "text": "cat", "misconception": "FIXTURE_subject_as_verb" },
-      { "id": "C", "text": "drinks" },
-      { "id": "D", "text": "milk", "misconception": "FIXTURE_object_as_verb" }
+      {
+        "id": "A",
+        "text": "The",
+        "misconception": "FIXTURE_article_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "cat",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "drinks"
+      },
+      {
+        "id": "D",
+        "text": "milk",
+        "misconception": "FIXTURE_object_as_verb"
+      }
     ],
     "answer": "C",
-    "skills": ["FIXTURE_verb_identification"],
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
     "explanation": {
       "summary": "drinks가 '마신다'는 동작을 나타내는 동사입니다.",
-      "byOption": { "B": "cat은 동작을 하는 주어입니다.", "D": "milk는 마시는 대상인 목적어입니다." }
+      "byOption": {
+        "B": "cat은 동작을 하는 주어입니다.",
+        "D": "milk는 마시는 대상인 목적어입니다."
+      }
     },
     "variantGroup": "FIXTURE-VG-verb",
-    "source": { "type": "original", "generatedBy": "human", "reviewedBy": "fixture" },
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
     "reviewStatus": "approved",
-    "version": 1
+    "version": 1,
+    "hints": {
+      "direction": "동작을 나타내는 단어를 찾아보세요.",
+      "range": [
+        1,
+        2
+      ]
+    }
   },
   {
     "id": "FIXTURE-Q-002",
@@ -31,15 +62,34 @@
     "sentenceId": "FIXTURE-S-002",
     "prompt": "이 문장의 동사는 무엇인가요?",
     "options": [
-      { "id": "A", "text": "sister", "misconception": "FIXTURE_subject_as_verb" },
-      { "id": "B", "text": "plays" },
-      { "id": "C", "text": "piano", "misconception": "FIXTURE_object_as_verb" }
+      {
+        "id": "A",
+        "text": "sister",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "plays"
+      },
+      {
+        "id": "C",
+        "text": "piano",
+        "misconception": "FIXTURE_object_as_verb"
+      }
     ],
     "answer": "B",
-    "skills": ["FIXTURE_verb_identification"],
-    "explanation": { "summary": "plays가 '친다'는 동작을 나타내는 동사입니다." },
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "plays가 '친다'는 동작을 나타내는 동사입니다."
+    },
     "variantGroup": "FIXTURE-VG-verb",
-    "source": { "type": "original", "generatedBy": "ai_draft", "reviewedBy": "fixture" },
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft",
+      "reviewedBy": "fixture"
+    },
     "reviewStatus": "approved",
     "version": 1
   },
@@ -51,14 +101,486 @@
     "passageId": "FIXTURE-P-001",
     "prompt": "글의 내용과 일치하는 것은?",
     "options": [
-      { "id": "1", "text": "여동생은 방과 후에 피아노를 친다." },
-      { "id": "2", "text": "여동생은 피아노를 치지 않는다.", "trap": "FIXTURE_opposite_claim" },
-      { "id": "3", "text": "고양이가 피아노를 친다.", "trap": "FIXTURE_keyword_reuse" }
+      {
+        "id": "1",
+        "text": "여동생은 방과 후에 피아노를 친다."
+      },
+      {
+        "id": "2",
+        "text": "여동생은 피아노를 치지 않는다.",
+        "trap": "FIXTURE_opposite_claim"
+      },
+      {
+        "id": "3",
+        "text": "고양이가 피아노를 친다.",
+        "trap": "FIXTURE_keyword_reuse"
+      }
     ],
     "answer": "1",
-    "skills": ["FIXTURE_main_idea"],
-    "explanation": { "summary": "두 번째 문장이 근거입니다." },
-    "source": { "type": "original", "generatedBy": "human", "reviewedBy": "fixture" },
+    "skills": [
+      "FIXTURE_main_idea"
+    ],
+    "explanation": {
+      "summary": "두 번째 문장이 근거입니다."
+    },
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-004",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-003",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "boy",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "kicks"
+      },
+      {
+        "id": "C",
+        "text": "ball",
+        "misconception": "FIXTURE_object_as_verb"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "kicks가 '찬다'는 동작을 나타내는 동사입니다.",
+      "byOption": {
+        "A": "boy는 동작을 하는 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "공에 하는 동작을 찾아보세요."
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-005",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-005",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tom",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "book",
+        "misconception": "FIXTURE_object_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "reads"
+      }
+    ],
+    "answer": "C",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "reads가 '읽는다'는 동작을 나타내는 동사입니다."
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-006",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-006",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Birds",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "build"
+      },
+      {
+        "id": "C",
+        "text": "nests",
+        "misconception": "FIXTURE_object_as_verb"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "build가 '짓는다'는 동작을 나타내는 동사입니다."
+    },
+    "hints": {
+      "direction": "새들이 하는 일을 찾아보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-007",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-007",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "father",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "washes"
+      },
+      {
+        "id": "C",
+        "text": "car",
+        "misconception": "FIXTURE_object_as_verb"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "washes가 '세차한다'는 동작을 나타내는 동사입니다.",
+      "byOption": {
+        "A": "father는 세차를 하는 사람, 즉 주어입니다."
+      }
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-008",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-008",
+    "prompt": "이 문장의 동사는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "children",
+        "misconception": "FIXTURE_subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "song",
+        "misconception": "FIXTURE_object_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "sing"
+      }
+    ],
+    "answer": "C",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "explanation": {
+      "summary": "sing이 '부른다'는 동작을 나타내는 동사입니다.",
+      "byOption": {
+        "A": "children은 노래를 부르는 사람, 즉 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "아이들이 하는 동작을 찾아보세요."
+    },
+    "variantGroup": "FIXTURE-VG-verb",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-009",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-003",
+    "prompt": "이 문장의 주어는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The boy"
+      },
+      {
+        "id": "B",
+        "text": "kicks",
+        "misconception": "FIXTURE_verb_as_subject"
+      },
+      {
+        "id": "C",
+        "text": "the ball",
+        "misconception": "FIXTURE_object_as_subject"
+      }
+    ],
+    "answer": "A",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "The boy가 공을 차는 사람, 즉 주어입니다.",
+      "byOption": {
+        "C": "the ball은 차는 대상인 목적어입니다."
+      }
+    },
+    "hints": {
+      "direction": "동작을 하는 사람을 찾아보세요."
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-010",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-005",
+    "prompt": "이 문장의 주어는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "reads",
+        "misconception": "FIXTURE_verb_as_subject"
+      },
+      {
+        "id": "B",
+        "text": "Tom"
+      },
+      {
+        "id": "C",
+        "text": "a book",
+        "misconception": "FIXTURE_object_as_subject"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "Tom이 책을 읽는 사람, 즉 주어입니다."
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-011",
+    "lessonId": "FIXTURE-U01",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-006",
+    "prompt": "이 문장의 주어는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "nests",
+        "misconception": "FIXTURE_object_as_subject"
+      },
+      {
+        "id": "B",
+        "text": "build",
+        "misconception": "FIXTURE_verb_as_subject"
+      },
+      {
+        "id": "C",
+        "text": "Birds"
+      }
+    ],
+    "answer": "C",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "Birds가 둥지를 짓는 주체, 즉 주어입니다."
+    },
+    "hints": {
+      "range": [
+        0,
+        1
+      ]
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-012",
+    "lessonId": "FIXTURE-U01",
+    "type": "true_false",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-007",
+    "prompt": "the car가 이 문장의 주어인가요?",
+    "options": [
+      {
+        "id": "T",
+        "text": "맞다",
+        "misconception": "FIXTURE_object_as_subject"
+      },
+      {
+        "id": "F",
+        "text": "아니다"
+      }
+    ],
+    "answer": "F",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "the car는 세차하는 대상인 목적어입니다. 주어는 My father입니다."
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-013",
+    "lessonId": "FIXTURE-U02",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-008",
+    "prompt": "이 문장의 주어는 무엇인가요?",
+    "options": [
+      {
+        "id": "A",
+        "text": "sing",
+        "misconception": "FIXTURE_verb_as_subject"
+      },
+      {
+        "id": "B",
+        "text": "The children"
+      },
+      {
+        "id": "C",
+        "text": "a song",
+        "misconception": "FIXTURE_object_as_subject"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "The children이 노래를 부르는 사람, 즉 주어입니다."
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-014",
+    "lessonId": "FIXTURE-U01",
+    "type": "true_false",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-004",
+    "prompt": "eat가 이 문장의 주어인가요?",
+    "options": [
+      {
+        "id": "T",
+        "text": "맞다",
+        "misconception": "FIXTURE_verb_as_subject"
+      },
+      {
+        "id": "F",
+        "text": "아니다"
+      }
+    ],
+    "answer": "F",
+    "skills": [
+      "FIXTURE_subject_identification"
+    ],
+    "explanation": {
+      "summary": "eat는 '먹는다'는 동작, 즉 동사입니다. 주어는 We입니다."
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "human",
+      "reviewedBy": "fixture"
+    },
     "reviewStatus": "approved",
     "version": 1
   }

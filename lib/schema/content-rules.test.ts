@@ -228,12 +228,13 @@ describe("referential integrity", () => {
   });
 
   it("rejects missing references inside lesson blocks", () => {
-    const blocks = find("unit", "FIXTURE-U01").blocks;
-    blocks[1].sentenceIds = ["FIXTURE-S-999"];
-    blocks[2].questionIds = ["FIXTURE-Q-999"];
-    blocks[3].misconceptionId = "FIXTURE_nope";
-    blocks[4].misconceptionIds = ["FIXTURE_nope", "FIXTURE_object_as_verb"];
-    blocks.push({ id: "FIXTURE-U01-B07", type: "predict", body: "예측해 보세요.", questionId: "FIXTURE-Q-998" });
+    const blocks: Item[] = find("unit", "FIXTURE-U01").blocks;
+    const block = (id: string) => blocks.find((b) => b.id === `FIXTURE-U01-${id}`)!;
+    block("B02").sentenceIds = ["FIXTURE-S-999"];
+    block("B03").questionIds = ["FIXTURE-Q-999"];
+    block("B04").misconceptionId = "FIXTURE_nope";
+    block("B05").misconceptionIds = ["FIXTURE_nope", "FIXTURE_object_as_verb"];
+    blocks.push({ id: "FIXTURE-U01-B99", type: "predict", body: "예측해 보세요.", questionId: "FIXTURE-Q-998" });
     const found = messages();
     expect(found).toEqual(
       expect.arrayContaining([
@@ -241,7 +242,7 @@ describe("referential integrity", () => {
         expect.stringMatching(/B03: question "FIXTURE-Q-999"/),
         expect.stringMatching(/B04: misconception "FIXTURE_nope"/),
         expect.stringMatching(/B05: misconception "FIXTURE_nope"/),
-        expect.stringMatching(/B07: question "FIXTURE-Q-998"/),
+        expect.stringMatching(/B99: question "FIXTURE-Q-998"/),
       ]),
     );
   });

@@ -4,14 +4,99 @@
     "levelId": "L0",
     "order": 1,
     "title": "FIXTURE 주어와 동사",
-    "skills": ["FIXTURE_subject_identification", "FIXTURE_verb_identification"],
+    "skills": [
+      "FIXTURE_subject_identification",
+      "FIXTURE_verb_identification"
+    ],
     "blocks": [
-      { "id": "FIXTURE-U01-B01", "type": "concept", "body": "동사는 동작이나 상태를 나타낸다." },
-      { "id": "FIXTURE-U01-B02", "type": "sentence_task", "interaction": "role_tagging", "instruction": "주어와 동사를 표시하세요.", "sentenceIds": ["FIXTURE-S-001"] },
-      { "id": "FIXTURE-U01-B03", "type": "practice", "questionIds": ["FIXTURE-Q-001"] },
-      { "id": "FIXTURE-U01-B04", "type": "remedial", "misconceptionId": "FIXTURE_subject_as_verb", "body": "동작을 하는 사람은 주어다.", "questionIds": ["FIXTURE-Q-002"] },
-      { "id": "FIXTURE-U01-B05", "type": "contrast", "misconceptionIds": ["FIXTURE_subject_as_verb", "FIXTURE_object_as_verb"], "body": "주어와 목적어를 나란히 비교한다." },
-      { "id": "FIXTURE-U01-B06", "type": "assessment", "questionIds": ["FIXTURE-Q-002"] }
+      {
+        "id": "FIXTURE-U01-B01",
+        "type": "concept",
+        "body": "동사는 동작이나 상태를 나타낸다."
+      },
+      {
+        "id": "FIXTURE-U01-B02",
+        "type": "sentence_task",
+        "interaction": "role_tagging",
+        "instruction": "주어와 동사를 표시하세요.",
+        "sentenceIds": [
+          "FIXTURE-S-001",
+          "FIXTURE-S-003"
+        ]
+      },
+      {
+        "id": "FIXTURE-U01-B07",
+        "type": "sentence_task",
+        "interaction": "sentence_building",
+        "instruction": "단어를 순서대로 눌러 문장을 만드세요.",
+        "sentenceIds": [
+          "FIXTURE-S-004"
+        ]
+      },
+      {
+        "id": "FIXTURE-U01-B03",
+        "type": "practice",
+        "questionIds": [
+          "FIXTURE-Q-001"
+        ]
+      },
+      {
+        "id": "FIXTURE-U01-B06",
+        "type": "assessment",
+        "questionIds": [
+          "FIXTURE-Q-002",
+          "FIXTURE-Q-004",
+          "FIXTURE-Q-005",
+          "FIXTURE-Q-006",
+          "FIXTURE-Q-009",
+          "FIXTURE-Q-010",
+          "FIXTURE-Q-011",
+          "FIXTURE-Q-012"
+        ]
+      },
+      {
+        "id": "FIXTURE-U01-B04",
+        "type": "remedial",
+        "misconceptionId": "FIXTURE_subject_as_verb",
+        "body": "동작을 하는 사람은 주어다.",
+        "questionIds": [
+          "FIXTURE-Q-007"
+        ]
+      },
+      {
+        "id": "FIXTURE-U01-B05",
+        "type": "contrast",
+        "misconceptionIds": [
+          "FIXTURE_subject_as_verb",
+          "FIXTURE_object_as_verb"
+        ],
+        "body": "주어와 목적어를 나란히 비교한다."
+      }
+    ],
+    "reviewStatus": "approved",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-U02",
+    "levelId": "L0",
+    "order": 2,
+    "title": "FIXTURE 목적어",
+    "skills": [
+      "FIXTURE_verb_identification"
+    ],
+    "blocks": [
+      {
+        "id": "FIXTURE-U02-B01",
+        "type": "concept",
+        "body": "목적어는 동작의 대상이다."
+      },
+      {
+        "id": "FIXTURE-U02-B02",
+        "type": "assessment",
+        "questionIds": [
+          "FIXTURE-Q-013"
+        ]
+      }
     ],
     "reviewStatus": "approved",
     "version": 1
