@@ -58,6 +58,30 @@ describe("localDayKey", () => {
     const plan = planToday({ dailyMinutes: 15, now, cards: [...dueCards(43), card("W1", -1000)], wordOrder: words(12), learnedToday: 0 });
     expect(plan.reviews).toEqual(["W1"]);
     expect(plan.newWords).toHaveLength(10); // the 43 stale reviews do not use up the time
-    expect(planToday({ dailyMinutes: 15, now, cards: dueCards(3), wordOrder: [], learnedToday: 0 })).toEqual({ reviews: [], newWords: [], estimatedMinutes: 0 });
+    expect(planToday({ dailyMinutes: 15, now, cards: dueCards(3), wordOrder: [], learnedToday: 0 })).toMatchObject({ reviews: [], newWords: [], estimatedMinutes: 0 });
+  });
+});
+
+describe("planToday with skills and units", () => {
+  const skill = (id: string, dueOffsetMs: number): ReviewCard => ({ ...card(id, dueOffsetMs), itemType: "skill" });
+
+  it("adds due skill reviews (oldest first) and the next unit to the estimate", () => {
+    const plan = planToday({
+      dailyMinutes: 15,
+      now,
+      cards: [skill("s2", -1000), skill("s1", -5000), skill("s3", 1000)],
+      wordOrder: [],
+      learnedToday: 0,
+      units: [{ id: "U1", title: "하나" }],
+      lessons: {},
+    });
+    expect(plan.skillReviews).toEqual(["s1", "s2"]);
+    expect(plan.unit).toEqual({ id: "U1", title: "하나" });
+    expect(plan.estimatedMinutes).toBe(2 + 10);
+  });
+
+  it("has no skills or unit when none are given", () => {
+    const plan = planToday({ dailyMinutes: 15, now, cards: [], wordOrder: [], learnedToday: 0 });
+    expect(plan).toMatchObject({ skillReviews: [], unit: null, estimatedMinutes: 0 });
   });
 });
