@@ -1,4 +1,5 @@
 import { TodayPlan } from "@/components/dashboard/TodayPlan";
+import { loadStudentUnits } from "@/lib/content/learning";
 import { loadCoverageEntries, loadStudentVocabulary } from "@/lib/content/vocabulary";
 import { coverageWeights } from "@/lib/engine/coverage";
 
@@ -11,6 +12,7 @@ export default function DashboardPage() {
       wordOrder={words.map((w) => w.id)}
       lemmaById={lemmaById}
       coverage={entries ? coverageWeights(entries, words.map((w) => w.lemma)) : null}
+      units={loadStudentUnits().map(({ id, title }) => ({ id, title }))}
     />
   );
 }

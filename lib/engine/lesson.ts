@@ -186,12 +186,18 @@ function enterBlock(state: LessonState, index: number, ctx: LessonContext, now: 
   return block.type === "assessment" ? { state: judge(next, ctx), shortages } : enterBlock(next, index + 1, ctx, now, shortages);
 }
 
-function roundAttempts(state: LessonState, ctx: LessonContext): LessonAttempt[] {
+function roundAttempts(state: LessonState, ctx: Pick<LessonContext, "unit">): LessonAttempt[] {
   if (state.round === 0) {
     const ids = new Set(assessmentIds(ctx.unit));
     return state.attempts.filter((a) => a.phase === "main" && a.round === 0 && ids.has(a.questionId));
   }
   return state.attempts.filter((a) => a.phase === "reassessment" && a.round === state.round);
+}
+
+// Credited answers out of all answers in the round being judged, for the result screen.
+export function roundScore(state: LessonState, unit: Unit): { correct: number; total: number } {
+  const attempts = roundAttempts(state, { unit });
+  return { correct: attempts.filter(countsAsCorrect).length, total: attempts.length };
 }
 
 // Delayed checks happen on another day through skill review, never inside the unit.

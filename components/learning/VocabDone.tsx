@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { buttonVariants } from "@/components/ui/button";
-import { localDayKey } from "@/lib/engine/planToday";
+import { localDayKey, type PlannedUnit } from "@/lib/engine/planToday";
+import { nextUnit } from "@/lib/engine/skillProgress";
 import { cn } from "@/lib/utils";
 import { NotSavedNotice, useProgress } from "./ProgressProvider";
 import { useNow } from "./useNow";
 
-export function VocabDone() {
+export function VocabDone({ units }: { units: PlannedUnit[] }) {
   const state = useProgress();
   const now = useNow();
   const router = useRouter();
@@ -24,6 +25,7 @@ export function VocabDone() {
   const today = state.progress.days[localDayKey(now)] ?? { reviewed: 0, learned: 0 };
   // Due before the local midnight that ends tomorrow.
   const endOfTomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 2).getTime();
+  const unit = nextUnit(units, state.progress.lessons);
   const dueByTomorrow = state.progress.cards.filter((c) => c.itemType === "word" && Date.parse(c.fsrs.due) < endOfTomorrow).length;
 
   return (
@@ -38,6 +40,11 @@ export function VocabDone() {
         <Row label="내일까지 복습 예정" value={dueByTomorrow} />
       </dl>
       <NotSavedNotice persistent={state.persistent} />
+      {unit && (
+        <Link href={`/learn/${unit.id}`} className={cn(buttonVariants(), "h-12 text-base")}>
+          단원 학습 계속: {unit.title}
+        </Link>
+      )}
       <Link href="/dashboard" className={cn(buttonVariants({ variant: "outline" }), "h-12 text-base")}>
         대시보드로
       </Link>

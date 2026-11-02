@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { LessonAttempt, LessonState } from "@/lib/schema/progress";
 import type { Unit } from "@/lib/schema/curriculum";
-import { currentStep, type LessonAction, type LessonContext, lessonReducer, startLesson } from "./lesson";
+import { currentStep, roundScore, type LessonAction, type LessonContext, lessonReducer, startLesson } from "./lesson";
 
 const now = new Date("2026-11-02T09:00:00+09:00");
 const A = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"];
@@ -152,5 +152,12 @@ describe("lesson flow", () => {
     const c = ctx();
     const { state } = drive(c, [done, { type: "analyzerDone", passed: false }, answer(true), ...Array(8).fill(answer(true)), done]);
     expect(currentStep(state, unit)).toEqual({ kind: "block", block: unit.blocks[1] });
+  });
+});
+
+describe("roundScore", () => {
+  it("counts credited answers of the judged round only", () => {
+    const { state } = drive(ctx(), [...toAssessment, answer(true, undefined, 3), ...Array(6).fill(answer(true)), answer(false)]);
+    expect(roundScore(state, unit)).toEqual({ correct: 6, total: 8 });
   });
 });
