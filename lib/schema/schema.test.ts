@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  LocalProgress,
   Attempt,
   Blueprint,
   Id,
@@ -113,5 +114,33 @@ describe("content models", () => {
     expect(
       Blueprint.safeParse({ ...blueprint, passage: { ...blueprint.passage, wordCount: { min: 200, max: 100 } } }).success,
     ).toBe(false);
+  });
+});
+
+describe("Vocabulary example", () => {
+  it("is optional until the content pipeline adds one", () => {
+    const word = { id: "FIXTURE-V-900", lemma: "fake", pos: "noun", meanings: ["가짜"], level: "L0", isPolysemous: false, reviewStatus: "draft" };
+    expect(Vocabulary.safeParse(word).success).toBe(true);
+  });
+});
+
+describe("LocalProgress", () => {
+  const progress = {
+    schemaVersion: 1,
+    profile: { anonId: "0b7e9c1e-2f4a-4c1d-9a8b-1c2d3e4f5a6b", nickname: "학생", dailyMinutes: 30, createdAt: at },
+    cards: [{ userId: "0b7e9c1e-2f4a-4c1d-9a8b-1c2d3e4f5a6b", itemType: "word", itemId: "FIXTURE-V-001", fsrs }],
+    days: { "2026-11-02": { reviewed: 3, learned: 10 } },
+  };
+
+  it("accepts saved browser progress, with or without a profile", () => {
+    expect(LocalProgress.safeParse(progress).success).toBe(true);
+    expect(LocalProgress.safeParse({ ...progress, profile: null, cards: [], days: {} }).success).toBe(true);
+  });
+
+  it("rejects other daily goals, other schema versions, long nicknames and bad day keys", () => {
+    expect(LocalProgress.safeParse({ ...progress, profile: { ...progress.profile, dailyMinutes: 45 } }).success).toBe(false);
+    expect(LocalProgress.safeParse({ ...progress, schemaVersion: 2 }).success).toBe(false);
+    expect(LocalProgress.safeParse({ ...progress, profile: { ...progress.profile, nickname: "가".repeat(21) } }).success).toBe(false);
+    expect(LocalProgress.safeParse({ ...progress, days: { "11/02": { reviewed: 0, learned: 0 } } }).success).toBe(false);
   });
 });

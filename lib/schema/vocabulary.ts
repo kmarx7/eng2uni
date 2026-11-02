@@ -19,7 +19,9 @@ export const Vocabulary = z.object({
   lemma: z.string().min(1),
   pos: PartOfSpeech,
   meanings: z.array(z.string().min(1)).min(1),
-  example: z.object({ en: z.string().min(1), ko: z.string().min(1) }),
+  // Optional until the content pipeline (stage 8) adds one; cards that need an
+  // example stay hidden without it.
+  example: z.object({ en: z.string().min(1), ko: z.string().min(1) }).optional(),
   // Path to a pre-generated TTS file under public/ (word-level playback only).
   audio: z.string().regex(/^\/audio\/[\w/.-]+\.(mp3|ogg|m4a)$/).optional(),
   level: LevelId,

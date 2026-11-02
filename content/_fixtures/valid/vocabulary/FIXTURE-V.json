@@ -3,12 +3,163 @@
     "id": "FIXTURE-V-001",
     "lemma": "drink",
     "pos": "verb",
-    "meanings": ["마시다"],
-    "example": { "en": "The cat drinks milk.", "ko": "고양이가 우유를 마신다." },
+    "meanings": [
+      "마시다"
+    ],
+    "example": {
+      "en": "The cat drinks milk.",
+      "ko": "고양이가 우유를 마신다."
+    },
     "audio": "/audio/words/FIXTURE-V-001.mp3",
     "level": "L0",
     "isPolysemous": false,
     "csatFrequencyRank": 1200,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-002",
+    "lemma": "apple",
+    "pos": "noun",
+    "meanings": [
+      "사과"
+    ],
+    "example": {
+      "en": "I eat an apple.",
+      "ko": "나는 사과를 먹는다."
+    },
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 900,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-003",
+    "lemma": "run",
+    "pos": "verb",
+    "meanings": [
+      "달리다"
+    ],
+    "example": {
+      "en": "The dog runs fast.",
+      "ko": "개가 빨리 달린다."
+    },
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 300,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-004",
+    "lemma": "happy",
+    "pos": "adjective",
+    "meanings": [
+      "행복한"
+    ],
+    "example": {
+      "en": "She looks happy.",
+      "ko": "그녀는 행복해 보인다."
+    },
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-005",
+    "lemma": "slowly",
+    "pos": "adverb",
+    "meanings": [
+      "천천히"
+    ],
+    "example": {
+      "en": "He walks slowly.",
+      "ko": "그는 천천히 걷는다."
+    },
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 1500,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-006",
+    "lemma": "under",
+    "pos": "preposition",
+    "meanings": [
+      "~아래에"
+    ],
+    "example": {
+      "en": "The cat sleeps under the bed.",
+      "ko": "고양이가 침대 아래에서 잔다."
+    },
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-007",
+    "lemma": "window",
+    "pos": "noun",
+    "meanings": [
+      "창문"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 2100,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-008",
+    "lemma": "open",
+    "pos": "verb",
+    "meanings": [
+      "열다"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-009",
+    "lemma": "cold",
+    "pos": "adjective",
+    "meanings": [
+      "추운"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-010",
+    "lemma": "quickly",
+    "pos": "adverb",
+    "meanings": [
+      "빨리"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-011",
+    "lemma": "chair",
+    "pos": "noun",
+    "meanings": [
+      "의자"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "FIXTURE-V-012",
+    "lemma": "write",
+    "pos": "verb",
+    "meanings": [
+      "쓰다"
+    ],
+    "level": "L0",
+    "isPolysemous": false,
+    "csatFrequencyRank": 700,
     "reviewStatus": "approved"
   }
 ]

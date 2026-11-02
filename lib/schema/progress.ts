@@ -65,6 +65,29 @@ export const SkillMastery = z.object({
   updatedAt: IsoDateTime,
 });
 
+// Daily goal in minutes (DESIGN 9-2).
+export const DailyMinutes = z.union([z.literal(15), z.literal(30), z.literal(60)]);
+
+// Progress kept in the student's browser (stage 6). Bump schemaVersion on any
+// change; older data is backed up and reset by the repository.
+export const LocalProgress = z.object({
+  schemaVersion: z.literal(1),
+  profile: z
+    .object({
+      anonId: z.uuid(),
+      nickname: z.string().trim().min(1).max(20),
+      dailyMinutes: DailyMinutes,
+      createdAt: IsoDateTime,
+    })
+    .nullable(),
+  cards: z.array(ReviewCard),
+  // Local calendar date -> counts done that day.
+  days: z.record(
+    z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    z.object({ reviewed: z.number().int().min(0), learned: z.number().int().min(0) }),
+  ),
+});
+
 // Event types from DESIGN 9-3.
 export const LearningEventType = z.enum([
   "session_start",
@@ -93,3 +116,5 @@ export type MasteryStatus = z.infer<typeof MasteryStatus>;
 export type SkillMastery = z.infer<typeof SkillMastery>;
 export type LearningEventType = z.infer<typeof LearningEventType>;
 export type LearningEvent = z.infer<typeof LearningEvent>;
+export type DailyMinutes = z.infer<typeof DailyMinutes>;
+export type LocalProgress = z.infer<typeof LocalProgress>;
