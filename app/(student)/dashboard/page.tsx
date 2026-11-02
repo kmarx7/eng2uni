@@ -1,8 +1,16 @@
+import { TodayPlan } from "@/components/dashboard/TodayPlan";
+import { loadCoverageEntries, loadStudentVocabulary } from "@/lib/content/vocabulary";
+import { coverageWeights } from "@/lib/engine/coverage";
+
 export default function DashboardPage() {
+  const words = loadStudentVocabulary();
+  const entries = loadCoverageEntries();
+  const lemmaById = Object.fromEntries(words.map((w) => [w.id, w.lemma]));
   return (
-    <section className="flex flex-col gap-2">
-      <h1 className="text-title font-bold tracking-tight">오늘의 학습</h1>
-      <p className="text-muted-foreground">아직 준비된 학습이 없습니다.</p>
-    </section>
+    <TodayPlan
+      wordOrder={words.map((w) => w.id)}
+      lemmaById={lemmaById}
+      coverage={entries ? coverageWeights(entries, words.map((w) => w.lemma)) : null}
+    />
   );
 }

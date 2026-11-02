@@ -50,3 +50,40 @@ export function masteredCoverage(
     .map((c) => lemmaById[c.itemId]);
   return coverage(new Set(known), entries);
 }
+
+// The analysis file is too large to send to the browser. The server keeps the
+// counted total and the counts of the lemmas a student can learn; the share
+// then matches masteredCoverage.
+export interface CoverageWeights {
+  total: number;
+  countByLemma: Record<string, number>;
+}
+
+export function coverageWeights(entries: readonly CoverageEntry[], lemmas: readonly string[]): CoverageWeights {
+  const wanted = new Set(lemmas.map(normalizeLemma));
+  const countByLemma: Record<string, number> = {};
+  let total = 0;
+  for (const entry of entries) {
+    if (!COUNTED.has(entry.kind)) continue;
+    total += entry.totalCount;
+    const lemma = normalizeLemma(entry.lemma);
+    if (wanted.has(lemma)) countByLemma[lemma] = (countByLemma[lemma] ?? 0) + entry.totalCount;
+  }
+  return { total, countByLemma };
+}
+
+export function masteredShare(
+  cards: readonly ReviewCard[],
+  lemmaById: Readonly<Record<string, string>>,
+  weights: CoverageWeights,
+): number {
+  if (weights.total === 0) return 0;
+  const known = new Set(
+    cards
+      .filter((c) => c.itemType === "word" && isMastered(c.fsrs) && lemmaById[c.itemId])
+      .map((c) => normalizeLemma(lemmaById[c.itemId])),
+  );
+  let hit = 0;
+  for (const lemma of known) hit += weights.countByLemma[lemma] ?? 0;
+  return hit / weights.total;
+}
