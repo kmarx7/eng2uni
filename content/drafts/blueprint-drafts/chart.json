@@ -1,0 +1,89 @@
+[
+  {
+    "id": "BPD-chart",
+    "type": "chart",
+    "items": "25",
+    "basis": {
+      "scope": "since2018",
+      "passages": 29,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 127,
+        "max": 160
+      },
+      "wordCountMedian": 150,
+      "paragraphsMean": 2.83,
+      "avgSentenceLength": 24.56,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 2
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 35.91,
+        "participlePhrase": 27.07,
+        "toInfinitive": 9.94,
+        "nounClause": 13.81,
+        "inversion": 0
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "social_science": 0.9655,
+        "natural_science": 0.0345
+      }
+    },
+    "evidence": {
+      "meanSpans": 1.31,
+      "position": {
+        "early": 0.0789,
+        "middle": 0.3421,
+        "late": 0.5789
+      }
+    },
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.chart.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.chart.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.chart.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.chart.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.chart.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.chart"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.chart"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)"
+    ]
+  }
+]

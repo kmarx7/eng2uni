@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import { Blueprint } from "./blueprint";
+import { Blueprint, BlueprintDraft } from "./blueprint";
 import { Level, Misconception, Skill, TrapType, Unit } from "./curriculum";
 import { Question } from "./question";
 import { AnnotatedSentence, Passage } from "./sentence";
@@ -17,6 +17,7 @@ export const CONTENT_SCHEMAS = {
   question: Question,
   vocabulary: Vocabulary,
   blueprint: Blueprint,
+  blueprintDraft: BlueprintDraft,
 } as const;
 
 export type ContentKind = keyof typeof CONTENT_SCHEMAS;
@@ -55,6 +56,7 @@ function emptyParsed(): ParsedByKind {
     question: [],
     vocabulary: [],
     blueprint: [],
+    blueprintDraft: [],
   };
 }
 

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "BPD-contextual_vocab",
+    "type": "contextual_vocab",
+    "items": "30",
+    "basis": {
+      "scope": "since2018",
+      "passages": 28,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 171.5,
+        "max": 183.25
+      },
+      "wordCountMedian": 175,
+      "paragraphsMean": 1.04,
+      "avgSentenceLength": 22.82,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 3
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 31.16,
+        "participlePhrase": 16.74,
+        "toInfinitive": 45.58,
+        "nounClause": 39.07,
+        "inversion": 0.47
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "social_science": 0.4643,
+        "natural_science": 0.2143,
+        "humanities": 0.1429,
+        "arts": 0.1071,
+        "technology": 0.0714
+      }
+    },
+    "evidence": {
+      "meanSpans": 2.79,
+      "position": {
+        "early": 0.1282,
+        "middle": 0.3718,
+        "late": 0.5
+      }
+    },
+    "vocabBasis": [
+      {
+        "basis": "context_logic",
+        "ratio": 0.6832
+      },
+      {
+        "basis": "contrast_signal",
+        "ratio": 0.145
+      },
+      {
+        "basis": "cause_effect",
+        "ratio": 0.0878
+      },
+      {
+        "basis": "collocation",
+        "ratio": 0.0573
+      },
+      {
+        "basis": "antonym",
+        "ratio": 0.0267
+      }
+    ],
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.contextual_vocab.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.contextual_vocab.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.contextual_vocab.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.contextual_vocab.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.contextual_vocab.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.contextual_vocab"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.contextual_vocab"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.vocabBasis"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)",
+      "vocabBasis는 30번과 장문 42번 어휘 문항의 합계"
+    ]
+  }
+]

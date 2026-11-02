@@ -1,0 +1,126 @@
+[
+  {
+    "id": "BPD-notice",
+    "type": "notice",
+    "items": "27-28",
+    "basis": {
+      "scope": "since2018",
+      "passages": 58,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 95,
+        "max": 110.5
+      },
+      "wordCountMedian": 102,
+      "paragraphsMean": 6.29,
+      "avgSentenceLength": 13.95,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 2
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 4.24,
+        "participlePhrase": 10.59,
+        "toInfinitive": 18.59,
+        "nounClause": 5.88,
+        "inversion": 0.47
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "daily_life": 0.931,
+        "arts": 0.0172,
+        "humanities": 0.0172,
+        "natural_science": 0.0172,
+        "social_science": 0.0172
+      }
+    },
+    "evidence": {
+      "meanSpans": 1.28,
+      "position": {
+        "early": 0,
+        "middle": 0.4459,
+        "late": 0.5541
+      }
+    },
+    "distractors": {
+      "count": 4,
+      "traps": [
+        {
+          "trap": "opposite_claim",
+          "ratio": 0.6897
+        },
+        {
+          "trap": "partial_detail",
+          "ratio": 0.1466
+        },
+        {
+          "trap": "keyword_reuse",
+          "ratio": 0.1034
+        },
+        {
+          "trap": "over_generalization",
+          "ratio": 0.0259
+        },
+        {
+          "trap": "no_textual_basis",
+          "ratio": 0.0172
+        },
+        {
+          "trap": "scope_shift",
+          "ratio": 0.0172
+        }
+      ]
+    },
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.notice.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.notice.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.notice.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.notice.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.notice.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.notice"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.notice"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.trapsByType.notice"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)",
+      "distractors.traps는 content/traps.json 승인 후 함정 id로 연결"
+    ]
+  }
+]

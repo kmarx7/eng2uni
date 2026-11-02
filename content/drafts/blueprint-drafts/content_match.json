@@ -1,0 +1,91 @@
+[
+  {
+    "id": "BPD-content_match",
+    "type": "content_match",
+    "items": "26",
+    "basis": {
+      "scope": "since2018",
+      "passages": 29,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 135,
+        "max": 148
+      },
+      "wordCountMedian": 142,
+      "paragraphsMean": 1.03,
+      "avgSentenceLength": 15.57,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 2
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 13.31,
+        "participlePhrase": 14.45,
+        "toInfinitive": 12.93,
+        "nounClause": 4.56,
+        "inversion": 0.38
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "humanities": 0.3793,
+        "arts": 0.2759,
+        "natural_science": 0.1724,
+        "social_science": 0.1724
+      }
+    },
+    "evidence": {
+      "meanSpans": 1.03,
+      "position": {
+        "early": 0.0667,
+        "middle": 0.4,
+        "late": 0.5333
+      }
+    },
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.content_match.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.content_match.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.content_match.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.content_match.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.content_match.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.content_match"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.content_match"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)"
+    ]
+  }
+]

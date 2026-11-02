@@ -1,0 +1,158 @@
+[
+  {
+    "id": "BPD-grammar",
+    "type": "grammar",
+    "items": "29",
+    "basis": {
+      "scope": "since2018",
+      "passages": 29,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 152,
+        "max": 165
+      },
+      "wordCountMedian": 161,
+      "paragraphsMean": 1.03,
+      "avgSentenceLength": 20.86,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 3
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 35.29,
+        "participlePhrase": 24.43,
+        "toInfinitive": 44.34,
+        "nounClause": 42.53,
+        "inversion": 0.9
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "social_science": 0.5517,
+        "natural_science": 0.2069,
+        "humanities": 0.1379,
+        "arts": 0.069,
+        "daily_life": 0.0345
+      }
+    },
+    "evidence": {
+      "meanSpans": 1,
+      "position": {
+        "early": 0.25,
+        "middle": 0.5357,
+        "late": 0.2143
+      }
+    },
+    "grammarPoints": [
+      {
+        "point": "participle_form",
+        "ratio": 0.1793
+      },
+      {
+        "point": "relative_pronoun",
+        "ratio": 0.1793
+      },
+      {
+        "point": "pronoun_reflexive",
+        "ratio": 0.1172
+      },
+      {
+        "point": "adjective_adverb",
+        "ratio": 0.1034
+      },
+      {
+        "point": "infinitive_gerund",
+        "ratio": 0.1034
+      },
+      {
+        "point": "subject_verb_agreement",
+        "ratio": 0.0828
+      },
+      {
+        "point": "parallelism",
+        "ratio": 0.0552
+      },
+      {
+        "point": "other",
+        "ratio": 0.0414
+      },
+      {
+        "point": "finite_vs_nonfinite",
+        "ratio": 0.0345
+      },
+      {
+        "point": "pro_verb",
+        "ratio": 0.0276
+      },
+      {
+        "point": "active_passive",
+        "ratio": 0.0207
+      },
+      {
+        "point": "conjunction_vs_preposition",
+        "ratio": 0.0207
+      },
+      {
+        "point": "relative_adverb",
+        "ratio": 0.0138
+      },
+      {
+        "point": "tense_mood",
+        "ratio": 0.0138
+      },
+      {
+        "point": "inversion",
+        "ratio": 0.0069
+      }
+    ],
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.grammar.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.grammar.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.grammar.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.grammar.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.grammar.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.grammar"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.grammar"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.grammarPoints"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)"
+    ]
+  }
+]

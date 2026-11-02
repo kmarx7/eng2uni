@@ -43,6 +43,7 @@ describe("kindForPath", () => {
     ["questions/L0/U05.json", "question"],
     ["vocabulary/middle.json", "vocabulary"],
     ["blueprints/blank.json", "blueprint"],
+    ["blueprint-drafts/blank_inference.json", "blueprintDraft"],
     ["passages/p.json", "passage"],
     ["units/L0-U05.json", "unit"],
     ["sentences/s.json", "sentence"],

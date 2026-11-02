@@ -1,0 +1,91 @@
+[
+  {
+    "id": "BPD-irrelevant_sentence",
+    "type": "irrelevant_sentence",
+    "items": "35",
+    "basis": {
+      "scope": "since2018",
+      "passages": 29,
+      "taggedItems": 812,
+      "tagsReviewed": false
+    },
+    "passage": {
+      "wordCount": {
+        "min": 156,
+        "max": 173
+      },
+      "wordCountMedian": 169,
+      "paragraphsMean": 1.07,
+      "avgSentenceLength": 23.58,
+      "maxClauseDepth": {
+        "min": 1,
+        "max": 3
+      },
+      "constructionsPer100Sentences": {
+        "relativeClause": 22.17,
+        "participlePhrase": 18.72,
+        "toInfinitive": 45.32,
+        "nounClause": 29.56,
+        "inversion": 0
+      },
+      "vocabBand": {
+        "source": "csat_frequency",
+        "topN": 4000,
+        "coverage": 0.9657
+      },
+      "topicDomains": {
+        "social_science": 0.6897,
+        "natural_science": 0.2069,
+        "daily_life": 0.069,
+        "arts": 0.0345
+      }
+    },
+    "evidence": {
+      "meanSpans": 1.97,
+      "position": {
+        "early": 0.0877,
+        "middle": 0.386,
+        "late": 0.5263
+      }
+    },
+    "sourceStats": [
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.irrelevant_sentence.wordCount"
+      },
+      {
+        "file": "analysis/passage_stats.json",
+        "path": "byScope.since2018.irrelevant_sentence.paragraphs"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.irrelevant_sentence.sentenceLength"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.irrelevant_sentence.clauseDepthHistogram"
+      },
+      {
+        "file": "analysis/syntax_stats.json",
+        "path": "byScope.since2018.irrelevant_sentence.constructions"
+      },
+      {
+        "file": "analysis/vocab_frequency.json",
+        "path": "coverageCurve.since2018"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.topicDomainsByType.irrelevant_sentence"
+      },
+      {
+        "file": "analysis/tagging_stats.json",
+        "path": "byScope.since2018.evidenceByType.irrelevant_sentence"
+      }
+    ],
+    "pending": [
+      "requiredSkills: content/skills.json이 아직 없어 비워 둠",
+      "answerBasis(정답 근거 서술): 통계로 정할 수 없어 사람이 작성",
+      "AI 태그 표본 검수 전 수치(함정·어법·빈칸·단서·소재·근거 위치)"
+    ]
+  }
+]

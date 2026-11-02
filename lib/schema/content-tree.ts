@@ -28,6 +28,8 @@ const KIND_DIRS: Record<string, ContentKind> = {
   questions: "question",
   vocabulary: "vocabulary",
   blueprints: "blueprint",
+  // Stage 5 statistical drafts; only expected under drafts/.
+  "blueprint-drafts": "blueprintDraft",
 };
 
 // Maps a path relative to a content root to the kind of item it holds.

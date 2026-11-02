@@ -19,7 +19,8 @@
     "validate:analysis": "tsx scripts/validate-analysis.ts",
     "tag:items": "tsx scripts/tag-items.ts",
     "tag:review": "tsx scripts/tag-review.ts",
-    "analyze:tags": "tsx scripts/tag-stats.ts && npm run analyze:leaks && npm run validate:analysis"
+    "analyze:tags": "tsx scripts/tag-stats.ts && npm run analyze:leaks && npm run validate:analysis",
+    "blueprints:draft": "tsx scripts/blueprint-drafts.ts && npm run validate:content"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
