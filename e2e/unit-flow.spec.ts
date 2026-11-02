@@ -9,6 +9,11 @@ const ASSESSMENT = ["FIXTURE-Q-002", "FIXTURE-Q-004", "FIXTURE-Q-005", "FIXTURE-
 const RIGHT = ["plays", "kicks", "reads", "build", "The boy", "Tom", "Birds", "아니다"];
 
 const role = (page: Page, symbol: string) => page.getByRole("group", { name: "역할 고르기" }).getByRole("button", { name: new RegExp(`^${symbol}`) });
+// Tags are checked on the server; wait for the answer before the next tap.
+async function tag(page: Page, symbol: string, label: string) {
+  await role(page, symbol).click();
+  await expect(page.getByRole("status").filter({ hasText: `${label}를 찾았어요.` })).toBeVisible();
+}
 const token = (page: Page, text: string) => page.getByRole("region", { name: "문장 성분 표시" }).getByRole("button", { name: text, exact: true });
 
 async function answerAndNext(page: Page, option: string) {
@@ -32,22 +37,23 @@ test("the demo unit, from concept to a pass that opens the next unit", async ({ 
   await role(page, "V").click();
   await expect(page.getByText("다시 골라 보세요. 고른 부분은 동사가 아닙니다.")).toBeVisible();
   await token(page, "drinks").click();
-  await role(page, "V").click();
+  await tag(page, "V", "동사");
   await token(page, "The").click();
   await token(page, "cat").click();
-  await role(page, "S").click();
+  await tag(page, "S", "주어");
   await token(page, "milk").click();
-  await role(page, "O").click();
+  await tag(page, "O", "목적어");
   await expect(page.getByText("고양이가 우유를 마신다.")).toBeVisible();
   await expect(page.getByText("고양이가", { exact: true })).toBeVisible();
   await expectNoHorizontalOverflow(page);
   await page.getByRole("button", { name: "다음" }).click();
 
   // Role tagging by keyboard: the head noun alone counts as the subject.
-  for (const [word, key] of [["boy", "s"], ["kicks", "v"]] as const) {
+  for (const [word, key, label] of [["boy", "s", "주어"], ["kicks", "v", "동사"]] as const) {
     await token(page, word).focus();
     await page.keyboard.press("Enter");
     await page.keyboard.press(key);
+    await expect(page.getByRole("status").filter({ hasText: `${label}를 찾았어요.` })).toBeVisible();
   }
   await token(page, "the").focus();
   await page.keyboard.press("Enter");

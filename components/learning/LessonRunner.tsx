@@ -9,7 +9,17 @@ import { useEffect, useState } from "react";
 import { type AnsweredQuestion, PracticeQuestion } from "@/components/question/PracticeQuestion";
 import { buttonVariants } from "@/components/ui/button";
 import type { AnswerResult, UnitBundle } from "@/lib/content/learning";
-import { currentStep, flowBlocks, type LessonAction, type LessonContext, lessonReducer, roundScore, startLesson } from "@/lib/engine/lesson";
+import {
+  canRetry,
+  currentStep,
+  flowBlocks,
+  type LessonAction,
+  type LessonContext,
+  lessonReducer,
+  reconcileLesson,
+  roundScore,
+  startLesson,
+} from "@/lib/engine/lesson";
 import { isUnlocked, nextUnit, recordLessonAnswer, scheduleDelayedCheck } from "@/lib/engine/skillProgress";
 import type { LessonBlock } from "@/lib/schema/curriculum";
 import type { LessonState, LocalProgress } from "@/lib/schema/progress";
@@ -83,6 +93,16 @@ export function LessonRunner({ bundle, units }: LessonRunnerProps) {
     updateProgress((p) => (p.lessons[unit.id] ? p : { ...p, lessons: { ...p.lessons, [unit.id]: startLesson(context(bundle, p), new Date()) } }));
   }, [state, profile, unlocked, lesson, bundle, unit.id]);
 
+  // Saved progress planned from older content: drop what the unit no longer has.
+  useEffect(() => {
+    if (!lesson) return;
+    updateProgress((p) => {
+      const current = p.lessons[unit.id];
+      const fixed = current && reconcileLesson(current, context(bundle, p), new Date());
+      return fixed ? { ...p, lessons: { ...p.lessons, [unit.id]: fixed } } : p;
+    });
+  }, [lesson, bundle, unit.id]);
+
   const heading = <p className="text-caption text-muted-foreground">{unit.title}</p>;
   if (!state || !profile) return heading;
 
@@ -111,8 +131,11 @@ export function LessonRunner({ bundle, units }: LessonRunnerProps) {
   }
 
   let body: React.ReactNode;
-  if (activeQuestion) {
-    const question = bundle.questions.find((q) => q.id === activeQuestion)!;
+  const question = activeQuestion ? bundle.questions.find((q) => q.id === activeQuestion) : undefined;
+  if (activeQuestion && !question) {
+    // Waiting for reconcileLesson to drop a question the unit no longer has.
+    body = null;
+  } else if (activeQuestion && question) {
     body = (
       <PracticeQuestion
         // The id alone: answering can move the lesson to another phase while this
@@ -147,14 +170,13 @@ export function LessonRunner({ bundle, units }: LessonRunnerProps) {
   } else if (step.kind === "block") {
     body = <BlockView key={`${step.block.id}-${lesson.round}-${lesson.phase}`} block={step.block} bundle={bundle} />;
   } else {
-    const index = units.findIndex((u) => u.id === unit.id);
     body = (
       <LessonResult
         lesson={lesson}
         score={roundScore(lesson, unit)}
         nextUnit={nextUnit(units, state.progress.lessons)}
-        previousUnit={index > 0 ? units[index - 1] : null}
         onContinue={() => dispatch(bundle, { type: "blockDone" })}
+        onRetry={canRetry(lesson) ? () => dispatch(bundle, { type: "retry" }) : null}
       />
     );
   }
@@ -216,7 +238,9 @@ function SentenceTask({ block, bundle }: { block: Extract<LessonBlock, { type: "
     }
   }
 
-  if (!sentence || (block.interaction !== "role_tagging" && block.interaction !== "sentence_building")) {
+  const tagging = block.interaction === "role_tagging" && sentence?.tokens && sentence.roles ? { ...sentence, tokens: sentence.tokens, roles: sentence.roles } : null;
+  const building = block.interaction === "sentence_building" && sentence?.chips ? { ...sentence, chips: sentence.chips } : null;
+  if (!tagging && !building) {
     // An interaction this stage does not build yet: say so instead of pretending.
     return (
       <ConceptBlock heading="준비 중" body="이 연습은 아직 준비 중입니다. 다음으로 넘어가세요." onDone={() => dispatch(bundle, { type: "blockDone" })} />
@@ -234,10 +258,10 @@ function SentenceTask({ block, bundle }: { block: Extract<LessonBlock, { type: "
           </span>
         )}
       </p>
-      {block.interaction === "role_tagging" ? (
-        <SentenceAnalyzer key={sentence.id} sentence={sentence} mode="role_tagging" onDone={finish} />
+      {tagging ? (
+        <SentenceAnalyzer key={tagging.id} sentence={tagging} mode="role_tagging" onDone={finish} />
       ) : (
-        <SentenceBuilder key={sentence.id} sentence={sentence} seed={sentence.id} onDone={() => finish(true)} />
+        <SentenceBuilder key={building!.id} sentence={building!} onDone={() => finish(true)} />
       )}
     </div>
   );

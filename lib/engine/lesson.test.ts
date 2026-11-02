@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { LessonAttempt, LessonState } from "@/lib/schema/progress";
 import type { Unit } from "@/lib/schema/curriculum";
-import { currentStep, roundScore, type LessonAction, type LessonContext, lessonReducer, startLesson } from "./lesson";
+import { currentStep, reconcileLesson, roundScore, type LessonAction, type LessonContext, lessonReducer, startLesson } from "./lesson";
 
 const now = new Date("2026-11-02T09:00:00+09:00");
 const A = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"];
@@ -159,5 +159,44 @@ describe("roundScore", () => {
   it("counts credited answers of the judged round only", () => {
     const { state } = drive(ctx(), [...toAssessment, answer(true, undefined, 3), ...Array(6).fill(answer(true)), answer(false)]);
     expect(roundScore(state, unit)).toEqual({ correct: 6, total: 8 });
+  });
+});
+
+describe("review fixes", () => {
+  it("treats a unit with no tagging task as having passed the analyzer task", () => {
+    const noTagging = { ...unit, blocks: unit.blocks.filter((b) => b.id !== "T") };
+    const c = ctx({ unit: noTagging });
+    const { state } = drive(c, [done, answer(true), ...Array(8).fill(answer(true))]);
+    expect(state).toMatchObject({ judgment: "can_progress", status: "awaiting_delayed_check" });
+  });
+
+  it("retries a held judgment with a new round of variants", () => {
+    const c = ctx({ questions: fullPool.filter((q) => !["V4", "V5", "V6", "V7"].includes(q.id)) });
+    let { state } = drive(c, [...toAssessment, answer(false, "m1"), answer(false, "m1"), ...Array(6).fill(answer(true)), done, done]);
+    ({ state } = drive(c, [...Array(state.queue.length).fill(answer(true))], state));
+    ({ state } = drive(c, Array(state.queue.length).fill(answer(true)), state));
+    expect(state.judgment).toBe("learning");
+    const more = ctx({ questions: [...c.questions, ...g(["X1", "X2", "X3", "X4"], "G1"), ...g(["Y1", "Y2", "Y3", "Y4"], "G2")] });
+    const retried = drive(more, [{ type: "retry" }], state).state;
+    expect(retried).toMatchObject({ phase: "reassessment", round: 2, queue: ["X1", "X2", "X3", "X4", "W5", "Y1", "Y2", "Y3"] });
+  });
+
+  it("retries a failed foundation check instead of looping to the previous unit", () => {
+    const c = ctx();
+    const low = drive(c, [...toAssessment, ...Array(4).fill(answer(true)), ...Array(4).fill(answer(false)), done, answer(false), answer(false), answer(false)]).state;
+    expect(low).toMatchObject({ phase: "result", judgment: "foundation_check" });
+    expect(drive(c, [{ type: "retry" }], low).state).toMatchObject({ phase: "reassessment", round: 1 });
+  });
+
+  it("drops saved questions that are no longer in the unit and moves on", () => {
+    const c = ctx();
+    const { state } = drive(c, toAssessment);
+    const stale = { ...state, queue: ["GONE", ...state.queue.slice(0, 1)] };
+    expect(reconcileLesson(stale, c, now)?.queue).toEqual(["A1"]);
+    expect(reconcileLesson(state, c, now)).toBeNull();
+    const pastEnd = { ...state, blockIndex: 9, queue: [] };
+    expect(reconcileLesson(pastEnd, c, now)).toMatchObject({ phase: "result" });
+    const emptied = { ...state, queue: ["GONE"] };
+    expect(reconcileLesson(emptied, c, now)).toMatchObject({ phase: "result" });
   });
 });

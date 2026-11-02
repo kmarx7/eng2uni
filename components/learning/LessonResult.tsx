@@ -8,12 +8,13 @@ interface LessonResultProps {
   lesson: LessonState;
   score: { correct: number; total: number };
   nextUnit: { id: string; title: string } | null;
-  previousUnit: { id: string; title: string } | null;
   onContinue: () => void;
+  // Set when the result has no step forward except a new round of questions.
+  onRetry: (() => void) | null;
 }
 
 // What the judgment means for the student and where to go next (DESIGN 5-2).
-export function LessonResult({ lesson, score, nextUnit, previousUnit, onContinue }: LessonResultProps) {
+export function LessonResult({ lesson, score, nextUnit, onContinue, onRetry }: LessonResultProps) {
   const foundationFailed = lesson.judgment === "foundation_check" && lesson.attempts.some((a) => a.phase === "foundation" && a.round === lesson.round);
   const needsAnalyzer = lesson.judgment === "learning" && !lesson.analyzerPassed && score.total > 0;
 
@@ -43,12 +44,14 @@ export function LessonResult({ lesson, score, nextUnit, previousUnit, onContinue
       break;
     case "foundation_check":
       title = foundationFailed ? "기초부터 다시 확인해요" : "기초를 먼저 확인해요";
-      detail = foundationFailed ? "앞 단원을 복습한 뒤 다시 도전해 보세요." : "앞에서 배운 내용을 짧게 확인할게요.";
+      detail = foundationFailed ? "앞에서 배운 내용을 다시 살펴본 뒤, 새 문제로 다시 도전해 보세요." : "앞에서 배운 내용을 짧게 확인할게요.";
       action = foundationFailed ? "home" : "continue";
       break;
     default:
       title = needsAnalyzer ? "문장 성분 표시를 한 번 더 해 봐요" : "판정을 미뤘습니다";
-      detail = needsAnalyzer ? "문제는 잘 풀었어요. 주어·동사·목적어 표시를 다시 연습하면 통과할 수 있어요." : "문항이 부족해 이번에는 판정하지 않았어요.";
+      detail = needsAnalyzer
+        ? "문제는 잘 풀었어요. 주어·동사·목적어 표시를 다시 연습하면 통과할 수 있어요."
+        : "문항이 부족해 이번에는 판정하지 않았어요. 새 문제로 다시 도전하면 판정할 수 있어요.";
       action = needsAnalyzer ? "continue" : "home";
   }
 
@@ -76,10 +79,10 @@ export function LessonResult({ lesson, score, nextUnit, previousUnit, onContinue
           다음 단원: {nextUnit.title}
         </Link>
       )}
-      {foundationFailed && previousUnit && (
-        <Link href={`/learn/${previousUnit.id}`} className={cn(buttonVariants(), "h-12 text-base")}>
-          앞 단원 복습: {previousUnit.title}
-        </Link>
+      {onRetry && (
+        <Button onClick={onRetry} className="h-12 text-base">
+          새 문제로 다시 도전
+        </Button>
       )}
       <Link href="/dashboard" className={cn(buttonVariants({ variant: "outline" }), "h-12 text-base")}>
         대시보드로

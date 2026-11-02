@@ -9,6 +9,7 @@ import {
   recordLessonAnswer,
   recordSkillReview,
   scheduleDelayedCheck,
+  skipSkillReview,
 } from "./skillProgress";
 
 const now = new Date("2026-11-02T09:00:00+09:00");
@@ -116,5 +117,26 @@ describe("unit order", () => {
     expect(nextUnit(units, waiting)).toEqual(units[1]);
     expect(nextUnit(units, { ...waiting, U2: lesson("U2", "passed") })).toBeNull();
     expect(isUnlocked("U9", units, {})).toBe(false);
+  });
+});
+
+describe("review fixes", () => {
+  it("does not pass a delayed check on the day the unit passed", () => {
+    const units = [{ id: "U1", skills: ["s1"] }];
+    const passed = { ...lesson("U1", "awaiting_delayed_check"), attempts: [attempt(true)] };
+    const p = scheduleDelayedCheck({ ...start(), lessons: { U1: passed } }, ["s1"], now);
+    const sameDay = recordSkillReview(p, { skillId: "s1", correct: true, hintLevel: 0, durationMs: 1000 }, units, new Date(now.getTime() + 3_600_000));
+    expect(sameDay.lessons.U1.status).toBe("awaiting_delayed_check");
+    expect(sameDay.skills.s1.delayedCheckPassed).toBe(false);
+    const nextDay = recordSkillReview(p, { skillId: "s1", correct: true, hintLevel: 0, durationMs: 1000 }, units, new Date(now.getTime() + 86_400_000));
+    expect(nextDay.lessons.U1.status).toBe("passed");
+  });
+
+  it("puts off a skill with no question left until tomorrow and logs the shortage", () => {
+    const p = recordLessonAnswer(start(), { attempt: attempt(false), skills: ["s1"], durationMs: 1000 }, now);
+    const later = new Date(now.getTime() + 3_600_000);
+    const skipped = skipSkillReview(p, "s1", later);
+    expect(Date.parse(skillCard(skipped, "s1")!.fsrs.due)).toBe(later.getTime() + 86_400_000);
+    expect(skipped.shortages).toEqual([{ at: later.toISOString(), skillId: "s1" }]);
   });
 });

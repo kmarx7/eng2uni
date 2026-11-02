@@ -4,11 +4,14 @@ import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import type { Question } from "@/lib/schema/question";
-import { gradeAnswer, hintFor, loadApprovedQuestion, loadReviewBundle, loadStudentUnits, loadUnitBundle, toPublicQuestion } from "./learning";
+import type { AnnotatedSentence } from "@/lib/schema/sentence";
+import { buildResult, gradeAnswer, hintFor, loadApprovedQuestion, loadApprovedSentence, loadReviewBundle, loadStudentUnits, loadUnitBundle, tagResult, toPublicQuestion } from "./learning";
 
 const FIXTURES = path.join(__dirname, "../../content/_fixtures/valid");
 const questions: Question[] = JSON.parse(readFileSync(path.join(FIXTURES, "questions/FIXTURE-Q.json"), "utf8"));
 const q = (id: string) => questions.find((x) => x.id === id)!;
+const sentences: AnnotatedSentence[] = JSON.parse(readFileSync(path.join(FIXTURES, "sentences/FIXTURE-S.json"), "utf8"));
+const sentence = (id: string) => sentences.find((x) => x.id === id)!;
 const misconceptions = JSON.parse(readFileSync(path.join(FIXTURES, "misconceptions.json"), "utf8"));
 
 // A copy of the fixtures where one unit and one question are drafts.
@@ -109,5 +112,41 @@ describe("loading", () => {
     ]);
     expect(bundle.questions).toHaveLength(questions.length);
     expect(JSON.stringify(bundle)).not.toContain("explanation");
+  });
+});
+
+describe("sentences leave the server without their answers", () => {
+  it("sends tokens and role symbols, never spans, glosses or translations, for tagging and questions", () => {
+    const bundle = loadUnitBundle("FIXTURE-U01", FIXTURES)!;
+    const text = JSON.stringify(bundle.sentences);
+    for (const secret of ["spans", "gloss", "MAIN_VERB", "고양이가", "chunkedTranslation", "고양이가 우유를 마신다."]) expect(text).not.toContain(secret);
+    expect(bundle.sentences.find((s) => s.id === "FIXTURE-S-001")).toEqual({ id: "FIXTURE-S-001", tokens: ["The", "cat", "drinks", "milk", "."], roles: ["S", "V", "O"] });
+    expect(JSON.stringify(loadReviewBundle(FIXTURES).sentences)).not.toContain("spans");
+  });
+
+  it("sends a building sentence as shuffled chips with its translation as the prompt", () => {
+    const building = loadUnitBundle("FIXTURE-U01", FIXTURES)!.sentences.find((s) => s.id === "FIXTURE-S-004")!;
+    expect(building.chips).toHaveLength(5);
+    expect(building.chips).not.toEqual(["We", "eat", "lunch", "at", "noon"]);
+    expect(building.translation).toBe("우리는 정오에 점심을 먹는다.");
+  });
+
+  it("checks a role tag on the server, with the translation once every role is tagged", () => {
+    const s = sentence("FIXTURE-S-001");
+    expect(tagResult(s, "V", [2, 2], [])).toEqual({ correct: true, range: [2, 2], gloss: "마신다" });
+    expect(tagResult(s, "S", [1, 1], ["V"])).toEqual({ correct: true, range: [0, 1], gloss: "고양이가" });
+    expect(tagResult(s, "O", [2, 2], ["S", "V"])).toEqual({ correct: false });
+    expect(tagResult(s, "O", [3, 3], ["S", "V"])).toEqual({ correct: true, range: [3, 3], gloss: "우유를", translation: "고양이가 우유를 마신다." });
+  });
+
+  it("checks a built sentence on the server, with the sentence once it is right", () => {
+    const s = sentence("FIXTURE-S-004");
+    expect(buildResult(s, ["eat", "We", "lunch", "at", "noon"])).toEqual({ marks: [false, false, true, true, true] });
+    expect(buildResult(s, ["We", "eat", "lunch", "at", "noon"])).toEqual({ marks: [true, true, true, true, true], text: "We eat lunch at noon." });
+  });
+
+  it("finds an approved sentence by id", () => {
+    expect(loadApprovedSentence("FIXTURE-S-001", FIXTURES)?.id).toBe("FIXTURE-S-001");
+    expect(loadApprovedSentence("FIXTURE-S-999", FIXTURES)).toBeNull();
   });
 });

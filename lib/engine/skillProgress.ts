@@ -4,6 +4,7 @@ import type { LessonAttempt, LessonState, LocalProgress, ReviewCard } from "@/li
 import { gradeCard, newCardState } from "@/lib/srs";
 import { countsAsCorrect, skillGrade } from "./grade";
 import { DELAYED_CHECK_DAYS } from "./mastery";
+import { localDayKey } from "./planToday";
 
 const DAY_MS = 86_400_000;
 
@@ -65,8 +66,15 @@ export function scheduleDelayedCheck(progress: LocalProgress, skillIds: string[]
   return next;
 }
 
-// One skill review answer. A credited answer passes the skill's delayed check;
-// a unit waiting on its check passes once all of its skills have.
+// The local day a unit was passed: its last answer (DESIGN 5-2 wants the check on another day).
+function passDay(lesson: LessonState): string {
+  const last = lesson.attempts.reduce((latest, a) => (a.at > latest ? a.at : latest), lesson.updatedAt);
+  return localDayKey(new Date(last));
+}
+
+// One skill review answer. A credited answer on a later day than the unit's pass
+// passes the skill's delayed check; a unit waiting on its check passes once all
+// of its skills have.
 export function recordSkillReview(
   progress: LocalProgress,
   answer: { skillId: string; correct: boolean; hintLevel: number; durationMs: number },
@@ -77,15 +85,27 @@ export function recordSkillReview(
   const fsrs = gradeCard(findSkillCard(progress, answer.skillId)?.fsrs ?? newCardState(now), skillGrade(answer), now);
   let next = putCard(progress, { userId: user, itemType: "skill", itemId: answer.skillId, fsrs });
   if (!countsAsCorrect(answer)) return next;
+  const today = localDayKey(now);
+  const waiting = units.filter((u) => u.skills.includes(answer.skillId) && next.lessons[u.id]?.status === "awaiting_delayed_check");
+  if (waiting.some((u) => passDay(next.lessons[u.id]) >= today)) return next;
   next = { ...next, skills: { ...next.skills, [answer.skillId]: { ...(next.skills[answer.skillId] ?? freshSkill()), delayedCheckPassed: true } } };
   const lessons = { ...next.lessons };
-  for (const unit of units) {
-    const lesson = lessons[unit.id];
-    if (lesson?.status === "awaiting_delayed_check" && unit.skills.every((s) => next.skills[s]?.delayedCheckPassed)) {
-      lessons[unit.id] = { ...lesson, status: "passed", judgment: "mastered", updatedAt: now.toISOString() };
+  for (const unit of waiting) {
+    if (unit.skills.every((s) => next.skills[s]?.delayedCheckPassed)) {
+      lessons[unit.id] = { ...lessons[unit.id], status: "passed", judgment: "mastered", updatedAt: now.toISOString() };
     }
   }
   return { ...next, lessons };
+}
+
+// A due skill with no question left to ask: try again tomorrow, so it does not
+// hold the dashboard on an empty review, and log the shortage.
+export function skipSkillReview(progress: LocalProgress, skillId: string, now: Date): LocalProgress {
+  const card = findSkillCard(progress, skillId);
+  const at = now.toISOString();
+  const next = { ...progress, shortages: [...progress.shortages, { at, skillId }] };
+  if (!card) return next;
+  return putCard(next, { ...card, fsrs: { ...card.fsrs, due: new Date(now.getTime() + DAY_MS).toISOString() } });
 }
 
 interface SkillQuestion {

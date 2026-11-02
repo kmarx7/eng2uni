@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { PracticeQuestion } from "@/components/question/PracticeQuestion";
 import { buttonVariants } from "@/components/ui/button";
 import type { ReviewBundle } from "@/lib/content/learning";
-import { lastMissedGroup, pickSkillReviewQuestion, recordSkillReview } from "@/lib/engine/skillProgress";
+import { lastMissedGroup, pickSkillReviewQuestion, recordSkillReview, skipSkillReview } from "@/lib/engine/skillProgress";
 import type { LocalProgress } from "@/lib/schema/progress";
 import { isDue } from "@/lib/srs";
 import { cn } from "@/lib/utils";
@@ -45,12 +45,12 @@ export function SkillReviewSession({ bundle }: { bundle: ReviewBundle }) {
     if (state && !profile) router.replace("/start");
   }, [state, profile, router]);
 
-  // Log skills that had no question left, once per planned session.
+  // Skills with no question left wait until tomorrow (and are logged), once per planned session.
   const missing = items?.filter((i) => i.questionId === null).map((i) => i.skillId).join(",");
   useEffect(() => {
     if (!missing) return;
-    const at = new Date().toISOString();
-    updateProgress((p) => ({ ...p, shortages: [...p.shortages, ...missing.split(",").map((skillId) => ({ at, skillId }))] }));
+    const now = new Date();
+    updateProgress((p) => missing.split(",").reduce((acc, skillId) => skipSkillReview(acc, skillId, now), p));
   }, [missing]);
 
   if (!state || !profile || !items) return <h1 className="text-title font-bold">개념 복습</h1>;

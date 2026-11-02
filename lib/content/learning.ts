@@ -6,6 +6,7 @@ import path from "node:path";
 import type { z } from "zod";
 import { Level, Misconception, Skill, Unit } from "@/lib/schema/curriculum";
 import { Question } from "@/lib/schema/question";
+import { builderTokens, checkBuild, checkRoleTag, type RoleSymbol, shuffled, targetSpans } from "@/lib/engine/analyzer";
 import { AnnotatedSentence } from "@/lib/schema/sentence";
 
 const defaultDir = () => process.env.CONTENT_DIR ?? "content";
@@ -57,6 +58,65 @@ export function toPublicQuestion(q: Question): PublicQuestion {
     ...(q.variantGroup ? { variantGroup: q.variantGroup } : {}),
     hintLevels,
   };
+}
+
+// A sentence as the page gets it: tokens to show (questions, tagging), the role
+// symbols to find (tagging), or shuffled chips and the translation prompt
+// (building). Spans, glosses and translations stay on the server.
+export interface PublicSentence {
+  id: string;
+  tokens?: string[];
+  roles?: RoleSymbol[];
+  chips?: string[];
+  translation?: string;
+}
+
+interface SentenceUses {
+  shown: boolean;
+  tagging: boolean;
+  building: boolean;
+}
+
+export function toPublicSentence(s: AnnotatedSentence, uses: SentenceUses): PublicSentence {
+  const spans = targetSpans(s);
+  return {
+    id: s.id,
+    ...(uses.shown || uses.tagging ? { tokens: s.tokens } : {}),
+    ...(uses.tagging ? { roles: (["S", "V", "O"] as const).filter((r) => spans[r]) } : {}),
+    ...(uses.building ? { chips: shuffled(builderTokens(s), s.id), translation: s.translation } : {}),
+  };
+}
+
+export interface TagResult {
+  correct: boolean;
+  range?: [number, number];
+  gloss?: string;
+  // Once every role of the sentence is tagged.
+  translation?: string;
+}
+
+export function tagResult(s: AnnotatedSentence, symbol: RoleSymbol, range: [number, number], tagged: RoleSymbol[]): TagResult {
+  const { correct, span } = checkRoleTag(s, symbol, range);
+  if (!correct || !span) return { correct: false };
+  const spans = targetSpans(s);
+  const done = (["S", "V", "O"] as const).filter((r) => spans[r]).every((r) => r === symbol || tagged.includes(r));
+  return {
+    correct: true,
+    range: span.range,
+    ...(span.gloss ? { gloss: span.gloss } : {}),
+    ...(done ? { translation: s.translation } : {}),
+  };
+}
+
+export interface BuildResult {
+  marks: boolean[];
+  // The finished sentence, once every word is in place.
+  text?: string;
+}
+
+export function buildResult(s: AnnotatedSentence, words: string[]): BuildResult {
+  const marks = checkBuild(builderTokens(s), words);
+  return marks.every(Boolean) ? { marks, text: s.text } : { marks };
 }
 
 export interface AnswerResult {
@@ -118,13 +178,17 @@ export function loadApprovedQuestion(id: string, contentDir = defaultDir()): Que
   return loadAll(contentDir).questions.find((q) => q.id === id) ?? null;
 }
 
+export function loadApprovedSentence(id: string, contentDir = defaultDir()): AnnotatedSentence | null {
+  return loadAll(contentDir).sentences.find((s) => s.id === id) ?? null;
+}
+
 export function loadMisconceptions(contentDir = defaultDir()): Misconception[] {
   return loadAll(contentDir).misconceptions;
 }
 
 export interface UnitBundle {
   unit: Unit;
-  sentences: AnnotatedSentence[];
+  sentences: PublicSentence[];
   questions: PublicQuestion[];
   misconceptions: { id: string; remedialBlockId?: string }[];
   prerequisiteQuestionIds: string[];
@@ -154,13 +218,15 @@ export function loadUnitBundle(unitId: string, contentDir = defaultDir()): UnitB
   const questions = all.questions.filter(
     (q) => direct.has(q.id) || (q.variantGroup && groups.has(q.variantGroup)) || prerequisiteQuestions.includes(q),
   );
-  const sentenceIds = new Set([
-    ...unit.blocks.flatMap((b) => (b.type === "sentence_task" ? b.sentenceIds : [])),
-    ...questions.flatMap((q) => (q.sentenceId ? [q.sentenceId] : [])),
-  ]);
+  const tasks = unit.blocks.flatMap((b) => (b.type === "sentence_task" ? [b] : []));
+  const tagging = new Set(tasks.filter((b) => b.interaction === "role_tagging").flatMap((b) => b.sentenceIds));
+  const building = new Set(tasks.filter((b) => b.interaction === "sentence_building").flatMap((b) => b.sentenceIds));
+  const shown = new Set(questions.flatMap((q) => (q.sentenceId ? [q.sentenceId] : [])));
   return {
     unit,
-    sentences: all.sentences.filter((s) => sentenceIds.has(s.id)),
+    sentences: all.sentences
+      .filter((s) => shown.has(s.id) || tagging.has(s.id) || building.has(s.id))
+      .map((s) => toPublicSentence(s, { shown: shown.has(s.id), tagging: tagging.has(s.id), building: building.has(s.id) })),
     questions: questions.map(toPublicQuestion),
     misconceptions: all.misconceptions.map(({ id, remedialBlockId }) => (remedialBlockId ? { id, remedialBlockId } : { id })),
     prerequisiteQuestionIds: prerequisiteQuestions.map((q) => q.id),
@@ -169,7 +235,7 @@ export function loadUnitBundle(unitId: string, contentDir = defaultDir()): UnitB
 
 export interface ReviewBundle {
   questions: PublicQuestion[];
-  sentences: AnnotatedSentence[];
+  sentences: PublicSentence[];
   units: { id: string; skills: string[] }[];
 }
 
@@ -179,7 +245,9 @@ export function loadReviewBundle(contentDir = defaultDir()): ReviewBundle {
   const sentenceIds = new Set(all.questions.flatMap((q) => (q.sentenceId ? [q.sentenceId] : [])));
   return {
     questions: all.questions.map(toPublicQuestion),
-    sentences: all.sentences.filter((s) => sentenceIds.has(s.id)),
+    sentences: all.sentences
+      .filter((s) => sentenceIds.has(s.id))
+      .map((s) => toPublicSentence(s, { shown: true, tagging: false, building: false })),
     units: all.units.map((u) => ({ id: u.id, skills: u.skills })),
   };
 }

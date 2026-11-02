@@ -1,34 +1,57 @@
 "use client";
 
 // Sentence building (DESIGN 13-2): tap shuffled word chips in order; undo takes
-// back the last chip. When every chip is placed, wrong positions are marked and
-// the student fixes them from the first wrong word.
+// back the last chip. When every chip is placed the server checks the order,
+// wrong positions are marked, and the student fixes them from the first wrong word.
 import { Undo2 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { checkBuiltSentence } from "@/app/(student)/learn/actions";
 import { Button } from "@/components/ui/button";
-import { builderTokens, checkBuild, shuffled } from "@/lib/engine/analyzer";
-import type { AnnotatedSentence } from "@/lib/schema/sentence";
+import type { BuildResult, PublicSentence } from "@/lib/content/learning";
 import { cn } from "@/lib/utils";
 
 interface SentenceBuilderProps {
-  sentence: AnnotatedSentence;
-  seed: string;
+  sentence: PublicSentence & { chips: string[] };
   onDone: () => void;
 }
 
-export function SentenceBuilder({ sentence, seed, onDone }: SentenceBuilderProps) {
-  const expected = builderTokens(sentence);
-  const [chips] = useState(() => shuffled(expected, seed));
+export function SentenceBuilder({ sentence, onDone }: SentenceBuilderProps) {
+  const { chips } = sentence;
   const [built, setBuilt] = useState<number[]>([]);
+  const [result, setResult] = useState<BuildResult | null>(null);
+  const [error, setError] = useState("");
+  const checking = useRef(false);
   const words = built.map((i) => chips[i]);
   const full = built.length === chips.length;
-  const marks = full ? checkBuild(expected, words) : null;
-  const solved = marks?.every(Boolean) ?? false;
+  const solved = result?.text !== undefined;
+
+  async function place(index: number) {
+    const next = [...built, index];
+    setBuilt(next);
+    if (next.length < chips.length || checking.current) return;
+    checking.current = true;
+    setError("");
+    try {
+      setResult(await checkBuiltSentence(sentence.id, next.map((i) => chips[i])));
+    } catch {
+      setError("확인하지 못했습니다. 되돌린 뒤 다시 놓아 주세요.");
+    } finally {
+      checking.current = false;
+    }
+  }
 
   function retry() {
-    const firstWrong = marks!.findIndex((ok) => !ok);
+    const firstWrong = result!.marks.findIndex((ok) => !ok);
     setBuilt((b) => b.slice(0, firstWrong));
+    setResult(null);
   }
+
+  function undo() {
+    setBuilt((b) => b.slice(0, -1));
+    setResult(null);
+  }
+
+  const marks = full ? result?.marks : undefined;
 
   return (
     <section aria-label="문장 만들기" className="flex flex-col gap-5">
@@ -48,19 +71,19 @@ export function SentenceBuilder({ sentence, seed, onDone }: SentenceBuilderProps
             </li>
           ))}
         </ol>
-        {solved && <p className="font-medium">맞았어요. {sentence.text}</p>}
+        {solved && <p className="font-medium">맞았어요. {result!.text}</p>}
       </div>
+
+      {error && (
+        <p role="alert" className="text-caption text-destructive">
+          {error}
+        </p>
+      )}
 
       {!full && (
         <div role="group" aria-label="단어 칩" lang="en" className="flex flex-wrap gap-2">
           {chips.map((chip, i) => (
-            <Button
-              key={i}
-              variant="outline"
-              disabled={built.includes(i)}
-              onClick={() => setBuilt((b) => [...b, i])}
-              className="h-11 px-3 text-base"
-            >
+            <Button key={i} variant="outline" disabled={built.includes(i)} onClick={() => void place(i)} className="h-11 px-3 text-base">
               {chip}
             </Button>
           ))}
@@ -71,12 +94,12 @@ export function SentenceBuilder({ sentence, seed, onDone }: SentenceBuilderProps
         <Button onClick={onDone} className="h-12 text-base">
           다음
         </Button>
-      ) : full ? (
+      ) : full && result ? (
         <Button onClick={retry} className="h-12 text-base">
           다시 맞추기
         </Button>
       ) : (
-        <Button variant="ghost" onClick={() => setBuilt((b) => b.slice(0, -1))} disabled={built.length === 0} className="h-11 self-start text-base">
+        <Button variant="ghost" onClick={undo} disabled={built.length === 0} className="h-11 self-start text-base">
           <Undo2 aria-hidden />
           되돌리기
         </Button>

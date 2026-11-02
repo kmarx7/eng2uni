@@ -25,7 +25,12 @@ export interface LessonContext {
   seen: ReadonlySet<string>;
 }
 
-export type LessonAction = { type: "blockDone" } | { type: "analyzerDone"; passed: boolean } | { type: "answered"; attempt: LessonAttempt };
+export type LessonAction =
+  | { type: "blockDone" }
+  | { type: "analyzerDone"; passed: boolean }
+  | { type: "answered"; attempt: LessonAttempt }
+  // From a held judgment or a failed foundation check: a new round of variants.
+  | { type: "retry" };
 
 export type LessonStep =
   | { kind: "block"; block: LessonBlock }
@@ -90,7 +95,8 @@ export function startLesson(ctx: LessonContext, now: Date): LessonState {
     queue: [],
     round: 0,
     attempts: [],
-    analyzerPassed: false,
+    // A unit without a tagging task has no analyzer task to pass.
+    analyzerPassed: !flowBlocks(ctx.unit).some((b) => b.type === "sentence_task" && b.interaction === "role_tagging"),
     updatedAt: now.toISOString(),
   };
   return enterBlock(state, 0, ctx, now, []).state;
@@ -108,6 +114,42 @@ export function lessonReducer(state: LessonState, action: LessonAction, ctx: Les
       return stamp(blockDone(state, ctx, now, shortages));
     case "answered":
       return answered(state, action.attempt, ctx, now, shortages, stamp);
+    case "retry":
+      return canRetry(state) ? stamp(enterReassessment(state, ctx, now, shortages)) : { state, shortages };
+  }
+}
+
+// A result the student cannot continue from: a held judgment (too few questions)
+// or a failed foundation check. Retrying asks a new round of variants, which is
+// held again when none are left.
+export function canRetry(state: LessonState): boolean {
+  if (state.phase !== "result") return false;
+  if (state.judgment === "foundation_check") return state.attempts.some((a) => a.phase === "foundation" && a.round === state.round);
+  return state.judgment === "learning" && state.analyzerPassed;
+}
+
+// Saved progress can outlive the content it was planned from (a question no
+// longer approved, blocks removed). Drops what the unit no longer has and moves
+// on from there; null when the lesson still fits.
+export function reconcileLesson(state: LessonState, ctx: LessonContext, now: Date): LessonState | null {
+  const known = new Set(ctx.questions.map((q) => q.id));
+  const queue = state.queue.filter((id) => known.has(id));
+  const blocks = flowBlocks(ctx.unit);
+  const pastEnd = state.phase === "main" && state.blockIndex >= blocks.length;
+  if (queue.length === state.queue.length && !pastEnd) return null;
+  const next = { ...state, queue, updatedAt: now.toISOString() };
+  if (pastEnd) return judge({ ...next, queue: [] }, ctx);
+  if (queue.length) return next;
+  const shortages: Shortage[] = [];
+  switch (state.phase) {
+    case "main":
+      return blocks[state.blockIndex].type === "assessment" ? judge(next, ctx) : enterBlock(next, state.blockIndex + 1, ctx, now, shortages).state;
+    case "remedial":
+      return enterReassessment(next, ctx, now, shortages);
+    case "foundation":
+      return enterRemedial(next, ctx, now, shortages);
+    default:
+      return judge(next, ctx);
   }
 }
 

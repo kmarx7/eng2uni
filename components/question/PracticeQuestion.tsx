@@ -7,8 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import { requestHint, submitAnswer } from "@/app/(student)/learn/actions";
 import { Button } from "@/components/ui/button";
-import type { AnswerResult, Hint, HintLevelNumber, PublicQuestion } from "@/lib/content/learning";
-import type { AnnotatedSentence } from "@/lib/schema/sentence";
+import type { AnswerResult, Hint, HintLevelNumber, PublicQuestion, PublicSentence } from "@/lib/content/learning";
 import { cn } from "@/lib/utils";
 import { FeedbackPanel } from "./FeedbackPanel";
 import { HintBar } from "./HintBar";
@@ -22,7 +21,7 @@ export interface AnsweredQuestion {
 
 interface PracticeQuestionProps {
   question: PublicQuestion;
-  sentence?: AnnotatedSentence;
+  sentence?: PublicSentence;
   onAnswered: (answer: AnsweredQuestion) => void;
   onNext: () => void;
   nextLabel: (result: AnswerResult) => string;
@@ -77,7 +76,7 @@ export function PracticeQuestion({ question, sentence, onAnswered, onNext, nextL
   return (
     <section aria-label="문제" className="flex flex-col gap-5">
       <div className="flex flex-col gap-4 rounded-xl border bg-card px-5 py-5 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)]">
-        {sentence && (
+        {sentence?.tokens && (
           <p lang="en" className="text-sentence leading-relaxed">
             {sentence.tokens.map((token, i) => (
               <span key={i}>
