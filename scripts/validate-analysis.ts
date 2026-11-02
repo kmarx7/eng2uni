@@ -3,11 +3,13 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { ZodType } from "zod";
 import { PassageStats, SyntaxStats, VocabFrequency } from "@/lib/schema/analysis";
+import { TaggingStats } from "@/lib/schema/tagging";
 
 const files: [string, ZodType][] = [
   ["vocab_frequency.json", VocabFrequency],
   ["syntax_stats.json", SyntaxStats],
   ["passage_stats.json", PassageStats],
+  ["tagging_stats.json", TaggingStats],
 ];
 let failed = 0;
 

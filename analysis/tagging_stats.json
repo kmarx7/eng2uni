@@ -1,0 +1,1121 @@
+{
+ "meta": {
+  "generator": "scripts/tag-stats.ts",
+  "promptVersion": 2,
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "exams": [
+   "2014_csat",
+   "2014_m06",
+   "2014_m09",
+   "2015_csat",
+   "2015_m06",
+   "2015_m09",
+   "2016_csat",
+   "2016_m06",
+   "2016_m09",
+   "2017_csat",
+   "2017_m06",
+   "2017_m09",
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ],
+  "since2018Exams": [
+   "2018_csat",
+   "2018_m06",
+   "2018_m09",
+   "2019_csat",
+   "2019_m06",
+   "2019_m09",
+   "2020_csat",
+   "2020_m06",
+   "2020_m09",
+   "2021_csat",
+   "2021_m06",
+   "2021_m09",
+   "2022_csat",
+   "2022_m06",
+   "2022_m09",
+   "2023_csat",
+   "2023_m06",
+   "2023_m09",
+   "2024_csat",
+   "2024_m06",
+   "2024_m09",
+   "2025_csat",
+   "2025_m06",
+   "2025_m09",
+   "2026_csat",
+   "2026_m06",
+   "2026_m09",
+   "2027_m06",
+   "2027_m09"
+  ],
+  "reviewed": false
+ },
+ "byScope": {
+  "all": {
+   "items": 1133,
+   "trapsByType": {
+    "gist": {
+     "no_textual_basis": 80,
+     "opposite_claim": 20,
+     "partial_detail": 23,
+     "keyword_reuse": 20,
+     "scope_shift": 11,
+     "over_generalization": 6
+    },
+    "topic": {
+     "scope_shift": 26,
+     "no_textual_basis": 55,
+     "keyword_reuse": 29,
+     "partial_detail": 21,
+     "over_generalization": 2,
+     "opposite_claim": 34,
+     "other": 1
+    },
+    "title": {
+     "opposite_claim": 36,
+     "no_textual_basis": 61,
+     "keyword_reuse": 30,
+     "partial_detail": 23,
+     "scope_shift": 18,
+     "over_generalization": 8
+    },
+    "blank_inference": {
+     "no_textual_basis": 268,
+     "keyword_reuse": 133,
+     "opposite_claim": 202,
+     "over_generalization": 10,
+     "partial_detail": 27,
+     "other": 24,
+     "scope_shift": 30
+    },
+    "summary": {
+     "partial_detail": 10,
+     "no_textual_basis": 52,
+     "keyword_reuse": 27,
+     "scope_shift": 2,
+     "other": 2,
+     "opposite_claim": 70,
+     "over_generalization": 1
+    },
+    "long_title_vocab": {
+     "opposite_claim": 43,
+     "no_textual_basis": 85,
+     "keyword_reuse": 41,
+     "partial_detail": 19,
+     "scope_shift": 28,
+     "over_generalization": 6,
+     "other": 2
+    },
+    "long_narrative": {
+     "no_textual_basis": 1,
+     "partial_detail": 1,
+     "opposite_claim": 1,
+     "scope_shift": 1
+    },
+    "mood": {
+     "no_textual_basis": 82,
+     "opposite_claim": 59,
+     "partial_detail": 10,
+     "keyword_reuse": 1
+    },
+    "notice": {
+     "opposite_claim": 105,
+     "partial_detail": 20,
+     "keyword_reuse": 17,
+     "no_textual_basis": 4,
+     "other": 1,
+     "scope_shift": 2,
+     "over_generalization": 3
+    },
+    "purpose": {
+     "no_textual_basis": 76,
+     "partial_detail": 12,
+     "scope_shift": 21,
+     "opposite_claim": 6,
+     "keyword_reuse": 33
+    },
+    "claim": {
+     "no_textual_basis": 76,
+     "keyword_reuse": 20,
+     "scope_shift": 14,
+     "opposite_claim": 20,
+     "partial_detail": 11,
+     "over_generalization": 3
+    },
+    "implication": {
+     "opposite_claim": 24,
+     "no_textual_basis": 40,
+     "keyword_reuse": 23,
+     "scope_shift": 7,
+     "partial_detail": 6,
+     "over_generalization": 4
+    }
+   },
+   "grammarPoints": [
+    {
+     "point": "relative_pronoun",
+     "count": 36,
+     "share": 0.1818
+    },
+    {
+     "point": "participle_form",
+     "count": 33,
+     "share": 0.1667
+    },
+    {
+     "point": "adjective_adverb",
+     "count": 23,
+     "share": 0.1162
+    },
+    {
+     "point": "pronoun_reflexive",
+     "count": 21,
+     "share": 0.1061
+    },
+    {
+     "point": "subject_verb_agreement",
+     "count": 18,
+     "share": 0.0909
+    },
+    {
+     "point": "infinitive_gerund",
+     "count": 17,
+     "share": 0.0859
+    },
+    {
+     "point": "finite_vs_nonfinite",
+     "count": 11,
+     "share": 0.0556
+    },
+    {
+     "point": "parallelism",
+     "count": 10,
+     "share": 0.0505
+    },
+    {
+     "point": "active_passive",
+     "count": 7,
+     "share": 0.0354
+    },
+    {
+     "point": "other",
+     "count": 7,
+     "share": 0.0354
+    },
+    {
+     "point": "pro_verb",
+     "count": 4,
+     "share": 0.0202
+    },
+    {
+     "point": "conjunction_vs_preposition",
+     "count": 3,
+     "share": 0.0152
+    },
+    {
+     "point": "relative_adverb",
+     "count": 3,
+     "share": 0.0152
+    },
+    {
+     "point": "tense_mood",
+     "count": 3,
+     "share": 0.0152
+    },
+    {
+     "point": "comparison",
+     "count": 1,
+     "share": 0.0051
+    },
+    {
+     "point": "inversion",
+     "count": 1,
+     "share": 0.0051
+    }
+   ],
+   "vocabBasis": {
+    "context_logic": 206,
+    "contrast_signal": 44,
+    "cause_effect": 31,
+    "collocation": 17,
+    "antonym": 8
+   },
+   "blankRoles": {
+    "mid_restatement": 17,
+    "conclusion": 69,
+    "other": 69,
+    "topic_sentence": 33
+   },
+   "orderCues": {
+    "connective": 75,
+    "demonstrative": 58,
+    "logical_flow": 117,
+    "lexical_repetition": 100,
+    "time_sequence": 45,
+    "pronoun": 49,
+    "article": 39
+   },
+   "insertionCues": {
+    "connective": 49,
+    "lexical_repetition": 68,
+    "pronoun": 15,
+    "logical_flow": 78,
+    "article": 11,
+    "time_sequence": 4,
+    "demonstrative": 27
+   },
+   "topicDomainsByType": {
+    "gist": {
+     "daily_life": 3,
+     "social_science": 35,
+     "humanities": 2
+    },
+    "topic": {
+     "social_science": 27,
+     "natural_science": 9,
+     "humanities": 4,
+     "arts": 1,
+     "technology": 1
+    },
+    "title": {
+     "arts": 6,
+     "social_science": 22,
+     "humanities": 4,
+     "daily_life": 1,
+     "technology": 3,
+     "natural_science": 8
+    },
+    "reference": {
+     "daily_life": 9,
+     "humanities": 2,
+     "natural_science": 1,
+     "arts": 1,
+     "social_science": 3
+    },
+    "grammar": {
+     "natural_science": 10,
+     "social_science": 20,
+     "daily_life": 2,
+     "humanities": 6,
+     "arts": 3
+    },
+    "contextual_vocab": {
+     "natural_science": 11,
+     "humanities": 5,
+     "daily_life": 1,
+     "social_science": 18,
+     "arts": 3,
+     "technology": 2
+    },
+    "chart": {
+     "social_science": 40,
+     "natural_science": 1
+    },
+    "content_match": {
+     "humanities": 16,
+     "arts": 13,
+     "social_science": 6,
+     "natural_science": 5
+    },
+    "blank_inference": {
+     "social_science": 84,
+     "natural_science": 38,
+     "technology": 8,
+     "humanities": 28,
+     "daily_life": 3,
+     "arts": 12
+    },
+    "ordering": {
+     "natural_science": 18,
+     "social_science": 39,
+     "humanities": 12,
+     "daily_life": 2,
+     "arts": 3,
+     "technology": 4
+    },
+    "insertion": {
+     "social_science": 39,
+     "natural_science": 21,
+     "technology": 7,
+     "arts": 7,
+     "humanities": 4
+    },
+    "summary": {
+     "social_science": 24,
+     "humanities": 4,
+     "arts": 4,
+     "natural_science": 9
+    },
+    "long_title_vocab": {
+     "social_science": 45,
+     "natural_science": 18,
+     "daily_life": 2,
+     "arts": 5,
+     "humanities": 10,
+     "technology": 2
+    },
+    "long_narrative": {
+     "daily_life": 95,
+     "social_science": 5,
+     "humanities": 15,
+     "arts": 8
+    },
+    "mood": {
+     "daily_life": 37,
+     "arts": 1
+    },
+    "notice": {
+     "daily_life": 67,
+     "arts": 4,
+     "natural_science": 2,
+     "technology": 1,
+     "social_science": 2,
+     "humanities": 1
+    },
+    "irrelevant_sentence": {
+     "social_science": 27,
+     "arts": 2,
+     "natural_science": 9,
+     "daily_life": 2
+    },
+    "purpose": {
+     "daily_life": 31,
+     "social_science": 5,
+     "arts": 1
+    },
+    "claim": {
+     "social_science": 27,
+     "daily_life": 7,
+     "technology": 1,
+     "humanities": 1
+    },
+    "implication": {
+     "natural_science": 3,
+     "social_science": 16,
+     "daily_life": 1,
+     "humanities": 3,
+     "technology": 2,
+     "arts": 1
+    }
+   },
+   "evidenceByType": {
+    "gist": {
+     "items": 40,
+     "meanSpans": 3.23,
+     "position": {
+      "early": 37,
+      "middle": 35,
+      "late": 57
+     }
+    },
+    "topic": {
+     "items": 42,
+     "meanSpans": 3.69,
+     "position": {
+      "early": 42,
+      "middle": 53,
+      "late": 60
+     }
+    },
+    "title": {
+     "items": 44,
+     "meanSpans": 4.02,
+     "position": {
+      "early": 42,
+      "middle": 63,
+      "late": 72
+     }
+    },
+    "reference": {
+     "items": 16,
+     "meanSpans": 3.25,
+     "position": {
+      "early": 12,
+      "middle": 15,
+      "late": 25
+     }
+    },
+    "grammar": {
+     "items": 39,
+     "meanSpans": 1.1,
+     "position": {
+      "early": 11,
+      "middle": 23,
+      "late": 9
+     }
+    },
+    "contextual_vocab": {
+     "items": 40,
+     "meanSpans": 3.08,
+     "position": {
+      "early": 25,
+      "middle": 45,
+      "late": 53
+     }
+    },
+    "chart": {
+     "items": 41,
+     "meanSpans": 1.22,
+     "position": {
+      "early": 3,
+      "middle": 17,
+      "late": 30
+     }
+    },
+    "content_match": {
+     "items": 40,
+     "meanSpans": 1.05,
+     "position": {
+      "early": 4,
+      "middle": 14,
+      "late": 24
+     }
+    },
+    "blank_inference": {
+     "items": 173,
+     "meanSpans": 3.42,
+     "position": {
+      "early": 133,
+      "middle": 214,
+      "late": 244
+     }
+    },
+    "ordering": {
+     "items": 78,
+     "meanSpans": 8.21,
+     "position": {
+      "early": 217,
+      "middle": 227,
+      "late": 196
+     }
+    },
+    "insertion": {
+     "items": 78,
+     "meanSpans": 2.51,
+     "position": {
+      "early": 13,
+      "middle": 87,
+      "late": 96
+     }
+    },
+    "summary": {
+     "items": 41,
+     "meanSpans": 3.78,
+     "position": {
+      "early": 38,
+      "middle": 52,
+      "late": 65
+     }
+    },
+    "long_title_vocab": {
+     "items": 82,
+     "meanSpans": 3.84,
+     "position": {
+      "early": 77,
+      "middle": 95,
+      "late": 143
+     }
+    },
+    "long_narrative": {
+     "items": 123,
+     "meanSpans": 4.55,
+     "position": {
+      "early": 121,
+      "middle": 212,
+      "late": 227
+     }
+    },
+    "mood": {
+     "items": 38,
+     "meanSpans": 5.29,
+     "position": {
+      "early": 67,
+      "middle": 50,
+      "late": 84
+     }
+    },
+    "notice": {
+     "items": 77,
+     "meanSpans": 1.26,
+     "position": {
+      "early": 0,
+      "middle": 42,
+      "late": 55
+     }
+    },
+    "irrelevant_sentence": {
+     "items": 40,
+     "meanSpans": 1.93,
+     "position": {
+      "early": 8,
+      "middle": 29,
+      "late": 40
+     }
+    },
+    "purpose": {
+     "items": 37,
+     "meanSpans": 2.95,
+     "position": {
+      "early": 25,
+      "middle": 64,
+      "late": 20
+     }
+    },
+    "claim": {
+     "items": 36,
+     "meanSpans": 3.19,
+     "position": {
+      "early": 20,
+      "middle": 38,
+      "late": 57
+     }
+    },
+    "implication": {
+     "items": 26,
+     "meanSpans": 3.65,
+     "position": {
+      "early": 17,
+      "middle": 28,
+      "late": 50
+     }
+    }
+   }
+  },
+  "since2018": {
+   "items": 812,
+   "trapsByType": {
+    "purpose": {
+     "no_textual_basis": 60,
+     "scope_shift": 15,
+     "keyword_reuse": 28,
+     "opposite_claim": 5,
+     "partial_detail": 8
+    },
+    "mood": {
+     "no_textual_basis": 62,
+     "opposite_claim": 48,
+     "partial_detail": 5,
+     "keyword_reuse": 1
+    },
+    "claim": {
+     "opposite_claim": 17,
+     "partial_detail": 10,
+     "no_textual_basis": 60,
+     "keyword_reuse": 15,
+     "scope_shift": 12,
+     "over_generalization": 2
+    },
+    "gist": {
+     "no_textual_basis": 56,
+     "keyword_reuse": 14,
+     "opposite_claim": 13,
+     "partial_detail": 19,
+     "over_generalization": 6,
+     "scope_shift": 8
+    },
+    "topic": {
+     "no_textual_basis": 39,
+     "keyword_reuse": 21,
+     "opposite_claim": 25,
+     "scope_shift": 17,
+     "partial_detail": 13,
+     "over_generalization": 1
+    },
+    "title": {
+     "no_textual_basis": 42,
+     "opposite_claim": 22,
+     "over_generalization": 8,
+     "partial_detail": 12,
+     "keyword_reuse": 19,
+     "scope_shift": 13
+    },
+    "notice": {
+     "keyword_reuse": 12,
+     "partial_detail": 17,
+     "opposite_claim": 80,
+     "scope_shift": 2,
+     "over_generalization": 3,
+     "no_textual_basis": 2
+    },
+    "blank_inference": {
+     "no_textual_basis": 200,
+     "keyword_reuse": 92,
+     "partial_detail": 21,
+     "opposite_claim": 118,
+     "scope_shift": 26,
+     "over_generalization": 8,
+     "other": 1
+    },
+    "summary": {
+     "keyword_reuse": 20,
+     "opposite_claim": 50,
+     "no_textual_basis": 38,
+     "partial_detail": 5,
+     "over_generalization": 1,
+     "scope_shift": 1,
+     "other": 1
+    },
+    "long_title_vocab": {
+     "no_textual_basis": 46,
+     "keyword_reuse": 27,
+     "opposite_claim": 18,
+     "scope_shift": 21,
+     "partial_detail": 12,
+     "over_generalization": 4
+    },
+    "implication": {
+     "opposite_claim": 24,
+     "no_textual_basis": 40,
+     "keyword_reuse": 23,
+     "scope_shift": 7,
+     "partial_detail": 6,
+     "over_generalization": 4
+    }
+   },
+   "grammarPoints": [
+    {
+     "point": "participle_form",
+     "count": 26,
+     "share": 0.1793
+    },
+    {
+     "point": "relative_pronoun",
+     "count": 26,
+     "share": 0.1793
+    },
+    {
+     "point": "pronoun_reflexive",
+     "count": 17,
+     "share": 0.1172
+    },
+    {
+     "point": "adjective_adverb",
+     "count": 15,
+     "share": 0.1034
+    },
+    {
+     "point": "infinitive_gerund",
+     "count": 15,
+     "share": 0.1034
+    },
+    {
+     "point": "subject_verb_agreement",
+     "count": 12,
+     "share": 0.0828
+    },
+    {
+     "point": "parallelism",
+     "count": 8,
+     "share": 0.0552
+    },
+    {
+     "point": "other",
+     "count": 6,
+     "share": 0.0414
+    },
+    {
+     "point": "finite_vs_nonfinite",
+     "count": 5,
+     "share": 0.0345
+    },
+    {
+     "point": "pro_verb",
+     "count": 4,
+     "share": 0.0276
+    },
+    {
+     "point": "active_passive",
+     "count": 3,
+     "share": 0.0207
+    },
+    {
+     "point": "conjunction_vs_preposition",
+     "count": 3,
+     "share": 0.0207
+    },
+    {
+     "point": "relative_adverb",
+     "count": 2,
+     "share": 0.0138
+    },
+    {
+     "point": "tense_mood",
+     "count": 2,
+     "share": 0.0138
+    },
+    {
+     "point": "inversion",
+     "count": 1,
+     "share": 0.0069
+    }
+   ],
+   "vocabBasis": {
+    "context_logic": 179,
+    "contrast_signal": 38,
+    "cause_effect": 23,
+    "antonym": 7,
+    "collocation": 15
+   },
+   "blankRoles": {
+    "conclusion": 41,
+    "other": 40,
+    "mid_restatement": 12,
+    "topic_sentence": 26
+   },
+   "orderCues": {
+    "connective": 55,
+    "lexical_repetition": 77,
+    "logical_flow": 87,
+    "pronoun": 32,
+    "time_sequence": 32,
+    "article": 31,
+    "demonstrative": 41
+   },
+   "insertionCues": {
+    "pronoun": 7,
+    "lexical_repetition": 51,
+    "logical_flow": 58,
+    "demonstrative": 20,
+    "connective": 37,
+    "time_sequence": 3,
+    "article": 8
+   },
+   "topicDomainsByType": {
+    "purpose": {
+     "daily_life": 24,
+     "social_science": 4,
+     "arts": 1
+    },
+    "mood": {
+     "daily_life": 28,
+     "arts": 1
+    },
+    "claim": {
+     "social_science": 23,
+     "daily_life": 4,
+     "technology": 1,
+     "humanities": 1
+    },
+    "gist": {
+     "social_science": 28,
+     "humanities": 1
+    },
+    "topic": {
+     "natural_science": 7,
+     "social_science": 18,
+     "arts": 1,
+     "technology": 1,
+     "humanities": 2
+    },
+    "title": {
+     "social_science": 17,
+     "natural_science": 6,
+     "humanities": 2,
+     "technology": 1,
+     "arts": 3
+    },
+    "chart": {
+     "social_science": 28,
+     "natural_science": 1
+    },
+    "content_match": {
+     "arts": 8,
+     "humanities": 11,
+     "natural_science": 5,
+     "social_science": 5
+    },
+    "notice": {
+     "daily_life": 54,
+     "natural_science": 1,
+     "humanities": 1,
+     "social_science": 1,
+     "arts": 1
+    },
+    "grammar": {
+     "social_science": 16,
+     "natural_science": 6,
+     "arts": 2,
+     "humanities": 4,
+     "daily_life": 1
+    },
+    "contextual_vocab": {
+     "humanities": 4,
+     "social_science": 13,
+     "arts": 3,
+     "natural_science": 6,
+     "technology": 2
+    },
+    "reference": {
+     "daily_life": 2,
+     "social_science": 2
+    },
+    "blank_inference": {
+     "arts": 11,
+     "natural_science": 24,
+     "social_science": 56,
+     "technology": 5,
+     "humanities": 20
+    },
+    "irrelevant_sentence": {
+     "social_science": 20,
+     "daily_life": 2,
+     "arts": 1,
+     "natural_science": 6
+    },
+    "ordering": {
+     "social_science": 29,
+     "arts": 3,
+     "humanities": 8,
+     "natural_science": 14,
+     "technology": 4
+    },
+    "insertion": {
+     "natural_science": 16,
+     "social_science": 24,
+     "technology": 7,
+     "arts": 7,
+     "humanities": 4
+    },
+    "summary": {
+     "social_science": 17,
+     "natural_science": 7,
+     "humanities": 2,
+     "arts": 3
+    },
+    "long_title_vocab": {
+     "arts": 5,
+     "social_science": 29,
+     "natural_science": 12,
+     "humanities": 10,
+     "technology": 2
+    },
+    "long_narrative": {
+     "daily_life": 77,
+     "humanities": 5,
+     "arts": 5
+    },
+    "implication": {
+     "natural_science": 3,
+     "social_science": 16,
+     "daily_life": 1,
+     "humanities": 3,
+     "technology": 2,
+     "arts": 1
+    }
+   },
+   "evidenceByType": {
+    "purpose": {
+     "items": 29,
+     "meanSpans": 2.97,
+     "position": {
+      "early": 18,
+      "middle": 51,
+      "late": 17
+     }
+    },
+    "mood": {
+     "items": 29,
+     "meanSpans": 5.38,
+     "position": {
+      "early": 53,
+      "middle": 37,
+      "late": 66
+     }
+    },
+    "claim": {
+     "items": 29,
+     "meanSpans": 3.14,
+     "position": {
+      "early": 16,
+      "middle": 30,
+      "late": 45
+     }
+    },
+    "gist": {
+     "items": 29,
+     "meanSpans": 3.34,
+     "position": {
+      "early": 28,
+      "middle": 26,
+      "late": 43
+     }
+    },
+    "topic": {
+     "items": 29,
+     "meanSpans": 3.66,
+     "position": {
+      "early": 24,
+      "middle": 39,
+      "late": 43
+     }
+    },
+    "title": {
+     "items": 29,
+     "meanSpans": 4.14,
+     "position": {
+      "early": 25,
+      "middle": 41,
+      "late": 54
+     }
+    },
+    "chart": {
+     "items": 29,
+     "meanSpans": 1.31,
+     "position": {
+      "early": 3,
+      "middle": 13,
+      "late": 22
+     }
+    },
+    "content_match": {
+     "items": 29,
+     "meanSpans": 1.03,
+     "position": {
+      "early": 2,
+      "middle": 12,
+      "late": 16
+     }
+    },
+    "notice": {
+     "items": 58,
+     "meanSpans": 1.28,
+     "position": {
+      "early": 0,
+      "middle": 33,
+      "late": 41
+     }
+    },
+    "grammar": {
+     "items": 28,
+     "meanSpans": 1,
+     "position": {
+      "early": 7,
+      "middle": 15,
+      "late": 6
+     }
+    },
+    "contextual_vocab": {
+     "items": 28,
+     "meanSpans": 2.79,
+     "position": {
+      "early": 10,
+      "middle": 29,
+      "late": 39
+     }
+    },
+    "reference": {
+     "items": 4,
+     "meanSpans": 3,
+     "position": {
+      "early": 5,
+      "middle": 2,
+      "late": 5
+     }
+    },
+    "blank_inference": {
+     "items": 116,
+     "meanSpans": 3.39,
+     "position": {
+      "early": 85,
+      "middle": 144,
+      "late": 164
+     }
+    },
+    "irrelevant_sentence": {
+     "items": 29,
+     "meanSpans": 1.97,
+     "position": {
+      "early": 5,
+      "middle": 22,
+      "late": 30
+     }
+    },
+    "ordering": {
+     "items": 58,
+     "meanSpans": 8.38,
+     "position": {
+      "early": 161,
+      "middle": 169,
+      "late": 156
+     }
+    },
+    "insertion": {
+     "items": 58,
+     "meanSpans": 2.48,
+     "position": {
+      "early": 6,
+      "middle": 64,
+      "late": 74
+     }
+    },
+    "summary": {
+     "items": 29,
+     "meanSpans": 3.79,
+     "position": {
+      "early": 27,
+      "middle": 38,
+      "late": 45
+     }
+    },
+    "long_title_vocab": {
+     "items": 58,
+     "meanSpans": 3.5,
+     "position": {
+      "early": 52,
+      "middle": 54,
+      "late": 97
+     }
+    },
+    "long_narrative": {
+     "items": 87,
+     "meanSpans": 4.83,
+     "position": {
+      "early": 96,
+      "middle": 159,
+      "late": 165
+     }
+    },
+    "implication": {
+     "items": 26,
+     "meanSpans": 3.65,
+     "position": {
+      "early": 17,
+      "middle": 28,
+      "late": 50
+     }
+    }
+   }
+  }
+ }
+}

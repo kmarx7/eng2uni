@@ -18,7 +18,8 @@
     "analyze:leaks": "cd scripts/analysis && uv run python check_leaks.py",
     "validate:analysis": "tsx scripts/validate-analysis.ts",
     "tag:items": "tsx scripts/tag-items.ts",
-    "tag:review": "tsx scripts/tag-review.ts"
+    "tag:review": "tsx scripts/tag-review.ts",
+    "analyze:tags": "tsx scripts/tag-stats.ts && npm run analyze:leaks && npm run validate:analysis"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",

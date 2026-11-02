@@ -108,3 +108,37 @@ export type BlankRole = z.infer<typeof BlankRole>;
 export type Cue = z.infer<typeof Cue>;
 export type ItemTagging = z.infer<typeof ItemTagging>;
 export type TaggedItem = z.infer<typeof TaggedItem>;
+
+const Counts = <T extends z.ZodEnum>(labels: T) => z.partialRecord(labels, z.number().int().min(0));
+
+// analysis/tagging_stats.json: counts of AI tags (no exam text). Written by
+// scripts/tag-stats.ts; accuracy is filled once the spot check is scored.
+export const TaggingScopeStats = z.object({
+  items: z.number().int().min(0),
+  trapsByType: z.partialRecord(AnalysisItemType, Counts(TrapLabel)),
+  grammarPoints: z.array(z.object({ point: GrammarPoint, count: z.number().int().min(0), share: z.number().min(0).max(1) })),
+  vocabBasis: Counts(VocabBasis),
+  blankRoles: Counts(BlankRole),
+  orderCues: Counts(Cue),
+  insertionCues: Counts(Cue),
+  topicDomainsByType: z.partialRecord(AnalysisItemType, Counts(TopicDomain)),
+  evidenceByType: z.partialRecord(
+    AnalysisItemType,
+    z.object({ items: z.number().int().min(0), meanSpans: z.number().min(0), position: z.object({ early: z.number().int().min(0), middle: z.number().int().min(0), late: z.number().int().min(0) }) }),
+  ),
+});
+
+export const TaggingStats = z.object({
+  meta: z.object({
+    generator: z.string().min(1),
+    promptVersion: z.number().int().min(1),
+    models: z.array(z.string().min(1)),
+    exams: z.array(z.string().min(1)),
+    since2018Exams: z.array(z.string().min(1)),
+    reviewed: z.boolean(),
+  }),
+  byScope: z.object({ all: TaggingScopeStats, since2018: TaggingScopeStats }),
+});
+
+export type TaggingScopeStats = z.infer<typeof TaggingScopeStats>;
+export type TaggingStats = z.infer<typeof TaggingStats>;

@@ -2,11 +2,10 @@
 //   npm run tag:review -- make [--rate 0.1] [--seed 20261101] [--force]  -> corpus/tagged/review.csv
 //   npm run tag:review -- score                                           -> per-type accuracy
 // Fill the "correct" column with y or n (o/x, 맞음/틀림 also work) after checking each row against the exam PDF.
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { parseArgs } from "node:util";
-import { TaggedItem } from "@/lib/schema/tagging";
-import { PROMPT_VERSION } from "./tagging/prompt";
+import { loadTagRecords } from "./tagging/records";
 import { parseReviewCsv, reviewCsv, sampleForReview, scoreReview } from "./tagging/review";
 
 const taggedDir = path.join(process.cwd(), "corpus/tagged");
@@ -16,24 +15,13 @@ const { values, positionals } = parseArgs({
   options: { rate: { type: "string", default: "0.1" }, seed: { type: "string", default: "20261101" }, force: { type: "boolean", default: false } },
 });
 
-function loadRecords(): TaggedItem[] {
-  const out: TaggedItem[] = [];
-  for (const exam of readdirSync(taggedDir, { withFileTypes: true }).filter((d) => d.isDirectory())) {
-    for (const file of readdirSync(path.join(taggedDir, exam.name)).filter((f) => f.endsWith(".json"))) {
-      const r = TaggedItem.safeParse(JSON.parse(readFileSync(path.join(taggedDir, exam.name, file), "utf8")));
-      if (r.success && r.data.promptVersion === PROMPT_VERSION) out.push(r.data);
-    }
-  }
-  return out;
-}
-
 const command = positionals[0];
 if (command === "make") {
   if (existsSync(csvPath) && !values.force && parseReviewCsv(readFileSync(csvPath, "utf8")).some((r) => r.correct.trim())) {
     console.error("review.csv already has answers; use --force to replace it");
     process.exit(1);
   }
-  const records = loadRecords();
+  const records = loadTagRecords(taggedDir);
   const sample = sampleForReview(records, Number(values.rate), Number(values.seed));
   // BOM so spreadsheet apps open the UTF-8 file correctly.
   writeFileSync(csvPath, "﻿" + reviewCsv(sample));
