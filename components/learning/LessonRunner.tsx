@@ -115,7 +115,9 @@ export function LessonRunner({ bundle, units }: LessonRunnerProps) {
     const question = bundle.questions.find((q) => q.id === activeQuestion)!;
     body = (
       <PracticeQuestion
-        key={`${activeQuestion}-${lesson.round}-${lesson.phase}`}
+        // The id alone: answering can move the lesson to another phase while this
+        // question's feedback is still on screen. A question is asked once per lesson.
+        key={activeQuestion}
         question={question}
         sentence={bundle.sentences.find((s) => s.id === question.sentenceId)}
         onAnswered={({ result, hintLevel, durationMs }: AnsweredQuestion) => {

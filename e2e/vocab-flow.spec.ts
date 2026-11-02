@@ -35,9 +35,11 @@ test("start, learn 5 words by keyboard, reload, finish 5 by tap", async ({ page 
   await expect(page.getByRole("definition").nth(1)).toHaveText("10개");
   await expectNoHorizontalOverflow(page);
 
+  // Vocabulary is done; the unit is what is left for today.
+  await expect(page.getByRole("link", { name: "단원 학습 계속: FIXTURE 주어와 동사" })).toBeVisible();
   await page.getByRole("link", { name: "대시보드로" }).click();
-  await expect(page.getByText("오늘 할 일을 모두 마쳤습니다.", { exact: false })).toBeVisible();
-  await expect(page.getByRole("button", { name: "오늘 학습 시작" })).toBeDisabled();
+  await expect(page.getByRole("list", { name: "오늘 할 일" })).toHaveText(/단원 학습FIXTURE 주어와 동사/);
+  await expect(page.getByRole("link", { name: "오늘 학습 시작" })).toHaveAttribute("href", "/learn/FIXTURE-U01");
 });
 
 test("a burst of rating keys rates one card once", async ({ page }) => {
@@ -107,10 +109,11 @@ test.describe("past local midnight", () => {
     await gradeByKeyboard(page, 10);
     await expect(page).toHaveURL(/\/vocab\/done$/);
     await page.getByRole("link", { name: "대시보드로" }).click();
-    await expect(page.getByRole("button", { name: "오늘 학습 시작" })).toBeDisabled();
+    const start = page.getByRole("link", { name: "오늘 학습 시작" });
+    await expect(start).toHaveAttribute("href", "/learn/FIXTURE-U01");
 
-    await page.clock.fastForward("40:00"); // 00:20 the next day
-    await expect(page.getByRole("link", { name: "오늘 학습 시작" })).toBeVisible();
+    await page.clock.fastForward("40:00"); // 00:20 the next day: new words again
+    await expect(start).toHaveAttribute("href", "/vocab");
   });
 
   test("a session that crosses midnight re-plans for the new day", async ({ page }) => {
