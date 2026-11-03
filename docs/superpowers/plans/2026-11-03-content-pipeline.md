@@ -200,6 +200,7 @@
     - Draft items get `reviewStatus: "draft"`, `source: { type: "original", generatedBy: "ai_draft" }`, `version: 1`, `variantGroup: group.id`.
     - The record status comes from `checkDraftGroup`.
     - The unit call runs only after all groups exist.
+    - Before any call, `spec.catalog` entries are copied into draft catalogue files (`content/drafts/{levels,skills,misconceptions,traps}.json`) with `kind: "catalog"` records, so the admin "기초 목록" tab can approve them first. A dry run writes nothing.
   - The CLI:
     - `npm run content:generate -- --spec L0-U05 [--limit N] [--dry-run] [--model opus]` asserts subscription auth before any call, except in dry runs.
     - A dry run prints "예상 호출 {n}회 (캐시 {m}회 제외)".
