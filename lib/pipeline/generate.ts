@@ -28,8 +28,25 @@ const QuestionOut = Question.omit({ id: true, lessonId: true, sentenceId: true, 
 const GroupOutput = z.object({ sentences: z.array(SentenceOut).min(1), questions: z.array(QuestionOut).min(1) });
 const UnitOutput = z.object({ title: z.string().min(1), blocks: z.array(LessonBlock).min(1) });
 
+// claude -p checks --json-schema with a strict draft-07 validator, and the API then
+// needs 2020-12. Tuples have no form both accept, so a tuple (TokenRange) becomes an
+// array of exactly n items of one type; Zod still checks the real tuple on the way back.
+function withoutTuples(node: unknown): unknown {
+  if (Array.isArray(node)) return node.map(withoutTuples);
+  if (node === null || typeof node !== "object") return node;
+  const out = Object.fromEntries(Object.entries(node).map(([k, v]) => [k, withoutTuples(v)])) as Record<string, unknown>;
+  if (Array.isArray(out.items)) {
+    const parts = out.items as Record<string, unknown>[];
+    out.items = parts[0];
+    out.minItems = parts.length;
+    out.maxItems = parts.length;
+    delete out.additionalItems;
+  }
+  return out;
+}
+
 function jsonSchema(schema: z.ZodType): Record<string, unknown> {
-  const out = z.toJSONSchema(schema, { target: "draft-2020-12", unrepresentable: "any", io: "input" }) as Record<string, unknown>;
+  const out = withoutTuples(z.toJSONSchema(schema, { target: "draft-7", unrepresentable: "any", io: "input" })) as Record<string, unknown>;
   delete out.$schema;
   return out;
 }
