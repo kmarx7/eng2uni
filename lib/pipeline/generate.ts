@@ -29,7 +29,7 @@ const GroupOutput = z.object({ sentences: z.array(SentenceOut).min(1), questions
 const UnitOutput = z.object({ title: z.string().min(1), blocks: z.array(LessonBlock).min(1) });
 
 function jsonSchema(schema: z.ZodType): Record<string, unknown> {
-  const out = z.toJSONSchema(schema, { target: "draft-7", unrepresentable: "any", io: "input" }) as Record<string, unknown>;
+  const out = z.toJSONSchema(schema, { target: "draft-2020-12", unrepresentable: "any", io: "input" }) as Record<string, unknown>;
   delete out.$schema;
   return out;
 }
