@@ -79,7 +79,7 @@ export async function runCrossCheck(opts: SecondOpinionOptions): Promise<SecondO
     async (q, sentence) => {
       const response = await opts.runner({
         model: opts.model,
-        schema: z.toJSONSchema(SolveOutput, { target: "draft-7" }) as Record<string, unknown>,
+        schema: z.toJSONSchema(SolveOutput, { target: "draft-2020-12" }) as Record<string, unknown>,
         systemPrompt: CROSS_SOLVE_PROMPT,
         input: JSON.stringify(maskQuestion(q, sentence)),
         timeoutMs: TIMEOUT_MS,
@@ -112,7 +112,7 @@ You are reviewing one AI-drafted question before a teacher sees it. List concret
     async (q, sentence) => {
       const response = await opts.runner({
         model: opts.model,
-        schema: z.toJSONSchema(ReviewOutput, { target: "draft-7" }) as Record<string, unknown>,
+        schema: z.toJSONSchema(ReviewOutput, { target: "draft-2020-12" }) as Record<string, unknown>,
         systemPrompt,
         input: JSON.stringify({ question: q, sentence }),
         timeoutMs: TIMEOUT_MS,

@@ -4,7 +4,7 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { ClaudeRunner } from "./claude-cli";
 import { readDrafts } from "./draft-store";
-import { assignIds, groupOutputSchema, runGenerate } from "./generate";
+import { assignIds, groupOutputSchema, runGenerate, unitOutputSchema } from "./generate";
 import { approve } from "./review-store";
 
 let root: string;
@@ -110,6 +110,18 @@ describe("groupOutputSchema", () => {
     expect(schema).toContain("sentenceIndex");
     expect(schema).not.toContain("reviewStatus");
     expect(schema).not.toContain("$schema");
+  });
+
+  it("uses JSON Schema 2020-12 forms (tuples as prefixItems), which claude -p requires", () => {
+    const arrayItems = (node: unknown): boolean =>
+      Array.isArray(node) ? node.some(arrayItems) : node !== null && typeof node === "object"
+        ? Object.entries(node).some(([k, v]) => (k === "items" && Array.isArray(v)) || arrayItems(v))
+        : false;
+    for (const schema of [groupOutputSchema(), unitOutputSchema()]) {
+      expect(arrayItems(schema)).toBe(false);
+      expect(JSON.stringify(schema)).not.toMatch(/"additionalItems"|"definitions"/);
+    }
+    expect(JSON.stringify(groupOutputSchema())).toContain("prefixItems");
   });
 });
 
