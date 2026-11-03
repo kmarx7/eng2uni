@@ -1,253 +1,6 @@
 [
   {
     "level": "L0",
-    "text": "My sister reads books.",
-    "tokens": [
-      "My",
-      "sister",
-      "reads",
-      "books",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s0_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          1
-        ],
-        "gloss": "내 여동생은"
-      },
-      {
-        "id": "s0_head",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "s0_subj"
-      },
-      {
-        "id": "s0_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "읽는다"
-      },
-      {
-        "id": "s0_obj",
-        "role": "OBJECT",
-        "range": [
-          3,
-          3
-        ],
-        "gloss": "책을"
-      }
-    ],
-    "translation": "내 여동생은 책을 읽는다.",
-    "skills": [
-      "subject_identification"
-    ],
-    "id": "S-L0-U05-001",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "Tom plays the piano.",
-    "tokens": [
-      "Tom",
-      "plays",
-      "the",
-      "piano",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s1_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "Tom은"
-      },
-      {
-        "id": "s1_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "친다"
-      },
-      {
-        "id": "s1_obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "피아노를"
-      }
-    ],
-    "translation": "Tom은 피아노를 친다.",
-    "skills": [
-      "subject_identification"
-    ],
-    "id": "S-L0-U05-002",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "The dog eats meat.",
-    "tokens": [
-      "The",
-      "dog",
-      "eats",
-      "meat",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s2_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          1
-        ],
-        "gloss": "그 개는"
-      },
-      {
-        "id": "s2_head",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "s2_subj"
-      },
-      {
-        "id": "s2_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "먹는다"
-      },
-      {
-        "id": "s2_obj",
-        "role": "OBJECT",
-        "range": [
-          3,
-          3
-        ],
-        "gloss": "고기를"
-      }
-    ],
-    "translation": "그 개는 고기를 먹는다.",
-    "skills": [
-      "subject_identification"
-    ],
-    "id": "S-L0-U05-003",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "Children love games.",
-    "tokens": [
-      "Children",
-      "love",
-      "games",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s3_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "아이들은"
-      },
-      {
-        "id": "s3_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "좋아한다"
-      },
-      {
-        "id": "s3_obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "게임을"
-      }
-    ],
-    "translation": "아이들은 게임을 좋아한다.",
-    "skills": [
-      "subject_identification"
-    ],
-    "id": "S-L0-U05-004",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "We clean the room.",
-    "tokens": [
-      "We",
-      "clean",
-      "the",
-      "room",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s4_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "우리는"
-      },
-      {
-        "id": "s4_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "청소한다"
-      },
-      {
-        "id": "s4_obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "방을"
-      }
-    ],
-    "translation": "우리는 방을 청소한다.",
-    "skills": [
-      "subject_identification"
-    ],
-    "id": "S-L0-U05-005",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
     "text": "The boy kicks the ball.",
     "tokens": [
       "The",
@@ -259,7 +12,7 @@
     ],
     "spans": [
       {
-        "id": "s5_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -268,16 +21,16 @@
         "gloss": "그 소년은"
       },
       {
-        "id": "s5_head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s5_subj"
+        "parent": "subj"
       },
       {
-        "id": "s5_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -286,7 +39,7 @@
         "gloss": "찬다"
       },
       {
-        "id": "s5_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
@@ -299,95 +52,205 @@
     "skills": [
       "subject_identification"
     ],
-    "id": "S-L0-U05-006",
+    "id": "S-L0-U05-001",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "Mom makes dinner.",
+    "text": "My mother cooks dinner.",
     "tokens": [
-      "Mom",
-      "makes",
+      "My",
+      "mother",
+      "cooks",
       "dinner",
       "."
     ],
     "spans": [
       {
-        "id": "s6_subj",
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "우리 어머니는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "만드신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          3
+        ],
+        "gloss": "저녁을"
+      }
+    ],
+    "translation": "우리 어머니는 저녁을 만드신다.",
+    "skills": [
+      "subject_identification"
+    ],
+    "id": "S-L0-U05-002",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The cat drinks milk.",
+    "tokens": [
+      "The",
+      "cat",
+      "drinks",
+      "milk",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 고양이는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "마신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          3
+        ],
+        "gloss": "우유를"
+      }
+    ],
+    "translation": "그 고양이는 우유를 마신다.",
+    "skills": [
+      "subject_identification"
+    ],
+    "id": "S-L0-U05-003",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "Students read books.",
+    "tokens": [
+      "Students",
+      "read",
+      "books",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           0
         ],
-        "gloss": "엄마는"
+        "gloss": "학생들은"
       },
       {
-        "id": "s6_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           1,
           1
         ],
-        "gloss": "만든다"
+        "gloss": "읽는다"
       },
       {
-        "id": "s6_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           2,
           2
         ],
-        "gloss": "저녁을"
+        "gloss": "책을"
       }
     ],
-    "translation": "엄마는 저녁을 만든다.",
+    "translation": "학생들은 책을 읽는다.",
     "skills": [
       "subject_identification"
     ],
-    "id": "S-L0-U05-007",
+    "id": "S-L0-U05-004",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "The students open the door.",
+    "text": "The teacher opens the door.",
     "tokens": [
       "The",
-      "students",
-      "open",
+      "teacher",
+      "opens",
       "the",
       "door",
       "."
     ],
     "spans": [
       {
-        "id": "s7_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           1
         ],
-        "gloss": "학생들이"
+        "gloss": "그 선생님은"
       },
       {
-        "id": "s7_head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s7_subj"
+        "parent": "subj"
       },
       {
-        "id": "s7_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
           2
         ],
-        "gloss": "연다"
+        "gloss": "여신다"
       },
       {
-        "id": "s7_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
@@ -396,7 +259,164 @@
         "gloss": "문을"
       }
     ],
-    "translation": "학생들이 문을 연다.",
+    "translation": "그 선생님은 문을 여신다.",
+    "skills": [
+      "subject_identification"
+    ],
+    "id": "S-L0-U05-005",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We play soccer.",
+    "tokens": [
+      "We",
+      "play",
+      "soccer",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "축구를"
+      }
+    ],
+    "translation": "우리는 축구를 한다.",
+    "skills": [
+      "subject_identification"
+    ],
+    "id": "S-L0-U05-006",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The girl writes a letter.",
+    "tokens": [
+      "The",
+      "girl",
+      "writes",
+      "a",
+      "letter",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 소녀는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "쓴다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "편지를"
+      }
+    ],
+    "translation": "그 소녀는 편지를 쓴다.",
+    "skills": [
+      "subject_identification"
+    ],
+    "id": "S-L0-U05-007",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "My father drives a car.",
+    "tokens": [
+      "My",
+      "father",
+      "drives",
+      "a",
+      "car",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "우리 아버지는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "운전하신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "차를"
+      }
+    ],
+    "translation": "우리 아버지는 차를 운전하신다.",
     "skills": [
       "subject_identification"
     ],
@@ -416,7 +436,7 @@
     ],
     "spans": [
       {
-        "id": "s0",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -425,16 +445,16 @@
         "gloss": "그 소년은"
       },
       {
-        "id": "h0",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s0"
+        "parent": "subj"
       },
       {
-        "id": "v0",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -443,7 +463,7 @@
         "gloss": "찬다"
       },
       {
-        "id": "o0",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
@@ -461,36 +481,92 @@
   },
   {
     "level": "L0",
-    "text": "My sister reads the book.",
+    "text": "A cat drinks the milk.",
     "tokens": [
-      "My",
-      "sister",
-      "reads",
+      "A",
+      "cat",
+      "drinks",
       "the",
-      "book",
+      "milk",
       "."
     ],
     "spans": [
       {
-        "id": "s1",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           1
         ],
-        "gloss": "내 여동생은"
+        "gloss": "고양이 한 마리가"
       },
       {
-        "id": "h1",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s1"
+        "parent": "subj"
       },
       {
-        "id": "v1",
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "마신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "그 우유를"
+      }
+    ],
+    "translation": "고양이 한 마리가 그 우유를 마신다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-010",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The girl reads a book.",
+    "tokens": [
+      "The",
+      "girl",
+      "reads",
+      "a",
+      "book",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 소녀는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -499,20 +575,411 @@
         "gloss": "읽는다"
       },
       {
-        "id": "o1",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
           4
         ],
-        "gloss": "그 책을"
+        "gloss": "책을"
       }
     ],
-    "translation": "내 여동생은 그 책을 읽는다.",
+    "translation": "그 소녀는 책을 읽는다.",
     "skills": [
       "verb_identification"
     ],
-    "id": "S-L0-U05-010",
+    "id": "S-L0-U05-011",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The teacher opens a window.",
+    "tokens": [
+      "The",
+      "teacher",
+      "opens",
+      "a",
+      "window",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 선생님은"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "연다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "창문을"
+      }
+    ],
+    "translation": "그 선생님은 창문을 연다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-012",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "A dog eats the bread.",
+    "tokens": [
+      "A",
+      "dog",
+      "eats",
+      "the",
+      "bread",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "개 한 마리가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "먹는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "그 빵을"
+      }
+    ],
+    "translation": "개 한 마리가 그 빵을 먹는다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-013",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The baby holds a cup.",
+    "tokens": [
+      "The",
+      "baby",
+      "holds",
+      "a",
+      "cup",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 아기는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "들고 있다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "컵을"
+      }
+    ],
+    "translation": "그 아기는 컵을 들고 있다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-014",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "A student sings the song.",
+    "tokens": [
+      "A",
+      "student",
+      "sings",
+      "the",
+      "song",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "한 학생이"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "부른다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "그 노래를"
+      }
+    ],
+    "translation": "한 학생이 그 노래를 부른다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-015",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The man buys a car.",
+    "tokens": [
+      "The",
+      "man",
+      "buys",
+      "a",
+      "car",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 남자는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "산다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "차를"
+      }
+    ],
+    "translation": "그 남자는 차를 산다.",
+    "skills": [
+      "verb_identification"
+    ],
+    "id": "S-L0-U05-016",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The boy kicks the ball.",
+    "tokens": [
+      "The",
+      "boy",
+      "kicks",
+      "the",
+      "ball",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 소년은"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "찬다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "공을"
+      }
+    ],
+    "translation": "그 소년은 공을 찬다.",
+    "skills": [
+      "object_identification"
+    ],
+    "id": "S-L0-U05-017",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "My mother bakes bread.",
+    "tokens": [
+      "My",
+      "mother",
+      "bakes",
+      "bread",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "우리 어머니는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "굽는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          3
+        ],
+        "gloss": "빵을"
+      }
+    ],
+    "translation": "우리 어머니는 빵을 굽는다.",
+    "skills": [
+      "object_identification"
+    ],
+    "id": "S-L0-U05-018",
     "reviewStatus": "draft"
   },
   {
@@ -527,7 +994,7 @@
     ],
     "spans": [
       {
-        "id": "s2",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -536,16 +1003,16 @@
         "gloss": "그 고양이는"
       },
       {
-        "id": "h2",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s2"
+        "parent": "subj"
       },
       {
-        "id": "v2",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -554,7 +1021,7 @@
         "gloss": "마신다"
       },
       {
-        "id": "o2",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
@@ -565,126 +1032,24 @@
     ],
     "translation": "그 고양이는 우유를 마신다.",
     "skills": [
-      "verb_identification"
+      "object_identification"
     ],
-    "id": "S-L0-U05-011",
+    "id": "S-L0-U05-019",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "Tom eats an apple.",
-    "tokens": [
-      "Tom",
-      "eats",
-      "an",
-      "apple",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s3",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "톰은"
-      },
-      {
-        "id": "v3",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "먹는다"
-      },
-      {
-        "id": "o3",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "사과를"
-      }
-    ],
-    "translation": "톰은 사과를 먹는다.",
-    "skills": [
-      "verb_identification"
-    ],
-    "id": "S-L0-U05-012",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "The girl opens the door.",
-    "tokens": [
-      "The",
-      "girl",
-      "opens",
-      "the",
-      "door",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s4",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          1
-        ],
-        "gloss": "그 소녀는"
-      },
-      {
-        "id": "h4",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "s4"
-      },
-      {
-        "id": "v4",
-        "role": "MAIN_VERB",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "연다"
-      },
-      {
-        "id": "o4",
-        "role": "OBJECT",
-        "range": [
-          3,
-          4
-        ],
-        "gloss": "문을"
-      }
-    ],
-    "translation": "그 소녀는 문을 연다.",
-    "skills": [
-      "verb_identification"
-    ],
-    "id": "S-L0-U05-013",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "We like the music.",
+    "text": "We clean the room.",
     "tokens": [
       "We",
-      "like",
+      "clean",
       "the",
-      "music",
+      "room",
       "."
     ],
     "spans": [
       {
-        "id": "s5",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -693,92 +1058,92 @@
         "gloss": "우리는"
       },
       {
-        "id": "v5",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           1,
           1
         ],
-        "gloss": "좋아한다"
+        "gloss": "청소한다"
       },
       {
-        "id": "o5",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           2,
           3
         ],
-        "gloss": "그 음악을"
+        "gloss": "그 방을"
       }
     ],
-    "translation": "우리는 그 음악을 좋아한다.",
+    "translation": "우리는 그 방을 청소한다.",
     "skills": [
-      "verb_identification"
+      "object_identification"
     ],
-    "id": "S-L0-U05-014",
+    "id": "S-L0-U05-020",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "The dog finds a bone.",
+    "text": "The students read books.",
     "tokens": [
       "The",
-      "dog",
-      "finds",
-      "a",
-      "bone",
+      "students",
+      "read",
+      "books",
       "."
     ],
     "spans": [
       {
-        "id": "s6",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           1
         ],
-        "gloss": "그 개는"
+        "gloss": "그 학생들은"
       },
       {
-        "id": "h6",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s6"
+        "parent": "subj"
       },
       {
-        "id": "v6",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
           2
         ],
-        "gloss": "찾아낸다"
+        "gloss": "읽는다"
       },
       {
-        "id": "o6",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
-          4
+          3
         ],
-        "gloss": "뼈 하나를"
+        "gloss": "책을"
       }
     ],
-    "translation": "그 개는 뼈 하나를 찾아낸다.",
+    "translation": "그 학생들은 책을 읽는다.",
     "skills": [
-      "verb_identification"
+      "object_identification"
     ],
-    "id": "S-L0-U05-015",
+    "id": "S-L0-U05-021",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "Dad washes the car.",
+    "text": "My father washes the car.",
     "tokens": [
-      "Dad",
+      "My",
+      "father",
       "washes",
       "the",
       "car",
@@ -786,139 +1151,47 @@
     ],
     "spans": [
       {
-        "id": "s7",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "아빠는"
-      },
-      {
-        "id": "v7",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "세차한다"
-      },
-      {
-        "id": "o7",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "차를"
-      }
-    ],
-    "translation": "아빠는 차를 세차한다.",
-    "skills": [
-      "verb_identification"
-    ],
-    "id": "S-L0-U05-016",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "Tom reads a book.",
-    "tokens": [
-      "Tom",
-      "reads",
-      "a",
-      "book",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s0-subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "톰은"
-      },
-      {
-        "id": "s0-verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "읽는다"
-      },
-      {
-        "id": "s0-obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "책을"
-      }
-    ],
-    "translation": "톰은 책을 읽는다.",
-    "skills": [
-      "object_identification"
-    ],
-    "id": "S-L0-U05-017",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "My sister drinks milk.",
-    "tokens": [
-      "My",
-      "sister",
-      "drinks",
-      "milk",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s1-subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           1
         ],
-        "gloss": "내 여동생은"
+        "gloss": "우리 아버지는"
       },
       {
-        "id": "s1-head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s1-subj"
+        "parent": "subj"
       },
       {
-        "id": "s1-verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
           2
         ],
-        "gloss": "마신다"
+        "gloss": "닦는다"
       },
       {
-        "id": "s1-obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
-          3
+          4
         ],
-        "gloss": "우유를"
+        "gloss": "그 차를"
       }
     ],
-    "translation": "내 여동생은 우유를 마신다.",
+    "translation": "우리 아버지는 그 차를 닦는다.",
     "skills": [
       "object_identification"
     ],
-    "id": "S-L0-U05-018",
+    "id": "S-L0-U05-022",
     "reviewStatus": "draft"
   },
   {
@@ -934,7 +1207,7 @@
     ],
     "spans": [
       {
-        "id": "s2-subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -943,16 +1216,16 @@
         "gloss": "그 소년은"
       },
       {
-        "id": "s2-head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s2-subj"
+        "parent": "subj"
       },
       {
-        "id": "s2-verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -961,7 +1234,7 @@
         "gloss": "찬다"
       },
       {
-        "id": "s2-obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
@@ -972,207 +1245,6 @@
     ],
     "translation": "그 소년은 공을 찬다.",
     "skills": [
-      "object_identification"
-    ],
-    "id": "S-L0-U05-019",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "We love music.",
-    "tokens": [
-      "We",
-      "love",
-      "music",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s3-subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "우리는"
-      },
-      {
-        "id": "s3-verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "사랑한다"
-      },
-      {
-        "id": "s3-obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "음악을"
-      }
-    ],
-    "translation": "우리는 음악을 사랑한다.",
-    "skills": [
-      "object_identification"
-    ],
-    "id": "S-L0-U05-020",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "The cat eats fish.",
-    "tokens": [
-      "The",
-      "cat",
-      "eats",
-      "fish",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s4-subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          1
-        ],
-        "gloss": "그 고양이는"
-      },
-      {
-        "id": "s4-head",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "s4-subj"
-      },
-      {
-        "id": "s4-verb",
-        "role": "MAIN_VERB",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "먹는다"
-      },
-      {
-        "id": "s4-obj",
-        "role": "OBJECT",
-        "range": [
-          3,
-          3
-        ],
-        "gloss": "생선을"
-      }
-    ],
-    "translation": "그 고양이는 생선을 먹는다.",
-    "skills": [
-      "object_identification"
-    ],
-    "id": "S-L0-U05-021",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "She opens the door.",
-    "tokens": [
-      "She",
-      "opens",
-      "the",
-      "door",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s5-subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "그녀는"
-      },
-      {
-        "id": "s5-verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "연다"
-      },
-      {
-        "id": "s5-obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          3
-        ],
-        "gloss": "문을"
-      }
-    ],
-    "translation": "그녀는 문을 연다.",
-    "skills": [
-      "object_identification"
-    ],
-    "id": "S-L0-U05-022",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "My sister likes apples.",
-    "tokens": [
-      "My",
-      "sister",
-      "likes",
-      "apples",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s0_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          1
-        ],
-        "gloss": "나의 여동생은"
-      },
-      {
-        "id": "s0_head",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "s0_subj"
-      },
-      {
-        "id": "s0_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "좋아한다"
-      },
-      {
-        "id": "s0_obj",
-        "role": "OBJECT",
-        "range": [
-          3,
-          3
-        ],
-        "gloss": "사과를"
-      }
-    ],
-    "translation": "나의 여동생은 사과를 좋아한다.",
-    "skills": [
       "svo_word_order"
     ],
     "id": "S-L0-U05-023",
@@ -1180,44 +1252,53 @@
   },
   {
     "level": "L0",
-    "text": "Tom reads a book.",
+    "text": "My mother cooks dinner.",
     "tokens": [
-      "Tom",
-      "reads",
-      "a",
-      "book",
+      "My",
+      "mother",
+      "cooks",
+      "dinner",
       "."
     ],
     "spans": [
       {
-        "id": "s1_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
-          0
+          1
         ],
-        "gloss": "Tom은"
+        "gloss": "우리 어머니는"
       },
       {
-        "id": "s1_verb",
-        "role": "MAIN_VERB",
+        "id": "head",
+        "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "gloss": "읽는다"
+        "parent": "subj"
       },
       {
-        "id": "s1_obj",
-        "role": "OBJECT",
+        "id": "verb",
+        "role": "MAIN_VERB",
         "range": [
           2,
+          2
+        ],
+        "gloss": "만드신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
           3
         ],
-        "gloss": "책을"
+        "gloss": "저녁 식사를"
       }
     ],
-    "translation": "Tom은 책을 읽는다.",
+    "translation": "우리 어머니는 저녁 식사를 만드신다.",
     "skills": [
       "svo_word_order"
     ],
@@ -1226,54 +1307,53 @@
   },
   {
     "level": "L0",
-    "text": "The boy kicks the ball.",
+    "text": "The students read books.",
     "tokens": [
       "The",
-      "boy",
-      "kicks",
-      "the",
-      "ball",
+      "students",
+      "read",
+      "books",
       "."
     ],
     "spans": [
       {
-        "id": "s2_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           1
         ],
-        "gloss": "그 소년은"
+        "gloss": "그 학생들은"
       },
       {
-        "id": "s2_head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s2_subj"
+        "parent": "subj"
       },
       {
-        "id": "s2_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
           2
         ],
-        "gloss": "찬다"
+        "gloss": "읽는다"
       },
       {
-        "id": "s2_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
-          4
+          3
         ],
-        "gloss": "그 공을"
+        "gloss": "책을"
       }
     ],
-    "translation": "그 소년은 공을 찬다.",
+    "translation": "그 학생들은 책을 읽는다.",
     "skills": [
       "svo_word_order"
     ],
@@ -1282,62 +1362,18 @@
   },
   {
     "level": "L0",
-    "text": "We play soccer.",
-    "tokens": [
-      "We",
-      "play",
-      "soccer",
-      "."
-    ],
-    "spans": [
-      {
-        "id": "s3_subj",
-        "role": "SUBJECT",
-        "range": [
-          0,
-          0
-        ],
-        "gloss": "우리는"
-      },
-      {
-        "id": "s3_verb",
-        "role": "MAIN_VERB",
-        "range": [
-          1,
-          1
-        ],
-        "gloss": "한다"
-      },
-      {
-        "id": "s3_obj",
-        "role": "OBJECT",
-        "range": [
-          2,
-          2
-        ],
-        "gloss": "축구를"
-      }
-    ],
-    "translation": "우리는 축구를 한다.",
-    "skills": [
-      "svo_word_order"
-    ],
-    "id": "S-L0-U05-026",
-    "reviewStatus": "draft"
-  },
-  {
-    "level": "L0",
-    "text": "The dog eats food.",
+    "text": "The dog eats the bread.",
     "tokens": [
       "The",
       "dog",
       "eats",
-      "food",
+      "the",
+      "bread",
       "."
     ],
     "spans": [
       {
-        "id": "s4_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
@@ -1346,16 +1382,16 @@
         "gloss": "그 개는"
       },
       {
-        "id": "s4_head",
+        "id": "head",
         "role": "HEAD_NOUN",
         "range": [
           1,
           1
         ],
-        "parent": "s4_subj"
+        "parent": "subj"
       },
       {
-        "id": "s4_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           2,
@@ -1364,43 +1400,43 @@
         "gloss": "먹는다"
       },
       {
-        "id": "s4_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           3,
-          3
+          4
         ],
-        "gloss": "먹이를"
+        "gloss": "그 빵을"
       }
     ],
-    "translation": "그 개는 먹이를 먹는다.",
+    "translation": "그 개는 그 빵을 먹는다.",
     "skills": [
       "svo_word_order"
     ],
-    "id": "S-L0-U05-027",
+    "id": "S-L0-U05-026",
     "reviewStatus": "draft"
   },
   {
     "level": "L0",
-    "text": "Mina drinks milk.",
+    "text": "We drink milk.",
     "tokens": [
-      "Mina",
-      "drinks",
+      "We",
+      "drink",
       "milk",
       "."
     ],
     "spans": [
       {
-        "id": "s5_subj",
+        "id": "subj",
         "role": "SUBJECT",
         "range": [
           0,
           0
         ],
-        "gloss": "미나는"
+        "gloss": "우리는"
       },
       {
-        "id": "s5_verb",
+        "id": "verb",
         "role": "MAIN_VERB",
         "range": [
           1,
@@ -1409,7 +1445,7 @@
         "gloss": "마신다"
       },
       {
-        "id": "s5_obj",
+        "id": "obj",
         "role": "OBJECT",
         "range": [
           2,
@@ -1418,7 +1454,63 @@
         "gloss": "우유를"
       }
     ],
-    "translation": "미나는 우유를 마신다.",
+    "translation": "우리는 우유를 마신다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-027",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "My father washes the car.",
+    "tokens": [
+      "My",
+      "father",
+      "washes",
+      "the",
+      "car",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "우리 아버지는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "닦으신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "차를"
+      }
+    ],
+    "translation": "우리 아버지는 차를 닦으신다.",
     "skills": [
       "svo_word_order"
     ],
