@@ -3,6 +3,7 @@ import { ROLE_CLASS } from "@/components/learning/roleStyles";
 import type { RoleSymbol } from "@/lib/engine/analyzer";
 import type { Question } from "@/lib/schema/question";
 import type { AnnotatedSentence } from "@/lib/schema/sentence";
+import type { Vocabulary } from "@/lib/schema/vocabulary";
 import type { QueueEntry } from "@/lib/pipeline/review-store";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ export function ItemPreview({ entry, sentences }: { entry: QueueEntry; sentences
   if (!item) return <p className="text-destructive">초안 파일에서 이 항목을 찾지 못했습니다.</p>;
   if (record.kind === "sentence") return <SentencePreview sentence={item as AnnotatedSentence} />;
   if (record.kind === "question") return <QuestionPreview question={item as Question} sentenceText={sentences[(item as Question).sentenceId ?? ""]} />;
+  if (record.kind === "vocabulary") return <VocabularyPreview word={item as Vocabulary} />;
   return <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-caption">{JSON.stringify(item, null, 2)}</pre>;
 }
 
@@ -66,6 +68,28 @@ function QuestionPreview({ question, sentenceText }: { question: Question; sente
       </ul>
       <p>해설: {question.explanation.summary}</p>
       {question.hints?.direction && <p className="text-caption text-muted-foreground">힌트 1: {question.hints.direction}</p>}
+    </div>
+  );
+}
+
+function VocabularyPreview({ word }: { word: Vocabulary }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <p>
+        <span lang="en" className="text-title font-bold">
+          {word.lemma}
+        </span>{" "}
+        <span className="text-caption text-muted-foreground">{word.pos}</span>
+      </p>
+      <p>{word.meanings.join(", ")}</p>
+      {word.example && (
+        <>
+          <p lang="en" className="text-sentence">
+            {word.example.en}
+          </p>
+          <p className="text-muted-foreground">{word.example.ko}</p>
+        </>
+      )}
     </div>
   );
 }

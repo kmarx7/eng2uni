@@ -59,7 +59,18 @@ function draftLocation(contentDir: string, record: ReviewRecord): { file: string
   return { file, items: readJsonArray<Item>(file) };
 }
 
+// The approved vocabulary file that holds a word (examples are added to it in place).
+function approvedVocabularyFile(contentDir: string, itemId: string): string | undefined {
+  const dir = path.join(contentDir, "vocabulary");
+  if (!existsSync(dir)) return undefined;
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => path.join(dir, f))
+    .find((f) => readJsonArray<Item>(f).some((i) => i.id === itemId));
+}
+
 function approvedLocation(contentDir: string, record: ReviewRecord): string | undefined {
+  if (record.kind === "vocabulary") return approvedVocabularyFile(contentDir, record.id);
   if (record.kind === "catalog") {
     const key = catalogFileOf(contentDir, record.id);
     return key && path.join(contentDir, CATALOG_FILES[key]);
@@ -105,6 +116,11 @@ function precondition(contentDir: string, record: ReviewRecord, item: Item): str
     const sentenceId = (item as unknown as Question).sentenceId;
     if (sentenceId && !approved.has(sentenceId)) return `문장 ${sentenceId}을 먼저 승인하세요`;
   }
+  if (record.kind === "vocabulary") {
+    const file = approvedVocabularyFile(contentDir, record.id);
+    const word = file && readJsonArray<Item>(file).find((i) => i.id === record.id);
+    if (!word || word.reviewStatus !== "approved") return `단어 ${String(item.lemma)}이 아직 승인되지 않았습니다(npm run vocab:approve 먼저)`;
+  }
   if (record.kind === "unit") {
     const unit = item as unknown as Unit;
     const used = unit.blocks.flatMap((b) => [
@@ -123,14 +139,17 @@ export function approve(contentDir: string, itemId: string, reviewer: string, no
   const record = findRecord(contentDir, itemId);
   if (!record || record.status === "approved" || record.status === "retired") return { ok: false, error: `검수할 항목 ${itemId}이 없습니다` };
   const item = findItem(contentDir, record);
-  const target = approvedLocation(contentDir, record);
-  if (!item || !target) return { ok: false, error: `초안 ${itemId}을 찾을 수 없습니다` };
+  if (!item) return { ok: false, error: `초안 ${itemId}을 찾을 수 없습니다` };
   const blocked = precondition(contentDir, record, item);
   if (blocked) return { ok: false, error: blocked };
+  const target = approvedLocation(contentDir, record);
+  if (!target) return { ok: false, error: `초안 ${itemId}을 찾을 수 없습니다` };
 
   const before = new Set(studentIssues(contentDir).map(issueKey));
   const raw = readRaw(target);
-  const approvedItem: Item = { ...item, reviewStatus: "approved" };
+  // A vocabulary draft only adds its example to the approved word.
+  const base = record.kind === "vocabulary" ? readJsonArray<Item>(target).find((i) => i.id === itemId)! : item;
+  const approvedItem: Item = record.kind === "vocabulary" ? { ...base, example: item.example, reviewStatus: "approved" } : { ...item, reviewStatus: "approved" };
   if (record.kind === "question") approvedItem.source = { ...(item as unknown as Question).source, reviewedBy: reviewer };
   writeJsonAtomic(target, mergeById(readJsonArray<Item>(target), [approvedItem]));
 
