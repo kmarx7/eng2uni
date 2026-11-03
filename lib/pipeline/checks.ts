@@ -12,7 +12,7 @@ export function missingDistractorTags(q: Question): string[] {
   return q.options.filter((o) => o.id !== q.answer && !o.misconception && !o.trap).map((o) => o.id);
 }
 
-const englishWords = (text: string): string[] => text.split(/\s+/).map((w) => w.replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, ""));
+export const englishWords = (text: string): string[] => text.split(/\s+/).map((w) => w.replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, ""));
 
 export interface DraftGroup {
   sentences: AnnotatedSentence[];
@@ -59,6 +59,7 @@ export function checkDraftGroup({ sentences, questions, catalog, allowed, simila
 // units and catalogue entries are always approved one by one.
 export function isClean(r: ReviewRecord): boolean {
   if (r.status !== "auto_checked" || r.checks.similarity !== "pass") return false;
+  if (r.checks.rules !== "pass" || r.checks.vocab !== "pass" || r.checks.tags === "fail") return false;
   if (r.kind === "question") return r.crossSolve?.agrees === true && r.preReview !== undefined && r.preReview.issues.length === 0;
   return r.kind === "sentence" || r.kind === "vocabulary";
 }

@@ -1,10 +1,11 @@
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { ClaudeRunner } from "./claude-cli";
 import { readDrafts } from "./draft-store";
 import { assignIds, groupOutputSchema, runGenerate } from "./generate";
+import { approve } from "./review-store";
 
 let root: string;
 const now = new Date("2026-11-03T09:00:00+09:00");
@@ -170,5 +171,69 @@ describe("runGenerate", () => {
     expect(await run(again.runner)).toMatchObject({ calls: 0, written: 0 });
     expect(again.calls).toHaveLength(0);
     expect(readDrafts(path.join(root, "content"), "L0-U05")).toEqual(before);
+  });
+});
+
+describe("review fixes", () => {
+  const contentDir = () => path.join(root, "content");
+  const approveAll = () => {
+    for (const id of ["subject_find", "verb_as_subject", "S-L0-U05-001", "S-L0-U05-002", "Q-L0-U05-001", "Q-L0-U05-002", "L0-U05"]) {
+      expect(approve(contentDir(), id, "kim", now)).toEqual({ ok: true });
+    }
+  };
+
+  it("does not bring approved items back or touch their records on a re-run", async () => {
+    await run(fakeRunner().runner);
+    approveAll();
+    const again = await run(fakeRunner().runner);
+    expect(again).toMatchObject({ calls: 0, written: 0 });
+    const drafts = readDrafts(contentDir(), "L0-U05");
+    expect(drafts.sentences).toEqual([]);
+    expect(drafts.questions).toEqual([]);
+    expect(drafts.units).toEqual([]);
+    expect(drafts.records.every((r) => r.status === "approved" && r.reviewedBy === "kim")).toBe(true);
+    expect(existsSync(path.join(contentDir(), "drafts/skills.json")) ? JSON.parse(readFileSync(path.join(contentDir(), "drafts/skills.json"), "utf8")) : []).toEqual([]);
+  });
+
+  it("numbers new drafts after approved ones and skips approved groups when the spec changes", async () => {
+    await run(fakeRunner().runner, { limit: 1 });
+    for (const id of ["subject_find", "verb_as_subject", "S-L0-U05-001", "Q-L0-U05-001"]) expect(approve(contentDir(), id, "kim", now)).toEqual({ ok: true });
+    const changed = { ...spec, objectives: ["바뀐 목표"] };
+    writeFileSync(path.join(root, "content/specs/L0-U05.json"), JSON.stringify(changed));
+    const { runner, calls } = fakeRunner();
+    await run(runner);
+    expect(calls).toHaveLength(2);
+    const drafts = readDrafts(contentDir(), "L0-U05");
+    expect(drafts.questions.map((q) => [q.id, q.variantGroup])).toEqual([["Q-L0-U05-002", "VG-L0-U05-verb"]]);
+    expect(drafts.sentences.map((s) => s.id)).toEqual(["S-L0-U05-002"]);
+  });
+
+  it("checks a unit against approved items too", async () => {
+    await run(fakeRunner().runner, { limit: 2 });
+    for (const id of ["subject_find", "verb_as_subject", "S-L0-U05-001", "Q-L0-U05-001"]) expect(approve(contentDir(), id, "kim", now)).toEqual({ ok: true });
+    await run(fakeRunner().runner);
+    expect(readDrafts(contentDir(), "L0-U05").units.map((u) => u.id)).toEqual(["L0-U05"]);
+    expect(readDrafts(contentDir(), "L0-U05").records.find((r) => r.id === "L0-U05")).toMatchObject({ status: "auto_checked", reasons: [] });
+  });
+
+  it("flags a unit that uses an id no draft or approved item has", async () => {
+    const bad = { ...unitOut, blocks: [...unitOut.blocks, { id: "L0-U05-B03", type: "practice", questionIds: ["Q-L0-U05-999"] }] };
+    const runner: ClaudeRunner = async ({ input }) =>
+      input.includes('"task":"unit"') ? { ok: true, json: bad } : { ok: true, json: { sentences: [sentenceOut], questions: [questionOut()] } };
+    await run(runner);
+    const record = readDrafts(contentDir(), "L0-U05").records.find((r) => r.id === "L0-U05");
+    expect(record).toMatchObject({ status: "flagged" });
+    expect(record?.reasons.join()).toContain("Q-L0-U05-999");
+  });
+
+  it("flags a question whose sentence number is out of range", async () => {
+    const runner: ClaudeRunner = async ({ input }) =>
+      input.includes('"task":"unit"')
+        ? { ok: true, json: unitOut }
+        : { ok: true, json: { sentences: [sentenceOut], questions: [{ ...questionOut(), sentenceIndex: 5 }] } };
+    await run(runner, { limit: 1 });
+    const record = readDrafts(contentDir(), "L0-U05").records.find((r) => r.id === "Q-L0-U05-001");
+    expect(record).toMatchObject({ status: "flagged", checks: { rules: "fail" } });
+    expect(record?.reasons).toContain("문장 번호 범위 밖: 5");
   });
 });

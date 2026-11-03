@@ -50,10 +50,9 @@ export function appendReport(reportsDir: string, contentDir: string, input: Repo
   return { ok: true };
 }
 
-// Returns how many questions were sent back to review.
-export function applyReports(contentDir: string, reportsFile: string, now: Date): number {
-  if (!existsSync(reportsFile)) return 0;
-  const reports = readFileSync(reportsFile, "utf8")
+function readReports(reportsFile: string): Report[] {
+  if (!existsSync(reportsFile)) return [];
+  return readFileSync(reportsFile, "utf8")
     .split("\n")
     .filter((line) => line.trim())
     .flatMap((line) => {
@@ -64,6 +63,32 @@ export function applyReports(contentDir: string, reportsFile: string, now: Date)
         return [];
       }
     });
+}
+
+export interface ReportSummary {
+  questionId: string;
+  count: number;
+  reasons: string[];
+  notes: string[];
+}
+
+// Pending reports grouped by question, for a person to read before applying them.
+export function summarizeReports(reportsFile: string): ReportSummary[] {
+  const byQuestion = new Map<string, ReportSummary>();
+  for (const r of readReports(reportsFile)) {
+    const entry = byQuestion.get(r.questionId) ?? { questionId: r.questionId, count: 0, reasons: [], notes: [] };
+    entry.count += 1;
+    if (!entry.reasons.includes(REASON_LABEL[r.reason])) entry.reasons.push(REASON_LABEL[r.reason]);
+    if (r.note) entry.notes.push(r.note);
+    byQuestion.set(r.questionId, entry);
+  }
+  return [...byQuestion.values()];
+}
+
+// Returns how many questions were sent back to review.
+export function applyReports(contentDir: string, reportsFile: string, now: Date): number {
+  if (!existsSync(reportsFile)) return 0;
+  const reports = readReports(reportsFile);
   const handled = new Set<string>();
   for (const report of reports) {
     const file = approvedQuestionFile(contentDir, report.questionId);

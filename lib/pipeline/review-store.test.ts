@@ -9,6 +9,7 @@ import type { AnnotatedSentence } from "@/lib/schema/sentence";
 import { readDrafts, writeDrafts, writeJsonAtomic } from "./draft-store";
 import { approve, approveBatch, cleanBatch, editItem, listQueue, pickSample, reject, sendBatchToIndividual } from "./review-store";
 
+let base: string;
 let dir: string;
 const now = new Date("2026-11-03T09:00:00+09:00");
 const U = "L0-U05";
@@ -62,7 +63,10 @@ const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const snapshot = () => JSON.stringify([readDrafts(dir, U), existsSync(approvedFile("questions")), existsSync(approvedFile("sentences"))]);
 
 beforeEach(() => {
-  dir = mkdtempSync(path.join(tmpdir(), "review-store-"));
+  base = mkdtempSync(path.join(tmpdir(), "review-store-"));
+  dir = path.join(base, "content");
+  const lemmas = ["the", "cat", "drink", "milk"].map((lemma) => ({ lemma, kind: "content" }));
+  writeJsonAtomic(path.join(base, "analysis/vocab_frequency.json"), { lemmas });
   writeJsonAtomic(path.join(dir, "skills.json"), [{ id: "subject_find", name: "주어 찾기", category: "syntax", prerequisiteIds: [] }]);
   writeJsonAtomic(path.join(dir, "misconceptions.json"), [
     { id: "verb_as_subject", skillId: "subject_find", category: "SYN", description: "동사를 주어로 본다" },
@@ -73,7 +77,7 @@ beforeEach(() => {
     records: [record(`S-${U}-001`, "sentence"), record(`S-${U}-002`, "sentence", { status: "flagged", reasons: ["허용 어휘 밖: x"] }), record(`Q-${U}-001`, "question"), record(`Q-${U}-002`, "question")],
   });
 });
-afterEach(() => rmSync(dir, { recursive: true, force: true }));
+afterEach(() => rmSync(base, { recursive: true, force: true }));
 
 describe("listQueue", () => {
   it("puts flagged items first and leaves out finished ones", () => {
@@ -176,12 +180,24 @@ describe("editItem", () => {
     expect(snapshot()).toBe(before);
   });
 
-  it("saves a valid edit as a draft and keeps the cross-solve", () => {
+  it("saves a valid edit as a draft and sends a question back for a new cross-solve", () => {
     const edited = { ...question(1), prompt: "이 문장의 주어는?", reviewStatus: "approved" };
     expect(editItem(dir, `Q-${U}-001`, JSON.stringify(edited))).toEqual({ ok: true });
     const drafts = readDrafts(dir, U);
     expect(drafts.questions[0]).toMatchObject({ prompt: "이 문장의 주어는?", reviewStatus: "draft" });
-    expect(drafts.records.find((r) => r.id === `Q-${U}-001`)).toMatchObject({ status: "auto_checked", reasons: ["사람이 수정함"], crossSolve: { agrees: true } });
+    const record = drafts.records.find((r) => r.id === `Q-${U}-001`)!;
+    expect(record).toMatchObject({ status: "auto_checked", reasons: ["사람이 수정함", "유사도 미검사(수정 후)"] });
+    expect(record.crossSolve).toBeUndefined();
+    expect(record.preReview).toBeUndefined();
+    expect(cleanBatch(dir, U)).not.toContain(`Q-${U}-001`);
+  });
+
+  it("re-checks words after an edit and keeps a still-failing item flagged", () => {
+    const edited = { ...sentence(1), tokens: ["The", "zyzzyva", "drinks", "milk", "."] };
+    expect(editItem(dir, `S-${U}-001`, JSON.stringify(edited))).toEqual({ ok: true });
+    const record = readDrafts(dir, U).records.find((r) => r.id === `S-${U}-001`)!;
+    expect(record).toMatchObject({ status: "flagged", checks: { vocab: "fail", similarity: "skipped" } });
+    expect(record.reasons).toContain("허용 어휘 밖: zyzzyva");
   });
 
   it("refuses an edit that changes the id", () => {

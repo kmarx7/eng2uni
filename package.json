@@ -25,7 +25,8 @@
     "vocab:approve": "tsx scripts/approve-vocab.ts",
     "content:generate": "tsx scripts/content-pipeline/generate.ts",
     "content:crosscheck": "tsx scripts/content-pipeline/crosscheck.ts",
-    "content:reports": "tsx scripts/content-pipeline/reports.ts"
+    "content:reports": "tsx scripts/content-pipeline/reports.ts",
+    "postbuild": "tsx scripts/check-trace.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",

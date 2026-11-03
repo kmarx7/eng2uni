@@ -11,7 +11,7 @@
 5. `ADMIN_PASSWORD=… REVIEWER_NAME=… npm run dev` → http://localhost:3000/admin/review-queue 에서 사람이 승인·수정·폐기
    (기초 목록 → 문장 → 문항 → 단원 순서로 승인. 깨끗한 묶음은 표본을 모두 열어 본 뒤 일괄 승인)
 6. 어휘 예문: `npm run content:generate -- --vocab L0 [--dry-run|--limit N]` → 검수 화면 "어휘" 탭
-7. 학생 신고(`ENABLE_REPORTS=1`일 때만 버튼 표시): `npm run content:reports` → 신고 문항을 학생 화면에서 내리고 검수 대기로
+7. 학생 신고(`ENABLE_REPORTS=1`일 때만 버튼 표시): `npm run content:reports`로 목록 확인 → `npm run content:reports -- --apply`로 신고 문항을 학생 화면에서 내리고 검수 대기로
 
 같은 호출 결과는 `.cache/content-pipeline/`에 캐시되어 다시 실행해도 호출하지 않는다.
 어떤 스크립트도 approved로 바꾸지 않는다. 승인은 검수 화면에서 사람만 한다.

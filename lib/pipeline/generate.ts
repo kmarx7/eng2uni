@@ -7,6 +7,7 @@ import path from "node:path";
 import { z } from "zod";
 import type { ContentFile } from "@/lib/schema/content-rules";
 import { checkContent } from "@/lib/schema/content-rules";
+import { DRAFTS_DIR, FIXTURES_DIR, HANDOFF_DIRS, SPECS_DIR, loadContentRoot } from "@/lib/schema/content-tree";
 import { LessonBlock, Unit } from "@/lib/schema/curriculum";
 import { Question } from "@/lib/schema/question";
 import type { ReviewRecord } from "@/lib/schema/review-record";
@@ -76,6 +77,14 @@ function catalogFiles(contentDir: string): ContentFile[] {
   );
 }
 
+// What the unit already has outside the drafts: approved items keep their ids and
+// groups, so a re-run neither regenerates nor renumbers them.
+function approvedOf<T>(contentDir: string, dir: string, unitId: string): T[] {
+  return readJsonArray<T>(path.join(contentDir, dir, `${unitId}.json`));
+}
+
+const studentFiles = (contentDir: string) => loadContentRoot(contentDir, [DRAFTS_DIR, FIXTURES_DIR, SPECS_DIR, ...HANDOFF_DIRS]).files;
+
 export function unitOrder(unitId: string): number {
   const match = /U(\d+)$/.exec(unitId);
   return match ? Number(match[1]) : 0;
@@ -98,8 +107,15 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   if (opts.dryRun) return { calls: planned.length - cached, written: 0, flagged: 0, failed: 0 };
 
   // Catalogue drafts first, so drafts that reference them pass the reference checks.
-  writeCatalogDrafts(contentDir, spec.catalog);
+  // Entries that already have a record (drafted, approved or retired) are left alone.
   const existingRecords = new Set(readDrafts(contentDir, spec.unitId).records.map((r) => r.id));
+  const fresh = <T extends { id: string }>(items: T[]) => items.filter((item) => !existingRecords.has(item.id));
+  writeCatalogDrafts(contentDir, {
+    level: spec.catalog.level && !existingRecords.has(spec.catalog.level.id) ? spec.catalog.level : undefined,
+    skills: fresh(spec.catalog.skills),
+    misconceptions: fresh(spec.catalog.misconceptions),
+    traps: fresh(spec.catalog.traps),
+  });
   const catalogRecords: ReviewRecord[] = [spec.catalog.level, ...spec.catalog.skills, ...spec.catalog.misconceptions, ...spec.catalog.traps]
     .filter((item) => item !== undefined && !existingRecords.has(item.id))
     .map((item) => ({
@@ -137,14 +153,27 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
     return parsed.data;
   }
 
-  for (const group of spec.generation.variantGroups) {
+  const unitQuestions = () => [...readDrafts(contentDir, spec.unitId).questions, ...approvedOf<Question>(contentDir, "questions", spec.unitId)];
+  const usedIds = () => {
     const drafts = readDrafts(contentDir, spec.unitId);
-    if (drafts.questions.some((q) => q.variantGroup === group.id)) continue;
+    return [
+      ...drafts.records.map((r) => r.id),
+      ...drafts.sentences.map((x) => x.id),
+      ...drafts.questions.map((x) => x.id),
+      ...approvedOf<{ id: string }>(contentDir, "sentences", spec.unitId).map((x) => x.id),
+      ...approvedOf<{ id: string }>(contentDir, "questions", spec.unitId).map((x) => x.id),
+    ];
+  };
+
+  for (const group of spec.generation.variantGroups) {
+    if (unitQuestions().some((q) => q.variantGroup === group.id)) continue;
     const output = await call(groupKey(group), group.id, buildGroupPrompt(spec, group), GroupOutput, groupOutputSchema());
     if (!output) continue;
 
-    const sentenceIds = assignIds(spec.unitId, drafts.sentences.map((s) => s.id), output.sentences.length, "S");
-    const questionIds = assignIds(spec.unitId, drafts.questions.map((q) => q.id), output.questions.length, "Q");
+    const used = usedIds();
+    const sentenceIds = assignIds(spec.unitId, used, output.sentences.length, "S");
+    const questionIds = assignIds(spec.unitId, used, output.questions.length, "Q");
+    const badIndex = new Map(output.questions.flatMap((q, i) => (sentenceIds[q.sentenceIndex] ? [] : [[questionIds[i], q.sentenceIndex] as const])));
     const sentences = output.sentences.map((s, i) => ({ ...s, id: sentenceIds[i], reviewStatus: "draft" as const }));
     const questions = output.questions.map(({ sentenceIndex, ...q }, i) => ({
       ...q,
@@ -161,7 +190,24 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
     ]);
     const checked = checkDraftGroup({ sentences, questions, catalog: catalogFiles(contentDir), allowed, similarity });
     const records: ReviewRecord[] = [...sentences.map((s) => [s.id, "sentence"] as const), ...questions.map((q) => [q.id, "question"] as const)].map(
-      ([id, kind]) => ({ id, kind, unitId: spec.unitId, ...checked.get(id)!, generatedAt: at, reports: [] }),
+      ([id, kind]) => {
+        const outcome = checked.get(id)!;
+        // A question pointing past the group's sentences would reach students with no sentence.
+        if (badIndex.has(id)) {
+          return {
+            id,
+            kind,
+            unitId: spec.unitId,
+            ...outcome,
+            status: "flagged" as const,
+            reasons: [...outcome.reasons, `문장 번호 범위 밖: ${badIndex.get(id)}`],
+            checks: { ...outcome.checks, rules: "fail" as const },
+            generatedAt: at,
+            reports: [],
+          };
+        }
+        return { id, kind, unitId: spec.unitId, ...outcome, generatedAt: at, reports: [] };
+      },
     );
     writeDrafts(contentDir, spec.unitId, { sentences, questions, records });
     result.written += sentences.length + questions.length;
@@ -169,11 +215,13 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   }
 
   const drafts = readDrafts(contentDir, spec.unitId);
-  const allGroups = spec.generation.variantGroups.every((g) => drafts.questions.some((q) => q.variantGroup === g.id));
-  if (allGroups && drafts.units.length === 0) {
+  const questionsNow = unitQuestions().filter((q) => q.reviewStatus !== "retired");
+  const allGroups = spec.generation.variantGroups.every((g) => questionsNow.some((q) => q.variantGroup === g.id));
+  const hasUnit = drafts.units.length > 0 || drafts.records.some((r) => r.id === spec.unitId) || approvedOf(contentDir, "units", spec.unitId).length > 0;
+  if (allGroups && !hasUnit) {
     const ids = {
       groups: spec.generation.variantGroups.map((g) => {
-        const questions = drafts.questions.filter((q) => q.variantGroup === g.id);
+        const questions = questionsNow.filter((q) => q.variantGroup === g.id);
         const sentenceIds = new Set(questions.map((q) => q.sentenceId).filter((id) => id !== undefined));
         return { id: g.id, sentenceUse: g.sentenceUse, sentenceIds: [...sentenceIds], questionIds: questions.map((q) => q.id) };
       }),
@@ -190,16 +238,18 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
         reviewStatus: "draft",
         version: 1,
       });
-      const blockIds = new Set([unit.id, ...unit.blocks.map((b) => b.id)]);
+      // Rule issues on a unit name the unit or "unitId/blockId"; approved items count as present.
+      const draftCatalog = catalogFiles(contentDir).filter((f) => f.path.includes(`${path.sep}drafts${path.sep}`));
       const issues = checkContent(
         [
-          ...catalogFiles(contentDir),
+          ...studentFiles(contentDir),
+          ...draftCatalog,
           { path: "sentences", kind: "sentence", data: drafts.sentences },
           { path: "questions", kind: "question", data: drafts.questions },
           { path: "units", kind: "unit", data: [unit] },
         ],
         { mode: "full", requireApproved: false, requireFixtureIds: false },
-      ).filter((i) => i.itemId !== undefined && blockIds.has(i.itemId));
+      ).filter((i) => i.itemId === unit.id || i.itemId?.startsWith(`${unit.id}/`));
       const reasons = issues.map((i) => `규칙 위반: ${i.message}`);
       const record: ReviewRecord = {
         id: unit.id,

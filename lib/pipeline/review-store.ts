@@ -7,8 +7,11 @@ import { CONTENT_SCHEMAS, checkContent, type ContentFile, type ContentIssue } fr
 import { DRAFTS_DIR, FIXTURES_DIR, HANDOFF_DIRS, SPECS_DIR, loadContentRoot, validateContentTree } from "@/lib/schema/content-tree";
 import type { Unit } from "@/lib/schema/curriculum";
 import type { Question } from "@/lib/schema/question";
+import type { AnnotatedSentence } from "@/lib/schema/sentence";
+import type { Vocabulary } from "@/lib/schema/vocabulary";
 import type { ReviewRecord } from "@/lib/schema/review-record";
-import { isClean } from "./checks";
+import { englishWords, isClean, missingDistractorTags } from "./checks";
+import { allowedLemmas, outOfRange, type FrequencyTable } from "./vocab-range";
 import { CATALOG_FILES, draftFile, mergeById, readDrafts, readJsonArray, writeDrafts, writeJsonAtomic } from "./draft-store";
 
 export interface QueueEntry {
@@ -262,8 +265,59 @@ export function editItem(contentDir: string, itemId: string, json: string): Edit
   if (issues.length) return { ok: false, errors: issues.map((i) => i.message) };
 
   writeJsonAtomic(location.file, location.items.map((i) => (i.id === itemId ? (parsed.data as Item) : i)));
-  writeDrafts(contentDir, record.unitId, { records: [{ ...record, status: "auto_checked", reasons: ["사람이 수정함"] }] });
+  writeDrafts(contentDir, record.unitId, { records: [recheckEdited(contentDir, record, parsed.data as Item)] });
   return { ok: true };
+}
+
+// The spec's word limit for a unit, else the default 2000.
+function rankFor(contentDir: string, unitId: string): number {
+  const file = path.join(contentDir, SPECS_DIR, `${unitId}.json`);
+  if (!existsSync(file)) return 2000;
+  const spec = JSON.parse(readFileSync(file, "utf8")) as { generation?: { vocabRankMax?: number } };
+  return spec.generation?.vocabRankMax ?? 2000;
+}
+
+function frequencyTable(contentDir: string): FrequencyTable {
+  const candidates = [path.join(contentDir, "..", "analysis/vocab_frequency.json"), path.join(process.cwd(), "analysis/vocab_frequency.json")];
+  const file = candidates.find((f) => existsSync(f));
+  return file ? (JSON.parse(readFileSync(file, "utf8")) as FrequencyTable) : { lemmas: [] };
+}
+
+// A person's edit re-runs the word and tag checks. The exam-overlap check needs the
+// Python checker, so it is marked skipped, which keeps the item out of clean batches.
+// A question also loses its cross-solve and pre-review: they judged the old text.
+function recheckEdited(contentDir: string, record: ReviewRecord, item: Item): ReviewRecord {
+  const allowed = allowedLemmas(frequencyTable(contentDir), rankFor(contentDir, record.unitId));
+  let words: string[] = [];
+  let untagged: string[] | null = null;
+  if (record.kind === "sentence") words = (item as unknown as AnnotatedSentence).tokens;
+  if (record.kind === "question") {
+    const q = item as unknown as Question;
+    words = q.options.flatMap((o) => englishWords(o.text));
+    untagged = missingDistractorTags(q);
+  }
+  if (record.kind === "vocabulary") {
+    const word = item as unknown as Vocabulary;
+    words = word.example ? englishWords(word.example.en) : [];
+    allowed.add(word.lemma.toLowerCase());
+  }
+  const extra = outOfRange(words, allowed);
+  const reasons = ["사람이 수정함"];
+  if (extra.length) reasons.push(`허용 어휘 밖: ${extra.join(", ")}`);
+  if (untagged?.length) reasons.push(`오답 오개념 누락: ${untagged.join(", ")}`);
+  reasons.push("유사도 미검사(수정 후)");
+  const checks: ReviewRecord["checks"] = {
+    rules: "pass",
+    vocab: extra.length ? "fail" : "pass",
+    tags: untagged === null ? "n/a" : untagged.length ? "fail" : "pass",
+    similarity: "skipped",
+  };
+  const keep: ReviewRecord = { ...record };
+  if (record.kind === "question") {
+    delete keep.crossSolve;
+    delete keep.preReview;
+  }
+  return { ...keep, status: extra.length || untagged?.length ? "flagged" : "auto_checked", reasons, checks };
 }
 
 export function reject(contentDir: string, itemId: string, reviewer: string, now: Date): ActionResult {

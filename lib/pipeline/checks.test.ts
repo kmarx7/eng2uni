@@ -116,6 +116,9 @@ describe("isClean", () => {
     expect(isClean({ ...clean, preReview: undefined })).toBe(false);
     expect(isClean({ ...clean, preReview: { issues: ["애매함"] } })).toBe(false);
     expect(isClean({ ...clean, status: "flagged" })).toBe(false);
+    expect(isClean({ ...clean, checks: { ...clean.checks, vocab: "fail" } })).toBe(false);
+    expect(isClean({ ...clean, checks: { ...clean.checks, rules: "fail" } })).toBe(false);
+    expect(isClean({ ...clean, checks: { ...clean.checks, tags: "fail" } })).toBe(false);
   });
 
   it("treats a sentence as clean without a cross-solve", () => {

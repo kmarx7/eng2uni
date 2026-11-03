@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { loadUnitBundle } from "@/lib/content/learning";
 import { validateContentTree } from "@/lib/schema/content-tree";
 import { readDrafts, writeJsonAtomic } from "./draft-store";
-import { appendReport, applyReports } from "./reports";
+import { appendReport, applyReports, summarizeReports } from "./reports";
 
 let dir: string;
 let contentDir: string;
@@ -82,5 +82,15 @@ describe("applyReports", () => {
 
   it("does nothing without a reports file", () => {
     expect(applyReports(contentDir, path.join(reportsDir, "reports.jsonl"), now)).toBe(0);
+  });
+});
+
+describe("summarizeReports", () => {
+  it("groups pending reports by question so a person can look before anything changes", () => {
+    for (const reason of ["answer", "answer", "explanation"] as const) appendReport(reportsDir, contentDir, { questionId: Q, reason, at: now.toISOString() });
+    const file = path.join(reportsDir, "reports.jsonl");
+    expect(summarizeReports(file)).toEqual([{ questionId: Q, count: 3, reasons: ["정답 오류", "해설 오류"], notes: [] }]);
+    expect(readFileSync(path.join(contentDir, "questions/L0-U05.json"), "utf8")).toContain('"approved"');
+    expect(existsSync(file)).toBe(true);
   });
 });
