@@ -9,7 +9,7 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 import { TaggedItem, taggingJsonSchema } from "@/lib/schema/tagging";
 import { checkTagging, parseClaudeResult, type Usage } from "./tagging/check";
-import { assertSubscriptionAuth, authStatus, claudeArgs, runClaude } from "./tagging/claude";
+import { assertSubscriptionAuth, authStatus, claudeArgs, runClaude } from "@/lib/pipeline/claude-cli";
 import { ExamItem, PROMPT_VERSION, SYSTEM_PROMPT, buildPrompt } from "./tagging/prompt";
 
 const root = process.cwd();

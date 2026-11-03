@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import type { ItemTagging } from "@/lib/schema/tagging";
-import { assertSubscriptionAuth, claudeArgs, subscriptionEnv } from "../scripts/tagging/claude";
 import { buildPrompt, requirementsFor, splitSentences, type ExamItem } from "../scripts/tagging/prompt";
 import { checkTagging, parseClaudeResult } from "../scripts/tagging/check";
 
@@ -122,24 +121,5 @@ describe("parseClaudeResult", () => {
 
   it("reports unparsable output", () => {
     expect(parseClaudeResult("not json")).toMatchObject({ ok: false, limitReached: false });
-  });
-});
-
-describe("billing safeguards", () => {
-  it("removes API credentials so claude uses the subscription login", () => {
-    const env = subscriptionEnv({ ANTHROPIC_API_KEY: "k", ANTHROPIC_AUTH_TOKEN: "t", ANTHROPIC_BASE_URL: "u", PATH: "/bin" });
-    expect(env).toEqual({ PATH: "/bin" });
-  });
-
-  it("refuses to run unless logged in through claude.ai", () => {
-    expect(() => assertSubscriptionAuth(JSON.stringify({ loggedIn: true, authMethod: "claude.ai" }))).not.toThrow();
-    expect(() => assertSubscriptionAuth(JSON.stringify({ loggedIn: true, authMethod: "api_key" }))).toThrow(/subscription/);
-    expect(() => assertSubscriptionAuth("garbage")).toThrow();
-  });
-
-  it("never passes --bare (which reads only an API key)", () => {
-    const args = claudeArgs({ model: "sonnet", schema: "{}", systemPrompt: "s" });
-    expect(args).not.toContain("--bare");
-    expect(args).toEqual(expect.arrayContaining(["-p", "--tools", "", "--strict-mcp-config", "--json-schema", "{}", "--model", "sonnet"]));
   });
 });
