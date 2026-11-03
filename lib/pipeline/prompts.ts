@@ -3,7 +3,7 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v2";
+export const PROMPT_VERSION = "content-v3";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
@@ -23,7 +23,10 @@ Rules:
 - Do not define a grammatical role by meaning ("the one doing the action", "the animal that eats"). Explain roles by position and form in the sentence, so no option can be chosen by meaning alone.
 - When an English word has several Korean renderings (sister: 언니·누나·여동생), use a neutral Korean word (자매, 형제) or a context that fixes one meaning, and keep the translation, glosses and explanation consistent.
 - Span ids are short role names unique within their own sentence (subj, verb, obj, head). Never reuse ids or annotations from another sentence.
-- Use common nouns (my brother, the girl, the teacher) instead of personal names, and prefer the most frequent everyday words.`;
+- Use common nouns (my brother, the girl, the teacher) instead of personal names, and prefer the most frequent everyday words.
+- Option text copies the words exactly as they appear in the sentence, so capital letters give nothing away; when options mix sentence-initial and other words, write every option in lowercase instead.
+- hints.range must cover more than the answer (for example the whole part before the verb), so the level-2 hint narrows the search without marking the answer.
+- Explain a role by its position and its relation to the verb, never by a word ending: "-s" ends plural nouns (cats) as well as verbs (drinks).`;
 
 export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec): string {
   const misconceptions = spec.catalog.misconceptions.filter((m) => group.misconceptionIds.includes(m.id));
