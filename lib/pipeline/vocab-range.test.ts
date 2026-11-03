@@ -26,11 +26,16 @@ describe("outOfRange", () => {
     [["The", "cat", "drinks", "milk", "."], ["milk"]],
     [["Cats", "studied", "."], []],
     [["She", "stopped", "studies", "."], ["she"]],
-    [["It", "went", "home", "at", "3", "."], ["it", "went", "home", "at"]],
+    [["It", "went", "home", "at", "3", "."], ["it", "home", "at"]],
+    [["The", "children", "studied", "."], ["children"]],
     [["The", "cat", "met", "Mina", "."], ["met"]],
     [["She", "is", "going", "."], ["she", "is"]],
   ])("%j → %j", (tokens, expected) => {
     expect(outOfRange(tokens, allowed)).toEqual(expected);
+  });
+
+  it("maps common irregular forms to their lemma", () => {
+    expect(outOfRange(["men", "ate", "was", "taught"], new Set(["man", "eat", "be", "teach"]))).toEqual([]);
   });
 
   it("accepts an irregular form when that form itself is allowed", () => {

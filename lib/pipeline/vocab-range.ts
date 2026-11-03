@@ -8,9 +8,25 @@ export function allowedLemmas(freq: FrequencyTable, rankMax: number): Set<string
   return new Set(freq.lemmas.filter((entry, index) => index < rankMax || entry.kind === "function").map((e) => e.lemma.toLowerCase()));
 }
 
-// Simple inflection bases; irregular forms pass only when listed themselves.
+// Common irregular forms a beginner sentence uses, mapped to the lemma the
+// frequency table lists. Other irregular forms pass only when listed themselves.
+const IRREGULAR: Record<string, string> = {
+  children: "child", men: "man", women: "woman", people: "person", feet: "foot", teeth: "tooth", mice: "mouse",
+  is: "be", are: "be", am: "be", was: "be", were: "be", been: "be", has: "have", had: "have", does: "do", did: "do", done: "do",
+  went: "go", gone: "go", ate: "eat", eaten: "eat", saw: "see", seen: "see", ran: "run", took: "take", taken: "take",
+  made: "make", got: "get", came: "come", gave: "give", given: "give", said: "say", wrote: "write", written: "write",
+  bought: "buy", caught: "catch", taught: "teach", thought: "think", brought: "bring", found: "find", left: "leave",
+  felt: "feel", kept: "keep", slept: "sleep", met: "meet", sat: "sit", stood: "stand", told: "tell", sold: "sell",
+  won: "win", began: "begin", drank: "drink", swam: "swim", sang: "sing", flew: "fly", drew: "draw", threw: "throw",
+  knew: "know", known: "know", grew: "grow", wore: "wear", broke: "break", spoke: "speak", chose: "choose", rode: "ride",
+  drove: "drive", fell: "fall", held: "hold", heard: "hear", lost: "lose", paid: "pay", built: "build", sent: "send",
+  spent: "spend", understood: "understand", forgot: "forget", became: "become",
+};
+
+// Simple inflection bases plus the irregular table.
 function bases(word: string): string[] {
   const out = [word];
+  if (IRREGULAR[word]) out.push(IRREGULAR[word]);
   const strip = (suffix: string, add = "") => {
     if (word.length > suffix.length + 1 && word.endsWith(suffix)) out.push(word.slice(0, -suffix.length) + add);
   };

@@ -3,7 +3,7 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v1";
+export const PROMPT_VERSION = "content-v2";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
@@ -18,7 +18,12 @@ Rules:
 - Every wrong option must carry the misconception id (from the task) that would lead a student to choose it. Use "trap" only when no listed misconception fits.
 - explanation.summary is a one-sentence Korean reason. explanation.byOption explains every option, keyed by option id.
 - hints.direction is a Korean nudge that does not give the answer. hints.range is the token range in the question's sentence where the answer is found.
-- Questions in one variant group test the same idea with different sentences, so a student who missed one can try another.`;
+- Questions in one variant group test the same idea with different sentences, so a student who missed one can try another.
+- Never hint at the answer in the question prompt: no brackets, glosses or descriptions that point to the right option (write "다음 문장의 주어는?", not "다음 문장의 주어(피아노를 치는 사람)는?"). Hints belong only in "hints".
+- Do not define a grammatical role by meaning ("the one doing the action", "the animal that eats"). Explain roles by position and form in the sentence, so no option can be chosen by meaning alone.
+- When an English word has several Korean renderings (sister: 언니·누나·여동생), use a neutral Korean word (자매, 형제) or a context that fixes one meaning, and keep the translation, glosses and explanation consistent.
+- Span ids are short role names unique within their own sentence (subj, verb, obj, head). Never reuse ids or annotations from another sentence.
+- Use common nouns (my brother, the girl, the teacher) instead of personal names, and prefer the most frequent everyday words.`;
 
 export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec): string {
   const misconceptions = spec.catalog.misconceptions.filter((m) => group.misconceptionIds.includes(m.id));
