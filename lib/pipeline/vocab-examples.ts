@@ -74,7 +74,7 @@ export async function runVocabExamples(opts: VocabExampleOptions): Promise<{ cal
     result.calls += 1;
     const response = await opts.runner({
       model: opts.model ?? process.env.CLAUDE_CONTENT_MODEL ?? "opus",
-      schema: z.toJSONSchema(Output, { target: "draft-2020-12" }) as Record<string, unknown>,
+      schema: z.toJSONSchema(Output, { target: "draft-7" }) as Record<string, unknown>,
       systemPrompt: VOCAB_PROMPT,
       input: JSON.stringify({ task: "vocab_examples", level: opts.level, items: batch.map(({ id, lemma, pos, meanings }) => ({ id, lemma, pos, meanings })) }),
       timeoutMs: TIMEOUT_MS,

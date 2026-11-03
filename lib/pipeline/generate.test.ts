@@ -112,16 +112,16 @@ describe("groupOutputSchema", () => {
     expect(schema).not.toContain("$schema");
   });
 
-  it("uses JSON Schema 2020-12 forms (tuples as prefixItems), which claude -p requires", () => {
+  it("avoids tuple forms, so both the claude CLI (draft-07) and the API (2020-12) accept it", () => {
     const arrayItems = (node: unknown): boolean =>
       Array.isArray(node) ? node.some(arrayItems) : node !== null && typeof node === "object"
         ? Object.entries(node).some(([k, v]) => (k === "items" && Array.isArray(v)) || arrayItems(v))
         : false;
     for (const schema of [groupOutputSchema(), unitOutputSchema()]) {
       expect(arrayItems(schema)).toBe(false);
-      expect(JSON.stringify(schema)).not.toMatch(/"additionalItems"|"definitions"/);
+      expect(JSON.stringify(schema)).not.toMatch(/"prefixItems"|"additionalItems"|"\$defs"|"definitions"/);
     }
-    expect(JSON.stringify(groupOutputSchema())).toContain("prefixItems");
+    expect(JSON.stringify(groupOutputSchema())).toContain('"minItems":2,"maxItems":2');
   });
 });
 
