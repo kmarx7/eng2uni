@@ -1,0 +1,195 @@
+{
+  "unitId": "L0-U05",
+  "levelId": "L0",
+  "title": "주어·동사·목적어 찾기",
+  "objectives": [
+    "3~5단어로 된 간단한 영어 문장에서 주어(동작을 하거나 상태의 주인이 되는 말)를 찾아 표시할 수 있다.",
+    "같은 문장에서 주동사(동작이나 상태를 나타내는 말)를 찾아 표시하고, 관사(a, the)나 명사를 동사로 고르지 않는 이유를 설명할 수 있다.",
+    "주동사 뒤에서 목적어(동작의 대상)를 찾아 표시할 수 있다.",
+    "주어·동사·목적어 단어 칩을 영어 어순(S-V-O)대로 배열하고, 한국어처럼 동사를 문장 끝에 두지 않는 이유를 설명할 수 있다."
+  ],
+  "prerequisiteSkills": [],
+  "targetSkills": [
+    "subject_identification",
+    "verb_identification",
+    "object_identification",
+    "svo_word_order"
+  ],
+  "misconceptions": [
+    {
+      "id": "subject_as_verb",
+      "description": "주어 자리의 명사를 동사로 고른다. 예: 'The boy reads a book.'에서 boy를 동사로 본다.",
+      "remediation": "역할 태깅 대조 블록: 주어(누가)와 동사(무엇을 하나)를 나란히 놓고 질문 두 개로 구분하는 설명을 다시 보여 준 뒤, 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "object_as_verb",
+      "description": "동사 뒤의 목적어(동작의 대상)를 동사로 고른다. 예: 'reads a book'에서 book을 동사로 본다.",
+      "remediation": "역할 태깅 대조 블록: '무엇을?'에 답하는 단어가 목적어임을 보여 주고, 동사 뒤 명사를 목적어로 표시하는 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "article_as_word_class_confusion",
+      "description": "관사(a, an, the)를 동사나 주요 단어로 고른다. 관사는 명사 앞에 붙는 말이라 문장의 역할(주어·동사·목적어)을 가지지 않는다고 설명한다.",
+      "remediation": "품사 대조 블록: 관사가 명사를 꾸미는 말임을 보여 주고, 관사와 명사를 묶어 한 덩어리로 표시하는 연습을 한 뒤 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "verb_as_subject",
+      "description": "동사를 주어로 고른다. 예: 'Birds fly.'에서 fly를 주어로 본다.",
+      "remediation": "역할 태깅 대조 블록: '누가/무엇이?'에 답하는 단어만 주어로 표시하는 규칙을 다시 보여 주고, 동사가 주어 뒤에 오는 문장으로 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "object_as_subject",
+      "description": "동사 뒤에 오는 목적어를 주어로 고른다. 주어는 보통 동사 앞에 온다는 점을 놓친다.",
+      "remediation": "어순 대조 블록: 주어·동사·목적어의 위치를 한 문장에서 나란히 보여 주고, 동사 앞 명사가 주어임을 확인하는 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "verb_at_end_by_korean_order",
+      "description": "한국어 어순을 따라 동사를 문장 끝에서 찾는다. 예: 'I read a book.'에서 문장 끝의 book을 동사처럼 다룬다.",
+      "remediation": "어순 대조 블록: 한국어 문장 '나는 책을 읽는다'와 영어 문장을 주어·동사·목적어 칩으로 나란히 조립해 보여 주고, 칩을 S-V-O 순서로 배열하는 과제를 푼다."
+    }
+  ],
+  "vocabRange": {
+    "maxLevel": "L0",
+    "note": "L0 누적 목표 400개 이내의 중학 필수 고빈도 어휘만 쓴다(DESIGN 3-3, 앱 내부 가정). 생성 시 빈도 순위 상한은 generation.vocabRankMax(2000)로 제한하며, 두 기준의 차이는 unverified에 적었다."
+  },
+  "families": [],
+  "interactions": [
+    "role_tagging",
+    "sentence_building"
+  ],
+  "assessmentCriteria": [
+    "숙달: 이 단원의 신규 문항이 8개 이상이고 정답률이 85% 이상이며, 역할 태깅 과제(role_tagging)를 통과하고, 다른 날 지연 확인 1회를 통과해야 한다(DESIGN 5-2).",
+    "진행 가능: 위 조건 중 지연 확인만 남았으면 다음 단원을 열고 2~3일 뒤 지연 확인을 예약한다.",
+    "보충: 정답률이 60~84%이면 가장 많이 나온 오개념의 보충 블록과 동형 문항 4개를 준다.",
+    "기초 재확인: 정답률이 60% 미만이면 선수 skill 진단 문항 3개를 내고, 실패하면 선수 단원으로 돌아간다. 선수 단원이 아직 정해지지 않았으므로 이 판정은 U01~U04 명세가 생기면 적용한다.",
+    "혼동: 같은 오개념이 3회 이상 나오면 두 개념을 나란히 비교하는 대조 블록을 준다.",
+    "문항 수가 8개 미만이면 정답률로 판정하지 않는다.",
+    "단계 졸업 과제(3~5단어 문장의 주어·동사·목적어 표시)와 맞는지는 단원 통과 뒤 분석기 과제(sentence_building 포함)로 확인한다."
+  ],
+  "status": "specified",
+  "unverified": [
+    "L0 단원 순서와 범위(주어·동사·목적어 찾기 → 어순)는 DESIGN 3-1의 내부 추정이며 공식 교육과정 문서로 확인하지 못했다.",
+    "오개념 6개 중 article_as_word_class_confusion, subject_as_verb, object_as_verb는 DESIGN 4-2 예시에서, verb_at_end_by_korean_order는 DESIGN 12 미결정 항목의 예시에서 가져왔다. verb_as_subject와 object_as_subject는 설계 예시에서 유추한 것이다. 학생 오답 데이터로 검증하지 않았으므로 확정이 아니다.",
+    "선수 skill과 선수 단원(U01~U04)을 정하지 않았다. 저장소에 L0 다른 단원 명세가 없어 prerequisiteSkills를 비워 두었다.",
+    "어휘 상한: DESIGN 3-3의 L0 목표 400개와 generation.vocabRankMax 2000 사이의 차이를 조정할지 정하지 않았다.",
+    "문항 28개(그룹 합계), 문장 22개, 그룹별 문항 수와 질문 유형 배분은 가정이다.",
+    "숙달 기준(문항 8개, 정답률 85%, 60%, 3회 혼동)은 DESIGN 5-2 v2 값이며 파일럿 데이터로 보정해야 한다.",
+    "families는 비워 두었다. 블루프린트(content/blueprints)가 아직 없어 familyId를 확정할 수 없다(단계 5 대기).",
+    "졸업 과제 '3~5단어 문장'은 생성 필드가 없어 명세 문구로만 표현했다. 실제 문장 길이 제한이 생성 결과에 반영되는지 확인이 필요하다.",
+    "13-4 도입 계획은 역할 태깅을 P1에 두지만 13-2는 L0~L1에 쓴다. 도입 시점은 P1 구현 일정과 맞춰야 한다."
+  ],
+  "generation": {
+    "difficulty": 1,
+    "vocabRankMax": 2000,
+    "sentenceCount": 22,
+    "variantGroups": [
+      {
+        "id": "VG-L0-U05-SUBJ",
+        "skillId": "subject_identification",
+        "misconceptionIds": ["verb_as_subject", "object_as_subject"],
+        "questionType": "multiple_choice",
+        "count": 8,
+        "sentenceUse": "question",
+        "note": "3~5단어 문장에서 주어(누가·무엇이)를 고르는 문항. 오답 선택지는 동사(verb_as_subject)와 목적어(object_as_subject)를 쓴다. 주어가 동사 앞에 온다는 위치 단서는 쓰지 않고 역할로 판단하게 한다."
+      },
+      {
+        "id": "VG-L0-U05-VERB",
+        "skillId": "verb_identification",
+        "misconceptionIds": ["subject_as_verb", "article_as_word_class_confusion", "object_as_verb"],
+        "questionType": "multiple_choice",
+        "count": 8,
+        "sentenceUse": "question",
+        "note": "문장의 동사(동작·상태를 나타내는 말)를 고르는 문항. 오답은 주어(subject_as_verb), 관사(article_as_word_class_confusion), 목적어(object_as_verb)다. DESIGN 4-2 예시 형식을 따른다."
+      },
+      {
+        "id": "VG-L0-U05-OBJ-TAG",
+        "skillId": "object_identification",
+        "misconceptionIds": ["object_as_verb", "object_as_subject"],
+        "questionType": "multiple_choice",
+        "count": 6,
+        "sentenceUse": "tagging",
+        "note": "주어·동사를 찾은 뒤 동사 뒤의 목적어를 역할 태깅으로 표시하는 과제용 문장. 문항은 '무엇을 대상으로 하는가'에 답하는 목적어를 고르게 한다."
+      },
+      {
+        "id": "VG-L0-U05-SVO-BUILD",
+        "skillId": "svo_word_order",
+        "misconceptionIds": ["verb_at_end_by_korean_order"],
+        "questionType": "true_false",
+        "count": 6,
+        "sentenceUse": "building",
+        "note": "단어 칩을 S-V-O 순서로 배열하는 문장 조립 과제용 문장. 참/거짓 문항은 '동사가 문장 끝에 와도 된다'와 같은 한국어 어순 판단을 확인한다."
+      }
+    ]
+  },
+  "catalog": {
+    "level": {
+      "id": "L0",
+      "order": 0,
+      "name": "영어의 시작"
+    },
+    "skills": [
+      {
+        "id": "subject_identification",
+        "name": "주어 찾기",
+        "category": "syntax",
+        "prerequisiteIds": []
+      },
+      {
+        "id": "verb_identification",
+        "name": "동사 찾기",
+        "category": "syntax",
+        "prerequisiteIds": ["subject_identification"]
+      },
+      {
+        "id": "object_identification",
+        "name": "목적어 찾기",
+        "category": "syntax",
+        "prerequisiteIds": ["verb_identification"]
+      },
+      {
+        "id": "svo_word_order",
+        "name": "주어-동사-목적어 어순",
+        "category": "syntax",
+        "prerequisiteIds": ["subject_identification", "verb_identification", "object_identification"]
+      }
+    ],
+    "misconceptions": [
+      {
+        "id": "subject_as_verb",
+        "skillId": "verb_identification",
+        "category": "SYN",
+        "description": "주어를 동사로 고른다."
+      },
+      {
+        "id": "object_as_verb",
+        "skillId": "verb_identification",
+        "category": "SYN",
+        "description": "목적어를 동사로 고른다."
+      },
+      {
+        "id": "article_as_word_class_confusion",
+        "skillId": "verb_identification",
+        "category": "SYN",
+        "description": "관사를 동사나 문장 성분을 가진 단어로 고른다."
+      },
+      {
+        "id": "verb_as_subject",
+        "skillId": "subject_identification",
+        "category": "SYN",
+        "description": "동사를 주어로 고른다."
+      },
+      {
+        "id": "object_as_subject",
+        "skillId": "subject_identification",
+        "category": "SYN",
+        "description": "목적어를 주어로 고른다. 주어는 보통 동사 앞에 온다."
+      },
+      {
+        "id": "verb_at_end_by_korean_order",
+        "skillId": "svo_word_order",
+        "category": "SYN",
+        "description": "한국어 어순을 따라 동사를 문장 끝에서 찾거나 배열한다."
+      }
+    ],
+    "traps": []
+  }
+}
