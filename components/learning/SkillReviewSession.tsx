@@ -32,7 +32,7 @@ function planReview(progress: LocalProgress, bundle: ReviewBundle, now: Date): R
     });
 }
 
-export function SkillReviewSession({ bundle }: { bundle: ReviewBundle }) {
+export function SkillReviewSession({ bundle, reportsEnabled = false }: { bundle: ReviewBundle; reportsEnabled?: boolean }) {
   const state = useProgress();
   const router = useRouter();
   const profile = state?.progress.profile ?? null;
@@ -90,6 +90,7 @@ export function SkillReviewSession({ bundle }: { bundle: ReviewBundle }) {
         }
         onNext={() => setIndex((i) => i + 1)}
         nextLabel={() => (index + 1 < askable.length ? "다음" : "마치기")}
+        reportsEnabled={reportsEnabled}
       />
     </section>
   );

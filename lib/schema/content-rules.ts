@@ -320,8 +320,9 @@ function checkApproved(parsed: ParsedByKind, issues: ContentIssue[]): void {
     ...parsed.question,
     ...parsed.vocabulary,
   ] as { path: string; item: { id: string; reviewStatus: string } }[];
+  // retired items stay in place for the record (DESIGN 6-3); loaders show approved only.
   for (const { path, item } of reviewed) {
-    if (item.reviewStatus !== "approved") {
+    if (item.reviewStatus !== "approved" && item.reviewStatus !== "retired") {
       issues.push({
         path,
         itemId: item.id,

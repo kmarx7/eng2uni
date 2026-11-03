@@ -18,6 +18,7 @@ import {
   type TagResult,
 } from "@/lib/content/learning";
 import { Id } from "@/lib/schema/common";
+import { appendReport, NOTE_MAX, ReportReason } from "@/lib/pipeline/reports";
 
 const Level = z.union([z.literal(1), z.literal(2), z.literal(3)]);
 const RoleSym = z.enum(["S", "V", "O"]);
@@ -56,4 +57,16 @@ export async function tagRole(
 
 export async function checkBuiltSentence(sentenceId: string, words: string[]): Promise<BuildResult> {
   return buildResult(approvedSentence(sentenceId), z.array(z.string().max(60)).max(60).parse(words));
+}
+
+// Only where reports can be stored (local or self-hosted, ENABLE_REPORTS=1).
+export async function reportQuestion(questionId: string, reason: string, note: string): Promise<{ ok: boolean }> {
+  if (process.env.ENABLE_REPORTS !== "1") return { ok: false };
+  const result = appendReport(process.env.REPORTS_DIR ?? "data/reports", process.env.CONTENT_DIR ?? "content", {
+    questionId: Id.parse(questionId),
+    reason: ReportReason.parse(reason),
+    note: z.string().max(NOTE_MAX * 4).parse(note),
+    at: new Date().toISOString(),
+  });
+  return { ok: result.ok };
 }

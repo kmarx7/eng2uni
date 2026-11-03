@@ -33,6 +33,7 @@ import { SentenceBuilder } from "./SentenceBuilder";
 interface LessonRunnerProps {
   bundle: UnitBundle;
   units: { id: string; title: string }[];
+  reportsEnabled?: boolean;
 }
 
 const PHASE_LABEL: Record<Exclude<LessonState["phase"], "main" | "result">, string> = {
@@ -74,7 +75,7 @@ function dispatch(bundle: UnitBundle, action: LessonAction, durationMs = 0) {
   });
 }
 
-export function LessonRunner({ bundle, units }: LessonRunnerProps) {
+export function LessonRunner({ bundle, units, reportsEnabled = false }: LessonRunnerProps) {
   const state = useProgress();
   const router = useRouter();
   const { unit } = bundle;
@@ -165,6 +166,7 @@ export function LessonRunner({ bundle, units }: LessonRunnerProps) {
         }}
         onNext={() => setHeld(null)}
         nextLabel={nextLabel}
+        reportsEnabled={reportsEnabled}
       />
     );
   } else if (step.kind === "block") {

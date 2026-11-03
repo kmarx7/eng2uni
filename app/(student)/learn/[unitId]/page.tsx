@@ -17,5 +17,5 @@ async function Lesson({ params }: { params: Promise<{ unitId: string }> }) {
   const bundle = loadUnitBundle(unitId);
   if (!bundle) notFound();
   const units = loadStudentUnits().map(({ id, title }) => ({ id, title }));
-  return <LessonRunner bundle={bundle} units={units} />;
+  return <LessonRunner bundle={bundle} units={units} reportsEnabled={process.env.ENABLE_REPORTS === "1"} />;
 }

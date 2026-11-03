@@ -30,3 +30,7 @@ __pycache__/
 
 # Admin e2e scratch content (stage 8)
 /.e2e-admin-content/
+/.e2e-reports/
+
+# Student error reports (stage 8, local only)
+/data/reports/

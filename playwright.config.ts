@@ -31,7 +31,7 @@ export default defineConfig({
     {
       command: `npm run dev -- --port ${PORT}`,
       url: baseURL,
-      env: { CONTENT_DIR: "content/_fixtures/valid" },
+      env: { CONTENT_DIR: "content/_fixtures/valid", ENABLE_REPORTS: "1", REPORTS_DIR: ".e2e-reports" },
       reuseExistingServer: !process.env.CI,
       timeout: 120_000,
     },

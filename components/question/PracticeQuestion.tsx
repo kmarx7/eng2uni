@@ -11,6 +11,7 @@ import type { AnswerResult, Hint, HintLevelNumber, PublicQuestion, PublicSentenc
 import { cn } from "@/lib/utils";
 import { FeedbackPanel } from "./FeedbackPanel";
 import { HintBar } from "./HintBar";
+import { ReportButton } from "./ReportButton";
 
 export interface AnsweredQuestion {
   result: AnswerResult;
@@ -25,9 +26,11 @@ interface PracticeQuestionProps {
   onAnswered: (answer: AnsweredQuestion) => void;
   onNext: () => void;
   nextLabel: (result: AnswerResult) => string;
+  // True where student reports can be stored (ENABLE_REPORTS=1).
+  reportsEnabled?: boolean;
 }
 
-export function PracticeQuestion({ question, sentence, onAnswered, onNext, nextLabel }: PracticeQuestionProps) {
+export function PracticeQuestion({ question, sentence, onAnswered, onNext, nextLabel, reportsEnabled = false }: PracticeQuestionProps) {
   const [choice, setChoice] = useState<string | null>(null);
   const [hints, setHints] = useState<Hint[]>([]);
   const [result, setResult] = useState<AnswerResult | null>(null);
@@ -127,6 +130,7 @@ export function PracticeQuestion({ question, sentence, onAnswered, onNext, nextL
           </Button>
         </>
       )}
+      {reportsEnabled && <ReportButton questionId={question.id} />}
     </section>
   );
 }

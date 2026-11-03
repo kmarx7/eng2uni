@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { expect, type Page, test } from "@playwright/test";
 import { answer, expectNoHorizontalOverflow, remainingQuestions, seedLesson, startAs, storedProgress } from "./helpers";
 
@@ -23,6 +24,8 @@ async function answerAndNext(page: Page, option: string) {
 }
 
 test("the demo unit, from concept to a pass that opens the next unit", async ({ page }) => {
+  // About 20 s warm; a cold run compiles on three dev servers at once.
+  test.slow();
   await startAs(page, "테스트", 15);
   await expect(page.getByRole("list", { name: "오늘 할 일" })).toContainText("FIXTURE 주어와 동사");
   await page.goto(`/learn/${UNIT}`);
@@ -121,6 +124,16 @@ test.describe("in the middle of the assessment", () => {
     await expect(page.getByText("Tom reads a book.")).toBeVisible();
     await expect(remainingQuestions(page)).toHaveText("6");
     expect((await storedProgress(page)).lessons[UNIT].attempts).toHaveLength(2);
+  });
+
+  test("a student can report a broken question", async ({ page }) => {
+    await page.getByRole("button", { name: "문제 오류 신고" }).click();
+    await page.getByLabel("정답이 틀린 것 같아요").check();
+    await page.getByLabel("메모 (선택)").fill("e2e 신고");
+    await page.getByRole("button", { name: "보내기" }).click();
+    await expect(page.getByText("신고했습니다")).toBeVisible();
+    const lines = readFileSync(".e2e-reports/reports.jsonl", "utf8").trim().split("\n").map((l) => JSON.parse(l));
+    expect(lines).toContainEqual(expect.objectContaining({ questionId: ASSESSMENT[0], reason: "answer", note: "e2e 신고" }));
   });
 
   test("a double tap on submit records one answer", async ({ page }) => {
