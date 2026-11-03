@@ -24,3 +24,6 @@ next-env.d.ts
 .venv/
 __pycache__/
 .pytest_cache/
+
+# Content pipeline call cache (stage 8)
+.cache/content-pipeline/

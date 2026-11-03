@@ -22,7 +22,8 @@
     "analyze:tags": "tsx scripts/tag-stats.ts && npm run analyze:leaks && npm run validate:analysis",
     "blueprints:draft": "tsx scripts/blueprint-drafts.ts && npm run validate:content",
     "vocab:import": "tsx scripts/import-vocab.ts",
-    "vocab:approve": "tsx scripts/approve-vocab.ts"
+    "vocab:approve": "tsx scripts/approve-vocab.ts",
+    "content:generate": "tsx scripts/content-pipeline/generate.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.9.0",
