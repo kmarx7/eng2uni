@@ -27,3 +27,6 @@ __pycache__/
 
 # Content pipeline call cache (stage 8)
 .cache/content-pipeline/
+
+# Admin e2e scratch content (stage 8)
+/.e2e-admin-content/

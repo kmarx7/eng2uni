@@ -1,0 +1,99 @@
+[
+  {
+    "id": "FIXTURE-S-FIXTURE-U05-001",
+    "kind": "sentence",
+    "unitId": "FIXTURE-U05",
+    "status": "auto_checked",
+    "reasons": [
+      "유사도 미검사"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T09:00:00+09:00",
+    "reports": []
+  },
+  {
+    "id": "FIXTURE-S-FIXTURE-U05-002",
+    "kind": "sentence",
+    "unitId": "FIXTURE-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T09:00:00+09:00",
+    "reports": []
+  },
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-001",
+    "kind": "question",
+    "unitId": "FIXTURE-U05",
+    "status": "flagged",
+    "reasons": [
+      "교차 풀이 불일치(고른 답: b)"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T09:00:00+09:00",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": false
+    }
+  },
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-002",
+    "kind": "question",
+    "unitId": "FIXTURE-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T09:00:00+09:00",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-003",
+    "kind": "question",
+    "unitId": "FIXTURE-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T09:00:00+09:00",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  }
+]

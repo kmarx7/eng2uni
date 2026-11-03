@@ -1,0 +1,76 @@
+[
+  {
+    "id": "FIXTURE-S-FIXTURE-U05-001",
+    "level": "L0",
+    "text": "The dog runs fast.",
+    "tokens": [
+      "The",
+      "dog",
+      "runs",
+      "fast",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "s",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "주어"
+      },
+      {
+        "id": "v",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "동사"
+      }
+    ],
+    "translation": "번역",
+    "skills": [
+      "FIXTURE-subject"
+    ],
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "FIXTURE-S-FIXTURE-U05-002",
+    "level": "L0",
+    "text": "The dog runs home.",
+    "tokens": [
+      "The",
+      "dog",
+      "runs",
+      "home",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "s",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "주어"
+      },
+      {
+        "id": "v",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "동사"
+      }
+    ],
+    "translation": "번역",
+    "skills": [
+      "FIXTURE-subject"
+    ],
+    "reviewStatus": "draft"
+  }
+]

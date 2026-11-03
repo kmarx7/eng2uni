@@ -1,0 +1,8 @@
+[
+  {
+    "id": "FIXTURE-subject",
+    "name": "주어 찾기",
+    "category": "syntax",
+    "prerequisiteIds": []
+  }
+]

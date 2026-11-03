@@ -1,0 +1,110 @@
+[
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-001",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-FIXTURE-U05-001",
+    "prompt": "첫 문장의 주어는?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The dog"
+      },
+      {
+        "id": "b",
+        "text": "runs",
+        "misconception": "FIXTURE-verb-as-subject"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "FIXTURE-subject"
+    ],
+    "explanation": {
+      "summary": "동작을 하는 쪽이 주어입니다.",
+      "byOption": {
+        "a": "주어입니다.",
+        "b": "동사입니다."
+      }
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-002",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-FIXTURE-U05-002",
+    "prompt": "둘째 문장의 주어는?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The dog"
+      },
+      {
+        "id": "b",
+        "text": "runs",
+        "misconception": "FIXTURE-verb-as-subject"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "FIXTURE-subject"
+    ],
+    "explanation": {
+      "summary": "동작을 하는 쪽이 주어입니다.",
+      "byOption": {
+        "a": "주어입니다.",
+        "b": "동사입니다."
+      }
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "id": "FIXTURE-Q-FIXTURE-U05-003",
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "sentenceId": "FIXTURE-S-FIXTURE-U05-002",
+    "prompt": "이 문장에서 주어를 고르세요.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The dog"
+      },
+      {
+        "id": "b",
+        "text": "runs",
+        "misconception": "FIXTURE-verb-as-subject"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "FIXTURE-subject"
+    ],
+    "explanation": {
+      "summary": "동작을 하는 쪽이 주어입니다.",
+      "byOption": {
+        "a": "주어입니다.",
+        "b": "동사입니다."
+      }
+    },
+    "variantGroup": "FIXTURE-VG-subject",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  }
+]
