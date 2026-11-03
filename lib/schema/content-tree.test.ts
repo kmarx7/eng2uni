@@ -38,6 +38,7 @@ describe("kindForPath", () => {
   it.each([
     ["skills.json", "skill"],
     ["levels.json", "level"],
+    ["records/L0-U05.json", "record"],
     ["misconceptions.json", "misconception"],
     ["traps.json", "trap"],
     ["questions/L0/U05.json", "question"],
@@ -119,12 +120,25 @@ describe("validateContentTree", () => {
     ]);
   });
 
-  it("skips agent hand-off folders specs/ and curriculum/ until they get schemas", () => {
-    write("specs/L0-U05.json", { unitId: "L0-U05", status: "specified" });
+  it("skips the agent hand-off folder curriculum/ until it gets a schema", () => {
     write("curriculum/unit-status.json", { units: {} });
     const reports = validateContentTree(content);
     expect(reports).toHaveLength(1);
     expect(reports[0].issues).toEqual([]);
+  });
+
+  it("checks each spec in specs/ against UnitSpec and its file name", () => {
+    write("specs/L0-U05.json", { unitId: "L0-U06", status: "specified" });
+    const specs = validateContentTree(content).find((report) => report.root === "content/specs");
+    expect(specs?.issues.map((issue) => issue.message)).toEqual(
+      expect.arrayContaining(["unitId must match file name", expect.stringMatching(/^schema: /)]),
+    );
+  });
+
+  it("checks review records under drafts/records", () => {
+    write("drafts/records/L0-U05.json", [{ id: "Q-L0-U05-001" }]);
+    const drafts = validateContentTree(content).find((report) => report.root === "content/drafts");
+    expect(drafts?.issues[0].message).toMatch(/^schema: /);
   });
 
   it("ignores non-JSON files such as README.md", () => {

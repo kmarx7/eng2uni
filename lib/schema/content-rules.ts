@@ -2,6 +2,7 @@ import type { z } from "zod";
 import { Blueprint, BlueprintDraft } from "./blueprint";
 import { Level, Misconception, Skill, TrapType, Unit } from "./curriculum";
 import { Question } from "./question";
+import { ReviewRecord } from "./review-record";
 import { AnnotatedSentence, Passage } from "./sentence";
 import { Vocabulary } from "./vocabulary";
 
@@ -18,6 +19,8 @@ export const CONTENT_SCHEMAS = {
   vocabulary: Vocabulary,
   blueprint: Blueprint,
   blueprintDraft: BlueprintDraft,
+  // Pipeline records; only expected under drafts/records/.
+  record: ReviewRecord,
 } as const;
 
 export type ContentKind = keyof typeof CONTENT_SCHEMAS;
@@ -57,6 +60,7 @@ function emptyParsed(): ParsedByKind {
     vocabulary: [],
     blueprint: [],
     blueprintDraft: [],
+    record: [],
   };
 }
 

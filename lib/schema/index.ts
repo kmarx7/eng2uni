@@ -9,3 +9,5 @@ export * from "./progress";
 export * from "./blueprint";
 export * from "./analysis";
 export * from "./tagging";
+export * from "./spec";
+export * from "./review-record";

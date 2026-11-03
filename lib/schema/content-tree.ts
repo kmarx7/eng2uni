@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
+import { UnitSpec } from "./spec";
 import {
   checkContent,
   type CheckOptions,
@@ -10,9 +11,10 @@ import {
 
 export const DRAFTS_DIR = "drafts";
 export const FIXTURES_DIR = "_fixtures";
-// Agent hand-off documents (unit specs, unit status). Not student content and no
-// schema yet (see docs/specifications/DATA_CONTRACT_ADDENDUM.md), so not validated.
-export const HANDOFF_DIRS = ["specs", "curriculum"];
+export const SPECS_DIR = "specs";
+// Agent hand-off documents (unit status). Not student content and no schema yet
+// (see docs/specifications/DATA_CONTRACT_ADDENDUM.md), so not validated.
+export const HANDOFF_DIRS = ["curriculum"];
 
 const ROOT_FILES: Record<string, ContentKind> = {
   "levels.json": "level",
@@ -30,6 +32,8 @@ const KIND_DIRS: Record<string, ContentKind> = {
   blueprints: "blueprint",
   // Stage 5 statistical drafts; only expected under drafts/.
   "blueprint-drafts": "blueprintDraft",
+  // Content pipeline records; only expected under drafts/.
+  records: "record",
 };
 
 // Maps a path relative to a content root to the kind of item it holds.
@@ -102,7 +106,7 @@ function checkRoot(root: string, label: string, displayBase: string, skipDirs: s
 export function validateContentTree(contentDir: string): RootReport[] {
   const displayBase = path.dirname(contentDir);
   const reports = [
-    checkRoot(contentDir, path.basename(contentDir), displayBase, [DRAFTS_DIR, FIXTURES_DIR, ...HANDOFF_DIRS], {
+    checkRoot(contentDir, path.basename(contentDir), displayBase, [DRAFTS_DIR, FIXTURES_DIR, SPECS_DIR, ...HANDOFF_DIRS], {
       mode: "full",
       requireApproved: true,
       requireFixtureIds: false,
@@ -120,6 +124,9 @@ export function validateContentTree(contentDir: string): RootReport[] {
     );
   }
 
+  const specs = path.join(contentDir, SPECS_DIR);
+  if (existsSync(specs)) reports.push(checkSpecs(specs, path.relative(displayBase, specs), displayBase));
+
   const fixtures = path.join(contentDir, FIXTURES_DIR);
   if (existsSync(fixtures)) {
     for (const entry of readdirSync(fixtures, { withFileTypes: true })) {
@@ -135,4 +142,30 @@ export function validateContentTree(contentDir: string): RootReport[] {
     }
   }
   return reports;
+}
+
+// Unit specs hold one UnitSpec object per file, named after its unitId.
+export function checkSpecs(dir: string, label: string, displayBase: string): RootReport {
+  const issues: ContentIssue[] = [];
+  const files = listJsonFiles(dir, new Set());
+  for (const full of files) {
+    const display = path.relative(displayBase, full);
+    let data: unknown;
+    try {
+      data = JSON.parse(readFileSync(full, "utf8"));
+    } catch (error: unknown) {
+      issues.push({ path: display, message: `invalid JSON: ${error instanceof Error ? error.message : String(error)}` });
+      continue;
+    }
+    const unitId = data && typeof data === "object" && "unitId" in data ? String(data.unitId) : undefined;
+    if (unitId !== path.basename(full, ".json")) issues.push({ path: display, itemId: unitId, message: "unitId must match file name" });
+    const result = UnitSpec.safeParse(data);
+    if (!result.success) {
+      for (const problem of result.error.issues) {
+        const where = problem.path.length ? `${problem.path.join(".")}: ` : "";
+        issues.push({ path: display, itemId: unitId, message: `schema: ${where}${problem.message}` });
+      }
+    }
+  }
+  return { root: label, fileCount: files.length, itemCount: files.length, issues };
 }
