@@ -49,7 +49,7 @@
   ],
   "vocabRange": {
     "maxLevel": "L0",
-    "note": "L0 누적 목표 400개 이내의 중학 필수 고빈도 어휘만 쓴다(DESIGN 3-3, 앱 내부 가정). 생성 시 빈도 순위 상한은 generation.vocabRankMax(2000)로 제한하며, 두 기준의 차이는 unverified에 적었다."
+    "note": "L0 누적 목표 400개 이내의 중학 필수 고빈도 어휘만 쓴다(DESIGN 3-3, 앱 내부 가정). 생성 시 빈도 순위 상한은 generation.vocabRankMax(6000)로 제한한다. 상한을 6000으로 올린 이유는 2026-11-03 사용자 결정이다: 기출 빈도표가 일상 기초 단어를 낮게 매겨(girl 5469, dog 4135, milk 3640) 상한 2000이면 L0의 평범한 단어가 대부분 걸렸다. 목표 400개 목록이 승인되면 그 목록으로 바꿀 예정이다."
   },
   "families": [],
   "interactions": [
@@ -70,7 +70,7 @@
     "L0 단원 순서와 범위(주어·동사·목적어 찾기 → 어순)는 DESIGN 3-1의 내부 추정이며 공식 교육과정 문서로 확인하지 못했다.",
     "오개념 6개 중 article_as_word_class_confusion, subject_as_verb, object_as_verb는 DESIGN 4-2 예시에서, verb_at_end_by_korean_order는 DESIGN 12 미결정 항목의 예시에서 가져왔다. verb_as_subject와 object_as_subject는 설계 예시에서 유추한 것이다. 학생 오답 데이터로 검증하지 않았으므로 확정이 아니다.",
     "선수 skill과 선수 단원(U01~U04)을 정하지 않았다. 저장소에 L0 다른 단원 명세가 없어 prerequisiteSkills를 비워 두었다.",
-    "어휘 상한: DESIGN 3-3의 L0 목표 400개와 generation.vocabRankMax 2000 사이의 차이를 조정할지 정하지 않았다.",
+    "어휘 상한(결정됨): generation.vocabRankMax는 6000이다(2026-11-03 사용자 결정. 기출 빈도표가 일상 기초 단어를 낮게 매긴 데 따른 조정). 아래 두 항목은 아직 검증되지 않았다. (a) DESIGN 3-3의 L0 목표 400개 목록과 빈도 순위 6000 상한의 차이. 6000 안에는 목표 밖 단어가 많이 들어올 수 있다. (b) 6000 밖 단어(예: kick 8810)를 허용 어휘에서 어떻게 다룰지. 목표 400개 목록이 승인되면 그 목록으로 상한을 대체할지 정해야 한다.",
     "문항 28개(그룹 합계), 문장 22개, 그룹별 문항 수와 질문 유형 배분은 가정이다.",
     "숙달 기준(문항 8개, 정답률 85%, 60%, 3회 혼동)은 DESIGN 5-2 v2 값이며 파일럿 데이터로 보정해야 한다.",
     "families는 비워 두었다. 블루프린트(content/blueprints)가 아직 없어 familyId를 확정할 수 없다(단계 5 대기).",
@@ -79,7 +79,7 @@
   ],
   "generation": {
     "difficulty": 1,
-    "vocabRankMax": 2000,
+    "vocabRankMax": 6000,
     "sentenceCount": 22,
     "variantGroups": [
       {
