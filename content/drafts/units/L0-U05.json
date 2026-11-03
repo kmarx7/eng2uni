@@ -1,0 +1,155 @@
+[
+  {
+    "id": "L0-U05",
+    "levelId": "L0",
+    "order": 5,
+    "title": "주어·동사·목적어 찾기",
+    "skills": [
+      "subject_identification",
+      "verb_identification",
+      "object_identification",
+      "svo_word_order"
+    ],
+    "blocks": [
+      {
+        "id": "L0-U05-B01",
+        "type": "concept",
+        "body": "영어 문장에는 세 가지 중요한 자리가 있어요.\n\n1. 주어(S): '누가?' 또는 '무엇이?'에 답하는 말이에요. 동작을 하는 사람이나 상태의 주인이에요. 보통 문장 맨 앞, 동사 앞에 와요.\n2. 동사(V): '무엇을 하나?' 또는 '어떤 상태인가?'에 답하는 말이에요. 영어에서는 주어 바로 뒤에 와요.\n3. 목적어(O): '무엇을?' 또는 '누구를?'에 답하는 말이에요. 동작의 대상이고, 동사 뒤에 와요.\n\n예) My sister cleans the room.\n- 누가? → My sister (주어, '내 여동생은')\n- 무엇을 하나? → cleans (동사, '청소한다')\n- 무엇을? → the room (목적어, '방을')\n\n주의할 점 두 가지\n- a, an, the는 '관사'예요. 관사는 뒤에 오는 명사에 붙는 말이라서 혼자서는 주어·동사·목적어가 될 수 없어요. 'the room'처럼 명사와 한 덩어리로 묶어서 보세요.\n- 한국어는 '여동생은 방을 청소한다'처럼 동사가 맨 끝에 오지만, 영어는 '주어 → 동사 → 목적어' 순서예요. 그래서 영어 문장의 맨 끝 단어는 동사가 아니라 목적어인 경우가 많아요. 동사는 주어 바로 뒤에서 찾으세요."
+      },
+      {
+        "id": "L0-U05-B02",
+        "type": "sentence_task",
+        "interaction": "role_tagging",
+        "instruction": "각 문장에서 '누가?'에 답하는 말에 주어(S), '무엇을 하나?'에 답하는 말에 동사(V), '무엇을?'에 답하는 말에 목적어(O) 표시를 하세요. a, the 같은 관사는 뒤의 명사와 한 덩어리로 묶어 주세요.",
+        "sentenceIds": [
+          "S-L0-U05-017",
+          "S-L0-U05-018",
+          "S-L0-U05-019",
+          "S-L0-U05-020",
+          "S-L0-U05-021",
+          "S-L0-U05-022"
+        ]
+      },
+      {
+        "id": "L0-U05-B03",
+        "type": "sentence_task",
+        "interaction": "sentence_building",
+        "instruction": "단어 칩을 영어 어순인 주어 → 동사 → 목적어 순서로 놓아 문장을 만드세요. 한국어처럼 동사를 맨 끝에 두지 말고, 주어 바로 뒤에 두세요.",
+        "sentenceIds": [
+          "S-L0-U05-023",
+          "S-L0-U05-024",
+          "S-L0-U05-025",
+          "S-L0-U05-026",
+          "S-L0-U05-027",
+          "S-L0-U05-028"
+        ]
+      },
+      {
+        "id": "L0-U05-B04",
+        "type": "practice",
+        "questionIds": [
+          "Q-L0-U05-001",
+          "Q-L0-U05-009"
+        ]
+      },
+      {
+        "id": "L0-U05-B05",
+        "type": "assessment",
+        "questionIds": [
+          "Q-L0-U05-002",
+          "Q-L0-U05-003",
+          "Q-L0-U05-004",
+          "Q-L0-U05-010",
+          "Q-L0-U05-011",
+          "Q-L0-U05-012",
+          "Q-L0-U05-017",
+          "Q-L0-U05-018",
+          "Q-L0-U05-021",
+          "Q-L0-U05-023",
+          "Q-L0-U05-024",
+          "Q-L0-U05-027"
+        ]
+      },
+      {
+        "id": "L0-U05-B06",
+        "type": "remedial",
+        "misconceptionId": "subject_as_verb",
+        "body": "주어와 동사는 서로 다른 질문에 답해요.\n- 주어: '누가?' → 사람이나 사물의 이름(명사)\n- 동사: '무엇을 하나?' → 동작이나 상태\n\n예) The cat drinks milk.\n- 누가? → The cat (주어)\n- 무엇을 하나? → drinks (동사, '마신다')\n\ncat은 '고양이'라는 이름이지 동작이 아니에요. 단어 뒤에 '~한다'를 붙여 보세요. '고양이한다'는 말이 안 되지만 '마신다'는 말이 돼요. 이렇게 하면 동사를 찾을 수 있어요.",
+        "questionIds": [
+          "Q-L0-U05-013",
+          "Q-L0-U05-014"
+        ]
+      },
+      {
+        "id": "L0-U05-B07",
+        "type": "remedial",
+        "misconceptionId": "object_as_verb",
+        "body": "동사 뒤에 오는 명사는 보통 목적어예요. 목적어는 '무엇을?'에 답해요.\n\n예) Tom opens the door.\n- 무엇을 하나? → opens (동사, '연다')\n- 무엇을 여나? → the door (목적어, '문을')\n\ndoor는 동작이 아니라 동작을 받는 대상이에요. 동사를 찾은 다음 '무엇을?'이라고 물어서, 그 답이 되는 말은 동사가 아니라 목적어로 표시하세요.",
+        "questionIds": [
+          "Q-L0-U05-015",
+          "Q-L0-U05-016"
+        ]
+      },
+      {
+        "id": "L0-U05-B08",
+        "type": "remedial",
+        "misconceptionId": "article_as_word_class_confusion",
+        "body": "a, an, the는 관사예요. 관사는 혼자 쓰이지 않고 항상 뒤에 오는 명사에 붙어요.\n\n예) The girl has a bag.\n- [The girl] → 한 덩어리, 주어\n- has → 동사\n- [a bag] → 한 덩어리, 목적어\n\n관사는 '그', '하나의' 정도의 뜻만 더해 줄 뿐이고, 동작을 나타내지 않아요. 그래서 관사는 동사가 될 수 없어요. 관사를 보면 바로 뒤의 명사와 함께 괄호로 묶은 다음, 그 덩어리가 주어인지 목적어인지 생각해 보세요.",
+        "questionIds": [
+          "Q-L0-U05-005",
+          "Q-L0-U05-006"
+        ]
+      },
+      {
+        "id": "L0-U05-B09",
+        "type": "remedial",
+        "misconceptionId": "verb_as_subject",
+        "body": "주어는 '누가?' 또는 '무엇이?'에 답하는 말만 될 수 있어요.\n\n예) Dogs run.\n- 누가? → Dogs (주어, '개들은')\n- 무엇을 하나? → run (동사, '달린다')\n\nrun은 '누가?'에 대한 답이 아니라 '무엇을 하나?'에 대한 답이에요. 영어에서 동사는 주어 뒤에 와요. 그래서 동사 앞에 있는 이름(명사)이 주어예요. 먼저 동작을 나타내는 말을 찾고, 그 앞에 있는 말을 주어로 표시하세요.",
+        "questionIds": [
+          "Q-L0-U05-007",
+          "Q-L0-U05-008"
+        ]
+      },
+      {
+        "id": "L0-U05-B10",
+        "type": "remedial",
+        "misconceptionId": "object_as_subject",
+        "body": "영어에서는 위치가 역할을 알려 줘요.\n\n[주어] → [동사] → [목적어]\n\n예) My dad likes coffee.\n- 동사 앞: My dad → 주어 ('우리 아빠는')\n- 동사: likes ('좋아한다')\n- 동사 뒤: coffee → 목적어 ('커피를')\n\n문장에 명사가 두 개 있으면 먼저 동사를 찾으세요. 동사 앞에 있는 명사가 주어이고, 동사 뒤에 있는 명사는 목적어예요. 동사 뒤의 명사를 주어로 고르지 않도록 조심하세요.",
+        "questionIds": [
+          "Q-L0-U05-019",
+          "Q-L0-U05-020"
+        ]
+      },
+      {
+        "id": "L0-U05-B11",
+        "type": "remedial",
+        "misconceptionId": "verb_at_end_by_korean_order",
+        "body": "한국어와 영어는 순서가 달라요.\n\n한국어: 나는(S) 사과를(O) 먹는다(V) → 동사가 맨 끝\n영어: I(S) eat(V) an apple(O) → 동사가 주어 바로 뒤\n\n그래서 영어 문장에서 맨 끝 단어 apple은 동사가 아니라 목적어예요. 영어 동사는 끝이 아니라 주어 바로 다음에서 찾으세요. 칩을 놓을 때도 '주어 → 동사 → 목적어' 순서를 지키세요.",
+        "questionIds": [
+          "Q-L0-U05-025",
+          "Q-L0-U05-026"
+        ]
+      },
+      {
+        "id": "L0-U05-B12",
+        "type": "contrast",
+        "misconceptionIds": [
+          "subject_as_verb",
+          "verb_as_subject"
+        ],
+        "body": "주어와 동사를 서로 바꿔서 고르는 실수가 많아요. 두 가지 질문으로 구분해 보세요.\n\n예) Birds sing.\n| 질문 | 답 | 역할 |\n| 누가? | Birds | 주어 |\n| 무엇을 하나? | sing | 동사 |\n\n- Birds를 동사로 고르면: '새한다'는 말이 안 돼요. Birds는 이름이에요.\n- sing을 주어로 고르면: '노래한다가'는 '누가?'의 답이 될 수 없어요. sing은 동작이에요.\n\n규칙: 이름(명사)이고 동사 앞에 있으면 주어, '~한다'로 해석되고 주어 뒤에 있으면 동사예요."
+      },
+      {
+        "id": "L0-U05-B13",
+        "type": "contrast",
+        "misconceptionIds": [
+          "object_as_verb",
+          "verb_at_end_by_korean_order"
+        ],
+        "body": "두 실수 모두 동사 뒤의 명사(목적어)를 동사로 고르는 실수예요. 이유가 조금 달라요.\n\n- object_as_verb: 동작과 동작의 대상을 헷갈려요.\n- verb_at_end_by_korean_order: 한국어처럼 동사가 맨 끝에 있다고 생각해요.\n\n예) We play soccer.\n한국어: 우리는 축구를 한다 → '한다'가 끝\n영어: We play soccer → play가 가운데, soccer가 끝\n\nsoccer는 '무엇을?'의 답이라서 목적어이고, 맨 끝에 있다고 동사가 되지는 않아요. 두 가지를 함께 확인하세요. ① 동사는 주어 바로 뒤에 있다. ② '무엇을?'에 답하는 말은 목적어다."
+      }
+    ],
+    "reviewStatus": "draft",
+    "version": 1
+  }
+]

@@ -1,0 +1,1456 @@
+[
+  {
+    "id": "L0",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "subject_identification",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "verb_identification",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "object_identification",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "svo_word_order",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "subject_as_verb",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "object_as_verb",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "article_as_word_class_confusion",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "verb_as_subject",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "object_as_subject",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "verb_at_end_by_korean_order",
+    "kind": "catalog",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:28:05.387Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-001",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-002",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-003",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: meat"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-004",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: children"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-005",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: clean"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-006",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-007",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-008",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U05-001",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 발문의 '주어(읽는 사람)'라는 괄호 설명이 정답을 거의 직접 알려 주어서, 주어를 찾는 문법 판단 문항이 아니라 단순 의미 파악 문항이 됩니다.",
+      "사전 검수: sister는 언니·누나·여동생이 모두 가능한데 해석, gloss, 해설이 '여동생'으로만 정해져 있으니 '내 언니/누나/여동생' 같은 표현이나 중립적 표기를 검토해야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "A",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 '주어(읽는 사람)'라는 괄호 설명이 정답을 거의 직접 알려 주어서, 주어를 찾는 문법 판단 문항이 아니라 단순 의미 파악 문항이 됩니다.",
+        "sister는 언니·누나·여동생이 모두 가능한데 해석, gloss, 해설이 '여동생'으로만 정해져 있으니 '내 언니/누나/여동생' 같은 표현이나 중립적 표기를 검토해야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-002",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 발문의 괄호 설명 '(피아노를 치는 사람)'이 사실상 정답을 알려 주어 주어 판별 능력을 평가하지 못하고 힌트('누가' 치는지 찾기)와도 겹치므로, 괄호를 빼고 '다음 문장의 주어는?'으로 고쳐야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "B",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 괄호 설명 '(피아노를 치는 사람)'이 사실상 정답을 알려 주어 주어 판별 능력을 평가하지 못하고 힌트('누가' 치는지 찾기)와도 겹치므로, 괄호를 빼고 '다음 문장의 주어는?'으로 고쳐야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-003",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: meat",
+      "사전 검수: 발문의 '(먹는 동물)'이 정답을 알려 줍니다. 선택지 중 동물은 The dog뿐이라 문법을 몰라도 정답을 고를 수 있습니다.",
+      "사전 검수: 발문이 주어를 '먹는 동물'이라는 의미로 정의해서 '주어=행위자/동물'이라는 오개념을 심을 수 있습니다.",
+      "사전 검수: span id 접두어가 문장 id(S-L0-U05-003)와 맞지 않는 's2_'입니다. 다른 문장의 주석을 복사한 것으로 보입니다.",
+      "사전 검수: B 해설은 eats가 동사라는 것만 말하고, 그래서 주어가 될 수 없다는 이유는 밝히지 않습니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "C",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 '(먹는 동물)'이 정답을 알려 줍니다. 선택지 중 동물은 The dog뿐이라 문법을 몰라도 정답을 고를 수 있습니다.",
+        "발문이 주어를 '먹는 동물'이라는 의미로 정의해서 '주어=행위자/동물'이라는 오개념을 심을 수 있습니다.",
+        "span id 접두어가 문장 id(S-L0-U05-003)와 맞지 않는 's2_'입니다. 다른 문장의 주석을 복사한 것으로 보입니다.",
+        "B 해설은 eats가 동사라는 것만 말하고, 그래서 주어가 될 수 없다는 이유는 밝히지 않습니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-004",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: children",
+      "사전 검수: 발문 괄호 속 '(좋아하는 사람)'이 의미로 답을 알려 줘서 주어를 찾는 문항이 아니라 뜻을 고르는 문항이 된다.",
+      "사전 검수: 힌트 direction이 발문 괄호와 같은 내용('누가 좋아하는지')이라 힌트로서 새 정보를 주지 못한다.",
+      "사전 검수: 힌트 range [0,0]이 정답 토큰 Children을 바로 가리켜 힌트가 정답을 알려 준다.",
+      "사전 검수: spans id 접두어가 's3_'라서 문장 id S-L0-U05-004와 맞지 않고, 다른 문장에서 복사된 흔적으로 보인다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "A",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문 괄호 속 '(좋아하는 사람)'이 의미로 답을 알려 줘서 주어를 찾는 문항이 아니라 뜻을 고르는 문항이 된다.",
+        "힌트 direction이 발문 괄호와 같은 내용('누가 좋아하는지')이라 힌트로서 새 정보를 주지 못한다.",
+        "힌트 range [0,0]이 정답 토큰 Children을 바로 가리켜 힌트가 정답을 알려 준다.",
+        "spans id 접두어가 's3_'라서 문장 id S-L0-U05-004와 맞지 않고, 다른 문장에서 복사된 흔적으로 보인다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-005",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: clean",
+      "사전 검수: 발문의 '주어(청소하는 사람)'라는 괄호 설명이 정답을 거의 알려 주고, 주어를 '동작하는 사람'으로 정의해서 be동사 문장·수동태에서 틀리는 오개념을 심을 수 있으므로 괄호를 빼는 것을 권한다.",
+      "사전 검수: 해설 B의 '청소하는 동작을 하는 사람이 우리이다'도 주어를 동작하는 사람으로만 설명하므로, '동사 clean 앞에서 문장의 주인이 되는 말'처럼 문장 구조로 설명하도록 고쳐야 한다.",
+      "사전 검수: 문장 span id 접두어가 's4_'로 되어 있어 문장 번호(S-L0-U05-005)와 맞지 않으니 's5_' 등으로 통일해야 한다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "B",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 '주어(청소하는 사람)'라는 괄호 설명이 정답을 거의 알려 주고, 주어를 '동작하는 사람'으로 정의해서 be동사 문장·수동태에서 틀리는 오개념을 심을 수 있으므로 괄호를 빼는 것을 권한다.",
+        "해설 B의 '청소하는 동작을 하는 사람이 우리이다'도 주어를 동작하는 사람으로만 설명하므로, '동사 clean 앞에서 문장의 주인이 되는 말'처럼 문장 구조로 설명하도록 고쳐야 한다.",
+        "문장 span id 접두어가 's4_'로 되어 있어 문장 번호(S-L0-U05-005)와 맞지 않으니 's5_' 등으로 통일해야 한다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-006",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks",
+      "사전 검수: 발문의 괄호 '(공을 차는 사람)'이 사실상 정답을 알려 주어서, 문법으로 주어를 찾는 문항이 아니라 내용을 읽고 고르는 문제가 되므로 괄호를 빼야 한다.",
+      "사전 검수: 해설과 발문이 주어를 '동작을 하는 사람'으로만 설명해서, 수동태처럼 주어가 행위자가 아닌 문장에서 오개념이 생길 수 있으니 '문장이 누구/무엇에 대한 이야기인지'처럼 설명하는 편이 좋다.",
+      "사전 검수: 선택지 A의 해설은 kicks가 동사라는 것만 말하고 왜 주어가 될 수 없는지는 말하지 않아서, verb_as_subject 오개념을 고쳐 주는 설명으로는 부족하다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "C",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 괄호 '(공을 차는 사람)'이 사실상 정답을 알려 주어서, 문법으로 주어를 찾는 문항이 아니라 내용을 읽고 고르는 문제가 되므로 괄호를 빼야 한다.",
+        "해설과 발문이 주어를 '동작을 하는 사람'으로만 설명해서, 수동태처럼 주어가 행위자가 아닌 문장에서 오개념이 생길 수 있으니 '문장이 누구/무엇에 대한 이야기인지'처럼 설명하는 편이 좋다.",
+        "선택지 A의 해설은 kicks가 동사라는 것만 말하고 왜 주어가 될 수 없는지는 말하지 않아서, verb_as_subject 오개념을 고쳐 주는 설명으로는 부족하다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-007",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 발문 괄호 '(저녁을 만드는 사람)'가 정답을 사실상 알려 줘서, 주어를 찾는 문제가 아니라 의미를 고르는 문제가 되었고 힌트 '누가 저녁을 만드는지'와도 겹친다.",
+      "사전 검수: 발문과 해설이 주어를 '동작을 하는 사람'으로만 정의해서, 행위자가 아닌 주어(수동태, be동사 문장 등)에서 오개념이 생길 수 있다.",
+      "사전 검수: sentence의 span id 접두어가 's6_'라서 문장 id S-L0-U05-007(7번)과 맞지 않는다. 다른 문장에서 복사한 흔적일 수 있다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "B",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문 괄호 '(저녁을 만드는 사람)'가 정답을 사실상 알려 줘서, 주어를 찾는 문제가 아니라 의미를 고르는 문제가 되었고 힌트 '누가 저녁을 만드는지'와도 겹친다.",
+        "발문과 해설이 주어를 '동작을 하는 사람'으로만 정의해서, 행위자가 아닌 주어(수동태, be동사 문장 등)에서 오개념이 생길 수 있다.",
+        "sentence의 span id 접두어가 's6_'라서 문장 id S-L0-U05-007(7번)과 맞지 않는다. 다른 문장에서 복사한 흔적일 수 있다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-008",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 발문의 괄호 '(문을 여는 사람)'가 사실상 정답을 알려 주어서, 주어를 찾는 능력(subject_identification)을 제대로 확인할 수 없습니다.",
+      "사전 검수: 힌트 '누가 문을 여는지 생각해 보세요'가 발문의 괄호 설명과 겹쳐서 힌트로서 하는 일이 없습니다.",
+      "사전 검수: B 해설은 open이 동사라는 사실만 말하고, 왜 주어가 될 수 없는지는 설명하지 않습니다(예: 주어는 동사 앞에서 동작을 하는 말이라는 설명이 필요합니다)."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:29:54.385Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "A",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 괄호 '(문을 여는 사람)'가 사실상 정답을 알려 주어서, 주어를 찾는 능력(subject_identification)을 제대로 확인할 수 없습니다.",
+        "힌트 '누가 문을 여는지 생각해 보세요'가 발문의 괄호 설명과 겹쳐서 힌트로서 하는 일이 없습니다.",
+        "B 해설은 open이 동사라는 사실만 말하고, 왜 주어가 될 수 없는지는 설명하지 않습니다(예: 주어는 동사 앞에서 동작을 하는 말이라는 설명이 필요합니다)."
+      ]
+    }
+  },
+  {
+    "id": "S-L0-U05-009",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-010",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-011",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: drinks, milk"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-012",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom, apple"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-013",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: girl"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-014",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-015",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-016",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: washes"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U05-009",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks",
+      "사전 검수: 선택지 a 해설에서 'boy'를 주어라고 했지만, 문장 주석(s0)에서 주어는 'The boy'이고 boy는 주어의 중심 명사(HEAD_NOUN)이므로 '주어의 중심 낱말'이라고 고쳐 써야 합니다.",
+      "사전 검수: 선택지 d 해설에서 'ball'을 목적어라고 했지만, 주석(o0)에서 목적어는 'a ball'이므로 'ball'은 목적어의 중심 낱말이라고 써야 합니다.",
+      "사전 검수: 주어 span(s0)에는 HEAD_NOUN(h0)이 있는데 목적어 span(o0)에는 'ball'을 가리키는 HEAD_NOUN이 없어서 주석 기준이 일관되지 않습니다.",
+      "사전 검수: 선택지 c의 태그 'article_as_word_class_confusion'은 '관사를 동사로 잘못 고름'이라는 실제 오답 이유를 뚜렷하게 나타내지 못하므로, 명세의 오개념 목록에 있는 태그인지 확인해야 합니다.",
+      "사전 검수: 선택지 c 'a'는 초급 학습자도 동사로 고를 가능성이 매우 낮아 함정 역할을 거의 하지 못하므로, 다른 오답으로 바꾸는 것을 검토해야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지 a 해설에서 'boy'를 주어라고 했지만, 문장 주석(s0)에서 주어는 'The boy'이고 boy는 주어의 중심 명사(HEAD_NOUN)이므로 '주어의 중심 낱말'이라고 고쳐 써야 합니다.",
+        "선택지 d 해설에서 'ball'을 목적어라고 했지만, 주석(o0)에서 목적어는 'a ball'이므로 'ball'은 목적어의 중심 낱말이라고 써야 합니다.",
+        "주어 span(s0)에는 HEAD_NOUN(h0)이 있는데 목적어 span(o0)에는 'ball'을 가리키는 HEAD_NOUN이 없어서 주석 기준이 일관되지 않습니다.",
+        "선택지 c의 태그 'article_as_word_class_confusion'은 '관사를 동사로 잘못 고름'이라는 실제 오답 이유를 뚜렷하게 나타내지 못하므로, 명세의 오개념 목록에 있는 태그인지 확인해야 합니다.",
+        "선택지 c 'a'는 초급 학습자도 동사로 고를 가능성이 매우 낮아 함정 역할을 거의 하지 못하므로, 다른 오답으로 바꾸는 것을 검토해야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-010",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 'sister'는 언니·누나·여동생 중 누구인지 알 수 없는데, 해석(translation·gloss)과 해설 summary가 근거 없이 '여동생'으로 정해 버렸으므로 '언니(누나)/여동생'처럼 표기하거나 다른 단어로 바꿔야 합니다.",
+      "사전 검수: '내 여동생은'보다 '우리 여동생은'이 한국어로 더 자연스럽습니다.",
+      "사전 검수: 힌트 '주어 My sister 바로 뒤에 오는 말'과 range [2,2]가 정답 위치를 그대로 알려 주므로, 학생이 동사의 개념을 생각하지 않아도 정답을 고를 수 있습니다.",
+      "사전 검수: 오답 b의 태그 'article_as_word_class_confusion'은 다른 태그(subject_as_verb, object_as_verb)와 이름 짓는 방식이 다르고 뜻도 모호하므로, 명세의 오개념 목록에 맞춰 'article_as_verb' 같은 이름으로 통일해야 합니다.",
+      "사전 검수: 해설 a·d는 'sister'와 'book'을 각각 주어·목적어라고 했지만, 실제 주어와 목적어는 'My sister'와 'the book'이고 sister·book은 그 중심 명사입니다. '명사로, 동작을 나타내지 않는다'처럼 품사를 기준으로 설명하는 것이 더 정확합니다.",
+      "사전 검수: 문장 주석에서 주어 s1에는 HEAD_NOUN이 표시됐지만 목적어 o1(the book)에는 중심 명사 book(range [4,4])이 표시되지 않아 일관성이 없습니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "'sister'는 언니·누나·여동생 중 누구인지 알 수 없는데, 해석(translation·gloss)과 해설 summary가 근거 없이 '여동생'으로 정해 버렸으므로 '언니(누나)/여동생'처럼 표기하거나 다른 단어로 바꿔야 합니다.",
+        "'내 여동생은'보다 '우리 여동생은'이 한국어로 더 자연스럽습니다.",
+        "힌트 '주어 My sister 바로 뒤에 오는 말'과 range [2,2]가 정답 위치를 그대로 알려 주므로, 학생이 동사의 개념을 생각하지 않아도 정답을 고를 수 있습니다.",
+        "오답 b의 태그 'article_as_word_class_confusion'은 다른 태그(subject_as_verb, object_as_verb)와 이름 짓는 방식이 다르고 뜻도 모호하므로, 명세의 오개념 목록에 맞춰 'article_as_verb' 같은 이름으로 통일해야 합니다.",
+        "해설 a·d는 'sister'와 'book'을 각각 주어·목적어라고 했지만, 실제 주어와 목적어는 'My sister'와 'the book'이고 sister·book은 그 중심 명사입니다. '명사로, 동작을 나타내지 않는다'처럼 품사를 기준으로 설명하는 것이 더 정확합니다.",
+        "문장 주석에서 주어 s1에는 HEAD_NOUN이 표시됐지만 목적어 o1(the book)에는 중심 명사 book(range [4,4])이 표시되지 않아 일관성이 없습니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-011",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: drinks, milk",
+      "사전 검수: 선택지 c 해설은 'cat'을 주어라고 하지만, 문장 주석에서는 주어(s2)를 'The cat' [0,1]으로, 'cat'을 핵심 명사(HEAD_NOUN)로 표시해 서로 맞지 않으므로 'The cat의 중심 명사로, 주어의 일부'처럼 고쳐야 합니다.",
+      "사전 검수: 선택지 b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 잘못 고르는 오류를 분명히 나타내지 못하므로, 다른 선택지와 맞춰 'article_as_verb'처럼 바꾸는 것이 좋습니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지 c 해설은 'cat'을 주어라고 하지만, 문장 주석에서는 주어(s2)를 'The cat' [0,1]으로, 'cat'을 핵심 명사(HEAD_NOUN)로 표시해 서로 맞지 않으므로 'The cat의 중심 명사로, 주어의 일부'처럼 고쳐야 합니다.",
+        "선택지 b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 잘못 고르는 오류를 분명히 나타내지 못하므로, 다른 선택지와 맞춰 'article_as_verb'처럼 바꾸는 것이 좋습니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-012",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom, apple",
+      "사전 검수: 힌트 direction의 '주어 바로 다음에 동작을 나타내는 말이 온다'는 지나친 일반화입니다(조동사, 부사, be동사 문장 같은 예외가 있음). '보통', '대개' 같은 말을 넣어야 합니다.",
+      "사전 검수: hints.range [1,1]이 정답 토큰 'eats'를 그대로 가리킵니다. 이 범위가 학생 화면에 강조 표시된다면 정답이 드러나므로 힌트 범위를 다시 정해야 합니다.",
+      "사전 검수: c 해설은 'apple'을 목적어라고 했지만, 문장 주석의 목적어 span은 'an apple'[2,3]입니다. '목적어 an apple의 중심 명사'처럼 주석과 맞춰 써야 합니다.",
+      "사전 검수: b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못하는 모호한 이름입니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다(예: function_word_as_verb)."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "d",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 direction의 '주어 바로 다음에 동작을 나타내는 말이 온다'는 지나친 일반화입니다(조동사, 부사, be동사 문장 같은 예외가 있음). '보통', '대개' 같은 말을 넣어야 합니다.",
+        "hints.range [1,1]이 정답 토큰 'eats'를 그대로 가리킵니다. 이 범위가 학생 화면에 강조 표시된다면 정답이 드러나므로 힌트 범위를 다시 정해야 합니다.",
+        "c 해설은 'apple'을 목적어라고 했지만, 문장 주석의 목적어 span은 'an apple'[2,3]입니다. '목적어 an apple의 중심 명사'처럼 주석과 맞춰 써야 합니다.",
+        "b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못하는 모호한 이름입니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다(예: function_word_as_verb)."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-013",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: girl",
+      "사전 검수: 해설 c는 'door'를 목적어라고 하지만 목적어 span은 'the door'([3,4])이므로 'door는 목적어 the door의 중심 명사'로 고쳐야 합니다.",
+      "사전 검수: 주어 span(s4)에는 HEAD_NOUN(h4)이 있는데 목적어 span(o4)에는 HEAD_NOUN이 없어 주석이 일관되지 않습니다. door([4,4])에 HEAD_NOUN을 추가해야 합니다.",
+      "사전 검수: 선택지 a의 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못해 모호합니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "해설 c는 'door'를 목적어라고 하지만 목적어 span은 'the door'([3,4])이므로 'door는 목적어 the door의 중심 명사'로 고쳐야 합니다.",
+        "주어 span(s4)에는 HEAD_NOUN(h4)이 있는데 목적어 span(o4)에는 HEAD_NOUN이 없어 주석이 일관되지 않습니다. door([4,4])에 HEAD_NOUN을 추가해야 합니다.",
+        "선택지 a의 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못해 모호합니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-014",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 힌트의 '주어 We 다음 말을 보세요'가 정답 위치를 바로 알려 주어 문항이 사실상 풀이 없이 풀립니다.",
+      "사전 검수: 선택지 d의 오개념 태그 'article_as_word_class_confusion'은 다른 태그(subject_as_verb, object_as_verb)와 형식이 다르고 무엇을 혼동했는지 분명하지 않아 'article_as_verb'처럼 바꾸는 것이 맞는지 명세에서 확인해야 합니다.",
+      "사전 검수: b·c 해설이 '주어', '목적어'라는 용어로 오답 이유를 설명하는데, L0 동사 찾기 단계에서 이 용어를 이미 배웠는지 확인이 필요하며 '동작이나 상태를 나타내지 않는다'는 설명을 함께 넣는 것이 좋습니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트의 '주어 We 다음 말을 보세요'가 정답 위치를 바로 알려 주어 문항이 사실상 풀이 없이 풀립니다.",
+        "선택지 d의 오개념 태그 'article_as_word_class_confusion'은 다른 태그(subject_as_verb, object_as_verb)와 형식이 다르고 무엇을 혼동했는지 분명하지 않아 'article_as_verb'처럼 바꾸는 것이 맞는지 명세에서 확인해야 합니다.",
+        "b·c 해설이 '주어', '목적어'라는 용어로 오답 이유를 설명하는데, L0 동사 찾기 단계에서 이 용어를 이미 배웠는지 확인이 필요하며 '동작이나 상태를 나타내지 않는다'는 설명을 함께 넣는 것이 좋습니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-015",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 오답 c의 오개념 태그 'article_as_word_class_confusion'은 무엇을 무엇으로 혼동했는지 드러나지 않으며, 다른 태그의 이름 규칙(subject_as_verb, object_as_verb)에 맞춰 'article_as_verb'로 고쳐야 합니다.",
+      "사전 검수: 한국어 해석 '그 개는 뼈 하나를 찾아낸다'는 어색하므로 '그 개가 뼈를 찾는다'처럼 고치고, 목적어 주석의 뜻풀이 '뼈 하나를'도 '뼈를'로 맞춰야 합니다.",
+      "사전 검수: 보기 a·b의 해설은 주어·목적어라는 것만 말하고 동작을 나타내지 않아 동사가 아니라는 점은 말하지 않으므로, L0 학습자를 위해 오답인 이유를 직접 적어야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "d",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "오답 c의 오개념 태그 'article_as_word_class_confusion'은 무엇을 무엇으로 혼동했는지 드러나지 않으며, 다른 태그의 이름 규칙(subject_as_verb, object_as_verb)에 맞춰 'article_as_verb'로 고쳐야 합니다.",
+        "한국어 해석 '그 개는 뼈 하나를 찾아낸다'는 어색하므로 '그 개가 뼈를 찾는다'처럼 고치고, 목적어 주석의 뜻풀이 '뼈 하나를'도 '뼈를'로 맞춰야 합니다.",
+        "보기 a·b의 해설은 주어·목적어라는 것만 말하고 동작을 나타내지 않아 동사가 아니라는 점은 말하지 않으므로, L0 학습자를 위해 오답인 이유를 직접 적어야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-016",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: washes",
+      "사전 검수: 한국어 해석 '아빠는 차를 세차한다'는 '세차'에 이미 '차'가 들어 있어 말이 겹치므로 '아빠는 차를 닦는다' 또는 '아빠는 세차를 한다'로 고쳐야 합니다.",
+      "사전 검수: 동사 gloss '세차한다'와 목적어 gloss '차를'을 이어 읽으면 '차를 세차한다'가 되어 말이 겹치므로 동사 gloss를 '닦는다' 또는 '씻는다'로 바꿔야 합니다.",
+      "사전 검수: 해설 요약의 '씻다, 세차한다'는 기본형과 활용형을 섞어 쓴 것이고 문장 해석과도 다르므로 해석에 맞는 한 가지 표현으로 통일해야 합니다.",
+      "사전 검수: 해설 c와 a도 '세차한다', '씻는 대상'처럼 서로 다른 표현을 쓰므로 고친 해석에 맞춰 같은 동사 표현으로 맞춰야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "한국어 해석 '아빠는 차를 세차한다'는 '세차'에 이미 '차'가 들어 있어 말이 겹치므로 '아빠는 차를 닦는다' 또는 '아빠는 세차를 한다'로 고쳐야 합니다.",
+        "동사 gloss '세차한다'와 목적어 gloss '차를'을 이어 읽으면 '차를 세차한다'가 되어 말이 겹치므로 동사 gloss를 '닦는다' 또는 '씻는다'로 바꿔야 합니다.",
+        "해설 요약의 '씻다, 세차한다'는 기본형과 활용형을 섞어 쓴 것이고 문장 해석과도 다르므로 해석에 맞는 한 가지 표현으로 통일해야 합니다.",
+        "해설 c와 a도 '세차한다', '씻는 대상'처럼 서로 다른 표현을 쓰므로 고친 해석에 맞춰 같은 동사 표현으로 맞춰야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "S-L0-U05-017",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-018",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: drinks, milk"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-019",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-020",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-021",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-022",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U05-017",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom",
+      "사전 검수: 힌트의 range [2,3]이 정답 a book의 위치와 같아서 힌트만 봐도 답을 알 수 있다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트의 range [2,3]이 정답 a book의 위치와 같아서 힌트만 봐도 답을 알 수 있다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-018",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: milk, drinks",
+      "사전 검수: 힌트 range [3,3]이 정답 토큰 milk만 정확히 가리켜 사실상 정답을 노출하므로, 동사 뒤 영역 등으로 범위를 넓혀야 한다.",
+      "사전 검수: sister를 '여동생'으로만 해석·주석하여 언니/누나/여동생 중 하나로 단정하므로, 학습자가 sister=여동생으로 오해할 수 있다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 range [3,3]이 정답 토큰 milk만 정확히 가리켜 사실상 정답을 노출하므로, 동사 뒤 영역 등으로 범위를 넓혀야 한다.",
+        "sister를 '여동생'으로만 해석·주석하여 언니/누나/여동생 중 하나로 단정하므로, 학습자가 sister=여동생으로 오해할 수 있다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-019",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks",
+      "사전 검수: 힌트 range [3,4]가 정답 the ball의 범위와 똑같아서, 힌트를 펼치면 정답이 바로 드러납니다.",
+      "사전 검수: 문장 S-L0-U05-019의 span id 접두어가 's2-'로 되어 있어 문장 번호(019)와 맞지 않습니다. 다른 문장에서 복사한 것으로 보입니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 range [3,4]가 정답 the ball의 범위와 똑같아서, 힌트를 펼치면 정답이 바로 드러납니다.",
+        "문장 S-L0-U05-019의 span id 접두어가 's2-'로 되어 있어 문장 번호(019)와 맞지 않습니다. 다른 문장에서 복사한 것으로 보입니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-020",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 선택지 b 해설의 '사랑하는 주인인 주어'는 어색하므로 '사랑하는 주체인 주어'처럼 고쳐야 한다.",
+      "사전 검수: 선택지 a 해설은 love가 동사라는 사실만 말하고, 목적어가 아닌 이유(목적어는 동사 뒤에서 대상을 나타냄)는 설명하지 않는다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지 b 해설의 '사랑하는 주인인 주어'는 어색하므로 '사랑하는 주체인 주어'처럼 고쳐야 한다.",
+        "선택지 a 해설은 love가 동사라는 사실만 말하고, 목적어가 아닌 이유(목적어는 동사 뒤에서 대상을 나타냄)는 설명하지 않는다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-021",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 힌트 범위 [3,3]이 정답 단어 fish를 그대로 가리켜서, 문제의 '무엇을' 단서와 함께 보면 힌트가 사실상 정답을 알려 줍니다(범위를 동사 eats [2,2]로 바꾸기를 권합니다)."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 범위 [3,3]이 정답 단어 fish를 그대로 가리켜서, 문제의 '무엇을' 단서와 함께 보면 힌트가 사실상 정답을 알려 줍니다(범위를 동사 eats [2,2]로 바꾸기를 권합니다)."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-022",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "S-L0-U05-023",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: apples"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-024",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: tom"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-025",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: kicks"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-026",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: soccer"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-027",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U05-028",
+    "kind": "sentence",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: mina, drinks, milk"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U05-023",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: sister는 언니·누나·여동생 모두 가능한데 해석, gloss, 해설에서 '여동생'으로만 옮겨 뜻을 좁혔으니 문맥상 근거가 없으면 '언니(여동생)' 등으로 고쳐야 한다.",
+      "사전 검수: '나의 여동생은'은 직역투라 부자연스러우므로 해석과 gloss를 '우리 언니는/내 여동생은'처럼 자연스러운 한국어로 바꾸는 것이 좋다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "F",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "sister는 언니·누나·여동생 모두 가능한데 해석, gloss, 해설에서 '여동생'으로만 옮겨 뜻을 좁혔으니 문맥상 근거가 없으면 '언니(여동생)' 등으로 고쳐야 한다.",
+        "'나의 여동생은'은 직역투라 부자연스러우므로 해석과 gloss를 '우리 언니는/내 여동생은'처럼 자연스러운 한국어로 바꾸는 것이 좋다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-024",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "T",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U05-025",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 힌트 range [0,4]가 문장 전체를 가리켜, 힌트 문구가 말하는 주어와 동사(The boy kicks, [0,2])를 짚어 주지 못한다.",
+      "사전 검수: 목적어 gloss는 '그 공을'인데 translation은 '그 소년은 공을 찬다'여서 the ball의 해석이 서로 맞지 않는다.",
+      "사전 검수: span id 접두어가 문장 id(S-L0-U05-025)와 맞지 않는 's2_'로 되어 있어, 다른 문장에서 복사한 것인지 확인해야 한다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "F",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 range [0,4]가 문장 전체를 가리켜, 힌트 문구가 말하는 주어와 동사(The boy kicks, [0,2])를 짚어 주지 못한다.",
+        "목적어 gloss는 '그 공을'인데 translation은 '그 소년은 공을 찬다'여서 the ball의 해석이 서로 맞지 않는다.",
+        "span id 접두어가 문장 id(S-L0-U05-025)와 맞지 않는 's2_'로 되어 있어, 다른 문장에서 복사한 것인지 확인해야 한다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-026",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 힌트 문구는 주어 We 바로 다음 단어(play)만 가리키는데 hints.range가 [1,2]로 soccer까지 포함하므로 [1,1]로 맞추는 것이 적절하다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "F",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "힌트 문구는 주어 We 바로 다음 단어(play)만 가리키는데 hints.range가 [1,2]로 soccer까지 포함하므로 [1,1]로 맞추는 것이 적절하다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-027",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "flagged",
+    "reasons": [
+      "사전 검수: 발문에서 주어(The dog)·동사(eats)·목적어(food)를 이미 짚어 주고 있어서 학생이 어순을 직접 판단하지 않아도 '참'을 고를 수 있으므로, 발문에서 성분 표시를 빼고 문장만 제시해야 합니다.",
+      "사전 검수: 발문이 성분과 순서를 다 알려 주기 때문에 '거짓'을 고르는 이유가 '동사는 문장 끝에 온다'는 오개념이라고 보기 어려워서, 오답 F의 verb_at_end_by_korean_order 태그가 실제로 진단하는 내용이 약합니다.",
+      "사전 검수: 힌트 range [0,4]에 마침표 토큰(4)까지 들어가 있으므로, 주어·동사·목적어 범위인 [0,3]으로 맞추는 것이 좋습니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "T",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문에서 주어(The dog)·동사(eats)·목적어(food)를 이미 짚어 주고 있어서 학생이 어순을 직접 판단하지 않아도 '참'을 고를 수 있으므로, 발문에서 성분 표시를 빼고 문장만 제시해야 합니다.",
+        "발문이 성분과 순서를 다 알려 주기 때문에 '거짓'을 고르는 이유가 '동사는 문장 끝에 온다'는 오개념이라고 보기 어려워서, 오답 F의 verb_at_end_by_korean_order 태그가 실제로 진단하는 내용이 약합니다.",
+        "힌트 range [0,4]에 마침표 토큰(4)까지 들어가 있으므로, 주어·동사·목적어 범위인 [0,3]으로 맞추는 것이 좋습니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U05-028",
+    "kind": "question",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "F",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "L0-U05",
+    "kind": "unit",
+    "unitId": "L0-U05",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-03T05:30:50.069Z",
+    "reports": []
+  }
+]
