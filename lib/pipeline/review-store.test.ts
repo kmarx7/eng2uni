@@ -118,12 +118,28 @@ describe("approve", () => {
     expect(read(approvedFile("sentences"))).toHaveLength(1);
   });
 
+  it("says in Korean which catalogue entry to approve first", () => {
+    writeFileSync(path.join(dir, "skills.json"), "[]");
+    writeFileSync(path.join(dir, "misconceptions.json"), "[]");
+    expect(approve(dir, `S-${U}-001`, "kim", now)).toEqual({ ok: false, error: "먼저 '기초 목록'에서 subject_find를 승인하세요" });
+  });
+
+  it("says when the misconception a question uses was rejected", () => {
+    writeFileSync(path.join(dir, "misconceptions.json"), "[]");
+    writeDrafts(dir, U, { records: [record("verb_as_subject", "catalog", { status: "retired", reviewedBy: "kim", reviewedAt: now.toISOString() })] });
+    approve(dir, `S-${U}-001`, "kim", now);
+    expect(approve(dir, `Q-${U}-001`, "kim", now)).toEqual({
+      ok: false,
+      error: "verb_as_subject는 '기초 목록'에서 폐기되었습니다. 이 항목을 수정해 verb_as_subject를 빼거나 폐기하세요",
+    });
+  });
+
   it("rolls back an approval that breaks the student content", () => {
     writeFileSync(path.join(dir, "misconceptions.json"), "[]");
     approve(dir, `S-${U}-001`, "kim", now);
     const before = snapshot();
     const result = approve(dir, `Q-${U}-001`, "kim", now);
-    expect(result).toMatchObject({ ok: false, error: expect.stringMatching(/^승인하면 검증 오류: /) });
+    expect(result).toEqual({ ok: false, error: "먼저 '기초 목록'에서 verb_as_subject를 승인하세요" });
     expect(snapshot()).toBe(before);
   });
 
