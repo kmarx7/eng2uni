@@ -5,7 +5,7 @@ import { z } from "zod";
 import type { Question } from "@/lib/schema/question";
 import type { ReviewRecord } from "@/lib/schema/review-record";
 import type { AnnotatedSentence } from "@/lib/schema/sentence";
-import type { ClaudeRunner } from "./claude-cli";
+import type { ClaudeRunner, RunnerResult } from "./claude-cli";
 import { readDrafts, writeDrafts } from "./draft-store";
 
 const TIMEOUT_MS = 300_000;
@@ -45,6 +45,9 @@ Read the question and choose the single best option. Reply with the option id on
 
 const SolveOutput = z.object({ answer: z.string() });
 const ReviewOutput = z.object({ issues: z.array(z.string().min(1)) });
+
+// Why a call gave nothing usable, for the run log (e.g. a usage limit or a timeout).
+const failureReason = (response: RunnerResult) => (response.ok ? "출력이 스키마와 맞지 않음" : response.error);
 
 const flag = (r: ReviewRecord, reason: string): ReviewRecord => ({ ...r, status: "flagged", reasons: [...r.reasons, reason] });
 
@@ -87,7 +90,7 @@ export async function runCrossCheck(opts: SecondOpinionOptions): Promise<SecondO
       const parsed = response.ok ? SolveOutput.safeParse(response.json) : null;
       if (!parsed?.success) {
         failed += 1;
-        opts.log(`${q.id}: 교차 풀이 실패`);
+        opts.log(`${q.id}: 교차 풀이 실패 (${failureReason(response)})`);
         return (r) => flag(r, "교차 풀이 실패");
       }
       const answer = parsed.data.answer;
@@ -120,7 +123,7 @@ You are reviewing one AI-drafted question before a teacher sees it. List concret
       const parsed = response.ok ? ReviewOutput.safeParse(response.json) : null;
       if (!parsed?.success) {
         failed += 1;
-        opts.log(`${q.id}: 사전 검수 실패`);
+        opts.log(`${q.id}: 사전 검수 실패 (${failureReason(response)})`);
         return (r) => flag(r, "사전 검수 실패");
       }
       const { issues } = parsed.data;
