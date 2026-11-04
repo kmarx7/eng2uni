@@ -15,8 +15,7 @@
     "id": "article_as_word_class_confusion",
     "skillId": "verb_identification",
     "category": "SYN",
-    "description": "관사를 동사나 문장 성분을 가진 단어로 고른다.",
-    "reviewStatus": "retired"
+    "description": "관사를 동사나 문장 성분을 가진 단어로 고른다."
   },
   {
     "id": "verb_as_subject",

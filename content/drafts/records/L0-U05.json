@@ -110,7 +110,7 @@
     "id": "article_as_word_class_confusion",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "retired",
+    "status": "auto_checked",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -119,9 +119,7 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": [],
-    "reviewedBy": "kmarx",
-    "reviewedAt": "2026-11-04T14:30:34.574Z"
+    "reports": []
   },
   {
     "id": "verb_as_subject",
