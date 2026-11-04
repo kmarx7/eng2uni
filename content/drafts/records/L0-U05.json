@@ -3,7 +3,7 @@
     "id": "L0",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -12,7 +12,9 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-04T14:30:35.619Z"
   },
   {
     "id": "subject_identification",
@@ -108,7 +110,7 @@
     "id": "article_as_word_class_confusion",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "retired",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -117,7 +119,9 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-04T14:30:34.574Z"
   },
   {
     "id": "verb_as_subject",
