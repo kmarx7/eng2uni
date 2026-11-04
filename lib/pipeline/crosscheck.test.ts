@@ -59,7 +59,8 @@ const runnerOf = (json: unknown, fail = false) => {
   };
   return { runner, inputs };
 };
-const opts = (runner: ClaudeRunner) => ({ contentDir: dir, unitId: "L0-U05", runner, model: "sonnet", now, log: () => {} });
+const logs: string[] = [];
+const opts = (runner: ClaudeRunner) => ({ contentDir: dir, unitId: "L0-U05", runner, model: "sonnet", now, log: (line: string) => logs.push(line) });
 const questionRecord = () => readDrafts(dir, "L0-U05").records.find((r) => r.id === question.id)!;
 
 beforeEach(() => {
@@ -116,6 +117,13 @@ describe("runPreReview", () => {
   it("flags each issue", async () => {
     await review(runnerOf({ issues: ["정답이 둘일 수 있음"] }).runner);
     expect(questionRecord()).toMatchObject({ status: "flagged", reasons: ["사전 검수: 정답이 둘일 수 있음"] });
+  });
+
+  it("logs why a call failed", async () => {
+    logs.length = 0;
+    await runCrossCheck(opts(runnerOf(null, true).runner));
+    await review(runnerOf({ wrong: true }).runner);
+    expect(logs).toEqual([`${question.id}: 교차 풀이 실패 (timeout)`, `${question.id}: 사전 검수 실패 (출력이 스키마와 맞지 않음)`]);
   });
 
   it("flags a failed call", async () => {
