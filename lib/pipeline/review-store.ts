@@ -159,7 +159,7 @@ export function approve(contentDir: string, itemId: string, reviewer: string, no
   const added = studentIssues(contentDir).filter((i) => !before.has(issueKey(i)));
   if (added.length) {
     restore(target, raw);
-    return { ok: false, error: `승인하면 검증 오류: ${added.map((i) => `${i.itemId ?? ""} ${i.message}`.trim()).join("; ")}` };
+    return { ok: false, error: missingCatalogMessage(contentDir, added) ?? `승인하면 검증 오류: ${added.map((i) => `${i.itemId ?? ""} ${i.message}`.trim()).join("; ")}` };
   }
 
   const location = draftLocation(contentDir, record)!;
@@ -168,6 +168,22 @@ export function approve(contentDir: string, itemId: string, reviewer: string, no
     records: [{ ...record, status: "approved", reviewedBy: reviewer, reviewedAt: now.toISOString() }],
   });
   return { ok: true };
+}
+
+// The usual reason an approval fails: it refers to a skill, misconception or trap
+// that is not approved yet, or that the reviewer rejected. Say so in plain Korean.
+function missingCatalogMessage(contentDir: string, issues: ContentIssue[]): string | null {
+  for (const issue of issues) {
+    const match =
+      /^(?:prerequisite skill|skill|misconception|trap) "([^"]+)" does not exist$/.exec(issue.message) ??
+      /(?:misconception|trap) "([^"]+)" is not defined$/.exec(issue.message);
+    if (!match) continue;
+    const id = match[1];
+    const record = findRecord(contentDir, id);
+    if (record?.status === "retired") return `${id}는 '기초 목록'에서 폐기되었습니다. 이 항목을 수정해 ${id}를 빼거나 폐기하세요`;
+    return `먼저 '기초 목록'에서 ${id}를 승인하세요`;
+  }
+  return null;
 }
 
 export function cleanBatch(contentDir: string, unitId: string): string[] {
