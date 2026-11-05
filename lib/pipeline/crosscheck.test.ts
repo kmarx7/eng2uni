@@ -7,7 +7,7 @@ import type { ReviewRecord } from "@/lib/schema/review-record";
 import type { AnnotatedSentence } from "@/lib/schema/sentence";
 import type { ClaudeRunner } from "./claude-cli";
 import { maskQuestion, runCrossCheck, runPreReview } from "./crosscheck";
-import { readDrafts, writeDrafts } from "./draft-store";
+import { readDrafts, writeCatalogDrafts, writeDrafts } from "./draft-store";
 
 let dir: string;
 const now = new Date("2026-11-03T09:00:00+09:00");
@@ -124,6 +124,21 @@ describe("runPreReview", () => {
     await runCrossCheck(opts(runnerOf(null, true).runner));
     await review(runnerOf({ wrong: true }).runner);
     expect(logs).toEqual([`${question.id}: 교차 풀이 실패 (timeout)`, `${question.id}: 사전 검수 실패 (출력이 스키마와 맞지 않음)`]);
+  });
+
+  it("tells the reviewer the house rules so it does not flag them", async () => {
+    const prompts: string[] = [];
+    await review(async ({ systemPrompt }) => (prompts.push(systemPrompt), { ok: true, json: { issues: [] } }));
+    expect(prompts[0]).toMatch(/House rules/);
+    expect(prompts[0]).toMatch(/lowercase/);
+    expect(prompts[0]).toMatch(/hints.range/);
+  });
+
+  it("sends the unit's misconceptions so tags are judged against the real list", async () => {
+    writeCatalogDrafts(dir, { skills: [], traps: [], misconceptions: [{ id: "verb_as_subject", skillId: "subject_find", category: "SYN", description: "동사를 주어로 본다" }] } as never);
+    const { runner, inputs } = runnerOf({ issues: [] });
+    await review(runner);
+    expect(JSON.parse(inputs[0]).misconceptions).toEqual([{ id: "verb_as_subject", description: "동사를 주어로 본다" }]);
   });
 
   it("flags a failed call", async () => {

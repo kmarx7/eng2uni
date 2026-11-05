@@ -45,7 +45,7 @@ function withoutTuples(node: unknown): unknown {
   return out;
 }
 
-function jsonSchema(schema: z.ZodType): Record<string, unknown> {
+export function jsonSchema(schema: z.ZodType): Record<string, unknown> {
   const out = withoutTuples(z.toJSONSchema(schema, { target: "draft-7", unrepresentable: "any", io: "input" })) as Record<string, unknown>;
   delete out.$schema;
   return out;
@@ -83,7 +83,7 @@ export interface GenerateResult {
 }
 
 // Approved catalogue files plus the drafted ones, for reference checks.
-function catalogFiles(contentDir: string): ContentFile[] {
+export function catalogFiles(contentDir: string): ContentFile[] {
   const kinds = { levels: "level", skills: "skill", misconceptions: "misconception", traps: "trap" } as const;
   return (Object.keys(CATALOG_FILES) as (keyof typeof CATALOG_FILES)[]).flatMap((key) =>
     [contentDir, path.join(contentDir, "drafts")].map((dir) => ({
