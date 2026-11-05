@@ -1,13 +1,13 @@
 [
   {
     "level": "L0",
-    "text": "The boy kicks the ball.",
+    "text": "The boy likes the dog.",
     "tokens": [
       "The",
       "boy",
-      "kicks",
+      "likes",
       "the",
-      "ball",
+      "dog",
       "."
     ],
     "spans": [
@@ -18,7 +18,7 @@
           0,
           1
         ],
-        "gloss": "소년이"
+        "gloss": "소년은"
       },
       {
         "id": "head",
@@ -36,7 +36,7 @@
           2,
           2
         ],
-        "gloss": "찬다"
+        "gloss": "좋아한다"
       },
       {
         "id": "obj",
@@ -45,10 +45,10 @@
           3,
           4
         ],
-        "gloss": "공을"
+        "gloss": "개를"
       }
     ],
-    "translation": "소년이 공을 찬다.",
+    "translation": "소년은 개를 좋아한다.",
     "skills": [
       "subject_identification"
     ],

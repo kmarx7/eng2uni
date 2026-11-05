@@ -2,7 +2,7 @@
   {
     "type": "multiple_choice",
     "difficulty": 1,
-    "prompt": "다음 문장의 주어는?\n\"The boy kicks the ball.\"",
+    "prompt": "다음 문장의 주어는?\n\"The boy likes the dog.\"",
     "options": [
       {
         "id": "a",
@@ -10,12 +10,12 @@
       },
       {
         "id": "b",
-        "text": "kicks",
+        "text": "likes",
         "misconception": "verb_as_subject"
       },
       {
         "id": "c",
-        "text": "the ball",
+        "text": "the dog",
         "misconception": "object_as_subject"
       }
     ],
@@ -24,15 +24,15 @@
       "subject_identification"
     ],
     "explanation": {
-      "summary": "동사 kicks 앞자리에 놓인 the boy가 이 문장의 주어입니다.",
+      "summary": "이 문장에서는 동사 likes 앞에 놓인 the boy가 주어입니다.",
       "byOption": {
-        "a": "정답입니다. 동사 kicks 앞에 놓인 명사 덩어리 the boy가 주어입니다.",
-        "b": "kicks는 이 문장의 동사입니다. 주어는 동사 자체가 아니라 동사 앞에 놓인 말입니다.",
-        "c": "the ball은 동사 kicks 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다."
+        "a": "정답입니다. 이 문장에서는 동사 likes 앞에 놓인 명사 덩어리 the boy가 주어입니다.",
+        "b": "이 문장에서 likes는 동사입니다. 이 문장의 주어는 likes 앞에 놓인 the boy입니다.",
+        "c": "이 문장에서 the dog는 동사 likes 뒤에 놓인 목적어입니다."
       }
     },
     "hints": {
-      "direction": "먼저 문장에서 동사를 찾은 다음, 그 동사의 앞뒤에 무엇이 있는지 살펴보세요.",
+      "direction": "먼저 문장에서 동사를 찾은 다음, 그 동사 앞부분을 살펴보세요.",
       "range": [
         0,
         2
@@ -46,7 +46,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -75,16 +75,16 @@
     "explanation": {
       "summary": "동사 makes 앞자리에 놓인 my mom이 이 문장의 주어입니다.",
       "byOption": {
-        "a": "makes는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다.",
+        "a": "makes는 이 문장의 동사입니다. 이 문장의 주어는 동사 makes 앞에 놓인 명사 덩어리입니다.",
         "b": "정답입니다. 동사 makes 앞에 놓인 명사 덩어리 my mom이 주어입니다.",
-        "c": "soup은 동사 makes 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다."
+        "c": "이 문장에서 soup는 동사 makes 뒤에 놓인 목적어이므로 주어가 아닙니다."
       }
     },
     "hints": {
       "direction": "문장에서 동사를 먼저 찾고, 동사 앞과 뒤에 놓인 말을 나누어 보세요.",
       "range": [
         0,
-        2
+        3
       ]
     },
     "id": "Q-L0-U05-002",
@@ -95,7 +95,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -124,9 +124,9 @@
     "explanation": {
       "summary": "동사 like 앞자리에 놓인 cats가 이 문장의 주어입니다.",
       "byOption": {
-        "a": "fish는 동사 like 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다.",
-        "b": "like는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다.",
-        "c": "정답입니다. 동사 like 앞에 놓인 명사 cats가 주어입니다."
+        "a": "이 문장에서 fish는 동사 like 뒤에 놓인 목적어이므로 주어가 아닙니다.",
+        "b": "이 문장에서 like는 동사이므로 주어가 아닙니다. 이 문장의 주어는 like 앞에 있는 cats입니다.",
+        "c": "정답입니다. 이 문장에서 동사 like 앞에 놓인 명사 cats가 주어입니다."
       }
     },
     "hints": {
@@ -144,7 +144,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -173,9 +173,9 @@
     "explanation": {
       "summary": "동사 reads 앞자리에 놓인 the teacher가 이 문장의 주어입니다.",
       "byOption": {
-        "a": "a book은 동사 reads 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다.",
+        "a": "이 문장에서 a book은 동사 reads 뒤에 놓인 목적어이므로 주어가 아닙니다.",
         "b": "정답입니다. 동사 reads 앞에 놓인 명사 덩어리 the teacher가 주어입니다.",
-        "c": "reads는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다."
+        "c": "이 문장에서 reads는 동사입니다. 이 문장의 주어는 동사 reads 앞에 놓인 명사 덩어리 the teacher입니다."
       }
     },
     "hints": {
@@ -193,7 +193,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -222,9 +222,9 @@
     "explanation": {
       "summary": "동사 play 앞자리에 놓인 we가 이 문장의 주어입니다.",
       "byOption": {
-        "a": "정답입니다. 동사 play 앞에 놓인 대명사 we가 주어입니다.",
-        "b": "soccer는 동사 play 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다.",
-        "c": "play는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다."
+        "a": "정답입니다. 이 문장에서 동사 play 앞에 놓인 대명사 we가 주어입니다.",
+        "b": "이 문장에서 soccer는 동사 play 뒤에 놓인 목적어입니다.",
+        "c": "이 문장에서 play는 동사이고, 이 문장에서는 play 앞에 놓인 we가 주어입니다."
       }
     },
     "hints": {
@@ -242,7 +242,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
