@@ -249,3 +249,82 @@ describe("review fixes", () => {
     expect(record?.reasons).toContain("문장 번호 범위 밖: 5");
   });
 });
+
+// Stage 8 trial 3: the student screen shows a question's sentence above it, so a
+// word-order question linked to the finished sentence showed its own answer.
+describe("building groups", () => {
+  const contentDir = () => path.join(root, "content");
+  const buildingSpec = {
+    ...spec,
+    generation: {
+      ...spec.generation,
+      variantGroups: [spec.generation.variantGroups[0], { ...spec.generation.variantGroups[1], sentenceUse: "building" }],
+    },
+  };
+  const withHints = { ...questionOut(), hints: { direction: "동사 앞을 보세요", range: [0, 2] } };
+  const runnerWith = () => {
+    const calls: string[] = [];
+    const runner: ClaudeRunner = async ({ input }) => {
+      calls.push(input);
+      if (input.includes('"task":"unit"')) return { ok: true, json: unitOut };
+      return { ok: true, json: { sentences: [sentenceOut], questions: [withHints] } };
+    };
+    return { runner, calls };
+  };
+  beforeEach(() => writeFileSync(path.join(root, "content/specs/L0-U05.json"), JSON.stringify(buildingSpec)));
+
+  it("does not link a building group's questions to a sentence or a hint range", async () => {
+    await run(runnerWith().runner);
+    const [tagged, built] = readDrafts(contentDir(), "L0-U05").questions;
+    expect(tagged).toMatchObject({ sentenceId: "S-L0-U05-001", hints: { range: [0, 2] } });
+    expect(built.sentenceId).toBeUndefined();
+    expect(built.hints).toEqual({ direction: "동사 앞을 보세요" });
+  });
+
+  it("still gives the unit the building group's sentences", async () => {
+    const { runner, calls } = runnerWith();
+    await run(runner);
+    const unitInput = JSON.parse(calls.find((c) => c.includes('"task":"unit"'))!);
+    expect(unitInput.drafts.find((g: { id: string }) => g.id === "VG-L0-U05-verb")).toMatchObject({ sentenceUse: "building", sentenceIds: ["S-L0-U05-002"] });
+  });
+});
+
+describe("redoGroups", () => {
+  const contentDir = () => path.join(root, "content");
+  const redo = (runner: ClaudeRunner) =>
+    runGenerate({ root, specPath: path.join(root, "content/specs/L0-U05.json"), dryRun: false, runner, similarity, now, log: (l) => logs.push(l), redoGroups: ["VG-L0-U05-verb"] });
+
+  it("retires the group's drafts and the unit draft, then drafts them again with new ids", async () => {
+    await run(fakeRunner().runner);
+    const { runner, calls } = fakeRunner();
+    expect(await redo(runner)).toMatchObject({ calls: 2, written: 3 });
+    expect(calls).toHaveLength(2);
+    const drafts = readDrafts(contentDir(), "L0-U05");
+    const status = (id: string) => drafts.records.find((r) => r.id === id)?.status;
+    expect([status("Q-L0-U05-002"), status("S-L0-U05-002")]).toEqual(["retired", "retired"]);
+    expect(drafts.records.find((r) => r.id === "Q-L0-U05-002")?.reasons).toContain("명세 변경으로 다시 생성");
+    expect(drafts.questions.find((q) => q.id === "Q-L0-U05-002")?.reviewStatus).toBe("retired");
+    expect([status("Q-L0-U05-001"), status("S-L0-U05-001")]).toEqual(["auto_checked", "auto_checked"]);
+    expect(drafts.questions.find((q) => q.id === "Q-L0-U05-003")).toMatchObject({ variantGroup: "VG-L0-U05-verb", sentenceId: "S-L0-U05-003", reviewStatus: "draft" });
+    expect(status("L0-U05")).toBe("auto_checked");
+  });
+
+  it("retires a building group's unlinked sentences too", async () => {
+    const building = { ...spec, generation: { ...spec.generation, variantGroups: [spec.generation.variantGroups[0], { ...spec.generation.variantGroups[1], sentenceUse: "building" }] } };
+    writeFileSync(path.join(root, "content/specs/L0-U05.json"), JSON.stringify(building));
+    await run(fakeRunner().runner);
+    await redo(fakeRunner().runner);
+    const drafts = readDrafts(contentDir(), "L0-U05");
+    expect(drafts.sentences.map((s) => [s.id, s.reviewStatus])).toEqual([
+      ["S-L0-U05-001", "draft"],
+      ["S-L0-U05-002", "retired"],
+      ["S-L0-U05-003", "draft"],
+    ]);
+  });
+
+  it("refuses when an item of the group is already approved", async () => {
+    await run(fakeRunner().runner);
+    for (const id of ["subject_find", "verb_as_subject", "S-L0-U05-002", "Q-L0-U05-002"]) expect(approve(contentDir(), id, "kim", now)).toEqual({ ok: true });
+    await expect(redo(fakeRunner().runner)).rejects.toThrow(/승인된 항목/);
+  });
+});

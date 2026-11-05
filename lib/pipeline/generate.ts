@@ -73,6 +73,8 @@ export interface GenerateOptions {
   now: Date;
   log: (line: string) => void;
   model?: string;
+  // Groups whose drafts are retired and drafted again (after a spec change to them).
+  redoGroups?: string[];
 }
 
 export interface GenerateResult {
@@ -107,6 +109,34 @@ export function unitOrder(unitId: string): number {
   return match ? Number(match[1]) : 0;
 }
 
+// Retires a group's unapproved drafts (its questions, the sentences only they use,
+// and for a building group its unlinked sentences) and the unit draft built from them.
+function retireGroups(contentDir: string, unitId: string, specs: VariantGroupSpec[]): void {
+  const groups = new Set(specs.map((g) => g.id));
+  const approvedQuestions = approvedOf<Question>(contentDir, "questions", unitId);
+  const blocked = [
+    ...approvedQuestions.filter((q) => q.variantGroup && groups.has(q.variantGroup)).map((q) => q.id),
+    ...approvedOf<{ id: string }>(contentDir, "units", unitId).map((u) => u.id),
+  ];
+  if (blocked.length) throw new Error(`승인된 항목이 있어 다시 생성할 수 없습니다: ${blocked.join(", ")}`);
+  const drafts = readDrafts(contentDir, unitId);
+  const live = drafts.questions.filter((q) => q.reviewStatus !== "retired");
+  const redone = live.filter((q) => q.variantGroup && groups.has(q.variantGroup));
+  const kept = live.filter((q) => !redone.includes(q));
+  const keptSentences = new Set([...kept, ...approvedQuestions].map((q) => q.sentenceId));
+  const redoneSentences = new Set(redone.map((q) => q.sentenceId));
+  const buildingSkills = new Set(specs.filter((g) => g.sentenceUse === "building").map((g) => g.skillId));
+  const sentences = drafts.sentences.filter(
+    (s) => s.reviewStatus !== "retired" && !keptSentences.has(s.id) && (redoneSentences.has(s.id) || (!live.some((q) => q.sentenceId === s.id) && s.skills.some((k) => buildingSkills.has(k)))),
+  );
+  const ids = new Set([...redone.map((q) => q.id), ...sentences.map((s) => s.id), unitId]);
+  const retire = <T extends { id: string; reviewStatus: string }>(items: T[]) => items.filter((i) => ids.has(i.id)).map((i) => ({ ...i, reviewStatus: "retired" as const }));
+  const records = drafts.records
+    .filter((r) => ids.has(r.id) && r.status !== "approved")
+    .map((r): ReviewRecord => ({ ...r, status: "retired", reasons: [...r.reasons, "명세 변경으로 다시 생성"] }));
+  writeDrafts(contentDir, unitId, { questions: retire(drafts.questions), sentences: retire(drafts.sentences), units: retire(drafts.units), records });
+}
+
 export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult> {
   const { root, runner, log, now } = opts;
   const model = opts.model ?? process.env.CLAUDE_CONTENT_MODEL ?? "opus";
@@ -118,20 +148,27 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   const unitKey = `${spec.unitId}-unit-${specHash}-${PROMPT_VERSION}`;
   const at = now.toISOString();
 
+  const redo = new Set(opts.redoGroups ?? []);
+  const unknown = [...redo].filter((id) => !spec.generation.variantGroups.some((g) => g.id === id));
+  if (unknown.length) throw new Error(`명세에 없는 묶음: ${unknown.join(", ")}`);
+  // A redone group and the unit built from it are called again even when cached.
+  const fresh = new Set(redo.size ? [...spec.generation.variantGroups.filter((g) => redo.has(g.id)).map(groupKey), unitKey] : []);
+  const cachedOf = (key: string) => (fresh.has(key) ? undefined : cacheGet(cacheDir, key));
   const planned = [...spec.generation.variantGroups.map(groupKey), unitKey];
-  const cached = planned.filter((key) => cacheGet(cacheDir, key) !== undefined).length;
+  const cached = planned.filter((key) => cachedOf(key) !== undefined).length;
   log(`예상 호출 ${planned.length - cached}회 (캐시 ${cached}회 제외)`);
   if (opts.dryRun) return { calls: planned.length - cached, written: 0, flagged: 0, failed: 0 };
+  if (redo.size) retireGroups(contentDir, spec.unitId, spec.generation.variantGroups.filter((g) => redo.has(g.id)));
 
   // Catalogue drafts first, so drafts that reference them pass the reference checks.
   // Entries that already have a record (drafted, approved or retired) are left alone.
   const existingRecords = new Set(readDrafts(contentDir, spec.unitId).records.map((r) => r.id));
-  const fresh = <T extends { id: string }>(items: T[]) => items.filter((item) => !existingRecords.has(item.id));
+  const unrecorded = <T extends { id: string }>(items: T[]) => items.filter((item) => !existingRecords.has(item.id));
   writeCatalogDrafts(contentDir, {
     level: spec.catalog.level && !existingRecords.has(spec.catalog.level.id) ? spec.catalog.level : undefined,
-    skills: fresh(spec.catalog.skills),
-    misconceptions: fresh(spec.catalog.misconceptions),
-    traps: fresh(spec.catalog.traps),
+    skills: unrecorded(spec.catalog.skills),
+    misconceptions: unrecorded(spec.catalog.misconceptions),
+    traps: unrecorded(spec.catalog.traps),
   });
   const catalogRecords: ReviewRecord[] = [spec.catalog.level, ...spec.catalog.skills, ...spec.catalog.misconceptions, ...spec.catalog.traps]
     .filter((item) => item !== undefined && !existingRecords.has(item.id))
@@ -154,7 +191,7 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   const canCall = () => opts.limit === undefined || result.calls < opts.limit;
 
   async function call<T>(key: string, label: string, input: string, schema: z.ZodType<T>, outSchema: Record<string, unknown>): Promise<T | null> {
-    const hit = cacheGet(cacheDir, key);
+    const hit = cachedOf(key);
     if (hit !== undefined) return schema.parse(hit);
     if (!canCall()) return null;
     result.calls += 1;
@@ -170,7 +207,8 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
     return parsed.data;
   }
 
-  const unitQuestions = () => [...readDrafts(contentDir, spec.unitId).questions, ...approvedOf<Question>(contentDir, "questions", spec.unitId)];
+  const unitQuestions = () =>
+    [...readDrafts(contentDir, spec.unitId).questions, ...approvedOf<Question>(contentDir, "questions", spec.unitId)].filter((q) => q.reviewStatus !== "retired");
   const usedIds = () => {
     const drafts = readDrafts(contentDir, spec.unitId);
     return [
@@ -190,12 +228,18 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
     const used = usedIds();
     const sentenceIds = assignIds(spec.unitId, used, output.sentences.length, "S");
     const questionIds = assignIds(spec.unitId, used, output.questions.length, "Q");
-    const badIndex = new Map(output.questions.flatMap((q, i) => (sentenceIds[q.sentenceIndex] ? [] : [[questionIds[i], q.sentenceIndex] as const])));
+    // Students see a question's sentence above it, so a building group's question
+    // (put the words in order) must not show the finished sentence or point into it.
+    const building = group.sentenceUse === "building";
+    const badIndex = new Map(
+      output.questions.flatMap((q, i) => (building || sentenceIds[q.sentenceIndex] ? [] : [[questionIds[i], q.sentenceIndex] as const])),
+    );
     const sentences = output.sentences.map((s, i) => ({ ...s, id: sentenceIds[i], reviewStatus: "draft" as const }));
-    const questions = output.questions.map(({ sentenceIndex, ...q }, i) => ({
+    const questions = output.questions.map(({ sentenceIndex, hints, ...q }, i) => ({
       ...q,
+      ...(hints ? { hints: building ? { ...(hints.direction ? { direction: hints.direction } : {}) } : hints } : {}),
       id: questionIds[i],
-      ...(sentenceIds[sentenceIndex] ? { sentenceId: sentenceIds[sentenceIndex] } : {}),
+      ...(!building && sentenceIds[sentenceIndex] ? { sentenceId: sentenceIds[sentenceIndex] } : {}),
       variantGroup: group.id,
       source: { type: "original" as const, generatedBy: "ai_draft" as const },
       reviewStatus: "draft" as const,
@@ -232,14 +276,22 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   }
 
   const drafts = readDrafts(contentDir, spec.unitId);
-  const questionsNow = unitQuestions().filter((q) => q.reviewStatus !== "retired");
+  const questionsNow = unitQuestions();
   const allGroups = spec.generation.variantGroups.every((g) => questionsNow.some((q) => q.variantGroup === g.id));
-  const hasUnit = drafts.units.length > 0 || drafts.records.some((r) => r.id === spec.unitId) || approvedOf(contentDir, "units", spec.unitId).length > 0;
+  const hasUnit =
+    drafts.units.some((u) => u.reviewStatus !== "retired") ||
+    drafts.records.some((r) => r.id === spec.unitId && r.status !== "retired") ||
+    approvedOf(contentDir, "units", spec.unitId).length > 0;
   if (allGroups && !hasUnit) {
+    // Building questions link no sentence, so a building group's sentences are the
+    // unit's sentences with its skill that no question links.
+    const sentencesNow = [...drafts.sentences, ...approvedOf<AnnotatedSentence>(contentDir, "sentences", spec.unitId)].filter((s) => s.reviewStatus !== "retired");
+    const linked = new Set(questionsNow.map((q) => q.sentenceId));
     const ids = {
       groups: spec.generation.variantGroups.map((g) => {
         const questions = questionsNow.filter((q) => q.variantGroup === g.id);
         const sentenceIds = new Set(questions.map((q) => q.sentenceId).filter((id) => id !== undefined));
+        if (g.sentenceUse === "building") for (const s of sentencesNow) if (!linked.has(s.id) && s.skills.includes(g.skillId)) sentenceIds.add(s.id);
         return { id: g.id, sentenceUse: g.sentenceUse, sentenceIds: [...sentenceIds], questionIds: questions.map((q) => q.id) };
       }),
     };

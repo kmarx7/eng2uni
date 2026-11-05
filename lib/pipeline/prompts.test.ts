@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { PROMPT_VERSION, SYSTEM_PROMPT } from "./prompts";
+import type { UnitSpec } from "@/lib/schema/spec";
+import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt } from "./prompts";
 
 // Rules added after the first L0-U05 trial run, where the pre-review flagged
 // answer hints in most question prompts, and the second trial, where it flagged
@@ -26,5 +27,16 @@ describe("generation prompt", () => {
     ["consistent, natural translations", /Translate articles the same way/],
   ])("tells the model: %s", (_, rule) => {
     expect(SYSTEM_PROMPT).toMatch(rule);
+  });
+});
+
+describe("buildGroupPrompt", () => {
+  const group = (sentenceUse: string) =>
+    ({ id: "VG", skillId: "svo_word_order", misconceptionIds: [], questionType: "multiple_choice", count: 2, sentenceUse, note: "n" }) as never;
+  const spec = { unitId: "L0-U05", levelId: "L0", title: "t", objectives: [], catalog: { misconceptions: [] }, generation: { difficulty: 1, vocabRankMax: 6000 } } as unknown as UnitSpec;
+
+  it("tells the model that students do not see the sentence of a building question", () => {
+    expect(JSON.parse(buildGroupPrompt(spec, group("building"))).output).toMatch(/students do not see the sentence/);
+    expect(JSON.parse(buildGroupPrompt(spec, group("question"))).output).not.toMatch(/students do not see the sentence/);
   });
 });
