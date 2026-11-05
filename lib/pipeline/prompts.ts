@@ -55,7 +55,14 @@ export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec): strin
     misconceptions: misconceptions.map((m) => ({ id: m.id, description: m.description })),
     difficulty: spec.generation.difficulty,
     wordFrequencyLimit: `Use only words within the ${spec.generation.vocabRankMax} most frequent English words.`,
-    output: `Write ${group.count} questions and at least ${Math.ceil(group.count / 2)} sentences. Every sentence lists skill "${group.skillId}" and level "${spec.levelId}".`,
+    output: [
+      `Write ${group.count} questions and at least ${Math.ceil(group.count / 2)} sentences. Every sentence lists skill "${group.skillId}" and level "${spec.levelId}".`,
+      ...(group.sentenceUse === "building"
+        ? [
+            "The sentences are for a word-chip building task, and students do not see the sentence of these questions: each prompt must give everything needed (the Korean meaning and the word chips) and must not contain the finished English sentence. Do not set hints.range.",
+          ]
+        : []),
+    ].join(" "),
   });
 }
 
