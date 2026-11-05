@@ -1237,7 +1237,7 @@
       "svo_word_order"
     ],
     "id": "S-L0-U05-023",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -1293,7 +1293,7 @@
       "svo_word_order"
     ],
     "id": "S-L0-U05-024",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -1348,6 +1348,342 @@
       "svo_word_order"
     ],
     "id": "S-L0-U05-025",
+    "reviewStatus": "retired"
+  },
+  {
+    "level": "L0",
+    "text": "The cat chases the dog.",
+    "tokens": [
+      "The",
+      "cat",
+      "chases",
+      "the",
+      "dog",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "고양이가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "쫓는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "개를"
+      }
+    ],
+    "translation": "고양이가 개를 쫓는다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-026",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The girl helps the boy.",
+    "tokens": [
+      "The",
+      "girl",
+      "helps",
+      "the",
+      "boy",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "소녀가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "돕는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "소년을"
+      }
+    ],
+    "translation": "소녀가 소년을 돕는다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-027",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The teacher calls the student.",
+    "tokens": [
+      "The",
+      "teacher",
+      "calls",
+      "the",
+      "student",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "선생님이"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "부르신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "학생을"
+      }
+    ],
+    "translation": "선생님이 학생을 부르신다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-028",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The baby holds the cup.",
+    "tokens": [
+      "The",
+      "baby",
+      "holds",
+      "the",
+      "cup",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "아기가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "잡는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "컵을"
+      }
+    ],
+    "translation": "아기가 컵을 잡는다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-029",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The man washes the car.",
+    "tokens": [
+      "The",
+      "man",
+      "washes",
+      "the",
+      "car",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "남자가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "닦는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "차를"
+      }
+    ],
+    "translation": "남자가 차를 닦는다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-030",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The mother hugs the child.",
+    "tokens": [
+      "The",
+      "mother",
+      "hugs",
+      "the",
+      "child",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "어머니가"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "안아 주신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "아이를"
+      }
+    ],
+    "translation": "어머니가 아이를 안아 주신다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-031",
     "reviewStatus": "draft"
   }
 ]
