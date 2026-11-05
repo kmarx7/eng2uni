@@ -224,7 +224,7 @@
       "byOption": {
         "a": "정답입니다. 이 문장에서 동사 play 앞에 놓인 대명사 we가 주어입니다.",
         "b": "이 문장에서 soccer는 동사 play 뒤에 놓인 목적어입니다.",
-        "c": "이 문장에서 play는 동사이고, 이 문장에서는 play 앞에 놓인 we가 주어입니다."
+        "c": "이 문장에서 play는 동사이고, play 앞에 놓인 we가 주어입니다."
       }
     },
     "hints": {
@@ -242,12 +242,12 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 2
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "difficulty": 1,
-    "prompt": "다음 문장의 주어는?\n\"The girl drinks milk.\"",
+    "prompt": "다음 문장의 주어는?\n\"Every morning, the girl drinks milk.\"",
     "options": [
       {
         "id": "a",
@@ -269,18 +269,18 @@
       "subject_identification"
     ],
     "explanation": {
-      "summary": "동사 drinks 앞자리에 놓인 the girl이 이 문장의 주어입니다.",
+      "summary": "이 문장에서 동사 drinks 바로 앞에 놓인 the girl이 주어입니다.",
       "byOption": {
-        "a": "drinks는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다.",
-        "b": "milk는 동사 drinks 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다.",
-        "c": "정답입니다. 동사 drinks 앞에 놓인 명사 덩어리 the girl이 주어입니다."
+        "a": "이 문장에서 drinks는 the girl 바로 뒤에 놓인 동사입니다.",
+        "b": "이 문장에서 milk는 동사 drinks 뒤에 놓인 목적어 역할을 합니다.",
+        "c": "정답입니다. 이 문장에서 동사 drinks 바로 앞에 놓인 the girl이 주어이고, 맨 앞의 Every morning은 때를 나타내는 수식어입니다."
       }
     },
     "hints": {
-      "direction": "문장에서 동사를 먼저 찾고, 동사 앞과 뒤에 놓인 말을 나누어 보세요.",
+      "direction": "문장에서 동사를 먼저 찾고, 동사 앞에 놓인 부분을 살펴보세요.",
       "range": [
         0,
-        2
+        4
       ]
     },
     "id": "Q-L0-U05-006",
@@ -291,7 +291,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -320,9 +320,9 @@
     "explanation": {
       "summary": "동사 eat 앞자리에 놓인 dogs가 이 문장의 주어입니다.",
       "byOption": {
-        "a": "eat은 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다.",
+        "a": "eat은 이 문장의 동사입니다. 이 문장에서 주어는 동사 eat 앞에 놓인 dogs입니다.",
         "b": "정답입니다. 동사 eat 앞에 놓인 명사 dogs가 주어입니다.",
-        "c": "meat은 동사 eat 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다."
+        "c": "이 문장에서 meat은 동사 eat 뒤에 놓인 목적어이므로 주어가 아닙니다."
       }
     },
     "hints": {
@@ -340,7 +340,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -369,9 +369,9 @@
     "explanation": {
       "summary": "동사 washes 앞자리에 놓인 my father가 이 문장의 주어입니다.",
       "byOption": {
-        "a": "정답입니다. 동사 washes 앞에 놓인 명사 덩어리 my father가 주어입니다.",
-        "b": "the car는 동사 washes 뒤에 놓인 목적어입니다. 목적어는 주어가 될 수 없습니다.",
-        "c": "washes는 이 문장의 동사입니다. 주어는 동사 앞에 놓인 말입니다."
+        "a": "정답입니다. 이 문장에서 동사 washes 앞에 놓인 명사 덩어리 my father가 주어입니다.",
+        "b": "이 문장에서 the car는 동사 washes 뒤에 놓여 목적어 역할을 합니다.",
+        "c": "이 문장에서 washes는 동사입니다. 이 문장의 주어는 washes 앞에 놓인 my father입니다."
       }
     },
     "hints": {
@@ -389,13 +389,13 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 동사는?\n\"The boy kicks a ball.\"",
+    "prompt": "다음 문장의 동사는?\n\"The boy sees a ball.\"",
     "options": [
       {
         "id": "a",
@@ -404,7 +404,7 @@
       },
       {
         "id": "b",
-        "text": "kicks"
+        "text": "sees"
       },
       {
         "id": "c",
@@ -422,19 +422,19 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "kicks는 주어 The boy 바로 뒤에 오고, 그 뒤에 목적어 a ball이 이어지므로 이 문장의 동사다.",
+      "summary": "sees는 주어 The boy 바로 뒤에 오고, 그 뒤에 목적어 a ball이 이어지므로 이 문장의 동사다.",
       "byOption": {
-        "a": "boy는 동사 앞자리에 있는 주어 The boy의 중심 단어라서 동사가 아니다.",
-        "b": "정답. 주어 The boy와 목적어 a ball 사이의 자리에 있는 kicks가 동사다.",
-        "c": "a는 뒤의 명사 ball 앞에 붙는 관사라서 동사 자리에 올 수 없다.",
-        "d": "ball은 동사 뒤에 오는 목적어 a ball의 중심 단어라서 동사가 아니다."
+        "a": "이 문장에서 boy는 동사 앞자리에 있는 주어 The boy의 중심 단어라서 동사가 아니다.",
+        "b": "정답. 이 문장에서 주어 The boy와 목적어 a ball 사이의 자리에 있는 sees가 동사다.",
+        "c": "이 문장에서 a는 뒤의 명사 ball 앞에 붙는 관사라서 동사가 아니다.",
+        "d": "이 문장에서 ball은 동사 뒤에 오는 목적어 a ball의 중심 단어라서 동사가 아니다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "주어가 끝난 뒤부터 문장 끝까지의 부분에서 찾아보세요.",
       "range": [
-        1,
-        3
+        2,
+        4
       ]
     },
     "id": "Q-L0-U05-009",
@@ -445,7 +445,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 2
   },
   {
     "type": "multiple_choice",
@@ -469,8 +469,8 @@
       },
       {
         "id": "d",
-        "text": "a",
-        "misconception": "article_as_word_class_confusion"
+        "text": "my",
+        "misconception": "subject_as_verb"
       }
     ],
     "answer": "c",
@@ -478,19 +478,19 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "makes는 주어 My mom 바로 뒤에 오고, 그 뒤에 목적어 a cake가 이어지므로 이 문장의 동사다.",
+      "summary": "이 문장에서 makes는 주어 My mom 바로 뒤, 목적어 a cake 바로 앞에 놓여 주어와 목적어를 이어 주므로 동사다.",
       "byOption": {
-        "a": "cake는 동사 뒤에 오는 목적어 a cake의 중심 단어라서 동사가 아니다.",
-        "b": "mom은 동사 앞자리에 있는 주어 My mom의 중심 단어라서 동사가 아니다.",
-        "c": "정답. 주어 My mom과 목적어 a cake 사이의 자리에 있는 makes가 동사다.",
-        "d": "a는 뒤의 명사 cake 앞에 붙는 관사라서 동사 자리에 올 수 없다."
+        "a": "이 문장에서 cake는 동사 뒤에 오는 목적어 a cake의 중심 단어라서 동사가 아니다.",
+        "b": "이 문장에서 mom은 동사 앞자리에 있는 주어 My mom의 중심 단어라서 동사가 아니다.",
+        "c": "정답. 이 문장에서 makes는 주어 My mom과 목적어 a cake 사이에 있으며, '우리 엄마가 케이크를 만든다'에서 '만든다'에 해당하는 동사다.",
+        "d": "이 문장에서 my는 mom 앞에 붙어 주어 My mom을 이루는 말이라서 동사가 아니다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "주어가 끝난 뒤 이어지는 부분을 살펴보세요.",
       "range": [
-        1,
-        3
+        2,
+        4
       ]
     },
     "id": "Q-L0-U05-010",
@@ -501,7 +501,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -516,7 +516,7 @@
       {
         "id": "b",
         "text": "a",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "object_as_verb"
       },
       {
         "id": "c",
@@ -537,16 +537,16 @@
       "summary": "reads는 주어 The girl 바로 뒤에 오고, 그 뒤에 목적어 a book이 이어지므로 이 문장의 동사다.",
       "byOption": {
         "a": "정답. 주어 The girl과 목적어 a book 사이의 자리에 있는 reads가 동사다.",
-        "b": "a는 뒤의 명사 book 앞에 붙는 관사라서 동사 자리에 올 수 없다.",
+        "b": "이 문장에서 a는 동사 reads 뒤에 오는 목적어 a book의 첫 단어(관사)라서 동사가 아니다.",
         "c": "girl은 동사 앞자리에 있는 주어 The girl의 중심 단어라서 동사가 아니다.",
         "d": "book은 동사 뒤에 오는 목적어 a book의 중심 단어라서 동사가 아니다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "문장 앞의 주어 부분과 그 바로 뒤에 오는 단어를 살펴보세요.",
       "range": [
-        1,
-        3
+        0,
+        2
       ]
     },
     "id": "Q-L0-U05-011",
@@ -557,13 +557,13 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 동사는?\n\"The dog eats the bread.\"",
+    "prompt": "다음 문장의 동사는?\n\"The dog eats bread.\"",
     "options": [
       {
         "id": "a",
@@ -573,7 +573,7 @@
       {
         "id": "b",
         "text": "the",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "subject_as_verb"
       },
       {
         "id": "c",
@@ -590,18 +590,18 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "eats는 주어 The dog 바로 뒤에 오고, 그 뒤에 목적어 the bread가 이어지므로 이 문장의 동사다.",
+      "summary": "이 문장에서 eats는 주어 The dog 바로 뒤에 오고 그 뒤에 목적어 bread가 이어지므로 동사다.",
       "byOption": {
-        "a": "dog는 동사 앞자리에 있는 주어 The dog의 중심 단어라서 동사가 아니다.",
-        "b": "the는 뒤의 명사 bread 앞에 붙는 관사라서 동사 자리에 올 수 없다.",
-        "c": "bread는 동사 뒤에 오는 목적어 the bread의 중심 단어라서 동사가 아니다.",
-        "d": "정답. 주어 The dog와 목적어 the bread 사이의 자리에 있는 eats가 동사다."
+        "a": "이 문장에서 dog는 동사 eats 앞에 있는 주어 The dog의 중심 단어라서 동사가 아니다.",
+        "b": "이 문장에서 the는 맨 앞에서 명사 dog 앞에 붙은 관사로, 주어 The dog의 일부라서 동사가 아니다.",
+        "c": "이 문장에서 bread는 동사 eats 뒤에 오는 목적어라서 동사가 아니다.",
+        "d": "정답. 이 문장에서 주어 The dog와 목적어 bread 사이에 있는 eats가 동사다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "주어가 끝난 바로 다음부터 이어지는 부분을 살펴보세요.",
       "range": [
-        1,
+        2,
         3
       ]
     },
@@ -613,13 +613,13 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 동사는?\n\"The teacher opens the door.\"",
+    "prompt": "다음 문장의 동사는?\n\"My teacher opens the door.\"",
     "options": [
       {
         "id": "a",
@@ -638,7 +638,7 @@
       {
         "id": "d",
         "text": "the",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "object_as_verb"
       }
     ],
     "answer": "b",
@@ -646,19 +646,19 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "opens는 주어 The teacher 바로 뒤에 오고, 그 뒤에 목적어 the door가 이어지므로 이 문장의 동사다.",
+      "summary": "이 문장에서 opens는 주어 My teacher 바로 뒤에 오고 그 뒤에 목적어 the door가 이어지므로 동사다.",
       "byOption": {
-        "a": "door는 동사 뒤에 오는 목적어 the door의 중심 단어라서 동사가 아니다.",
-        "b": "정답. 주어 The teacher와 목적어 the door 사이의 자리에 있는 opens가 동사다.",
-        "c": "teacher는 동사 앞자리에 있는 주어 The teacher의 중심 단어라서 동사가 아니다.",
-        "d": "the는 뒤의 명사 door 앞에 붙는 관사라서 동사 자리에 올 수 없다."
+        "a": "이 문장에서 door는 동사 opens 뒤에 오는 목적어 the door의 중심 단어라서 동사가 아니다.",
+        "b": "정답. 이 문장에서 주어 My teacher와 목적어 the door 사이에 있는 opens가 동사다.",
+        "c": "이 문장에서 teacher는 동사 opens 앞에 있는 주어 My teacher의 중심 단어라서 동사가 아니다.",
+        "d": "이 문장에서 the는 door 앞에 붙은 관사로, 목적어 the door의 일부라서 동사가 아니다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "표시된 범위에서 주어가 어디까지인지 확인한 뒤, 주어가 끝난 바로 다음 단어를 보세요.",
       "range": [
-        1,
-        3
+        0,
+        1
       ]
     },
     "id": "Q-L0-U05-013",
@@ -669,7 +669,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -680,7 +680,7 @@
       {
         "id": "a",
         "text": "the",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "object_as_verb"
       },
       {
         "id": "b",
@@ -704,7 +704,7 @@
     "explanation": {
       "summary": "washes는 주어 My father 바로 뒤에 오고, 그 뒤에 목적어 the car가 이어지므로 이 문장의 동사다.",
       "byOption": {
-        "a": "the는 뒤의 명사 car 앞에 붙는 관사라서 동사 자리에 올 수 없다.",
+        "a": "이 문장에서 the는 동사 washes 뒤에 오는 목적어 the car의 일부라서 동사가 아니다.",
         "b": "car는 동사 뒤에 오는 목적어 the car의 중심 단어라서 동사가 아니다.",
         "c": "father는 동사 앞자리에 있는 주어 My father의 중심 단어라서 동사가 아니다.",
         "d": "정답. 주어 My father와 목적어 the car 사이의 자리에 있는 washes가 동사다."
@@ -725,13 +725,13 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 동사는?\n\"The cat drinks the milk.\"",
+    "prompt": "다음 문장의 동사는?\n\"The cat drinks milk.\"",
     "options": [
       {
         "id": "a",
@@ -745,7 +745,7 @@
       {
         "id": "c",
         "text": "the",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "subject_as_verb"
       },
       {
         "id": "d",
@@ -758,18 +758,18 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "drinks는 주어 The cat 바로 뒤에 오고, 그 뒤에 목적어 the milk가 이어지므로 이 문장의 동사다.",
+      "summary": "이 문장에서 drinks는 문장 맨 앞의 주어 The cat 바로 뒤에 와서 '마신다'라는 동작을 나타내므로 동사입니다.",
       "byOption": {
-        "a": "정답. 주어 The cat과 목적어 the milk 사이의 자리에 있는 drinks가 동사다.",
-        "b": "milk는 동사 뒤에 오는 목적어 the milk의 중심 단어라서 동사가 아니다.",
-        "c": "the는 뒤의 명사 milk 앞에 붙는 관사라서 동사 자리에 올 수 없다.",
-        "d": "cat은 동사 앞자리에 있는 주어 The cat의 중심 단어라서 동사가 아니다."
+        "a": "정답. 이 문장에서 drinks는 주어 The cat 바로 뒤에 있고, '마신다'라는 동작을 나타내는 동사입니다.",
+        "b": "이 문장에서 milk는 동사 drinks 바로 뒤에서 drinks의 대상이 되는 목적어 자리에 있으므로 동사가 아닙니다.",
+        "c": "이 문장에서 the는 cat 앞에 붙어 주어 The cat을 이루는 관사로, 동사 drinks 앞의 주어 부분에 속하므로 동사가 아닙니다.",
+        "d": "이 문장에서 cat은 the와 함께 주어 The cat을 이루어 동사 drinks 앞에 있으므로 동사가 아닙니다."
       }
     },
     "hints": {
-      "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
+      "direction": "주어가 끝난 뒤 이어지는 부분에서 동작을 나타내는 단어를 찾아보세요.",
       "range": [
-        1,
+        2,
         3
       ]
     },
@@ -781,13 +781,13 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 동사는?\n\"The students clean the room.\"",
+    "prompt": "다음 문장의 동사는?\n\"Students clean the room.\"",
     "options": [
       {
         "id": "a",
@@ -806,7 +806,7 @@
       {
         "id": "d",
         "text": "the",
-        "misconception": "article_as_word_class_confusion"
+        "misconception": "object_as_verb"
       }
     ],
     "answer": "c",
@@ -814,19 +814,19 @@
       "verb_identification"
     ],
     "explanation": {
-      "summary": "clean은 주어 The students 바로 뒤에 오고, 그 뒤에 목적어 the room이 이어지므로 이 문장의 동사다.",
+      "summary": "clean은 주어 Students 바로 뒤에 오고, 그 뒤에 목적어 the room이 이어지므로 이 문장의 동사다.",
       "byOption": {
-        "a": "students는 동사 앞자리에 있는 주어 The students의 중심 단어라서 동사가 아니다.",
-        "b": "room은 동사 뒤에 오는 목적어 the room의 중심 단어라서 동사가 아니다.",
-        "c": "정답. 주어 The students와 목적어 the room 사이의 자리에 있는 clean이 동사다.",
-        "d": "the는 뒤의 명사 room 앞에 붙는 관사라서 동사 자리에 올 수 없다."
+        "a": "이 문장에서 students는 동사 clean 앞자리에 있는 주어라서 동사가 아니다.",
+        "b": "이 문장에서 room은 동사 clean 뒤에 오는 목적어 the room의 중심 단어라서 동사가 아니다.",
+        "c": "정답. 주어 Students와 목적어 the room 사이의 자리에 있는 clean이 이 문장의 동사다.",
+        "d": "이 문장에서 the는 뒤의 명사 room 앞에 붙은 관사로 목적어 the room의 일부라서 동사가 아니다."
       }
     },
     "hints": {
       "direction": "주어가 끝나는 곳 바로 다음 자리를 살펴보세요.",
       "range": [
         1,
-        3
+        2
       ]
     },
     "id": "Q-L0-U05-016",
@@ -837,7 +837,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -855,7 +855,7 @@
       },
       {
         "id": "c",
-        "text": "my father",
+        "text": "father",
         "misconception": "object_as_subject"
       }
     ],
@@ -866,9 +866,9 @@
     "explanation": {
       "summary": "coffee는 동사 drinks 바로 뒤에 오는 명사로, 동사의 목적어이다.",
       "byOption": {
-        "a": "정답. 동사 drinks 뒤에 와서 '커피를'로 해석되는 목적어이다.",
-        "b": "drinks는 주어 my father 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에서 찾는다.",
-        "c": "my father는 동사 drinks 앞에 오는 주어이다. 목적어는 동사 뒤에 온다."
+        "a": "정답. 이 문장에서 coffee는 동사 drinks 바로 뒤에 와서 동사의 대상이 되는 목적어이다.",
+        "b": "drinks는 주어 My father 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에서 찾는다.",
+        "c": "이 문장에서 father는 동사 drinks 앞에 있는 주어 My father의 중심 명사이다. 이 문장의 목적어는 drinks 뒤에 있는 말이다."
       }
     },
     "hints": {
@@ -886,7 +886,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -916,7 +916,7 @@
       "summary": "a book은 동사 reads 뒤에 오는 명사구로, 동사의 목적어이다.",
       "byOption": {
         "a": "reads는 주어 the girl 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에 있다.",
-        "b": "정답. 동사 reads 뒤에 와서 '책을'로 해석되는 목적어이다.",
+        "b": "정답. a book은 동사 reads 바로 뒤에 오는 목적어이다.",
         "c": "the girl은 동사 reads 앞에 오는 주어이다. 목적어는 동사 뒤에 온다."
       }
     },
@@ -935,7 +935,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -966,11 +966,11 @@
       "byOption": {
         "a": "the teacher는 동사 opens 앞에 오는 주어이다. 목적어는 동사 뒤에 온다.",
         "b": "opens는 주어 the teacher 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에서 찾는다.",
-        "c": "정답. 동사 opens 뒤에 와서 '문을'로 해석되는 목적어이다."
+        "c": "정답. 이 문장에서 the door는 동사 opens 바로 뒤에 놓인 명사구로, opens의 목적어이다."
       }
     },
     "hints": {
-      "direction": "동사 뒤쪽에 있는 말 중에서 '~을/를'로 해석되는 것을 찾아보세요.",
+      "direction": "동사부터 문장 끝까지 살펴보고, 동사 바로 뒤에 이어지는 명사구를 찾아보세요.",
       "range": [
         2,
         4
@@ -984,7 +984,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -1015,7 +1015,7 @@
       "byOption": {
         "a": "play는 주어 we 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에 온다.",
         "b": "we는 문장 맨 앞, 동사 play 앞에 오는 주어이다. 목적어는 동사 뒤에 온다.",
-        "c": "정답. 동사 play 뒤에 와서 '축구를'로 해석되는 목적어이다."
+        "c": "정답. 이 문장에서 soccer는 동사 play 바로 뒤에 오는 목적어이다."
       }
     },
     "hints": {
@@ -1033,7 +1033,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -1047,12 +1047,12 @@
       {
         "id": "b",
         "text": "the dog",
-        "misconception": "object_as_subject"
+        "trap": "subject_as_object"
       },
       {
         "id": "c",
         "text": "likes",
-        "misconception": "object_as_verb"
+        "trap": "verb_as_object"
       }
     ],
     "answer": "a",
@@ -1060,11 +1060,11 @@
       "object_identification"
     ],
     "explanation": {
-      "summary": "the ball은 동사 likes 뒤에 오는 명사구로, 동사의 목적어이다.",
+      "summary": "이 문장에서 the ball은 동사 likes 바로 뒤에 오는 명사구로, likes의 목적어입니다.",
       "byOption": {
-        "a": "정답. 동사 likes 뒤에 와서 '그 공을'로 해석되는 목적어이다.",
-        "b": "the dog는 동사 likes 앞에 오는 주어이다. 목적어는 동사 뒤에 온다.",
-        "c": "likes는 주어 the dog 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에서 찾는다."
+        "a": "정답. 이 문장에서 the ball은 동사 likes 바로 뒤에 놓여 likes의 대상이 되는 명사구이므로 목적어입니다.",
+        "b": "이 문장에서 the dog는 동사 likes 앞, 문장 맨 앞에 놓인 주어입니다. 이 문장의 목적어는 likes 뒤에 있습니다.",
+        "c": "이 문장에서 likes는 주어 the dog 바로 뒤에 오는 동사입니다. 이 문장의 목적어는 likes 뒤에 있습니다."
       }
     },
     "hints": {
@@ -1082,7 +1082,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "multiple_choice",
@@ -1100,7 +1100,7 @@
       },
       {
         "id": "c",
-        "text": "my mother",
+        "text": "mother",
         "misconception": "object_as_subject"
       }
     ],
@@ -1111,9 +1111,9 @@
     "explanation": {
       "summary": "dinner는 동사 cooks 뒤에 오는 명사로, 동사의 목적어이다.",
       "byOption": {
-        "a": "cooks는 주어 my mother 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에 온다.",
-        "b": "정답. 동사 cooks 뒤에 와서 '저녁 식사를'로 해석되는 목적어이다.",
-        "c": "my mother는 동사 cooks 앞에 오는 주어이다. 목적어는 동사 뒤에 온다."
+        "a": "cooks는 주어 My mother 바로 뒤에 오는 동사이다. 목적어는 이 동사 뒤에 온다.",
+        "b": "정답. 이 문장에서 dinner는 동사 cooks 바로 뒤에 와서 동사의 대상이 되는 목적어이다.",
+        "c": "이 문장에서 mother는 동사 cooks 앞에 오는 주어 My mother의 중심 명사이다. 이 문장의 목적어는 동사 cooks 뒤에 있다."
       }
     },
     "hints": {
@@ -1131,7 +1131,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 1
+    "version": 3
   },
   {
     "type": "true_false",

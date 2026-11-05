@@ -248,7 +248,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -278,7 +280,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 2회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -388,10 +392,9 @@
     "id": "Q-L0-U05-005",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 1회",
-      "사전 검수: 선택지 c 해설에 '이 문장에서'가 한 문장 안에 두 번 나와 어색하므로 '이 문장에서 play는 동사이고, play 앞에 놓인 we가 주어입니다.'처럼 고쳐야 합니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -406,19 +409,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c 해설에 '이 문장에서'가 한 문장 안에 두 번 나와 어색하므로 '이 문장에서 play는 동사이고, play 앞에 놓인 we가 주어입니다.'처럼 고쳐야 합니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-006",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c가 'the girl'로 소문자인데 원문은 'The girl'이라서, 문장에서 그대로 찾아야 하는 학습자가 헷갈릴 수 있습니다.",
-      "사전 검수: 해설 b의 '목적어는 주어가 될 수 없습니다'는 지나친 일반화입니다. milk는 다른 문장에서 주어가 될 수 있으므로 '이 문장에서 milk는 목적어 역할을 합니다'처럼 고치는 것이 맞습니다."
+      "AI 수정 1회"
     ],
     "checks": {
       "rules": "pass",
@@ -433,21 +433,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c가 'the girl'로 소문자인데 원문은 'The girl'이라서, 문장에서 그대로 찾아야 하는 학습자가 헷갈릴 수 있습니다.",
-        "해설 b의 '목적어는 주어가 될 수 없습니다'는 지나친 일반화입니다. milk는 다른 문장에서 주어가 될 수 있으므로 '이 문장에서 milk는 목적어 역할을 합니다'처럼 고치는 것이 맞습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-007",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c 해설의 '목적어는 주어가 될 수 없습니다'는 지나친 일반화입니다. 'Meat is good.'처럼 meat도 다른 문장에서는 주어가 될 수 있으므로 '이 문장에서 meat은 목적어이므로 주어가 아닙니다'로 고쳐야 합니다.",
-      "사전 검수: 선택지 a 해설의 '주어는 동사 앞에 놓인 말입니다'는 의문문이나 There 구문에서는 맞지 않는 규칙을 단정합니다. '이 문장처럼 평서문에서는'이라는 단서를 붙여야 합니다.",
-      "사전 검수: 선택지 b의 'dogs'는 원문의 'Dogs'와 대소문자가 다릅니다. 원문과 똑같이 'Dogs'로 맞추는 것이 좋습니다."
+      "AI 수정 1회"
     ],
     "checks": {
       "rules": "pass",
@@ -462,22 +457,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c 해설의 '목적어는 주어가 될 수 없습니다'는 지나친 일반화입니다. 'Meat is good.'처럼 meat도 다른 문장에서는 주어가 될 수 있으므로 '이 문장에서 meat은 목적어이므로 주어가 아닙니다'로 고쳐야 합니다.",
-        "선택지 a 해설의 '주어는 동사 앞에 놓인 말입니다'는 의문문이나 There 구문에서는 맞지 않는 규칙을 단정합니다. '이 문장처럼 평서문에서는'이라는 단서를 붙여야 합니다.",
-        "선택지 b의 'dogs'는 원문의 'Dogs'와 대소문자가 다릅니다. 원문과 똑같이 'Dogs'로 맞추는 것이 좋습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-008",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 a는 'my father'로 소문자인데 원문은 'My father'라서 표기가 서로 다릅니다. 원문대로 'My father'로 맞춰야 합니다.",
-      "사전 검수: b 해설의 '목적어는 주어가 될 수 없습니다'는 단어 자체가 주어가 될 수 없다는 뜻으로 오해할 수 있습니다. '이 문장에서 the car는 목적어 역할을 합니다'처럼 고치는 것이 좋습니다.",
-      "사전 검수: 해석 '차를 닦는다'도 틀리지는 않지만, 'washes the car'는 '세차한다'나 '(차를) 세차하신다'로 옮기는 편이 더 자연스럽습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -492,24 +481,20 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 a는 'my father'로 소문자인데 원문은 'My father'라서 표기가 서로 다릅니다. 원문대로 'My father'로 맞춰야 합니다.",
-        "b 해설의 '목적어는 주어가 될 수 없습니다'는 단어 자체가 주어가 될 수 없다는 뜻으로 오해할 수 있습니다. '이 문장에서 the car는 목적어 역할을 합니다'처럼 고치는 것이 좋습니다.",
-        "해석 '차를 닦는다'도 틀리지는 않지만, 'washes the car'는 '세차한다'나 '(차를) 세차하신다'로 옮기는 편이 더 자연스럽습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "S-L0-U05-009",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "허용 어휘 밖: kicks"
+      "AI 수정 1회"
     ],
     "checks": {
       "rules": "pass",
-      "vocab": "fail",
+      "vocab": "pass",
       "tags": "n/a",
       "similarity": "pass"
     },
@@ -536,7 +521,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -551,7 +538,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -566,7 +555,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -581,7 +572,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -596,7 +589,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -611,7 +606,9 @@
     "kind": "sentence",
     "unitId": "L0-U05",
     "status": "auto_checked",
-    "reasons": [],
+    "reasons": [
+      "AI 수정 1회"
+    ],
     "checks": {
       "rules": "pass",
       "vocab": "pass",
@@ -625,15 +622,13 @@
     "id": "Q-L0-U05-009",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "허용 어휘 밖: kicks",
-      "사전 검수: 힌트 range [1,3]은 boy·kicks·a를 함께 가리켜서 '주어 바로 다음 자리'를 짚으라는 힌트 문구와 맞지 않으므로, 동사 자리인 [2,2]로 좁히거나 힌트 문구에 맞게 범위를 바꿔야 합니다.",
-      "사전 검수: 주어 span에는 HEAD_NOUN(boy)을 표시했지만 목적어 span에는 HEAD_NOUN(ball)이 없습니다. d번 해설에서 'ball은 목적어 a ball의 중심 단어'라고 설명하므로 주석도 그에 맞게 일관되게 달아야 합니다."
+      "AI 수정 1회"
     ],
     "checks": {
       "rules": "pass",
-      "vocab": "fail",
+      "vocab": "pass",
       "tags": "pass",
       "similarity": "pass"
     },
@@ -644,21 +639,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "힌트 range [1,3]은 boy·kicks·a를 함께 가리켜서 '주어 바로 다음 자리'를 짚으라는 힌트 문구와 맞지 않으므로, 동사 자리인 [2,2]로 좁히거나 힌트 문구에 맞게 범위를 바꿔야 합니다.",
-        "주어 span에는 HEAD_NOUN(boy)을 표시했지만 목적어 span에는 HEAD_NOUN(ball)이 없습니다. d번 해설에서 'ball은 목적어 a ball의 중심 단어'라고 설명하므로 주석도 그에 맞게 일관되게 달아야 합니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-010",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: hints.range [1,3]은 mom·makes·a 세 토큰을 가리켜 정답 makes의 span [2,2]와 맞지 않고, 주어 끝 다음 자리를 보라는 힌트 문구와도 어긋난다.",
-      "사전 검수: 선택지 d의 태그 article_as_word_class_confusion은 '관사를 동사로 오인'이라는 오답 이유를 분명히 나타내지 못하므로 명세의 오개념 목록에 있는 태그인지 확인해야 한다.",
-      "사전 검수: 해설이 makes를 문장 속 위치로만 동사라고 설명하고 '만든다'라는 동작의 뜻은 언급하지 않아, 초급 학습자에게 근거가 순환 논리처럼 보일 수 있다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -673,22 +663,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "hints.range [1,3]은 mom·makes·a 세 토큰을 가리켜 정답 makes의 span [2,2]와 맞지 않고, 주어 끝 다음 자리를 보라는 힌트 문구와도 어긋난다.",
-        "선택지 d의 태그 article_as_word_class_confusion은 '관사를 동사로 오인'이라는 오답 이유를 분명히 나타내지 못하므로 명세의 오개념 목록에 있는 태그인지 확인해야 한다.",
-        "해설이 makes를 문장 속 위치로만 동사라고 설명하고 '만든다'라는 동작의 뜻은 언급하지 않아, 초급 학습자에게 근거가 순환 논리처럼 보일 수 있다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-011",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 힌트 range [1,3]은 girl·reads·a를 함께 가리켜 오답 단어까지 포함하므로, 힌트 문구('주어가 끝나는 곳 바로 다음 자리')에 맞게 [2,2] 또는 [0,2]로 좁혀야 한다.",
-      "사전 검수: 선택지 b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못하므로, 명세의 오개념 목록에 있는 태그인지 확인하고 'article_as_verb' 같은 이름으로 바꾸는 것을 검토해야 한다.",
-      "사전 검수: 목적어 a book에는 HEAD_NOUN(book) 주석이 없어서, 주어에만 중심어를 표시한 주석과 맞지 않고 해설 d의 '목적어의 중심 단어'라는 설명도 뒷받침하지 못한다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -703,22 +687,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "힌트 range [1,3]은 girl·reads·a를 함께 가리켜 오답 단어까지 포함하므로, 힌트 문구('주어가 끝나는 곳 바로 다음 자리')에 맞게 [2,2] 또는 [0,2]로 좁혀야 한다.",
-        "선택지 b의 오개념 태그 'article_as_word_class_confusion'은 관사를 동사로 고르는 오류를 정확히 나타내지 못하므로, 명세의 오개념 목록에 있는 태그인지 확인하고 'article_as_verb' 같은 이름으로 바꾸는 것을 검토해야 한다.",
-        "목적어 a book에는 HEAD_NOUN(book) 주석이 없어서, 주어에만 중심어를 표시한 주석과 맞지 않고 해설 d의 '목적어의 중심 단어'라는 설명도 뒷받침하지 못한다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-012",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 문장에 'The'와 'the'가 두 번 나오는데 선택지 b는 'the'로만 적혀 있어 어느 the를 가리키는지 모호하다(해설은 bread 앞의 the로만 설명함).",
-      "사전 검수: 선택지 b의 오개념 태그 'article_as_word_class_confusion'은 '관사를 동사로 고른 실수'라는 실제 오답 이유를 분명히 나타내지 못한다. 다른 선택지 태그(subject_as_verb, object_as_verb)처럼 'article_as_verb' 형태로 맞추는 것이 좋다.",
-      "사전 검수: 번역에서 'the bread'는 '그 빵을'로, 'The dog'는 '개가'로 옮겨 같은 관사를 다르게 처리했다. 둘 다 '그'를 붙이거나 둘 다 빼서 통일해야 한다(subj gloss도 함께 고쳐야 함)."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -733,22 +711,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "문장에 'The'와 'the'가 두 번 나오는데 선택지 b는 'the'로만 적혀 있어 어느 the를 가리키는지 모호하다(해설은 bread 앞의 the로만 설명함).",
-        "선택지 b의 오개념 태그 'article_as_word_class_confusion'은 '관사를 동사로 고른 실수'라는 실제 오답 이유를 분명히 나타내지 못한다. 다른 선택지 태그(subject_as_verb, object_as_verb)처럼 'article_as_verb' 형태로 맞추는 것이 좋다.",
-        "번역에서 'the bread'는 '그 빵을'로, 'The dog'는 '개가'로 옮겨 같은 관사를 다르게 처리했다. 둘 다 '그'를 붙이거나 둘 다 빼서 통일해야 한다(subj gloss도 함께 고쳐야 함)."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-013",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 힌트 range [1,3]은 teacher·opens·the를 함께 가리켜서 '주어가 끝난 바로 다음 자리'라는 힌트 문구와 맞지 않으니, 동사 자리 [2,2]나 주어 끝까지인 [0,1]로 맞춰야 한다.",
-      "사전 검수: 오답 d의 태그 article_as_word_class_confusion은 a·c 태그(object_as_verb, subject_as_verb)와 이름 짓는 방식이 달라 무슨 오개념인지 흐리므로, article_as_verb처럼 맞추고 명세의 오개념 목록에 있는지 확인해야 한다.",
-      "사전 검수: 선택지 d의 'the'는 문장에 The와 the로 두 번 나와서 어느 단어인지 모호하다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -763,22 +735,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "힌트 range [1,3]은 teacher·opens·the를 함께 가리켜서 '주어가 끝난 바로 다음 자리'라는 힌트 문구와 맞지 않으니, 동사 자리 [2,2]나 주어 끝까지인 [0,1]로 맞춰야 한다.",
-        "오답 d의 태그 article_as_word_class_confusion은 a·c 태그(object_as_verb, subject_as_verb)와 이름 짓는 방식이 달라 무슨 오개념인지 흐리므로, article_as_verb처럼 맞추고 명세의 오개념 목록에 있는지 확인해야 한다.",
-        "선택지 d의 'the'는 문장에 The와 the로 두 번 나와서 어느 단어인지 모호하다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-014",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 a의 태그 article_as_word_class_confusion은 오답 이유인 '관사를 동사로 착각함'을 분명히 나타내지 못하므로, 다른 선택지 태그와 형식을 맞춘 이름(예: article_as_verb)을 쓰는 것이 좋다.",
-      "사전 검수: 주어 My father에는 HEAD_NOUN 주석이 있는데 목적어 the car에는 없어서, 해설 b의 'car는 목적어의 중심 단어'라는 설명을 뒷받침할 주석이 없다.",
-      "사전 검수: 번역 '우리 아버지가 차를 닦는다'는 자기 아버지에게 높임말이 빠져 어색하므로 '우리 아버지는 세차를 하신다' 또는 '차를 닦으신다'처럼 고치는 것이 자연스럽다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -793,24 +759,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 a의 태그 article_as_word_class_confusion은 오답 이유인 '관사를 동사로 착각함'을 분명히 나타내지 못하므로, 다른 선택지 태그와 형식을 맞춘 이름(예: article_as_verb)을 쓰는 것이 좋다.",
-        "주어 My father에는 HEAD_NOUN 주석이 있는데 목적어 the car에는 없어서, 해설 b의 'car는 목적어의 중심 단어'라는 설명을 뒷받침할 주석이 없다.",
-        "번역 '우리 아버지가 차를 닦는다'는 자기 아버지에게 높임말이 빠져 어색하므로 '우리 아버지는 세차를 하신다' 또는 '차를 닦으신다'처럼 고치는 것이 자연스럽다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-015",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c의 'the'는 문장에 두 번(The cat, the milk) 나오는데, 해설은 milk 앞의 the만 설명해 어느 the를 가리키는지 분명하지 않습니다.",
-      "사전 검수: 힌트는 '주어가 끝나는 곳 바로 다음 자리'를 보라고 하지만, range [1,3]은 cat부터 the까지를 가리켜 힌트 내용과 맞지 않습니다. 동사 위치인 [2,2]로 고치거나 범위를 다시 정해야 합니다.",
-      "사전 검수: 해설은 '주어 뒤, 목적어 앞에 있으니 동사'라고 위치만으로 설명합니다. 목적어도 동사를 기준으로 정해지므로 순환 논리가 되고, 입문 학습자에게는 '동작을 나타내는 말'이라는 근거가 빠져 있습니다.",
-      "사전 검수: 오답 태그 'article_as_word_class_confusion'은 '관사를 동사로 착각'이라는 오답 이유를 정확히 나타내지 못합니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다.",
-      "사전 검수: 해석에서 The cat은 '고양이가'로, the milk는 '그 우유를'로 옮겨 관사 처리가 일관되지 않습니다. '고양이가 우유를 마신다'로 쓰는 편이 더 자연스럽습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -825,13 +783,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c의 'the'는 문장에 두 번(The cat, the milk) 나오는데, 해설은 milk 앞의 the만 설명해 어느 the를 가리키는지 분명하지 않습니다.",
-        "힌트는 '주어가 끝나는 곳 바로 다음 자리'를 보라고 하지만, range [1,3]은 cat부터 the까지를 가리켜 힌트 내용과 맞지 않습니다. 동사 위치인 [2,2]로 고치거나 범위를 다시 정해야 합니다.",
-        "해설은 '주어 뒤, 목적어 앞에 있으니 동사'라고 위치만으로 설명합니다. 목적어도 동사를 기준으로 정해지므로 순환 논리가 되고, 입문 학습자에게는 '동작을 나타내는 말'이라는 근거가 빠져 있습니다.",
-        "오답 태그 'article_as_word_class_confusion'은 '관사를 동사로 착각'이라는 오답 이유를 정확히 나타내지 못합니다. 명세의 오개념 목록에 있는 태그인지 확인해야 합니다.",
-        "해석에서 The cat은 '고양이가'로, the milk는 '그 우유를'로 옮겨 관사 처리가 일관되지 않습니다. '고양이가 우유를 마신다'로 쓰는 편이 더 자연스럽습니다."
-      ]
+      "issues": []
     }
   },
   {
@@ -840,8 +792,8 @@
     "unitId": "L0-U05",
     "status": "flagged",
     "reasons": [
-      "사전 검수: 선택지 d의 \"the\"는 문장에 두 번(The students, the room) 나오는데, 해설은 room 앞의 the만 설명하므로 어느 the를 가리키는지 분명하지 않다.",
-      "사전 검수: 선택지 d의 오개념 태그 article_as_word_class_confusion은 다른 태그(subject_as_verb, object_as_verb)와 이름 짓는 방식이 달라서, 명세에 있는 오개념인지 확인하고 article_as_verb 같은 태그로 맞춰야 한다."
+      "AI 수정 2회",
+      "사전 검수: 오답 d(the)는 목적어 전체가 아니라 관사 하나라서, 이를 고르는 오류를 '목적어를 동사로 고른다'(object_as_verb)로 태그하기는 어렵다."
     ],
     "checks": {
       "rules": "pass",
@@ -857,8 +809,7 @@
     },
     "preReview": {
       "issues": [
-        "선택지 d의 \"the\"는 문장에 두 번(The students, the room) 나오는데, 해설은 room 앞의 the만 설명하므로 어느 the를 가리키는지 분명하지 않다.",
-        "선택지 d의 오개념 태그 article_as_word_class_confusion은 다른 태그(subject_as_verb, object_as_verb)와 이름 짓는 방식이 달라서, 명세에 있는 오개념인지 확인하고 article_as_verb 같은 태그로 맞춰야 한다."
+        "오답 d(the)는 목적어 전체가 아니라 관사 하나라서, 이를 고르는 오류를 '목적어를 동사로 고른다'(object_as_verb)로 태그하기는 어렵다."
       ]
     }
   },
@@ -956,9 +907,9 @@
     "id": "Q-L0-U05-017",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c의 'my father'는 원문의 'My father'와 대소문자가 달라서 원문 그대로 표기하는 것이 좋다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -973,18 +924,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c의 'my father'는 원문의 'My father'와 대소문자가 달라서 원문 그대로 표기하는 것이 좋다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-018",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c의 표기가 \"the girl\"(소문자)로 원문 \"The girl\"과 대소문자가 달라 원문 그대로 \"The girl\"로 맞추는 것이 좋다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -999,18 +948,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c의 표기가 \"the girl\"(소문자)로 원문 \"The girl\"과 대소문자가 달라 원문 그대로 \"The girl\"로 맞추는 것이 좋다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-019",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 힌트 범위 [2,4]에 동사 opens(토큰 2)가 들어가 있어서, '동사 뒤쪽에 있는 말'이라는 힌트 문구와 맞지 않으므로 목적어 범위인 [3,4]로 고쳐야 한다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -1025,18 +972,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "힌트 범위 [2,4]에 동사 opens(토큰 2)가 들어가 있어서, '동사 뒤쪽에 있는 말'이라는 힌트 문구와 맞지 않으므로 목적어 범위인 [3,4]로 고쳐야 한다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U05-020",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 b의 텍스트가 소문자 'we'로 되어 있어 문장 속 대문자 'We'와 표기가 일치하지 않으므로 'We'로 맞춰야 한다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -1051,9 +996,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 b의 텍스트가 소문자 'we'로 되어 있어 문장 속 대문자 'We'와 표기가 일치하지 않으므로 'We'로 맞춰야 한다."
-      ]
+      "issues": []
     }
   },
   {
@@ -1062,11 +1005,13 @@
     "unitId": "L0-U05",
     "status": "flagged",
     "reasons": [
-      "사전 검수: 오답 b(the dog, 주어를 목적어로 고름)의 태그 object_as_subject는 오류 방향이 반대로 보여 subject_as_object가 맞는지 명세의 오개념 목록과 대조가 필요하다.",
-      "사전 검수: 오답 c(likes, 동사를 목적어로 고름)의 태그 object_as_verb도 방향이 반대로 보여 verb_as_object가 맞는지 명세와 대조가 필요하다."
+      "규칙 위반: distractor \"b\" trap \"subject_as_object\" is not defined",
+      "규칙 위반: distractor \"c\" trap \"verb_as_object\" is not defined",
+      "AI 수정 2회",
+      "사전 검수: 입력된 단원 오개념 목록이 비어 있는데 오답 b·c에 trap 태그(subject_as_object, verb_as_object)가 달려 있어, 목록에 없는 id라 맞는 태그인지 판단할 수 없습니다."
     ],
     "checks": {
-      "rules": "pass",
+      "rules": "fail",
       "vocab": "pass",
       "tags": "pass",
       "similarity": "pass"
@@ -1079,8 +1024,7 @@
     },
     "preReview": {
       "issues": [
-        "오답 b(the dog, 주어를 목적어로 고름)의 태그 object_as_subject는 오류 방향이 반대로 보여 subject_as_object가 맞는지 명세의 오개념 목록과 대조가 필요하다.",
-        "오답 c(likes, 동사를 목적어로 고름)의 태그 object_as_verb도 방향이 반대로 보여 verb_as_object가 맞는지 명세와 대조가 필요하다."
+        "입력된 단원 오개념 목록이 비어 있는데 오답 b·c에 trap 태그(subject_as_object, verb_as_object)가 달려 있어, 목록에 없는 id라 맞는 태그인지 판단할 수 없습니다."
       ]
     }
   },
@@ -1088,9 +1032,9 @@
     "id": "Q-L0-U05-022",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "사전 검수: 선택지 c의 표기가 \"my mother\"로 소문자여서 원문 \"My mother\"와 대소문자가 일치하지 않는다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -1105,9 +1049,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 c의 표기가 \"my mother\"로 소문자여서 원문 \"My mother\"와 대소문자가 일치하지 않는다."
-      ]
+      "issues": []
     }
   },
   {
@@ -1440,7 +1382,14 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   },
   {
     "id": "Q-L0-U05-030",
@@ -1455,7 +1404,14 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   },
   {
     "id": "Q-L0-U05-031",
@@ -1470,7 +1426,14 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   },
   {
     "id": "Q-L0-U05-032",
@@ -1485,7 +1448,14 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   },
   {
     "id": "Q-L0-U05-033",
@@ -1500,7 +1470,14 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   },
   {
     "id": "Q-L0-U05-034",
@@ -1515,6 +1492,13 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
   }
 ]

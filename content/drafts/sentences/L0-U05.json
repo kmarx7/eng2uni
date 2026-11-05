@@ -258,9 +258,12 @@
   },
   {
     "level": "L0",
-    "text": "The girl drinks milk.",
+    "text": "Every morning, the girl drinks milk.",
     "tokens": [
-      "The",
+      "Every",
+      "morning",
+      ",",
+      "the",
       "girl",
       "drinks",
       "milk",
@@ -268,11 +271,21 @@
     ],
     "spans": [
       {
-        "id": "subj",
-        "role": "SUBJECT",
+        "id": "time",
+        "role": "MODIFIER",
         "range": [
           0,
           1
+        ],
+        "modifies": "verb",
+        "gloss": "매일 아침"
+      },
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          3,
+          4
         ],
         "gloss": "소녀가"
       },
@@ -280,8 +293,8 @@
         "id": "head",
         "role": "HEAD_NOUN",
         "range": [
-          1,
-          1
+          4,
+          4
         ],
         "parent": "subj"
       },
@@ -289,8 +302,8 @@
         "id": "verb",
         "role": "MAIN_VERB",
         "range": [
-          2,
-          2
+          5,
+          5
         ],
         "gloss": "마신다"
       },
@@ -298,13 +311,13 @@
         "id": "obj",
         "role": "OBJECT",
         "range": [
-          3,
-          3
+          6,
+          6
         ],
         "gloss": "우유를"
       }
     ],
-    "translation": "소녀가 우유를 마신다.",
+    "translation": "매일 아침 소녀가 우유를 마신다.",
     "skills": [
       "subject_identification"
     ],
@@ -393,7 +406,7 @@
           2,
           2
         ],
-        "gloss": "닦는다"
+        "gloss": "닦으신다"
       },
       {
         "id": "obj",
@@ -405,7 +418,7 @@
         "gloss": "차를"
       }
     ],
-    "translation": "우리 아버지는 차를 닦는다.",
+    "translation": "우리 아버지는 차를 닦으신다.",
     "skills": [
       "subject_identification"
     ],
@@ -414,11 +427,11 @@
   },
   {
     "level": "L0",
-    "text": "The boy kicks a ball.",
+    "text": "The boy sees a ball.",
     "tokens": [
       "The",
       "boy",
-      "kicks",
+      "sees",
       "a",
       "ball",
       "."
@@ -449,7 +462,7 @@
           2,
           2
         ],
-        "gloss": "찬다"
+        "gloss": "본다"
       },
       {
         "id": "obj",
@@ -459,9 +472,18 @@
           4
         ],
         "gloss": "공을"
+      },
+      {
+        "id": "ohead",
+        "role": "HEAD_NOUN",
+        "range": [
+          4,
+          4
+        ],
+        "parent": "obj"
       }
     ],
-    "translation": "소년이 공을 찬다.",
+    "translation": "소년이 공을 본다.",
     "skills": [
       "verb_identification"
     ],
@@ -546,7 +568,7 @@
         "gloss": "소녀가"
       },
       {
-        "id": "head",
+        "id": "subjhead",
         "role": "HEAD_NOUN",
         "range": [
           1,
@@ -571,6 +593,15 @@
           4
         ],
         "gloss": "책을"
+      },
+      {
+        "id": "objhead",
+        "role": "HEAD_NOUN",
+        "range": [
+          4,
+          4
+        ],
+        "parent": "obj"
       }
     ],
     "translation": "소녀가 책을 읽는다.",
@@ -582,12 +613,11 @@
   },
   {
     "level": "L0",
-    "text": "The dog eats the bread.",
+    "text": "The dog eats bread.",
     "tokens": [
       "The",
       "dog",
       "eats",
-      "the",
       "bread",
       "."
     ],
@@ -599,7 +629,7 @@
           0,
           1
         ],
-        "gloss": "개가"
+        "gloss": "그 개가"
       },
       {
         "id": "head",
@@ -624,12 +654,12 @@
         "role": "OBJECT",
         "range": [
           3,
-          4
+          3
         ],
-        "gloss": "그 빵을"
+        "gloss": "빵을"
       }
     ],
-    "translation": "개가 그 빵을 먹는다.",
+    "translation": "그 개가 빵을 먹는다.",
     "skills": [
       "verb_identification"
     ],
@@ -638,9 +668,9 @@
   },
   {
     "level": "L0",
-    "text": "The teacher opens the door.",
+    "text": "My teacher opens the door.",
     "tokens": [
-      "The",
+      "My",
       "teacher",
       "opens",
       "the",
@@ -655,7 +685,7 @@
           0,
           1
         ],
-        "gloss": "선생님이"
+        "gloss": "우리 선생님께서"
       },
       {
         "id": "head",
@@ -673,7 +703,7 @@
           2,
           2
         ],
-        "gloss": "연다"
+        "gloss": "여신다"
       },
       {
         "id": "obj",
@@ -685,7 +715,7 @@
         "gloss": "문을"
       }
     ],
-    "translation": "선생님이 문을 연다.",
+    "translation": "우리 선생님께서 문을 여신다.",
     "skills": [
       "verb_identification"
     ],
@@ -711,7 +741,7 @@
           0,
           1
         ],
-        "gloss": "우리 아버지가"
+        "gloss": "우리 아버지는"
       },
       {
         "id": "head",
@@ -729,7 +759,7 @@
           2,
           2
         ],
-        "gloss": "닦는다"
+        "gloss": "닦으신다"
       },
       {
         "id": "obj",
@@ -739,9 +769,18 @@
           4
         ],
         "gloss": "차를"
+      },
+      {
+        "id": "objhead",
+        "role": "HEAD_NOUN",
+        "range": [
+          4,
+          4
+        ],
+        "parent": "obj"
       }
     ],
-    "translation": "우리 아버지가 차를 닦는다.",
+    "translation": "우리 아버지는 차를 닦으신다.",
     "skills": [
       "verb_identification"
     ],
@@ -750,12 +789,11 @@
   },
   {
     "level": "L0",
-    "text": "The cat drinks the milk.",
+    "text": "The cat drinks milk.",
     "tokens": [
       "The",
       "cat",
       "drinks",
-      "the",
       "milk",
       "."
     ],
@@ -792,12 +830,12 @@
         "role": "OBJECT",
         "range": [
           3,
-          4
+          3
         ],
-        "gloss": "그 우유를"
+        "gloss": "우유를"
       }
     ],
-    "translation": "고양이가 그 우유를 마신다.",
+    "translation": "고양이가 우유를 마신다.",
     "skills": [
       "verb_identification"
     ],
@@ -806,10 +844,9 @@
   },
   {
     "level": "L0",
-    "text": "The students clean the room.",
+    "text": "Students clean the room.",
     "tokens": [
-      "The",
-      "students",
+      "Students",
       "clean",
       "the",
       "room",
@@ -821,25 +858,16 @@
         "role": "SUBJECT",
         "range": [
           0,
-          1
+          0
         ],
         "gloss": "학생들이"
-      },
-      {
-        "id": "head",
-        "role": "HEAD_NOUN",
-        "range": [
-          1,
-          1
-        ],
-        "parent": "subj"
       },
       {
         "id": "verb",
         "role": "MAIN_VERB",
         "range": [
-          2,
-          2
+          1,
+          1
         ],
         "gloss": "청소한다"
       },
@@ -847,8 +875,8 @@
         "id": "obj",
         "role": "OBJECT",
         "range": [
-          3,
-          4
+          2,
+          3
         ],
         "gloss": "방을"
       }
