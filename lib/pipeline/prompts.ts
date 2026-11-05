@@ -3,7 +3,7 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v3";
+export const PROMPT_VERSION = "content-v4";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
@@ -26,7 +26,18 @@ Rules:
 - Use common nouns (my brother, the girl, the teacher) instead of personal names, and prefer the most frequent everyday words.
 - Option text copies the words exactly as they appear in the sentence, so capital letters give nothing away; when options mix sentence-initial and other words, write every option in lowercase instead.
 - hints.range must cover more than the answer (for example the whole part before the verb), so the level-2 hint narrows the search without marking the answer.
-- Explain a role by its position and its relation to the verb, never by a word ending: "-s" ends plural nouns (cats) as well as verbs (drinks).`;
+- Explain a role by its position and its relation to the verb, never by a word ending: "-s" ends plural nouns (cats) as well as verbs (drinks).
+- Explain each option for this sentence only ("이 문장에서 milk는 목적어입니다"). Never state a general claim such as "목적어는 주어가 될 수 없습니다", "주어는 동사 앞에 놓인 말입니다" or "영어는 동사를 문장 끝에 두지 않습니다".
+- Each option must match exactly one place in the sentence. When a word appears twice (The cat drinks the milk), use a longer chunk ("the milk") or another distractor.
+- hints.direction and hints.range must describe the same place: if the direction says "the place right after the subject", the range starts there.
+- Translate articles the same way within a sentence, and use natural Korean (honorifics for parents and teachers: 아버지가 세차를 하신다).`;
+
+// Rules the generator follows on purpose; the pre-review is told not to flag them.
+export const HOUSE_RULES = `House rules (deliberate, do not flag them):
+- When options mix the sentence's first word with other words, every option is written in lowercase so capital letters do not give the answer away.
+- hints.range covers more than the answer on purpose, so the hint narrows the search without marking the answer. Flag it only when it disagrees with hints.direction.
+- Roles are explained by position and relation to the verb, not by meaning.
+- Misconception ids come from the unit's list given in the input; judge a tag by that list's description, not by its name.`;
 
 export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec): string {
   const misconceptions = spec.catalog.misconceptions.filter((m) => group.misconceptionIds.includes(m.id));
