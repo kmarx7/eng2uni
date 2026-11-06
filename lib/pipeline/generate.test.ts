@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { ClaudeRunner } from "./claude-cli";
 import { readDrafts } from "./draft-store";
 import { assignIds, groupOutputSchema, runGenerate, unitOutputSchema } from "./generate";
-import { approve } from "./review-store";
+import { approve, reject } from "./review-store";
 
 let root: string;
 const now = new Date("2026-11-03T09:00:00+09:00");
@@ -306,7 +306,8 @@ describe("redoGroups", () => {
     expect(drafts.questions.find((q) => q.id === "Q-L0-U05-002")?.reviewStatus).toBe("retired");
     expect([status("Q-L0-U05-001"), status("S-L0-U05-001")]).toEqual(["auto_checked", "auto_checked"]);
     expect(drafts.questions.find((q) => q.id === "Q-L0-U05-003")).toMatchObject({ variantGroup: "VG-L0-U05-verb", sentenceId: "S-L0-U05-003", reviewStatus: "draft" });
-    expect(status("L0-U05")).toBe("auto_checked");
+    // Drafted again; the fake unit still names the retired Q-002, so it is flagged for that.
+    expect(drafts.records.find((r) => r.id === "L0-U05")?.reasons).toEqual(["규칙 위반: 폐기된 문항 사용: Q-L0-U05-002"]);
   });
 
   it("retires a building group's unlinked sentences too", async () => {
@@ -326,5 +327,41 @@ describe("redoGroups", () => {
     await run(fakeRunner().runner);
     for (const id of ["subject_find", "verb_as_subject", "S-L0-U05-002", "Q-L0-U05-002"]) expect(approve(contentDir(), id, "kim", now)).toEqual({ ok: true });
     await expect(redo(fakeRunner().runner)).rejects.toThrow(/승인된 항목/);
+  });
+});
+
+// Stage 8 trial 3: after a question was retired, the unit came back from the cache
+// still using it, and the unit check let a retired question through.
+describe("unit after a retired question", () => {
+  const contentDir = () => path.join(root, "content");
+  const redoUnit = (runner: ClaudeRunner) =>
+    runGenerate({ root, specPath: path.join(root, "content/specs/L0-U05.json"), dryRun: false, runner, similarity, now, log: (l) => logs.push(l), redoUnit: true });
+
+  it("assembles the unit again instead of reusing the cached one", async () => {
+    await run(fakeRunner().runner);
+    expect(reject(contentDir(), "L0-U05", "kim", now)).toEqual({ ok: true });
+    expect(reject(contentDir(), "Q-L0-U05-002", "kim", now)).toEqual({ ok: true });
+    const { runner, calls } = fakeRunner();
+    await run(runner);
+    expect(calls.filter((c) => c.includes('"task":"unit"'))).toHaveLength(1);
+    const unitInput = JSON.parse(calls.find((c) => c.includes('"task":"unit"'))!);
+    expect(unitInput.drafts.flatMap((g: { questionIds: string[] }) => g.questionIds)).not.toContain("Q-L0-U05-002");
+  });
+
+  it("flags a unit that uses a retired question", async () => {
+    await run(fakeRunner().runner);
+    expect(reject(contentDir(), "Q-L0-U05-002", "kim", now)).toEqual({ ok: true });
+    await redoUnit(fakeRunner().runner);
+    const record = readDrafts(contentDir(), "L0-U05").records.find((r) => r.id === "L0-U05");
+    expect(record).toMatchObject({ status: "flagged" });
+    expect(record?.reasons).toContain("규칙 위반: 폐기된 문항 사용: Q-L0-U05-002");
+  });
+
+  it("redoUnit retires the unit draft and drafts it again", async () => {
+    await run(fakeRunner().runner);
+    const { runner, calls } = fakeRunner();
+    expect(await redoUnit(runner)).toMatchObject({ calls: 1, written: 1 });
+    expect(calls).toHaveLength(1);
+    expect(readDrafts(contentDir(), "L0-U05").units[0].reviewStatus).toBe("draft");
   });
 });
