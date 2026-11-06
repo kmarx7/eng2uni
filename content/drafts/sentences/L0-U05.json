@@ -1,0 +1,169 @@
+[
+  {
+    "level": "L0",
+    "text": "The boy kicks the ball.",
+    "tokens": [
+      "The",
+      "boy",
+      "kicks",
+      "the",
+      "ball",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 소년은"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "찬다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "공을"
+      }
+    ],
+    "translation": "그 소년은 공을 찬다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-023",
+    "reviewStatus": "retired"
+  },
+  {
+    "level": "L0",
+    "text": "My mother reads a book.",
+    "tokens": [
+      "My",
+      "mother",
+      "reads",
+      "a",
+      "book",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "우리 어머니는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "읽으신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "책을"
+      }
+    ],
+    "translation": "우리 어머니는 책을 읽으신다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-024",
+    "reviewStatus": "retired"
+  },
+  {
+    "level": "L0",
+    "text": "The girl drinks milk.",
+    "tokens": [
+      "The",
+      "girl",
+      "drinks",
+      "milk",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          1
+        ],
+        "gloss": "그 소녀는"
+      },
+      {
+        "id": "head",
+        "role": "HEAD_NOUN",
+        "range": [
+          1,
+          1
+        ],
+        "parent": "subj"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "마신다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          3,
+          3
+        ],
+        "gloss": "우유를"
+      }
+    ],
+    "translation": "그 소녀는 우유를 마신다.",
+    "skills": [
+      "svo_word_order"
+    ],
+    "id": "S-L0-U05-025",
+    "reviewStatus": "retired"
+  }
+]
