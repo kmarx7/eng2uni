@@ -1,0 +1,14 @@
+{
+  "units": {
+    "L0-U01": {
+      "status": "specified",
+      "updatedAt": "2026-11-07",
+      "note": "curriculum-architect가 명세 작성. 다음 단계는 research-content 초안(사람이 다음 단원으로 확정한 뒤)."
+    },
+    "L0-U05": {
+      "status": "approved",
+      "updatedAt": "2026-11-07",
+      "note": "사람(kmarx) 승인 2026-11-07 (docs/progress/stage-8.md). implemented 전환은 메인 세션이 구현 상태를 확인한 뒤 기록한다."
+    }
+  }
+}
