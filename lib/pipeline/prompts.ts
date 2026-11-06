@@ -3,12 +3,13 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v4";
+export const PROMPT_VERSION = "content-v5";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
 
 Rules:
+- When the group note in the task limits or changes one of these rules (which roles to mark as spans, how to explain a word), follow the note: it is written for that unit.
 - Write original English sentences. Never reproduce, closely paraphrase or recall sentences from real CSAT or mock exams, textbooks or other published material.
 - Use only common words a beginner knows. Stay within the word-frequency limit given in the task.
 - Tokens: one token per word, and punctuation as separate tokens. "text" is the natural sentence those tokens spell.
