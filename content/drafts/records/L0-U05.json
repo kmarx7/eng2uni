@@ -20,7 +20,7 @@
     "id": "subject_identification",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -29,13 +29,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:24:49.913Z"
   },
   {
     "id": "verb_identification",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -44,13 +46,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:03.356Z"
   },
   {
     "id": "object_identification",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -59,13 +63,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:11.935Z"
   },
   {
     "id": "svo_word_order",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -74,13 +80,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:14.403Z"
   },
   {
     "id": "subject_as_verb",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -89,13 +97,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:13.369Z"
   },
   {
     "id": "object_as_verb",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -104,13 +114,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:10.575Z"
   },
   {
     "id": "article_as_word_class_confusion",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -119,13 +131,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:06.571Z"
   },
   {
     "id": "verb_as_subject",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -134,13 +148,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:24:59.349Z"
   },
   {
     "id": "object_as_subject",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -149,13 +165,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:09.471Z"
   },
   {
     "id": "verb_at_end_by_korean_order",
     "kind": "catalog",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -164,13 +182,15 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-03T05:28:05.387Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:15.807Z"
   },
   {
     "id": "S-L0-U05-001",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -181,13 +201,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-002",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -196,13 +218,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-003",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -211,13 +235,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-004",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -226,13 +252,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-005",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -241,13 +269,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-006",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -258,13 +288,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-007",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -273,13 +305,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-008",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -290,13 +324,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-001",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -314,13 +350,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-002",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -338,13 +376,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-003",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -362,13 +402,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-004",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -386,13 +428,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-005",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -410,13 +454,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-006",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -434,13 +480,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-007",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -458,13 +506,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-008",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -482,13 +532,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-009",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -499,13 +551,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-010",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -514,13 +568,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-011",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -531,13 +587,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-012",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -548,13 +606,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-013",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -565,13 +625,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-014",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -582,13 +644,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-015",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -599,13 +663,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-016",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -616,13 +682,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-009",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 1회"
     ],
@@ -640,13 +708,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-010",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -664,13 +734,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-011",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -688,13 +760,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-012",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -712,13 +786,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-013",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -736,13 +812,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-014",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -760,13 +838,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-015",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -784,13 +864,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-016",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회",
       "사전 검수: 오답 d(the)는 목적어 전체가 아니라 관사 하나라서, 이를 고르는 오류를 '목적어를 동사로 고른다'(object_as_verb)로 태그하기는 어렵다."
@@ -811,13 +893,15 @@
       "issues": [
         "오답 d(the)는 목적어 전체가 아니라 관사 하나라서, 이를 고르는 오류를 '목적어를 동사로 고른다'(object_as_verb)로 태그하기는 어렵다."
       ]
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:26:10.427Z"
   },
   {
     "id": "S-L0-U05-017",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -826,13 +910,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-018",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -841,13 +927,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-019",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -856,13 +944,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-020",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -871,13 +961,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-021",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -886,13 +978,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-022",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -901,13 +995,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-03T06:31:30.163Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-017",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -925,13 +1021,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-018",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -949,13 +1047,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-019",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -973,13 +1073,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-020",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -997,13 +1099,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-021",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "flagged",
+    "status": "retired",
     "reasons": [
       "규칙 위반: distractor \"b\" trap \"subject_as_object\" is not defined",
       "규칙 위반: distractor \"c\" trap \"verb_as_object\" is not defined",
@@ -1026,13 +1130,15 @@
       "issues": [
         "입력된 단원 오개념 목록이 비어 있는데 오답 b·c에 trap 태그(subject_as_object, verb_as_object)가 달려 있어, 목록에 없는 id라 맞는 태그인지 판단할 수 없습니다."
       ]
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:27:24.535Z"
   },
   {
     "id": "Q-L0-U05-022",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [
       "AI 수정 2회"
     ],
@@ -1050,7 +1156,9 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-023",
@@ -1276,14 +1384,14 @@
       "tags": "n/a",
       "similarity": "skipped"
     },
-    "generatedAt": "2026-11-05T01:24:31.522Z",
+    "generatedAt": "2026-11-06T23:28:12.177Z",
     "reports": []
   },
   {
     "id": "S-L0-U05-026",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1292,13 +1400,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-027",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1307,13 +1417,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-028",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1322,13 +1434,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-029",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1337,13 +1451,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-030",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1352,13 +1468,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "S-L0-U05-031",
     "kind": "sentence",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1367,13 +1485,15 @@
       "similarity": "pass"
     },
     "generatedAt": "2026-11-05T01:24:31.522Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-029",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1389,13 +1509,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-030",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1411,13 +1533,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-031",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1433,13 +1557,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-032",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1455,13 +1581,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-033",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1477,13 +1605,15 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   },
   {
     "id": "Q-L0-U05-034",
     "kind": "question",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1499,6 +1629,8 @@
     },
     "preReview": {
       "issues": []
-    }
+    },
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:25:57.388Z"
   }
 ]
