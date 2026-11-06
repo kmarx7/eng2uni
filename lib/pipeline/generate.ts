@@ -75,6 +75,8 @@ export interface GenerateOptions {
   model?: string;
   // Groups whose drafts are retired and drafted again (after a spec change to them).
   redoGroups?: string[];
+  // Retire the unit draft and assemble it again (e.g. after a question was retired).
+  redoUnit?: boolean;
 }
 
 export interface GenerateResult {
@@ -152,13 +154,14 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
   const unknown = [...redo].filter((id) => !spec.generation.variantGroups.some((g) => g.id === id));
   if (unknown.length) throw new Error(`명세에 없는 묶음: ${unknown.join(", ")}`);
   // A redone group and the unit built from it are called again even when cached.
-  const fresh = new Set(redo.size ? [...spec.generation.variantGroups.filter((g) => redo.has(g.id)).map(groupKey), unitKey] : []);
+  const redoUnit = redo.size > 0 || opts.redoUnit === true;
+  const fresh = new Set([...spec.generation.variantGroups.filter((g) => redo.has(g.id)).map(groupKey), ...(redoUnit ? [unitKey] : [])]);
   const cachedOf = (key: string) => (fresh.has(key) ? undefined : cacheGet(cacheDir, key));
   const planned = [...spec.generation.variantGroups.map(groupKey), unitKey];
   const cached = planned.filter((key) => cachedOf(key) !== undefined).length;
   log(`예상 호출 ${planned.length - cached}회 (캐시 ${cached}회 제외)`);
   if (opts.dryRun) return { calls: planned.length - cached, written: 0, flagged: 0, failed: 0 };
-  if (redo.size) retireGroups(contentDir, spec.unitId, spec.generation.variantGroups.filter((g) => redo.has(g.id)));
+  if (redoUnit) retireGroups(contentDir, spec.unitId, spec.generation.variantGroups.filter((g) => redo.has(g.id)));
 
   // Catalogue drafts first, so drafts that reference them pass the reference checks.
   // Entries that already have a record (drafted, approved or retired) are left alone.
@@ -295,7 +298,8 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
         return { id: g.id, sentenceUse: g.sentenceUse, sentenceIds: [...sentenceIds], questionIds: questions.map((q) => q.id) };
       }),
     };
-    const output = await call(unitKey, "단원", buildUnitPrompt(spec, ids), UnitOutput, unitOutputSchema());
+    // The cached unit is reused only for the same ids, so a retired question never comes back.
+    const output = await call(redoUnit ? unitKey : `${unitKey}-${hash(ids)}`, "단원", buildUnitPrompt(spec, ids), UnitOutput, unitOutputSchema());
     if (output) {
       const unit = Unit.parse({
         id: spec.unitId,
@@ -319,7 +323,11 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
         ],
         { mode: "full", requireApproved: false, requireFixtureIds: false },
       ).filter((i) => i.itemId === unit.id || i.itemId?.startsWith(`${unit.id}/`));
-      const reasons = issues.map((i) => `규칙 위반: ${i.message}`);
+      const retired = new Set(
+        [...drafts.questions, ...approvedOf<Question>(contentDir, "questions", spec.unitId)].filter((q) => q.reviewStatus === "retired").map((q) => q.id),
+      );
+      const usedRetired = unit.blocks.flatMap((b) => ("questionIds" in b ? (b.questionIds ?? []) : [])).filter((id) => retired.has(id));
+      const reasons = [...issues.map((i) => `규칙 위반: ${i.message}`), ...usedRetired.map((id) => `규칙 위반: 폐기된 문항 사용: ${id}`)];
       const record: ReviewRecord = {
         id: unit.id,
         kind: "unit",

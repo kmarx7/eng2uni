@@ -5,6 +5,7 @@
 //   npm run content:generate -- --spec L0-U05 --dry-run
 //   npm run content:generate -- --spec L0-U05 [--limit 5] [--model opus]
 //   npm run content:generate -- --spec L0-U05 --redo-group VG-L0-U05-SVO-BUILD   (retire that group's drafts and the unit draft, draft them again)
+//   npm run content:generate -- --spec L0-U05 --redo-unit   (retire the unit draft and assemble it again)
 //   npm run content:generate -- --spec-file path/to/spec.json --dry-run
 //   npm run content:generate -- --vocab L0 [--dry-run] [--limit 5]   (examples for vocabulary cards)
 import path from "node:path";
@@ -22,6 +23,7 @@ const { values } = parseArgs({
     limit: { type: "string" },
     model: { type: "string" },
     "redo-group": { type: "string", multiple: true },
+    "redo-unit": { type: "boolean", default: false },
     "dry-run": { type: "boolean", default: false },
   },
 });
@@ -63,6 +65,7 @@ async function main(): Promise<number> {
     now: new Date(),
     log,
     redoGroups: values["redo-group"],
+    redoUnit: values["redo-unit"],
   });
   return result.failed > 0 ? 1 : 0;
 }
