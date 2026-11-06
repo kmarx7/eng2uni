@@ -365,3 +365,15 @@ describe("unit after a retired question", () => {
     expect(readDrafts(contentDir(), "L0-U05").units[0].reviewStatus).toBe("draft");
   });
 });
+
+// L0-U01: the level L0, approved while reviewing L0-U05, was drafted again because
+// only this unit's records were checked.
+describe("catalogue already approved for another unit", () => {
+  it("is not drafted again", async () => {
+    writeFileSync(path.join(root, "content/skills.json"), JSON.stringify([{ id: "subject_find", name: "주어 찾기", category: "syntax", prerequisiteIds: [], reviewStatus: "approved" }]));
+    await run(fakeRunner().runner);
+    const drafts = readDrafts(path.join(root, "content"), "L0-U05");
+    expect(drafts.records.filter((r) => r.kind === "catalog").map((r) => r.id)).toEqual(["verb_as_subject"]);
+    expect(existsSync(path.join(root, "content/drafts/skills.json"))).toBe(false);
+  });
+});

@@ -165,7 +165,9 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
 
   // Catalogue drafts first, so drafts that reference them pass the reference checks.
   // Entries that already have a record (drafted, approved or retired) are left alone.
-  const existingRecords = new Set(readDrafts(contentDir, spec.unitId).records.map((r) => r.id));
+  // Entries approved while reviewing another unit count too.
+  const approvedCatalog = (Object.values(CATALOG_FILES) as string[]).flatMap((file) => readJsonArray<{ id: string }>(path.join(contentDir, file)).map((i) => i.id));
+  const existingRecords = new Set([...readDrafts(contentDir, spec.unitId).records.map((r) => r.id), ...approvedCatalog]);
   const unrecorded = <T extends { id: string }>(items: T[]) => items.filter((item) => !existingRecords.has(item.id));
   writeCatalogDrafts(contentDir, {
     level: spec.catalog.level && !existingRecords.has(spec.catalog.level.id) ? spec.catalog.level : undefined,
