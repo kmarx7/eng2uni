@@ -1376,7 +1376,7 @@
     "id": "L0-U05",
     "kind": "unit",
     "unitId": "L0-U05",
-    "status": "auto_checked",
+    "status": "approved",
     "reasons": [],
     "checks": {
       "rules": "pass",
@@ -1385,7 +1385,9 @@
       "similarity": "skipped"
     },
     "generatedAt": "2026-11-06T23:30:10.177Z",
-    "reports": []
+    "reports": [],
+    "reviewedBy": "kmarx",
+    "reviewedAt": "2026-11-06T23:31:46.925Z"
   },
   {
     "id": "S-L0-U05-026",
