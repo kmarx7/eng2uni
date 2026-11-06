@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "verb_as_noun",
+    "skillId": "noun_identification",
+    "category": "GRM",
+    "description": "동작을 나타내는 말(동사)을 사람·사물·장소의 이름(명사)으로 고른다."
+  },
+  {
+    "id": "noun_as_verb",
+    "skillId": "verb_meaning",
+    "category": "GRM",
+    "description": "사람·사물·장소의 이름(명사)을 동작이나 상태를 나타내는 말(동사)로 고른다."
+  }
+]
