@@ -8,8 +8,8 @@ import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt } from "./prompts";
 // and the third, where it flagged general claims in explanations, options that
 // match two places and hint text that disagrees with its range (2026-11-05).
 describe("generation prompt", () => {
-  it("is a new version so cached v3 outputs are not reused", () => {
-    expect(PROMPT_VERSION).toBe("content-v4");
+  it("is a new version so cached v4 outputs are not reused", () => {
+    expect(PROMPT_VERSION).toBe("content-v5");
   });
 
   it.each([
@@ -25,6 +25,7 @@ describe("generation prompt", () => {
     ["options that point to one place", /Each option must match exactly one place in the sentence/],
     ["hint text and range describe the same place", /hints.direction and hints.range must describe the same place/],
     ["consistent, natural translations", /Translate articles the same way/],
+    ["the group note wins over these general rules", /When the group note .* follow the note/],
   ])("tells the model: %s", (_, rule) => {
     expect(SYSTEM_PROMPT).toMatch(rule);
   });
