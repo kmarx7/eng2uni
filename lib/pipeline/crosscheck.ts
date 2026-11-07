@@ -9,6 +9,7 @@ import type { AnnotatedSentence } from "@/lib/schema/sentence";
 import type { ClaudeRunner, RunnerResult } from "./claude-cli";
 import type { Misconception } from "@/lib/schema/curriculum";
 import { CATALOG_FILES, readDrafts, readJsonArray, writeDrafts } from "./draft-store";
+import type { GroupContextOf } from "./group-context";
 import { HOUSE_RULES } from "./prompts";
 
 const TIMEOUT_MS = 300_000;
@@ -107,13 +108,30 @@ export async function runCrossCheck(opts: SecondOpinionOptions): Promise<SecondO
   return { ...result, failed };
 }
 
-export async function runPreReview(opts: SecondOpinionOptions & { reviewerPrompt: string }): Promise<SecondOpinionResult> {
+// Drops the pre-review of unapproved questions that got notes, so a later run reviews
+// them again (e.g. after the reviewer was given more context). Check failures stay.
+export function clearPreReviews(contentDir: string, unitId: string): string[] {
+  const records = readDrafts(contentDir, unitId).records.filter(
+    (r) => r.kind === "question" && r.status !== "approved" && r.status !== "retired" && (r.preReview?.issues.length ?? 0) > 0,
+  );
+  const cleared = records.map((r): ReviewRecord => {
+    const reasons = r.reasons.filter((x) => !x.startsWith("사전 검수"));
+    const next: ReviewRecord = { ...r, reasons, status: reasons.some((x) => !x.startsWith("AI 수정")) ? "flagged" : "auto_checked" };
+    delete next.preReview;
+    return next;
+  });
+  if (cleared.length) writeDrafts(contentDir, unitId, { records: cleared });
+  return cleared.map((r) => r.id);
+}
+
+export async function runPreReview(opts: SecondOpinionOptions & { reviewerPrompt: string; groupContext?: GroupContextOf }): Promise<SecondOpinionResult> {
   let failed = 0;
   const systemPrompt = `${opts.reviewerPrompt}
 
 You are reviewing one AI-drafted question before a teacher sees it. List concrete problems only: a wrong or doubtful answer, more than one defensible answer, an unclear sentence, unnatural English, content above the beginner level, a wrong explanation, or a wrong misconception tag. Write each issue as one short Korean sentence. Return an empty list when there is nothing to fix.
 
-${HOUSE_RULES}`;
+${HOUSE_RULES}
+- "groupNote", when given, is the unit's instruction for this question group (for example which spans the sentence marks). Do not flag what it asks for.`;
   const misconceptions = [opts.contentDir, path.join(opts.contentDir, "drafts")]
     .flatMap((dir) => readJsonArray<Misconception>(path.join(dir, CATALOG_FILES.misconceptions)))
     .map((m) => ({ id: m.id, description: m.description }));
@@ -129,6 +147,7 @@ ${HOUSE_RULES}`;
           question: q,
           sentence,
           misconceptions: misconceptions.filter((m) => q.options.some((o) => o.misconception === m.id)),
+          ...(opts.groupContext?.(q) ? { groupNote: opts.groupContext(q)!.note } : {}),
         }),
         timeoutMs: TIMEOUT_MS,
       });

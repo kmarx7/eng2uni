@@ -9,6 +9,7 @@ import { AnnotatedSentence } from "@/lib/schema/sentence";
 import { checkDraftGroup, type SimilarityResult } from "./checks";
 import type { ClaudeRunner } from "./claude-cli";
 import { type Drafts, readDrafts, writeDrafts } from "./draft-store";
+import type { GroupContextOf } from "./group-context";
 import { CALL_TIMEOUT_MS, catalogFiles, jsonSchema } from "./generate";
 import { SYSTEM_PROMPT } from "./prompts";
 
@@ -63,11 +64,6 @@ export function revisionTargets(drafts: Drafts, maxVersion: number): RevisionTar
   });
 }
 
-export interface GroupContext {
-  note: string;
-  misconceptions: { id: string; description: string }[];
-}
-
 export interface ReviseOptions {
   contentDir: string;
   unitId: string;
@@ -78,7 +74,7 @@ export interface ReviseOptions {
   limit?: number;
   maxVersion?: number;
   // The spec's note and misconceptions for the question's group.
-  groupContext?: (question: Question) => GroupContext | undefined;
+  groupContext?: GroupContextOf;
   now: Date;
   log: (line: string) => void;
 }

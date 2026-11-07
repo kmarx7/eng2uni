@@ -4,17 +4,16 @@
 //
 //   npm run content:revise -- --unit L0-U05 --dry-run
 //   npm run content:revise -- --unit L0-U05 [--limit 5] [--rounds 2]
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parseArgs } from "node:util";
 import { assertSubscriptionAuth, authStatus, subscriptionRunner } from "@/lib/pipeline/claude-cli";
 import { runCrossCheck, runPreReview } from "@/lib/pipeline/crosscheck";
-import { CATALOG_FILES, readDrafts, readJsonArray } from "@/lib/pipeline/draft-store";
+import { readDrafts } from "@/lib/pipeline/draft-store";
+import { groupContextFor, readSpec } from "@/lib/pipeline/group-context";
 import { MAX_VERSION, revisionTargets, runRevise } from "@/lib/pipeline/revise";
 import { similarityStatus } from "@/lib/pipeline/similarity";
 import { allowedLemmas, type FrequencyTable } from "@/lib/pipeline/vocab-range";
-import type { Question } from "@/lib/schema/question";
-import { UnitSpec } from "@/lib/schema/spec";
 
 const { values } = parseArgs({
   options: {
@@ -39,18 +38,10 @@ async function main(): Promise<number> {
   if (values["dry-run"] || !targets.length) return 0;
 
   assertSubscriptionAuth(await authStatus());
-  const specFile = path.join(contentDir, "specs", `${unitId}.json`);
-  const spec = existsSync(specFile) ? UnitSpec.parse(JSON.parse(readFileSync(specFile, "utf8"))) : undefined;
+  const spec = readSpec(contentDir, unitId);
   const rankMax = spec?.generation.vocabRankMax ?? 2000;
-  const known = [contentDir, path.join(contentDir, "drafts")].flatMap((dir) =>
-    readJsonArray<{ id: string; description: string }>(path.join(dir, CATALOG_FILES.misconceptions)),
-  );
-  const groupContext = (q: Question) => {
-    const group = spec?.generation.variantGroups.find((g) => g.id === q.variantGroup);
-    if (!group) return undefined;
-    const misconceptions = group.misconceptionIds.flatMap((id) => known.filter((m) => m.id === id).slice(0, 1).map((m) => ({ id: m.id, description: m.description })));
-    return { note: group.note, misconceptions };
-  };
+  const groupContext = groupContextFor(contentDir, spec);
+
   const freq = JSON.parse(readFileSync(path.join(root, "analysis/vocab_frequency.json"), "utf8")) as FrequencyTable;
   const agent = readFileSync(path.join(root, ".claude/agents/content-reviewer.md"), "utf8");
   const reviewerPrompt = agent.replace(/^---[\s\S]*?---\s*/, "");
@@ -64,7 +55,7 @@ async function main(): Promise<number> {
     const revised = await runRevise({ ...base, model: contentModel, allowed: allowedLemmas(freq, rankMax), similarity: similarityStatus, limit, groupContext });
     // Only the revised questions lack second opinions, so these calls stay within the limit.
     const solved = await runCrossCheck({ ...base, model: process.env.CLAUDE_CROSSCHECK_MODEL ?? "sonnet" });
-    const reviewed = await runPreReview({ ...base, model: contentModel, reviewerPrompt });
+    const reviewed = await runPreReview({ ...base, model: contentModel, reviewerPrompt, groupContext });
     failed += revised.failed + solved.failed + reviewed.failed;
     log(`수정 ${revised.revised}개(실패 ${revised.failed}), 교차 풀이 ${solved.calls}회(불일치·실패 ${solved.flagged}), 사전 검수 ${reviewed.calls}회(지적 남음 ${reviewed.flagged})`);
     if (!revised.revised) break;

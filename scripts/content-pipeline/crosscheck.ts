@@ -3,11 +3,13 @@
 //
 //   npm run content:crosscheck -- --unit L0-U05 --dry-run
 //   npm run content:crosscheck -- --unit L0-U05 [--limit 5]
+//   npm run content:crosscheck -- --unit L0-U05 --rereview   (review again the questions whose pre-review had notes)
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parseArgs } from "node:util";
 import { assertSubscriptionAuth, authStatus, subscriptionRunner } from "@/lib/pipeline/claude-cli";
-import { runCrossCheck, runPreReview } from "@/lib/pipeline/crosscheck";
+import { clearPreReviews, runCrossCheck, runPreReview } from "@/lib/pipeline/crosscheck";
+import { groupContextFor, readSpec } from "@/lib/pipeline/group-context";
 import { readDrafts } from "@/lib/pipeline/draft-store";
 
 const { values } = parseArgs({
@@ -15,6 +17,7 @@ const { values } = parseArgs({
     unit: { type: "string" },
     limit: { type: "string" },
     "dry-run": { type: "boolean", default: false },
+    rereview: { type: "boolean", default: false },
   },
 });
 
@@ -26,6 +29,7 @@ async function main(): Promise<number> {
     process.stderr.write("--unit {unitId}가 필요합니다\n");
     return 2;
   }
+  if (values.rereview && !values["dry-run"]) process.stdout.write(`다시 검수할 문항: ${clearPreReviews(contentDir, unitId).length}개\n`);
   const open = readDrafts(contentDir, unitId).records.filter((r) => r.kind === "question" && r.status !== "retired" && r.status !== "approved");
   const solve = open.filter((r) => !r.crossSolve).length;
   const review = open.filter((r) => !r.preReview).length;
@@ -39,7 +43,7 @@ async function main(): Promise<number> {
   const solved = await runCrossCheck({ ...base, model: process.env.CLAUDE_CROSSCHECK_MODEL ?? "sonnet" });
   const agent = readFileSync(path.join(root, ".claude/agents/content-reviewer.md"), "utf8");
   const reviewerPrompt = agent.replace(/^---[\s\S]*?---\s*/, "");
-  const reviewed = await runPreReview({ ...base, model: process.env.CLAUDE_CONTENT_MODEL ?? "opus", reviewerPrompt });
+  const reviewed = await runPreReview({ ...base, model: process.env.CLAUDE_CONTENT_MODEL ?? "opus", reviewerPrompt, groupContext: groupContextFor(contentDir, readSpec(contentDir, unitId)) });
   log(`교차 풀이 ${solved.calls}회(문제 있음 ${solved.flagged}, 실패 ${solved.failed}), 사전 검수 ${reviewed.calls}회(문제 있음 ${reviewed.flagged}, 실패 ${reviewed.failed})`);
   return solved.failed + reviewed.failed > 0 ? 1 : 0;
 }
