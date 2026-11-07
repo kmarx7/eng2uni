@@ -15,6 +15,11 @@
       "updatedAt": "2026-11-07",
       "note": "curriculum-architect가 명세 작성. 초안(research-content)은 사람 확인 후 시작."
     },
+    "L0-U04": {
+      "status": "specified",
+      "updatedAt": "2026-11-08",
+      "note": "curriculum-architect가 명세 작성(사용자 승인 2026-11-08: sentenceUse blank, 3인칭 -s 포함). 스키마에 blank 추가 전까지 validate:content 실패 예상."
+    },
     "L0-U05": {
       "status": "approved",
       "updatedAt": "2026-11-07",

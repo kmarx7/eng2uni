@@ -1,0 +1,139 @@
+{
+  "unitId": "L0-U04",
+  "levelId": "L0",
+  "title": "현재형 동사 모양: 주어에 따라 달라지는 동사",
+  "objectives": [
+    "he, she, it이나 'my brother'처럼 한 사람(또는 한 사물)인 주어가 오면 현재형 동사에 -s 또는 -es를 붙인다는 것을 이 문장에서 찾아 말할 수 있다.",
+    "I, you, we, they나 복수 명사(the dogs)가 주어이면 동사를 기본형으로 쓴다는 것을 구별할 수 있다.",
+    "빈칸이 있는 문장에서 주어를 보고 알맞은 동사 형태를 고르고, 그 이유를 이 문장의 주어로 설명할 수 있다."
+  ],
+  "prerequisiteSkills": [
+    "verb_meaning",
+    "pronoun_case"
+  ],
+  "targetSkills": [
+    "present_verb_form"
+  ],
+  "misconceptions": [
+    {
+      "id": "missing_s_for_third_person",
+      "description": "한 사람이나 한 사물인 주어(he, she, it, my brother 등) 뒤에서도 동사를 기본형으로 둔다. 예: 'My brother play soccer.'에서 play가 맞다고 본다.",
+      "remediation": "형태 대조 블록: 같은 동사의 기본형과 -s형을 나란히 놓고, 주어가 한 사람(또는 한 사물)일 때와 여럿이거나 I, you, we, they일 때를 두 칸으로 나눠 보여 준 뒤, 이 문장의 주어를 짚어 -s형을 고르는 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "s_on_non_third_person",
+      "description": "I, you, we, they나 복수 명사 주어 뒤에 동사의 -s형을 쓴다. 예: 'We plays soccer.'에서 plays가 맞다고 본다.",
+      "remediation": "형태 대조 블록: 'I, you, we, they, the dogs'처럼 주어가 여럿이거나 I·you일 때는 기본형을 쓴다는 것을 이 문장에서 확인하고, 주어를 바꿔 동사 형태가 어떻게 달라지는지 두 문장으로 비교한 뒤 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "third_person_s_spelling",
+      "description": "3인칭 단수 현재형의 -s/-es 철자를 잘못 쓴다. 예: 'My brother playes soccer.', 'She studys English.'처럼 -s를 규칙과 다르게 붙인다.",
+      "remediation": "철자 대조 블록: 동사가 s, ch로 끝나면 -es, 자음 뒤의 y는 ies로 바꾼다는 것을 동사 세 개(watch, study, play)로 나란히 보여 준 뒤, 같은 동사의 철자를 고르는 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "subject_as_verb",
+      "description": "주어 자리의 명사를 동사로 고른다. 승인본 L0-U05와 같은 오개념이다.",
+      "remediation": "승인본 기준(L0-U05의 subject_as_verb)과 같다. 역할 태깅 대조 블록에서 '무엇을 하나?'에 답하는 말만 동사로 표시하는 규칙을 다시 보여 주고 동형 문항 4개를 푼다."
+    },
+    {
+      "id": "object_as_verb",
+      "description": "동사 뒤의 목적어를 동사로 고른다. 승인본 L0-U05와 같은 오개념이다.",
+      "remediation": "승인본 기준(L0-U05의 object_as_verb)과 같다. '무엇을?'에 답하는 말이 목적어임을 보여 주고, 동사 뒤 명사를 표시하지 않는 동형 문항 4개를 푼다."
+    }
+  ],
+  "vocabRange": {
+    "maxLevel": "L0",
+    "note": "L0 누적 목표 400개 이내의 중학 필수 고빈도 어휘만 쓴다(DESIGN 3-3, 앱 내부 가정). 동사는 play, watch, study, read 같은 기본형 일상 동작 동사만 쓰고 be동사·조동사·do/does는 쓰지 않는다. 명사는 사람·동물·사물 이름과 soccer, English 같은 일상 어휘다. 사람 이름은 쓰지 않는다. 생성 시 빈도 순위 상한은 generation.vocabRankMax(6000)다. 상한 6000은 L0-U05와 같은 2026-11-03 사용자 결정이다."
+  },
+  "families": [],
+  "interactions": [
+    "role_tagging"
+  ],
+  "assessmentCriteria": [
+    "숙달: 이 단원의 신규 문항이 8개 이상이고 정답률이 85% 이상이며, 역할 태깅 과제(V 표시)를 통과하고, 다른 날 지연 확인 1회를 통과해야 한다(DESIGN 5-2). 형태 선택 문항(빈칸)과 태깅 문항을 함께 센다.",
+    "진행 가능: 위 조건 중 지연 확인만 남았으면 다음 단원을 열고 2~3일 뒤 지연 확인을 예약한다.",
+    "보충: 정답률이 60~84%이면 가장 많이 나온 오개념의 보충 블록과 동형 문항 4개를 준다. 3인칭 단수 주어 문항과 기본형 문항을 나눠 정답률을 보고, 한쪽만 낮으면 그쪽 오개념을 보충한다.",
+    "기초 재확인: 정답률이 60% 미만이면 선수 skill(verb_meaning, pronoun_case) 진단 문항 3개를 내고, 실패하면 선수 단원(L0-U01 또는 L0-U03)으로 돌아간다.",
+    "혼동: 같은 오개념이 3회 이상 나오면 기본형과 -s형을 나란히 비교하는 대조 블록을 준다.",
+    "문항 수가 8개 미만이면 정답률로 판정하지 않는다.",
+    "이 단원은 졸업 과제(3~5단어 문장의 주어·동사·목적어 표시)를 직접 평가하지 않는다. 졸업 과제와의 연결은 L0-U05 통과 뒤 확인한다."
+  ],
+  "status": "specified",
+  "unverified": [
+    "L0 단원 순서는 DESIGN 3-1 L0 항목을 풀어 쓴 내부 추정이며 공식 교육과정 문서로 확인하지 못했다. 3인칭 단수 -s를 L0에 두는 것은 DESIGN 3-1의 '일반동사' 항목을 앞당긴 것이다(사용자 승인 2026-11-08로 확정). 기출 근거: GRAMMAR_PRIORITY의 주어·동사 수 일치 5위.",
+    "sentenceUse 'blank'는 사용자 승인(2026-11-08)으로 정했으나 lib/schema/spec.ts의 sentenceUse 열거형에는 아직 없다. 스키마에 값을 추가하기 전까지 validate:content가 이 명세를 실패로 판정한다. 메인 세션 작업이 필요하다.",
+    "형태 선택 문항의 오답 세 번째 선택지는 철자 오류(playes, watchs, studys)다. 이 방식은 동사 세 개(play, watch, study)에서만 자연스럽게 만들 수 있어 쓰는 동사를 제한했다. 다른 동사로 넓히면 철자 오답을 다시 설계해야 한다.",
+    "third_person_s_spelling은 신규 오개념이다. 철자 오류는 주어 수 판단과 다른 문제일 수 있어, 실제 학생 오답에서 이 오개념이 많이 나오는지 확인하지 않았다.",
+    "he, she, it을 이 단원에서 처음 쓴다. 대명사 문항은 U03에서 주격 목적격만 다뤘다. U03(pronoun_case)은 초안 검수 대기 상태이므로 선수 관계는 확정이 아니다.",
+    "'it'은 사물과 가짜 주어(it is raining 등) 구분이 필요하지만 이 단원은 사물 it만 쓴다고 제한했다.",
+    "역할 태깅이 V만 묻는 모드는 DESIGN 13장에 없다(U01과 같은 미확인 항목).",
+    "문항 14개(FORM 8, TAG 6), 문장 14개(스키마 최소 6문항 기준을 지키려고 TAG를 6으로 올림), 숙달 기준(8문항, 85%, 60%, 3회 혼동)은 가정이거나 DESIGN 5-2 v2 값이며 파일럿 보정이 필요하다.",
+    "families는 비워 두었다. 블루프린트(content/blueprints)가 아직 없다(단계 5 대기)."
+  ],
+  "generation": {
+    "difficulty": 1,
+    "vocabRankMax": 6000,
+    "sentenceCount": 14,
+    "variantGroups": [
+      {
+        "id": "VG-L0-U04-FORM",
+        "skillId": "present_verb_form",
+        "misconceptionIds": [
+          "missing_s_for_third_person",
+          "s_on_non_third_person",
+          "third_person_s_spelling"
+        ],
+        "questionType": "multiple_choice",
+        "count": 8,
+        "sentenceUse": "blank",
+        "note": "빈칸 형태 선택 문항. 발문은 '다음 빈칸에 알맞은 말은?'으로 쓰고, 문장은 빈칸(___)이 있는 형태로 발문 안에 넣는다. 예: 'My brother ___ soccer.' 이 문항은 연결 문장(sentenceId)을 붙이지 않는다. 같은 완전한 문장(예: 'My brother plays soccer.')은 role_tagging 블록에 쓰도록 따로 만든다. 완전한 문장의 spans에는 MAIN_VERB 하나만 표시하고 SUBJECT·OBJECT는 표시하지 않는다(role_tagging 블록은 V만 묻는다). 문장은 3~5단어, 빈칸에 들어갈 동사는 기본형 한 단어다. 동사는 play, watch, study 세 개만 쓰고, 각 동사의 철자 오답을 만든다. 선택지는 정확히 3개이며 모두 같은 동사의 형태다. 3인칭 단수 주어일 때: 정답은 -s/-es형(plays, watches, studies), 오답 1은 기본형(missing_s_for_third_person), 오답 2는 철자가 틀린 -s형(playes, watchs, studys; third_person_s_spelling). 비3인칭 주어일 때(I, you, we, they, the dogs 등): 정답은 기본형(play, watch, study), 오답 1은 -s형(s_on_non_third_person), 오답 2는 철자가 틀린 -s형(third_person_s_spelling). 3인칭 단수 주어 문항과 비3인칭 주어 문항을 절반씩 섞는다. 주어는 3인칭 단수(he, she, it, my brother, the dog)와 비3인칭(I, you, we, they, the dogs)을 골고루 쓰고, 정답이 항상 -s형이 되지 않게 한다. 정답 위치는 문항마다 다르게 한다. 해설은 이 문장의 주어를 근거로 쓴다(예: '이 문장의 주어 my brother는 한 사람이므로 plays가 맞다. play는 주어가 여럿이거나 I, you, we, they일 때 쓴다.'). '3인칭 단수 주어에는 -s를 붙인다' 같은 일반 규칙 문장을 해설의 중심으로 쓰지 않는다. 철자 오답 선택지에는 byOption 해설에 철자 규칙(s·ch·sh·x로 끝나면 -es, 자음+y는 -ies)을 이 문장의 동사에 적용해 보여 준다. 사람 이름은 쓰지 않는다. 과거형, -ing형, be동사, do/does는 쓰지 않는다. 문항은 객관식만 쓰고 참·거짓 문항을 만들지 않는다."
+      },
+      {
+        "id": "VG-L0-U04-TAG",
+        "skillId": "present_verb_form",
+        "misconceptionIds": [
+          "subject_as_verb",
+          "object_as_verb"
+        ],
+        "questionType": "multiple_choice",
+        "count": 6,
+        "sentenceUse": "tagging",
+        "note": "3~5단어 문장으로 주어가 3인칭 단수(my sister, the boy, he, she, it 등)이고 동사가 -s형인 문장. 예: 'My sister reads books.' 이 문장의 spans에는 MAIN_VERB(reads) 하나만 표시한다. SUBJECT·OBJECT는 표시하지 않는다(role_tagging 블록은 V만 묻는다). 발문은 '이 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?'처럼 쓰고 정답 단어를 발문에 넣지 않는다. 선택지는 정확히 3개이며 같은 문장의 단어를 쓴다: 정답 -s형 동사 1개, 주어 명사 1개(subject_as_verb 오답), 목적어 명사 1개(object_as_verb 오답). 주어 명사는 'sister'처럼 사람 이름이 아닌 일상 명사다. 정답은 문항마다 위치를 바꾼다. 해설은 이 문장을 근거로 쓴다(예: 'reads는 주어 my sister가 하는 동작이므로 동사다. sister는 누가인지 말하는 말이고, books는 읽는 대상이다.'). 문장에 동사가 하나뿐이어야 한다. 사람 이름, 과거형, -ing형, be동사, do/does는 쓰지 않는다. 문항은 객관식만 쓰고 참·거짓 문항을 만들지 않는다."
+      }
+    ]
+  },
+  "catalog": {
+    "skills": [
+      {
+        "id": "present_verb_form",
+        "name": "현재형 동사 모양 알기",
+        "category": "grammar",
+        "prerequisiteIds": [
+          "verb_meaning",
+          "pronoun_case"
+        ]
+      }
+    ],
+    "misconceptions": [
+      {
+        "id": "missing_s_for_third_person",
+        "skillId": "present_verb_form",
+        "category": "GRM",
+        "description": "한 사람이나 한 사물인 주어 뒤에서도 동사를 기본형으로 둔다."
+      },
+      {
+        "id": "s_on_non_third_person",
+        "skillId": "present_verb_form",
+        "category": "GRM",
+        "description": "I, you, we, they나 복수 명사 주어 뒤에 동사의 -s형을 쓴다."
+      },
+      {
+        "id": "third_person_s_spelling",
+        "skillId": "present_verb_form",
+        "category": "GRM",
+        "description": "3인칭 단수 현재형의 -s/-es 철자를 규칙과 다르게 쓴다."
+      }
+    ],
+    "traps": []
+  }
+}
