@@ -11,74 +11,74 @@
       {
         "id": "L0-U03-B01",
         "type": "concept",
-        "body": "이 단원에서는 대명사가 문장의 어느 자리에 오느냐에 따라 모양이 바뀐다는 것을 배웁니다.\n\n이 단원의 문장은 모두 '주어 + 동사 + 목적어' 순서입니다. 먼저 동사를 찾고, 그다음 동사 앞과 뒤를 보세요.\n\n1) 동사 바로 앞(주어 자리): I, you, we, they\n2) 동사 바로 뒤(목적어 자리): me, you, us, them, him, her\n\n짝으로 보기\n- I – me\n- we – us\n- they – them\n- you – you (두 자리에서 모양이 같아요. 그래서 동사 앞에 있는지 뒤에 있는지 자리를 보고 구분해요.)\n※ him, her는 이 단원에서 목적어 자리에서만 연습합니다. 같은 사람을 주어 자리에 쓰는 모양은 L0-U04에서 배웁니다.\n\n예문: We help them. (우리는 그들을 돕는다.)\n- 동사: help\n- help 앞에 있는 We → 주어\n- help 뒤에 있는 them → 목적어\n\n자리를 바꾸면 모양도 바뀝니다: They help us. (그들은 우리를 돕는다.)\n- we가 동사 뒤로 가면서 us가 되었고, them이 동사 앞으로 오면서 they가 되었습니다.\n- 그래서 'Us help them.'이나 'We help they.'처럼 쓰면 틀린 문장이 됩니다."
+        "body": "영어 대명사는 문장 속 자리에 따라 모양이 달라집니다.\n\n예문 1: \"We help them.\" (우리는 그들을 돕는다.)\n- 이 문장에서 We는 동사 help 앞에 있는 주어입니다.\n- 이 문장에서 them은 동사 help 바로 뒤에 있는 목적어입니다.\n\n예문 2: \"They help us.\" (그들은 우리를 돕는다.)\n- 이 문장에서는 They가 help 앞의 주어이고, us가 help 뒤의 목적어입니다.\n- 예문 1과 비교해 보세요. 예문 1에서 목적어 자리에 있던 them이 예문 2에서 주어 자리로 가면 They로 모양이 바뀝니다. 예문 1의 주어 We도 예문 2의 목적어 자리에서는 us가 됩니다.\n\n짝으로 기억하기\n| 동사 앞(주어 자리) | 동사 뒤(목적어 자리) |\n| I | me |\n| we | us |\n| they | them |\n| you | you (모양이 같음) |\n\n목적어 자리에만 쓰는 말: him, her\n(이 단원에서는 he, she, it을 쓰지 않습니다.)\n\n주의: you는 두 자리에서 모양이 같습니다. \"You like us.\"에서는 you가 like 앞에 있고, \"We like you.\"에서는 you가 like 뒤에 있습니다. 이럴 때는 모양으로 구별할 수 없으니 동사보다 앞에 있는지 뒤에 있는지를 보세요."
       },
       {
         "id": "L0-U03-B02",
         "type": "sentence_task",
         "interaction": "role_tagging",
-        "instruction": "각 문장에서 먼저 동사(V)를 찾아 표시하세요. 그다음 동사 앞에 있는 주어(S)와 동사 뒤에 있는 목적어(O)를 표시하세요.",
+        "instruction": "각 문장에서 먼저 동사를 찾아 표시하세요. 그다음 동사 앞에 있는 대명사는 주어(S)로, 동사 바로 뒤에 있는 대명사는 목적어(O)로 표시하세요. 표시한 대명사가 위의 짝 표에서 어느 쪽 모양인지도 확인하세요.",
         "sentenceIds": [
-          "S-L0-U03-001",
-          "S-L0-U03-002",
-          "S-L0-U03-003",
-          "S-L0-U03-004",
-          "S-L0-U03-005",
-          "S-L0-U03-006",
-          "S-L0-U03-007",
-          "S-L0-U03-008",
-          "S-L0-U03-009",
-          "S-L0-U03-010",
-          "S-L0-U03-011",
-          "S-L0-U03-012"
+          "S-L0-U03-013",
+          "S-L0-U03-014",
+          "S-L0-U03-015",
+          "S-L0-U03-016",
+          "S-L0-U03-017",
+          "S-L0-U03-018",
+          "S-L0-U03-019",
+          "S-L0-U03-020",
+          "S-L0-U03-021",
+          "S-L0-U03-022",
+          "S-L0-U03-023",
+          "S-L0-U03-024"
         ]
       },
       {
         "id": "L0-U03-B03",
         "type": "practice",
         "questionIds": [
-          "Q-L0-U03-001"
+          "Q-L0-U03-024"
         ]
       },
       {
         "id": "L0-U03-B04",
         "type": "assessment",
         "questionIds": [
-          "Q-L0-U03-007",
-          "Q-L0-U03-002",
-          "Q-L0-U03-008",
-          "Q-L0-U03-003",
-          "Q-L0-U03-009",
-          "Q-L0-U03-004",
-          "Q-L0-U03-010",
-          "Q-L0-U03-011"
+          "Q-L0-U03-014",
+          "Q-L0-U03-020",
+          "Q-L0-U03-015",
+          "Q-L0-U03-021",
+          "Q-L0-U03-016",
+          "Q-L0-U03-022",
+          "Q-L0-U03-017",
+          "Q-L0-U03-023"
         ]
       },
       {
         "id": "L0-U03-B05",
         "type": "remedial",
         "misconceptionId": "object_pronoun_as_subject",
-        "body": "me, him, her, us, them을 주어로 고른 경우입니다. 자리를 순서대로 확인해 봅시다.\n\n예문: We like him. (우리는 그를 좋아한다.)\n- 1단계: 동사를 찾습니다 → like\n- 2단계: like 바로 앞을 봅니다 → We. 이 문장에서 We가 주어입니다.\n- 3단계: like 바로 뒤를 봅니다 → him. 이 문장에서 him은 목적어입니다.\n\n이 문장에서 him은 동사 like 뒤에 있으므로 주어가 아닙니다. 주어를 고를 때는 동사 앞 자리에 있는 말을 고르고, 그 말이 I, you, we, they 중 하나인지 확인하세요. 아래 문항에서 같은 순서로 연습해 보세요.",
+        "body": "me, him, her, us, them을 주어로 고르셨네요. 예문 \"We like him.\"을 다시 보세요.\n- 이 문장에서 동사는 like입니다.\n- 이 문장에서 We는 like 앞에 있고, 짝 표의 왼쪽(주어 자리) 모양입니다. 그래서 이 문장의 주어는 We입니다.\n- 이 문장에서 him은 like 바로 뒤에 있으므로 목적어입니다.\n\n비교: \"They call us.\" (그들은 우리에게 전화한다.)\n- 이 문장에서 call 앞에 있는 They가 주어이고, call 뒤의 us는 목적어입니다.\n\n문제를 풀 때는 ① 동사를 찾고 ② 그 앞에 있는 말을 보세요. 동사 뒤에 있는 me·us·them 같은 말은 고르지 마세요.",
         "questionIds": [
-          "Q-L0-U03-006"
+          "Q-L0-U03-013"
         ]
       },
       {
         "id": "L0-U03-B06",
         "type": "remedial",
         "misconceptionId": "subject_pronoun_as_object",
-        "body": "I, we, they를 목적어로 고른 경우입니다. 짝 표를 다시 보고 자리를 확인해 봅시다.\n\n| 동사 앞(주어 자리) | 동사 뒤(목적어 자리) |\n| I | me |\n| we | us |\n| they | them |\n| you | you ← 모양이 같아요! 자리로 구분해요 |\n\n예문: I help you. (나는 너를 돕는다.)\n- 동사: help\n- help 앞에 있는 I → 이 문장의 주어\n- help 뒤에 있는 you → 이 문장의 목적어\n\n이 문장에서 I는 동사 앞에 있으므로 목적어가 아닙니다. 목적어를 고를 때는 동사 바로 뒤 자리를 보고, 그 말이 오른쪽 칸(me, you, us, them, him, her)에 있는지 확인하세요.",
+        "body": "I, we, they를 목적어로 고르셨네요. 예문 \"I help you.\"를 다시 보세요.\n- 이 문장에서 동사는 help입니다.\n- 이 문장에서 I는 help 앞에 있으므로 주어입니다.\n- 이 문장에서 you는 help 바로 뒤에 있으므로 목적어입니다.\n\n짝 표로 다시 확인하기\n| 동사 앞(주어 자리) | 동사 뒤(목적어 자리) |\n| I | me |\n| we | us |\n| they | them |\n| you ★ | you ★ |\n★ you는 두 자리에서 모양이 같으므로 동사보다 앞에 있는지 뒤에 있는지로 판단하세요.\n\n문제를 풀 때는 ① 동사를 찾고 ② 그 바로 뒤에 있는 말을 보세요.",
         "questionIds": [
-          "Q-L0-U03-012"
+          "Q-L0-U03-019"
         ]
       },
       {
         "id": "L0-U03-B07",
         "type": "remedial",
         "misconceptionId": "verb_as_subject",
-        "body": "동사를 주어로 고른 경우입니다. 주어와 동사는 서로 다른 자리에 있습니다.\n\n예문: We like them. (우리는 그들을 좋아한다.)\n- 이 문장에서 like는 We와 them 사이에 있는 동사입니다.\n- 이 문장의 주어는 동사 like 앞에 있는 We입니다.\n- 이 문장의 목적어는 동사 like 뒤에 있는 them입니다.\n\n순서를 기억하세요: ① 동사를 먼저 찾는다 → ② 그 동사의 왼쪽(앞)에 있는 말을 주어로 표시한다. 동사 자체에는 주어 표시를 하지 않습니다. 아래 문항에서 같은 순서로 확인해 보세요.",
+        "body": "동사를 주어로 고르셨네요. 예문 \"We like him.\"을 다시 보세요.\n- 이 문장에서 like는 동사입니다. 주어가 아닙니다.\n- 이 문장의 주어는 like 앞에 있는 We입니다.\n- 이 문장에서 him은 like 뒤에 있는 목적어입니다.\n\n비교: \"They help me.\"\n- 이 문장에서 help는 동사이고, help 앞의 They가 주어입니다.\n\n문제를 풀 때는 먼저 동사를 찾아 표시하고, 그 동사 앞에 있는 말을 주어로 고르세요. 동사 자체는 주어 칸에 넣지 마세요.",
         "questionIds": [
-          "Q-L0-U03-005"
+          "Q-L0-U03-018"
         ]
       },
       {
@@ -88,7 +88,7 @@
           "object_pronoun_as_subject",
           "subject_pronoun_as_object"
         ],
-        "body": "주격과 목적격을 서로 바꿔 쓰는 실수를 함께 정리합니다.\n\n같은 두 사람이 자리를 바꾸면 모양도 같이 바뀝니다.\n- We help them. (우리는 그들을 돕는다.) → 동사 help 앞: We / 뒤: them\n- They help us. (그들은 우리를 돕는다.) → 동사 help 앞: They / 뒤: us\n\n두 문장에서 '우리'는 동사 앞에서는 we, 동사 뒤에서는 us입니다. '그들'은 동사 앞에서는 they, 동사 뒤에서는 them입니다.\n\n확인 순서\n① 동사를 찾는다.\n② 동사 앞 말이 I, you, we, they 중 하나인지 본다.\n③ 동사 뒤 말이 me, you, us, them, him, her 중 하나인지 본다.\n\n※ you는 두 자리에서 모양이 같으므로 ①번에서 찾은 동사를 기준으로 앞인지 뒤인지만 보고 판단하세요."
+        "body": "주격과 목적격은 짝으로 함께 보면 덜 헷갈립니다. 두 문장을 나란히 놓고 비교해 보세요.\n\nA: \"We help them.\" (우리는 그들을 돕는다.)\nB: \"They help us.\" (그들은 우리를 돕는다.)\n\n- A에서 help 앞은 We, help 뒤는 them입니다.\n- B에서 help 앞은 They, help 뒤는 us입니다.\n- 같은 짝(we–us, they–them)이라도 이 두 문장에서 help 앞에 오면 We·They, help 뒤에 오면 us·them 모양이 됩니다.\n\n| 동사 앞(주어 자리) | 동사 뒤(목적어 자리) |\n| I | me |\n| we | us |\n| they | them |\n| you | you (모양이 같음 — 자리로 구별) |\n\n두 문장에서 직접 표시해 보세요: 먼저 help에 동사 표시, 그 앞에 S, 그 뒤에 O."
       }
     ],
     "reviewStatus": "draft",

@@ -42,7 +42,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-001",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -87,7 +87,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-002",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -132,7 +132,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-003",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -177,7 +177,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-004",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -222,7 +222,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-005",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -269,7 +269,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-006",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -314,7 +314,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-007",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -359,7 +359,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-008",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -415,7 +415,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-009",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -461,7 +461,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-010",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -506,7 +506,7 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-011",
-    "reviewStatus": "draft"
+    "reviewStatus": "retired"
   },
   {
     "level": "L0",
@@ -551,6 +551,447 @@
       "pronoun_case"
     ],
     "id": "S-L0-U03-012",
+    "reviewStatus": "retired"
+  },
+  {
+    "level": "L0",
+    "text": "We like him.",
+    "tokens": [
+      "We",
+      "like",
+      "him",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그를"
+      }
+    ],
+    "translation": "우리는 그를 좋아한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-013",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They help us every day.",
+    "tokens": [
+      "They",
+      "help",
+      "us",
+      "every",
+      "day",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "우리를"
+      }
+    ],
+    "translation": "그들은 매일 우리를 도와준다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-014",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I know them well.",
+    "tokens": [
+      "I",
+      "know",
+      "them",
+      "well",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "나는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그들을"
+      }
+    ],
+    "translation": "나는 그들을 잘 안다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-015",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "You see her at school.",
+    "tokens": [
+      "You",
+      "see",
+      "her",
+      "at",
+      "school",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "너는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "너는 학교에서 그녀를 본다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-016",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They call me.",
+    "tokens": [
+      "They",
+      "call",
+      "me",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들이"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "나를"
+      }
+    ],
+    "translation": "그들이 나를 부른다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-017",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We miss them a lot.",
+    "tokens": [
+      "We",
+      "miss",
+      "them",
+      "a",
+      "lot",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그들을"
+      }
+    ],
+    "translation": "우리는 그들을 많이 그리워한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-018",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I help them.",
+    "tokens": [
+      "I",
+      "help",
+      "them",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "나는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그들을"
+      }
+    ],
+    "translation": "나는 그들을 돕는다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-019",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We help them.",
+    "tokens": [
+      "We",
+      "help",
+      "them",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그들을"
+      }
+    ],
+    "translation": "우리는 그들을 돕는다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-020",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They know me.",
+    "tokens": [
+      "They",
+      "know",
+      "me",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "나를"
+      }
+    ],
+    "translation": "그들은 나를 안다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-021",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I see her every day.",
+    "tokens": [
+      "I",
+      "see",
+      "her",
+      "every",
+      "day",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "나는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "나는 매일 그녀를 본다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-022",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We meet him.",
+    "tokens": [
+      "We",
+      "meet",
+      "him",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그를"
+      }
+    ],
+    "translation": "우리는 그를 만난다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-023",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They like us.",
+    "tokens": [
+      "They",
+      "like",
+      "us",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "우리를"
+      }
+    ],
+    "translation": "그들은 우리를 좋아한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-024",
     "reviewStatus": "draft"
   }
 ]
