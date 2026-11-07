@@ -3,7 +3,7 @@
 // Runs on `claude -p` with the claude.ai subscription. Nothing is approved.
 //
 //   npm run content:revise -- --unit L0-U05 --dry-run
-//   npm run content:revise -- --unit L0-U05 [--limit 5] [--rounds 2]
+//   npm run content:revise -- --unit L0-U05 [--limit 5] [--rounds 2] [--max-version 4]
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parseArgs } from "node:util";
@@ -20,6 +20,7 @@ const { values } = parseArgs({
     unit: { type: "string" },
     limit: { type: "string" },
     rounds: { type: "string", default: "2" },
+    "max-version": { type: "string" },
     "dry-run": { type: "boolean", default: false },
   },
 });
@@ -33,7 +34,9 @@ async function main(): Promise<number> {
     return 2;
   }
   const log = (line: string) => process.stdout.write(`${line}\n`);
-  const targets = revisionTargets(readDrafts(contentDir, unitId), MAX_VERSION);
+  // Version 1 is the generated draft; the default allows two revisions.
+  const maxVersion = values["max-version"] ? Number(values["max-version"]) : MAX_VERSION;
+  const targets = revisionTargets(readDrafts(contentDir, unitId), maxVersion);
   log(`수정할 문항 ${targets.length}개 (1회차 예상 호출: 수정 ${targets.length}, 교차 풀이 ${targets.length}, 사전 검수 ${targets.length})`);
   if (values["dry-run"] || !targets.length) return 0;
 
@@ -52,7 +55,7 @@ async function main(): Promise<number> {
   let failed = 0;
   for (let round = 1; round <= Number(values.rounds); round += 1) {
     log(`— ${round}회차 —`);
-    const revised = await runRevise({ ...base, model: contentModel, allowed: allowedLemmas(freq, rankMax), similarity: similarityStatus, limit, groupContext });
+    const revised = await runRevise({ ...base, model: contentModel, allowed: allowedLemmas(freq, rankMax), similarity: similarityStatus, limit, groupContext, maxVersion });
     // Only the revised questions lack second opinions, so these calls stay within the limit.
     const solved = await runCrossCheck({ ...base, model: process.env.CLAUDE_CROSSCHECK_MODEL ?? "sonnet" });
     const reviewed = await runPreReview({ ...base, model: contentModel, reviewerPrompt, groupContext });

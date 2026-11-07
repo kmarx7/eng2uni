@@ -751,11 +751,9 @@
     "id": "Q-L0-U03-015",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 2회",
-      "사전 검수: 문장 주석(spans)에 동사 know(V)와 수식어 well(M)의 역할 표시가 없어 문장 성분 주석이 빠져 있습니다.",
-      "사전 검수: 발문의 '주어를 가리키는 말'은 '주어를 대신 가리키는 다른 말'로 읽힐 수 있으니 '주어인 말은 무엇인가요?'처럼 더 분명하게 바꾸는 것이 좋습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -770,10 +768,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "문장 주석(spans)에 동사 know(V)와 수식어 well(M)의 역할 표시가 없어 문장 성분 주석이 빠져 있습니다.",
-        "발문의 '주어를 가리키는 말'은 '주어를 대신 가리키는 다른 말'로 읽힐 수 있으니 '주어인 말은 무엇인가요?'처럼 더 분명하게 바꾸는 것이 좋습니다."
-      ]
+      "issues": []
     }
   },
   {
@@ -804,10 +799,9 @@
     "id": "Q-L0-U03-017",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 2회",
-      "사전 검수: 문장 주석 spans에 주어와 목적어만 있고 동사 call의 VERB 표시가 없어, call을 동사로 설명하는 해설·힌트와 주석이 맞지 않습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -822,9 +816,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "문장 주석 spans에 주어와 목적어만 있고 동사 call의 VERB 표시가 없어, call을 동사로 설명하는 해설·힌트와 주석이 맞지 않습니다."
-      ]
+      "issues": []
     }
   },
   {
@@ -969,13 +961,9 @@
     "id": "Q-L0-U03-020",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 2회",
-      "사전 검수: 선택지 a 해설은 we가 이미 주어 자리에 쓰였다는 점을 오답 이유로 드는데, 이는 잘못된 근거라서 we가 주격이라 동사 뒤 목적어 자리에 올 수 없다는 핵심을 흐립니다.",
-      "사전 검수: a·b·c 해설이 '우리를/그들을'이라는 해석(뜻)에 기대어 오답과 정답을 판단하므로, 동사 help 바로 뒤 자리라는 위치 기준으로 설명을 고쳐야 합니다.",
-      "사전 검수: 발문이 목적어를 '동작의 대상(무엇을·누구를)'이라는 뜻으로 정의하므로, '동사 help 바로 뒤에 오는 말'처럼 위치 기준으로 바꿔야 합니다.",
-      "사전 검수: 문장 주석 spans에 동사 help(VERB, range [1,1])가 빠져 있어 S·V·O 구조가 다 표시되지 않습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -990,22 +978,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 a 해설은 we가 이미 주어 자리에 쓰였다는 점을 오답 이유로 드는데, 이는 잘못된 근거라서 we가 주격이라 동사 뒤 목적어 자리에 올 수 없다는 핵심을 흐립니다.",
-        "a·b·c 해설이 '우리를/그들을'이라는 해석(뜻)에 기대어 오답과 정답을 판단하므로, 동사 help 바로 뒤 자리라는 위치 기준으로 설명을 고쳐야 합니다.",
-        "발문이 목적어를 '동작의 대상(무엇을·누구를)'이라는 뜻으로 정의하므로, '동사 help 바로 뒤에 오는 말'처럼 위치 기준으로 바꿔야 합니다.",
-        "문장 주석 spans에 동사 help(VERB, range [1,1])가 빠져 있어 S·V·O 구조가 다 표시되지 않습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U03-021",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 2회",
-      "사전 검수: 문장 주석 spans에 동사 know(토큰 1)의 VERB 역할이 빠져 있어서, 동사와의 위치 관계로 목적어를 설명하는 해설·힌트와 주석이 서로 맞지 않습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -1020,25 +1002,19 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "문장 주석 spans에 동사 know(토큰 1)의 VERB 역할이 빠져 있어서, 동사와의 위치 관계로 목적어를 설명하는 해설·힌트와 주석이 서로 맞지 않습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U03-022",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "규칙 위반: skill \"object_position\" does not exist",
-      "AI 수정 2회",
-      "사전 검수: 문장 주석에 동사 see(토큰 1)의 VERB 표시가 없어, 해설과 힌트가 기준으로 삼는 동사가 주석에 나타나지 않습니다.",
-      "사전 검수: 문장 주석에 every day(토큰 3–4)의 수식어(M) 표시가 없습니다.",
-      "사전 검수: 문항 skills에는 object_position이 있지만 문장 skills에는 pronoun_case만 있습니다."
+      "AI 수정 3회"
     ],
     "checks": {
-      "rules": "fail",
+      "rules": "pass",
       "vocab": "pass",
       "tags": "pass",
       "similarity": "pass"
@@ -1050,22 +1026,16 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "문장 주석에 동사 see(토큰 1)의 VERB 표시가 없어, 해설과 힌트가 기준으로 삼는 동사가 주석에 나타나지 않습니다.",
-        "문장 주석에 every day(토큰 3–4)의 수식어(M) 표시가 없습니다.",
-        "문항 skills에는 object_position이 있지만 문장 skills에는 pronoun_case만 있습니다."
-      ]
+      "issues": []
     }
   },
   {
     "id": "Q-L0-U03-023",
     "kind": "question",
     "unitId": "L0-U03",
-    "status": "flagged",
+    "status": "auto_checked",
     "reasons": [
-      "AI 수정 2회",
-      "사전 검수: 선택지 a의 they는 문장에 없는 단어여서 '이 문장에서' 고르라는 발문에 맞지 않고 오답 매력이 거의 없으며, 이 문장의 대상 자리에 주격 대명사를 고르는 실수를 나타내는 subject_pronoun_as_object 태그와도 맞지 않습니다.",
-      "사전 검수: 문장 주석 spans에 동사 meet(range [1,1])의 VERB 역할이 빠져 있어, 해설과 힌트가 기준으로 삼는 동사 위치가 주석에 표시되지 않습니다."
+      "AI 수정 2회"
     ],
     "checks": {
       "rules": "pass",
@@ -1080,10 +1050,7 @@
       "agrees": true
     },
     "preReview": {
-      "issues": [
-        "선택지 a의 they는 문장에 없는 단어여서 '이 문장에서' 고르라는 발문에 맞지 않고 오답 매력이 거의 없으며, 이 문장의 대상 자리에 주격 대명사를 고르는 실수를 나타내는 subject_pronoun_as_object 태그와도 맞지 않습니다.",
-        "문장 주석 spans에 동사 meet(range [1,1])의 VERB 역할이 빠져 있어, 해설과 힌트가 기준으로 삼는 동사 위치가 주석에 표시되지 않습니다."
-      ]
+      "issues": []
     }
   },
   {

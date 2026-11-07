@@ -1005,7 +1005,7 @@
     "type": "multiple_choice",
     "readingType": "grammar",
     "difficulty": 1,
-    "prompt": "다음 문장의 빈칸에 들어갈 말로 알맞은 것은 무엇인가요?\n\"I see ___ every day.\"",
+    "prompt": "이 문장에서 동작의 대상(무엇을·누구를)을 나타내는 말은 무엇인가요?\n\"I see her every day.\"",
     "options": [
       {
         "id": "a",
@@ -1024,19 +1024,18 @@
     ],
     "answer": "b",
     "skills": [
-      "object_position",
       "pronoun_case"
     ],
     "explanation": {
-      "summary": "이 문장에서 빈칸은 동사 see 바로 뒤에서 see라는 동작을 받는 목적어 자리이므로 목적격 her가 알맞습니다.",
+      "summary": "이 문장에서 her는 동사 see 바로 뒤에서 see라는 동작을 받는 목적격 대명사이므로 목적어입니다.",
       "byOption": {
-        "a": "이 문장에서 I는 이미 see 앞의 주어 자리에 쓰인 주격 대명사입니다. see 뒤의 목적어 자리에 주격 I를 쓰면 'I see I'가 되어 틀립니다.",
-        "b": "정답입니다. 이 문장에서 빈칸은 see 뒤에서 see라는 동작을 받는 목적어 자리이므로 목적격 her가 들어가 '나는 매일 그녀를 본다'가 됩니다.",
-        "c": "they는 주격 대명사입니다. 이 문장에서 빈칸은 see 뒤의 목적어 자리이므로 주격 they가 아니라 목적격이 와야 합니다."
+        "a": "이 문장에서 I는 동사 see 앞에 놓인 주격 대명사로, 이 문장의 주어입니다. see라는 동작을 받는 말이 아닙니다.",
+        "b": "정답입니다. 이 문장에서 her는 see 바로 뒤에서 see라는 동작을 받는 목적격 대명사이므로 목적어이며, '나는 매일 그녀를 본다'라는 뜻이 됩니다.",
+        "c": "they는 주격 대명사이고 이 문장에는 나오지 않습니다. 이 문장에서 see라는 동작을 받는 자리에는 목적격 her가 쓰였습니다."
       }
     },
     "hints": {
-      "direction": "빈칸이 동사 see의 앞에 있는지 뒤에 있는지 확인하고, 그 자리에 맞는 대명사 형태를 생각해 보세요.",
+      "direction": "동사 see를 찾고, 그 뒤에 이어지는 말 중에서 see라는 동작을 받는 대명사를 찾아 보세요.",
       "range": [
         1,
         4
@@ -1050,7 +1049,7 @@
       "generatedBy": "ai_draft"
     },
     "reviewStatus": "draft",
-    "version": 3
+    "version": 4
   },
   {
     "type": "multiple_choice",
