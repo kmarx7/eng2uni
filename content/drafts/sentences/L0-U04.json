@@ -1,0 +1,391 @@
+[
+  {
+    "level": "L0",
+    "text": "The boy plays soccer.",
+    "tokens": [
+      "The",
+      "boy",
+      "plays",
+      "soccer",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "한다"
+      }
+    ],
+    "translation": "그 소년은 축구를 한다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-001",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We watch TV.",
+    "tokens": [
+      "We",
+      "watch",
+      "TV",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "본다"
+      }
+    ],
+    "translation": "우리는 TV를 본다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-002",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "She studies English.",
+    "tokens": [
+      "She",
+      "studies",
+      "English",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "공부한다"
+      }
+    ],
+    "translation": "그녀는 영어를 공부한다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-003",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The dogs play outside.",
+    "tokens": [
+      "The",
+      "dogs",
+      "play",
+      "outside",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "논다"
+      }
+    ],
+    "translation": "그 개들은 밖에서 논다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-004",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "He watches movies.",
+    "tokens": [
+      "He",
+      "watches",
+      "movies",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "본다"
+      }
+    ],
+    "translation": "그는 영화를 본다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-005",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I study math.",
+    "tokens": [
+      "I",
+      "study",
+      "math",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "공부한다"
+      }
+    ],
+    "translation": "나는 수학을 공부한다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-006",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The dog plays with me.",
+    "tokens": [
+      "The",
+      "dog",
+      "plays",
+      "with",
+      "me",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "논다"
+      }
+    ],
+    "translation": "그 개는 나와 함께 논다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-007",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They watch birds.",
+    "tokens": [
+      "They",
+      "watch",
+      "birds",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "본다"
+      }
+    ],
+    "translation": "그들은 새를 본다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-008",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The boy eats apples.",
+    "tokens": [
+      "The",
+      "boy",
+      "eats",
+      "apples",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "먹는다"
+      }
+    ],
+    "translation": "그 소년은 사과를 먹는다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-009",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The girl drinks milk.",
+    "tokens": [
+      "The",
+      "girl",
+      "drinks",
+      "milk",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "마신다"
+      }
+    ],
+    "translation": "그 소녀는 우유를 마신다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-010",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "My father washes the car.",
+    "tokens": [
+      "My",
+      "father",
+      "washes",
+      "the",
+      "car",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "닦으신다"
+      }
+    ],
+    "translation": "우리 아버지께서 차를 닦으신다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-011",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The teacher writes letters.",
+    "tokens": [
+      "The",
+      "teacher",
+      "writes",
+      "letters",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "쓰신다"
+      }
+    ],
+    "translation": "그 선생님께서 편지를 쓰신다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-012",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The dog wants food.",
+    "tokens": [
+      "The",
+      "dog",
+      "wants",
+      "food",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "원한다"
+      }
+    ],
+    "translation": "그 개는 먹이를 원한다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-013",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "My mother cooks dinner.",
+    "tokens": [
+      "My",
+      "mother",
+      "cooks",
+      "dinner",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "요리하신다"
+      }
+    ],
+    "translation": "우리 어머니께서 저녁을 요리하신다.",
+    "skills": [
+      "present_verb_form"
+    ],
+    "id": "S-L0-U04-014",
+    "reviewStatus": "draft"
+  }
+]

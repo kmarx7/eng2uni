@@ -16,5 +16,23 @@
     "skillId": "noun_phrase_chunk",
     "category": "SYN",
     "description": "관사(a, the)를 명사와 떼어 따로 두거나 명사 뒤에 둔다."
+  },
+  {
+    "id": "missing_s_for_third_person",
+    "skillId": "present_verb_form",
+    "category": "GRM",
+    "description": "한 사람이나 한 사물인 주어 뒤에서도 동사를 기본형으로 둔다."
+  },
+  {
+    "id": "s_on_non_third_person",
+    "skillId": "present_verb_form",
+    "category": "GRM",
+    "description": "I, you, we, they나 복수 명사 주어 뒤에 동사의 -s형을 쓴다."
+  },
+  {
+    "id": "third_person_s_spelling",
+    "skillId": "present_verb_form",
+    "category": "GRM",
+    "description": "3인칭 단수 현재형의 -s/-es 철자를 규칙과 다르게 쓴다."
   }
 ]

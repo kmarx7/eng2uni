@@ -14,5 +14,14 @@
     "prerequisiteIds": [
       "noun_identification"
     ]
+  },
+  {
+    "id": "present_verb_form",
+    "name": "현재형 동사 모양 알기",
+    "category": "grammar",
+    "prerequisiteIds": [
+      "verb_meaning",
+      "pronoun_case"
+    ]
   }
 ]

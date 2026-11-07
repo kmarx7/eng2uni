@@ -1,0 +1,656 @@
+[
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nThe boy ___ soccer.",
+    "options": [
+      {
+        "id": "a",
+        "text": "play",
+        "misconception": "missing_s_for_third_person"
+      },
+      {
+        "id": "b",
+        "text": "plays"
+      },
+      {
+        "id": "c",
+        "text": "playes",
+        "misconception": "third_person_s_spelling"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 the boy는 한 사람이므로 plays가 맞습니다.",
+      "byOption": {
+        "a": "play는 주어가 여럿이거나 I, you, we, they일 때 쓰는 모양이라, 한 사람인 the boy 뒤에는 맞지 않습니다.",
+        "b": "정답입니다. 이 문장의 주어 the boy는 한 사람이므로 plays를 씁니다.",
+        "c": "play는 a(모음) 다음에 y로 끝나므로 -s만 붙여 plays가 됩니다. playes는 틀린 철자입니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 한 사람인지 여러 사람인지 살펴보세요."
+    },
+    "id": "Q-L0-U04-001",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nWe ___ TV.",
+    "options": [
+      {
+        "id": "a",
+        "text": "watch"
+      },
+      {
+        "id": "b",
+        "text": "watches",
+        "misconception": "s_on_non_third_person"
+      },
+      {
+        "id": "c",
+        "text": "watchs",
+        "misconception": "third_person_s_spelling"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어는 we이므로 기본형 watch가 맞습니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장의 주어 we 뒤에는 기본형 watch를 씁니다.",
+        "b": "watches는 주어가 한 사람·한 개이고 I, you가 아닐 때(예: he, she, my brother) 쓰는 모양입니다. 이 문장의 주어 we는 여러 사람이므로 watches는 맞지 않습니다.",
+        "c": "watch는 ch로 끝나므로 -s형을 만들면 watches가 되고, watchs는 틀린 철자입니다. 게다가 이 문장의 주어 we 뒤에는 -s형이 아니라 watch를 씁니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 어떤 말인지 확인해 보세요."
+    },
+    "id": "Q-L0-U04-002",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nShe ___ English.",
+    "options": [
+      {
+        "id": "a",
+        "text": "studys",
+        "misconception": "third_person_s_spelling"
+      },
+      {
+        "id": "b",
+        "text": "study",
+        "misconception": "missing_s_for_third_person"
+      },
+      {
+        "id": "c",
+        "text": "studies"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 she는 한 사람이므로 studies가 맞습니다.",
+      "byOption": {
+        "a": "study는 d(자음) 다음에 y로 끝나므로 y를 i로 바꾸고 -es를 붙여 studies가 됩니다. studys는 틀린 철자입니다.",
+        "b": "study는 주어가 여럿이거나 I, you, we, they일 때 쓰는 모양이라, 한 사람인 she 뒤에는 맞지 않습니다.",
+        "c": "정답입니다. 이 문장의 주어 she는 한 사람이므로 studies를 씁니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 한 사람인지 여러 사람인지 살펴보세요."
+    },
+    "id": "Q-L0-U04-003",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nThe dogs ___ outside.",
+    "options": [
+      {
+        "id": "a",
+        "text": "plays",
+        "misconception": "s_on_non_third_person"
+      },
+      {
+        "id": "b",
+        "text": "play"
+      },
+      {
+        "id": "c",
+        "text": "playes",
+        "misconception": "third_person_s_spelling"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 the dogs는 여러 마리이므로 기본형 play가 맞습니다.",
+      "byOption": {
+        "a": "plays는 주어가 한 마리(the dog)일 때 쓰는 모양이라, 여러 마리인 the dogs 뒤에는 맞지 않습니다.",
+        "b": "정답입니다. 이 문장의 주어 the dogs는 여러 마리이므로 play를 씁니다.",
+        "c": "play는 a(모음) 다음에 y로 끝나므로 -s형을 만들면 plays가 되고, playes는 틀린 철자입니다. 게다가 이 문장의 주어 the dogs 뒤에는 -s형이 아니라 play를 씁니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 한 마리인지 여러 마리인지 살펴보세요."
+    },
+    "id": "Q-L0-U04-004",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nHe ___ movies.",
+    "options": [
+      {
+        "id": "a",
+        "text": "watches"
+      },
+      {
+        "id": "b",
+        "text": "watch",
+        "misconception": "missing_s_for_third_person"
+      },
+      {
+        "id": "c",
+        "text": "watchs",
+        "misconception": "third_person_s_spelling"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 he는 한 사람이므로 watches가 맞습니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장의 주어 he는 한 사람이므로 watches를 씁니다.",
+        "b": "watch는 주어가 여럿이거나 I, you, we, they일 때 쓰는 모양이라, 한 사람인 he 뒤에는 맞지 않습니다.",
+        "c": "watch는 ch로 끝나므로 -es를 붙여 watches가 됩니다. watchs는 틀린 철자입니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 어떤 말인지 확인해 보세요."
+    },
+    "id": "Q-L0-U04-005",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nI ___ math.",
+    "options": [
+      {
+        "id": "a",
+        "text": "studies",
+        "misconception": "s_on_non_third_person"
+      },
+      {
+        "id": "b",
+        "text": "studys",
+        "misconception": "third_person_s_spelling"
+      },
+      {
+        "id": "c",
+        "text": "study"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어는 I이므로 기본형 study가 맞습니다.",
+      "byOption": {
+        "a": "studies는 I, you가 아닌 다른 한 사람이나 하나의 사물(he, she, it 등)이 주어일 때 쓰는 모양이라, 이 문장의 주어 I 뒤에는 맞지 않습니다.",
+        "b": "study는 d(자음) 다음에 y로 끝나므로 -s형을 만들면 studies가 되고, studys는 틀린 철자입니다. 게다가 이 문장의 주어 I 뒤에는 -s형이 아니라 study를 씁니다.",
+        "c": "정답입니다. 이 문장의 주어 I 뒤에는 기본형 study를 씁니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 어떤 말인지 확인해 보세요."
+    },
+    "id": "Q-L0-U04-006",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nThe dog ___ with me.",
+    "options": [
+      {
+        "id": "a",
+        "text": "plays"
+      },
+      {
+        "id": "b",
+        "text": "playes",
+        "misconception": "third_person_s_spelling"
+      },
+      {
+        "id": "c",
+        "text": "play",
+        "misconception": "missing_s_for_third_person"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 the dog는 한 마리이므로 plays가 맞습니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장의 주어 the dog는 한 마리이므로 plays를 씁니다.",
+        "b": "play는 a(모음) 다음에 y로 끝나므로 -s만 붙여 plays가 됩니다. playes는 틀린 철자입니다.",
+        "c": "play는 주어가 여럿(the dogs)이거나 I, you, we, they일 때 쓰는 모양이라, 한 마리인 the dog 뒤에는 맞지 않습니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 한 마리인지 여러 마리인지 살펴보세요."
+    },
+    "id": "Q-L0-U04-007",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 빈칸에 알맞은 말은?\nThey ___ birds.",
+    "options": [
+      {
+        "id": "a",
+        "text": "watches",
+        "misconception": "s_on_non_third_person"
+      },
+      {
+        "id": "b",
+        "text": "watch"
+      },
+      {
+        "id": "c",
+        "text": "watchs",
+        "misconception": "third_person_s_spelling"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장의 주어 they는 여럿을 가리키므로 기본형 watch가 맞습니다.",
+      "byOption": {
+        "a": "watches는 he, she, it이나 한 사람·한 개를 가리키는 말(I, you 제외)이 주어일 때 쓰는 모양입니다. 이 문장의 주어 they는 여럿을 가리키므로 watches는 맞지 않습니다.",
+        "b": "정답입니다. 이 문장의 주어 they는 여럿을 가리키므로 기본형 watch를 씁니다.",
+        "c": "watch는 ch로 끝나므로 -s형을 만들면 watches가 되고, watchs는 틀린 철자입니다. 게다가 이 문장의 주어 they 뒤에는 -s형이 아니라 watch를 씁니다."
+      }
+    },
+    "hints": {
+      "direction": "빈칸 앞에 오는 주어가 어떤 말인지 확인해 보세요."
+    },
+    "id": "Q-L0-U04-008",
+    "variantGroup": "VG-L0-U04-FORM",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"The boy eats apples.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "eats"
+      },
+      {
+        "id": "B",
+        "text": "boy",
+        "misconception": "subject_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "apples",
+        "misconception": "object_as_verb"
+      }
+    ],
+    "answer": "A",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 eats는 주어 the boy 바로 뒤에 와서 소년이 하는 동작을 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "정답입니다. 이 문장에서 eats는 주어 the boy 바로 뒤에 놓여 '먹는다'라는 동작을 나타내는 동사입니다.",
+        "B": "이 문장에서 boy는 문장 맨 앞 The boy의 일부로, 누가 먹는지를 말하는 주어입니다.",
+        "C": "이 문장에서 apples는 eats 뒤에 와서 먹는 대상을 말하는 목적어입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'The boy' 다음에 오는 두 단어 중에서 찾아보세요.",
+      "range": [
+        2,
+        3
+      ]
+    },
+    "id": "Q-L0-U04-009",
+    "sentenceId": "S-L0-U04-009",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"The girl drinks milk.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "girl",
+        "misconception": "subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "drinks"
+      },
+      {
+        "id": "C",
+        "text": "milk",
+        "misconception": "object_as_verb"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 drinks는 주어 the girl 바로 뒤에 와서 소녀가 하는 동작을 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "이 문장에서 girl은 문장 맨 앞 The girl의 일부로, 누가 마시는지를 말하는 주어입니다.",
+        "B": "정답입니다. 이 문장에서 drinks는 주어 the girl 바로 뒤에 놓여 '마신다'라는 동작을 나타내는 동사입니다.",
+        "C": "이 문장에서 milk는 drinks 뒤에 와서 마시는 대상을 말하는 목적어입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'The girl' 다음에 오는 두 단어 중에서 찾아보세요.",
+      "range": [
+        2,
+        3
+      ]
+    },
+    "id": "Q-L0-U04-010",
+    "sentenceId": "S-L0-U04-010",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"My father washes the car.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "father",
+        "misconception": "subject_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "car",
+        "misconception": "object_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "washes"
+      }
+    ],
+    "answer": "C",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 washes는 주어 my father 바로 뒤에 와서 아버지께서 하시는 동작을 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "이 문장에서 father는 문장 맨 앞 My father의 일부로, 누가 닦으시는지를 말하는 주어입니다.",
+        "B": "이 문장에서 car는 washes 뒤의 the car의 일부로, 닦는 대상을 말하는 목적어입니다.",
+        "C": "정답입니다. 이 문장에서 washes는 주어 my father 바로 뒤에 놓여 '닦으신다'라는 동작을 나타내는 동사입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'My father' 다음에 오는 말들 중에서 찾아보세요.",
+      "range": [
+        2,
+        4
+      ]
+    },
+    "id": "Q-L0-U04-011",
+    "sentenceId": "S-L0-U04-011",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"The teacher writes letters.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "writes"
+      },
+      {
+        "id": "B",
+        "text": "letters",
+        "misconception": "object_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "teacher",
+        "misconception": "subject_as_verb"
+      }
+    ],
+    "answer": "A",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 writes는 주어 the teacher 바로 뒤에 와서 선생님께서 하시는 동작을 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "정답입니다. 이 문장에서 writes는 주어 the teacher 바로 뒤에 놓여 '쓰신다'라는 동작을 나타내는 동사입니다.",
+        "B": "이 문장에서 letters는 writes 뒤에 와서 쓰는 대상을 말하는 목적어입니다.",
+        "C": "이 문장에서 teacher는 문장 맨 앞 The teacher의 일부로, 누가 쓰시는지를 말하는 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'The teacher' 다음에 오는 두 단어 중에서 찾아보세요.",
+      "range": [
+        2,
+        3
+      ]
+    },
+    "id": "Q-L0-U04-012",
+    "sentenceId": "S-L0-U04-012",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"The dog wants food.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "food",
+        "misconception": "object_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "wants"
+      },
+      {
+        "id": "C",
+        "text": "dog",
+        "misconception": "subject_as_verb"
+      }
+    ],
+    "answer": "B",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 wants는 주어 the dog 바로 뒤에 와서 개의 상태(원함)를 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "이 문장에서 food는 wants 뒤에 와서 원하는 대상을 말하는 목적어입니다.",
+        "B": "정답입니다. 이 문장에서 wants는 주어 the dog 바로 뒤에 놓여 '원한다'라는 상태를 나타내는 동사입니다.",
+        "C": "이 문장에서 dog는 문장 맨 앞 The dog의 일부로, 무엇이 원하는지를 말하는 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'The dog' 다음에 오는 두 단어 중에서 찾아보세요.",
+      "range": [
+        2,
+        3
+      ]
+    },
+    "id": "Q-L0-U04-013",
+    "sentenceId": "S-L0-U04-013",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작이나 상태를 나타내는 말(동사)은 무엇인가요?\n\"My mother cooks dinner.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "dinner",
+        "misconception": "object_as_verb"
+      },
+      {
+        "id": "B",
+        "text": "mother",
+        "misconception": "subject_as_verb"
+      },
+      {
+        "id": "C",
+        "text": "cooks"
+      }
+    ],
+    "answer": "C",
+    "skills": [
+      "present_verb_form"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 cooks는 주어 My mother 바로 뒤에 와서 어머니께서 하시는 동작을 나타내므로 동사입니다.",
+      "byOption": {
+        "A": "이 문장에서 dinner는 cooks 뒤에 와서 요리하는 대상을 말하는 목적어입니다.",
+        "B": "이 문장에서 mother는 문장 맨 앞 My mother의 일부로, 누가 요리하시는지를 말하는 주어입니다.",
+        "C": "정답입니다. 이 문장에서 cooks는 주어 My mother 바로 뒤에 놓여 '요리하신다'라는 동작을 나타내는 동사입니다."
+      }
+    },
+    "hints": {
+      "direction": "문장 맨 앞의 'My mother' 다음에 오는 두 단어 중에서 찾아보세요.",
+      "range": [
+        2,
+        3
+      ]
+    },
+    "id": "Q-L0-U04-014",
+    "sentenceId": "S-L0-U04-014",
+    "variantGroup": "VG-L0-U04-TAG",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  }
+]

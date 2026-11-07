@@ -1,0 +1,116 @@
+[
+  {
+    "id": "L0-U04",
+    "levelId": "L0",
+    "order": 4,
+    "title": "현재형 동사 모양: 주어에 따라 달라지는 동사",
+    "skills": [
+      "present_verb_form"
+    ],
+    "blocks": [
+      {
+        "id": "L0-U04-B01",
+        "type": "concept",
+        "body": "현재형 동사의 모양은 문장의 주어를 보고 정합니다.\n\n① 먼저 문장 맨 앞에서 주어 덩어리를 찾습니다.\n② 주어가 한 사람이나 한 사물(he, she, it, the boy, the cat)이면 동사에 -s 또는 -es를 붙입니다.\n③ 주어가 I, you, we, they이거나 여럿(the boys, the cats)이면 동사를 기본형으로 씁니다.\n\n| 주어 | 동사 모양 | 예 |\n|---|---|---|\n| The boy | -s형 | The boy plays soccer. (그 소년은 축구를 한다.) |\n| The boys | 기본형 | The boys play soccer. (그 소년들은 축구를 한다.) |\n| She | -es형 | She watches TV. (그녀는 TV를 본다.) |\n| They | 기본형 | They watch TV. (그들은 TV를 본다.) |\n\n주의: The boys play soccer.에서 boys에도 -s가 붙어 있습니다. 하지만 이 문장에서 boys는 맨 앞의 주어 자리에 있고, 동사는 그 바로 뒤의 play입니다. 그러니 -s가 있는지만 보지 말고, 단어가 문장에서 어느 자리에 있는지를 먼저 보세요.\n\n-s를 붙이는 철자\n- watch → watches (ch로 끝나면 -es)\n- study → studies (자음 뒤의 y는 ies로)\n- play → plays (모음 a 뒤의 y는 그대로 두고 -s)"
+      },
+      {
+        "id": "L0-U04-B02",
+        "type": "sentence_task",
+        "interaction": "role_tagging",
+        "instruction": "각 문장에서 주어(S), 동사(V), 목적어(O)를 표시하세요. 빈칸 문제의 문장은 빈칸이 채워진 완성 문장으로 나옵니다. 동사(V)를 표시한 다음, 이 문장의 주어를 보고 동사가 왜 -s형인지 기본형인지 말해 보세요.",
+        "sentenceIds": [
+          "S-L0-U04-009",
+          "S-L0-U04-010",
+          "S-L0-U04-011",
+          "S-L0-U04-012",
+          "S-L0-U04-013",
+          "S-L0-U04-014",
+          "S-L0-U04-001",
+          "S-L0-U04-002",
+          "S-L0-U04-003",
+          "S-L0-U04-004",
+          "S-L0-U04-005",
+          "S-L0-U04-006",
+          "S-L0-U04-007",
+          "S-L0-U04-008"
+        ]
+      },
+      {
+        "id": "L0-U04-B03",
+        "type": "practice",
+        "questionIds": [
+          "Q-L0-U04-001",
+          "Q-L0-U04-009"
+        ]
+      },
+      {
+        "id": "L0-U04-B04",
+        "type": "assessment",
+        "questionIds": [
+          "Q-L0-U04-002",
+          "Q-L0-U04-003",
+          "Q-L0-U04-004",
+          "Q-L0-U04-005",
+          "Q-L0-U04-006",
+          "Q-L0-U04-010",
+          "Q-L0-U04-011",
+          "Q-L0-U04-012"
+        ]
+      },
+      {
+        "id": "L0-U04-B05",
+        "type": "remedial",
+        "misconceptionId": "missing_s_for_third_person",
+        "body": "같은 동사의 두 모양을 나란히 놓고 봅시다.\n\n| 주어가 한 사람·한 사물 | 주어가 여럿 또는 I, you, we, they |\n|---|---|\n| The girl reads a book. | The girls read a book. |\n| He drinks milk. | We drink milk. |\n\nThe girl reads a book.에서 맨 앞의 주어는 The girl, 한 사람입니다. 그래서 그 뒤의 동사가 read가 아니라 reads가 됩니다. 문제를 풀 때는 빈칸 앞의 주어를 먼저 짚고, 그 주어가 한 사람(또는 한 사물)인지 확인한 다음 동사를 고르세요.",
+        "questionIds": [
+          "Q-L0-U04-007"
+        ]
+      },
+      {
+        "id": "L0-U04-B06",
+        "type": "remedial",
+        "misconceptionId": "s_on_non_third_person",
+        "body": "주어만 바꿔서 두 문장을 비교해 봅시다.\n\n- The dog runs fast. → The dogs run fast.\n- She likes apples. → We like apples.\n\nThe dogs run fast.에서 맨 앞의 주어는 The dogs, 여러 마리입니다. 그래서 동사는 runs가 아니라 기본형 run입니다. We like apples.에서도 주어 We 뒤에 오는 동사는 기본형 like입니다. dogs에 -s가 있다고 동사에도 -s를 붙이는 것이 아닙니다. 빈칸 앞의 주어가 여럿인지, I, you, we, they 중 하나인지를 먼저 확인하세요.",
+        "questionIds": [
+          "Q-L0-U04-008"
+        ]
+      },
+      {
+        "id": "L0-U04-B07",
+        "type": "remedial",
+        "misconceptionId": "third_person_s_spelling",
+        "body": "주어가 한 사람이나 한 사물이면 동사에 -s를 붙이는데, 동사 끝 글자에 따라 붙이는 방법이 다릅니다.\n\n| 기본형 | 끝 글자 | -s형 |\n|---|---|---|\n| watch | ch | watches (-es) |\n| study | 자음 d + y | studies (y → ies) |\n| play | 모음 a + y | plays (그대로 -s) |\n\n- She watches TV. (watchs가 아님)\n- The boy studies English. (studys가 아님)\n- The boy plays soccer. (playes, plaies가 아님)\n\ny로 끝나는 동사는 y 바로 앞 글자가 모음(a, e, i, o, u)인지 먼저 보세요.",
+        "questionIds": []
+      },
+      {
+        "id": "L0-U04-B08",
+        "type": "remedial",
+        "misconceptionId": "subject_as_verb",
+        "body": "The cat drinks milk.를 다시 봅시다. 이 문장에서 맨 앞의 The cat이 주어이고, 동사는 그 바로 뒤의 drinks입니다. 이 문장에서 cat은 주어 덩어리 안에 있으므로 V로 표시하지 않습니다.\n\n표시 순서: ① 맨 앞의 주어 덩어리(The cat)를 S로 묶는다 → ② 그 바로 뒤의 단어(drinks)를 V로 표시한다 → ③ 이 문장의 주어가 한 사물이라서 동사가 drinks 모양이 되었는지 확인한다.",
+        "questionIds": [
+          "Q-L0-U04-013"
+        ]
+      },
+      {
+        "id": "L0-U04-B09",
+        "type": "remedial",
+        "misconceptionId": "object_as_verb",
+        "body": "The boy eats bread.를 다시 봅시다. 이 문장에서 동사는 주어 The boy 바로 뒤의 eats입니다. 동사 eats 뒤에 있는 bread는 목적어이므로 V가 아니라 O로 표시합니다.\n\n표시 순서: ① 주어(The boy)를 S로 묶는다 → ② 주어 바로 뒤의 eats를 V로 표시한다 → ③ eats 뒤에 남은 bread를 O로 표시한다. 이 문장에서 V는 한 곳(eats)뿐입니다.",
+        "questionIds": [
+          "Q-L0-U04-014"
+        ]
+      },
+      {
+        "id": "L0-U04-B10",
+        "type": "contrast",
+        "misconceptionIds": [
+          "missing_s_for_third_person",
+          "s_on_non_third_person"
+        ],
+        "body": "두 실수는 서로 반대 방향입니다. 하나는 붙여야 할 -s를 빼고, 다른 하나는 붙이면 안 되는 자리에 -s를 붙입니다. 둘 다 주어를 보지 않고 동사를 고를 때 생깁니다.\n\n| 이 문장의 주어 | 맞는 동사 | 틀린 동사 |\n|---|---|---|\n| The girl (한 사람) | The girl sings. | The girl sing. ✗ (-s를 뺌) |\n| The girls (여럿) | The girls sing. | The girls sings. ✗ (-s를 붙임) |\n| He | He sings. | He sing. ✗ |\n| They | They sing. | They sings. ✗ |\n\n방법은 하나입니다. 빈칸 앞의 주어를 손가락으로 짚고 \"한 사람(한 사물)인가, 아니면 여럿이거나 I, you, we, they인가?\"를 먼저 정한 다음 동사 모양을 고르세요. The girls처럼 주어 쪽에 -s가 있으면 동사는 오히려 기본형이 됩니다."
+      }
+    ],
+    "reviewStatus": "draft",
+    "version": 1
+  }
+]
