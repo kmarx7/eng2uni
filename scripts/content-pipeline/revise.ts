@@ -9,10 +9,12 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 import { assertSubscriptionAuth, authStatus, subscriptionRunner } from "@/lib/pipeline/claude-cli";
 import { runCrossCheck, runPreReview } from "@/lib/pipeline/crosscheck";
-import { readDrafts } from "@/lib/pipeline/draft-store";
+import { CATALOG_FILES, readDrafts, readJsonArray } from "@/lib/pipeline/draft-store";
 import { MAX_VERSION, revisionTargets, runRevise } from "@/lib/pipeline/revise";
 import { similarityStatus } from "@/lib/pipeline/similarity";
 import { allowedLemmas, type FrequencyTable } from "@/lib/pipeline/vocab-range";
+import type { Question } from "@/lib/schema/question";
+import { UnitSpec } from "@/lib/schema/spec";
 
 const { values } = parseArgs({
   options: {
@@ -38,7 +40,17 @@ async function main(): Promise<number> {
 
   assertSubscriptionAuth(await authStatus());
   const specFile = path.join(contentDir, "specs", `${unitId}.json`);
-  const rankMax = existsSync(specFile) ? (JSON.parse(readFileSync(specFile, "utf8")).generation?.vocabRankMax ?? 2000) : 2000;
+  const spec = existsSync(specFile) ? UnitSpec.parse(JSON.parse(readFileSync(specFile, "utf8"))) : undefined;
+  const rankMax = spec?.generation.vocabRankMax ?? 2000;
+  const known = [contentDir, path.join(contentDir, "drafts")].flatMap((dir) =>
+    readJsonArray<{ id: string; description: string }>(path.join(dir, CATALOG_FILES.misconceptions)),
+  );
+  const groupContext = (q: Question) => {
+    const group = spec?.generation.variantGroups.find((g) => g.id === q.variantGroup);
+    if (!group) return undefined;
+    const misconceptions = group.misconceptionIds.flatMap((id) => known.filter((m) => m.id === id).slice(0, 1).map((m) => ({ id: m.id, description: m.description })));
+    return { note: group.note, misconceptions };
+  };
   const freq = JSON.parse(readFileSync(path.join(root, "analysis/vocab_frequency.json"), "utf8")) as FrequencyTable;
   const agent = readFileSync(path.join(root, ".claude/agents/content-reviewer.md"), "utf8");
   const reviewerPrompt = agent.replace(/^---[\s\S]*?---\s*/, "");
@@ -49,7 +61,7 @@ async function main(): Promise<number> {
   let failed = 0;
   for (let round = 1; round <= Number(values.rounds); round += 1) {
     log(`— ${round}회차 —`);
-    const revised = await runRevise({ ...base, model: contentModel, allowed: allowedLemmas(freq, rankMax), similarity: similarityStatus, limit });
+    const revised = await runRevise({ ...base, model: contentModel, allowed: allowedLemmas(freq, rankMax), similarity: similarityStatus, limit, groupContext });
     // Only the revised questions lack second opinions, so these calls stay within the limit.
     const solved = await runCrossCheck({ ...base, model: process.env.CLAUDE_CROSSCHECK_MODEL ?? "sonnet" });
     const reviewed = await runPreReview({ ...base, model: contentModel, reviewerPrompt });

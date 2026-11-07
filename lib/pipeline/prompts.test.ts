@@ -8,8 +8,8 @@ import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt } from "./prompts";
 // and the third, where it flagged general claims in explanations, options that
 // match two places and hint text that disagrees with its range (2026-11-05).
 describe("generation prompt", () => {
-  it("is a new version so cached v4 outputs are not reused", () => {
-    expect(PROMPT_VERSION).toBe("content-v5");
+  it("is a new version so cached v5 outputs are not reused", () => {
+    expect(PROMPT_VERSION).toBe("content-v6");
   });
 
   it.each([
@@ -39,5 +39,22 @@ describe("buildGroupPrompt", () => {
   it("tells the model that students do not see the sentence of a building question", () => {
     expect(JSON.parse(buildGroupPrompt(spec, group("building"))).output).toMatch(/students do not see the sentence/);
     expect(JSON.parse(buildGroupPrompt(spec, group("question"))).output).not.toMatch(/students do not see the sentence/);
+  });
+});
+
+describe("buildGroupPrompt misconceptions", () => {
+  const spec = {
+    unitId: "L0-U03", levelId: "L0", title: "t", objectives: [],
+    catalog: { misconceptions: [{ id: "new_one", skillId: "s", category: "GRM", description: "새 오개념" }] },
+    generation: { difficulty: 1, vocabRankMax: 6000 },
+  } as unknown as UnitSpec;
+  const group = { id: "VG", skillId: "s", misconceptionIds: ["new_one", "verb_as_subject"], questionType: "multiple_choice", count: 2, sentenceUse: "tagging", note: "n" } as never;
+
+  it("lists approved misconceptions the group reuses, with their descriptions", () => {
+    const approved = [{ id: "verb_as_subject", description: "동사를 주어로 고른다." }, { id: "other", description: "x" }];
+    expect(JSON.parse(buildGroupPrompt(spec, group, approved)).misconceptions).toEqual([
+      { id: "new_one", description: "새 오개념" },
+      { id: "verb_as_subject", description: "동사를 주어로 고른다." },
+    ]);
   });
 });

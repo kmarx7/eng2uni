@@ -177,6 +177,19 @@ describe("runRevise", () => {
     });
   });
 
+  it("gives the model the group's note and misconceptions, and asks it to keep every option", async () => {
+    const { runner, inputs } = runnerOf({ question: revisedQuestion() });
+    const prompts: string[] = [];
+    await runRevise(
+      opts(async (args) => (prompts.push(args.systemPrompt), runner(args)), {
+        groupContext: (q) => (q.variantGroup === "VG-L0-U05-SUBJ" ? { note: "spans: SUBJECT와 OBJECT만", misconceptions: [{ id: "verb_as_subject", description: "동사를 주어로 본다" }] } : undefined),
+      }),
+    );
+    expect(JSON.parse(inputs[0])).toMatchObject({ groupNote: "spans: SUBJECT와 OBJECT만", misconceptions: [{ id: "verb_as_subject", description: "동사를 주어로 본다" }] });
+    expect(prompts[0]).toMatch(/Keep the same number of options/);
+    expect(prompts[0]).toMatch(/groupNote/);
+  });
+
   it("re-runs the checks and clears the old second opinions so they judge the new text", async () => {
     await runRevise(opts(runnerOf({ question: revisedQuestion() }).runner));
     const r = recordOf("Q-L0-U05-001");
