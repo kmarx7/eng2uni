@@ -1,0 +1,427 @@
+[
+  {
+    "id": "noun_phrase_chunk",
+    "kind": "catalog",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "article_detached_from_noun",
+    "kind": "catalog",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-001",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-002",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-003",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-004",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-005",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-006",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-007",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-008",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-009",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U02-010",
+    "kind": "sentence",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U02-001",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-002",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-003",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-004",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-005",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-006",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-007",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-008",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-009",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U02-010",
+    "kind": "question",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "L0-U02",
+    "kind": "unit",
+    "unitId": "L0-U02",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:36:11.555Z",
+    "reports": []
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "L0-U02",
+    "levelId": "L0",
+    "order": 2,
+    "title": "명사 덩어리: 관사와 명사",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "blocks": [
+      {
+        "id": "L0-U02-B01",
+        "type": "concept",
+        "body": "영어 문장에서 a와 the는 혼자 움직이지 않습니다. a나 the는 늘 명사 앞에 오고, 그 명사와 함께 한 덩어리(명사 덩어리)가 됩니다.\n\n예문: The boy has a cat.\n- 'the boy'가 한 덩어리, 'a cat'이 또 한 덩어리입니다.\n- 그래서 이 문장은 [The boy] [has] [a cat] 이렇게 세 조각으로 나뉩니다.\n\n단어 칩으로 문장을 만들 때는 a나 the를 따로 놓지 말고, 먼저 뒤에 올 명사와 짝을 지어 한 덩어리로 묶으세요. 그다음 덩어리끼리 차례를 정하면 됩니다.\n\n틀린 배열 예:\n- The boy has cat a. → a가 cat 뒤로 가서 'a cat' 덩어리가 깨졌습니다.\n- The boy a has cat. → a가 has 앞에 놓여 cat과 떨어졌습니다.\n두 배열 모두 a가 cat 앞에 붙어 있지 않아서 바른 문장이 되지 않습니다."
+      },
+      {
+        "id": "L0-U02-B02",
+        "type": "sentence_task",
+        "interaction": "sentence_building",
+        "instruction": "단어 칩을 바른 순서로 놓아 문장을 만드세요. a나 the 칩을 먼저 바로 뒤에 올 명사 칩과 짝지어 한 덩어리로 놓은 다음, 덩어리끼리 차례를 정하세요.",
+        "sentenceIds": [
+          "S-L0-U02-001",
+          "S-L0-U02-002",
+          "S-L0-U02-003",
+          "S-L0-U02-004",
+          "S-L0-U02-005",
+          "S-L0-U02-006",
+          "S-L0-U02-007",
+          "S-L0-U02-008",
+          "S-L0-U02-009",
+          "S-L0-U02-010"
+        ]
+      },
+      {
+        "id": "L0-U02-B03",
+        "type": "practice",
+        "questionIds": [
+          "Q-L0-U02-001"
+        ]
+      },
+      {
+        "id": "L0-U02-B04",
+        "type": "assessment",
+        "questionIds": [
+          "Q-L0-U02-002",
+          "Q-L0-U02-003",
+          "Q-L0-U02-004",
+          "Q-L0-U02-005",
+          "Q-L0-U02-006",
+          "Q-L0-U02-007",
+          "Q-L0-U02-008",
+          "Q-L0-U02-009"
+        ]
+      },
+      {
+        "id": "L0-U02-B05",
+        "type": "remedial",
+        "misconceptionId": "article_detached_from_noun",
+        "body": "a나 the를 명사와 떼어 놓으면 문장이 흐트러집니다. 아래 예문에서 덩어리를 확인해 봅시다.\n\n예문: The boys see a bird.\n덩어리로 묶으면: [The boys] [see] [a bird]\n\n이 문장에서 the는 boys 바로 앞에, a는 bird 바로 앞에 붙어 있습니다.\n\n틀린 배열과 비교해 보세요.\n- The boys see bird a. → a가 bird 뒤로 가서 'a bird' 덩어리가 깨졌습니다.\n- The boys a see bird. → a가 see 앞에 있어서 bird와 떨어졌습니다.\n- Boys the see a bird. → the가 boys 뒤로 가서 'the boys' 덩어리가 깨졌습니다.\n\n바른 배열에서만 'the boys'와 'a bird'가 각각 한 덩어리로 남아 '그 소년들이 새 한 마리를 본다'는 뜻이 분명해집니다. 문장을 만들 때는 a나 the 칩을 바로 뒤에 올 명사 칩과 먼저 짝지어 두세요.",
+        "questionIds": [
+          "Q-L0-U02-010"
+        ]
+      }
+    ],
+    "reviewStatus": "draft",
+    "version": 1
+  }
+]

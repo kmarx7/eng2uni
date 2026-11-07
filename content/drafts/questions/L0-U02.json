@@ -1,0 +1,452 @@
+[
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 소녀들이 책 한 권을 읽는다.'\n낱말 칩: [read] [girls] [the] [a] [book]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The girls read book a.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "The girls read a book."
+      },
+      {
+        "id": "c",
+        "text": "The girls a read book.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the girls'와 'a book'은 각각 한 덩어리이므로 a는 book 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 a를 book 뒤로 보내서 'a book' 덩어리가 깨졌습니다.",
+        "b": "정답입니다. 'the girls', 'read', 'a book'의 덩어리가 모두 지켜졌습니다.",
+        "c": "이 배열은 a를 read 앞에 두어 book과 떨어뜨렸으므로 'a book' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [a]가 뜻 속의 어느 낱말과 한 덩어리가 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-001",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 개들이 고양이 한 마리를 본다.'\n낱말 칩: [cat] [the] [see] [a] [dogs]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "the dogs see a cat."
+      },
+      {
+        "id": "b",
+        "text": "dogs the see a cat.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "the dogs see cat a.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the dogs'와 'a cat'은 각각 한 덩어리이므로 the는 dogs 바로 앞, a는 cat 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "정답입니다. 'the dogs', 'see', 'a cat'의 덩어리가 모두 지켜졌습니다.",
+        "b": "이 배열은 the를 dogs 뒤로 보내서 'the dogs' 덩어리가 깨졌습니다.",
+        "c": "이 배열은 a를 cat 뒤로 보내서 'a cat' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [the]와 [a]가 각각 어느 낱말과 붙어 다녀야 하는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-002",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 소년들이 게임을 한 판 한다.'\n낱말 칩: [a] [play] [boys] [game] [the]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The boys a play game.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "The boys play game a.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "The boys play a game."
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'a game'은 한 덩어리이므로 a는 game 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 a를 play 앞에 두어 game과 떨어뜨렸으므로 'a game' 덩어리가 깨졌습니다.",
+        "b": "이 배열은 a를 game 뒤로 보내서 'a game' 덩어리가 깨졌습니다.",
+        "c": "정답입니다. 'the boys', 'play', 'a game'의 덩어리가 모두 지켜졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [a]가 뜻 속의 어느 낱말과 한 덩어리가 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-003",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 새들이 그 빵을 먹는다.'\n낱말 칩: [eat] [the] [bread] [birds] [the]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "the birds the eat bread.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "the birds eat the bread."
+      },
+      {
+        "id": "c",
+        "text": "birds eat the bread the.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the birds'와 'the bread'는 각각 한 덩어리이므로 두 the는 birds와 bread 바로 앞에 하나씩 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 두 번째 the를 eat 앞에 두어 bread와 떨어뜨렸으므로 'the bread' 덩어리가 깨졌습니다.",
+        "b": "정답입니다. 'the birds', 'eat', 'the bread'의 덩어리가 모두 지켜졌습니다.",
+        "c": "이 배열은 birds 앞의 the를 문장 끝으로 보내서 'the birds' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "[the] 칩 두 개가 각각 어떤 낱말과 짝이 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-004",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 학생들이 그 문을 연다.'\n낱말 칩: [door] [the] [open] [students] [the]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The students open the door."
+      },
+      {
+        "id": "b",
+        "text": "The students open door the.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "The the students open door.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the students'와 'the door'는 각각 한 덩어리이므로 두 the는 students와 door 바로 앞에 하나씩 있어야 합니다.",
+      "byOption": {
+        "a": "정답입니다. 'the students', 'open', 'the door'의 덩어리가 모두 지켜졌습니다.",
+        "b": "이 배열은 두 번째 the를 door 뒤로 보내서 'the door' 덩어리가 깨졌습니다.",
+        "c": "이 배열은 the 두 개를 모두 문장 맨 앞에 몰아 두어 door 앞의 the가 door와 떨어졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "[the] 칩 두 개가 각각 어떤 낱말과 짝이 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-005",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 고양이들이 그 우유를 마신다.'\n낱말 칩: [the] [milk] [cats] [the] [drink]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "cats the drink the milk.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "the cats the drink milk.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "the cats drink the milk."
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the cats'와 'the milk'는 각각 한 덩어리이므로 두 the는 cats와 milk 바로 앞에 하나씩 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 첫 번째 the를 cats 뒤로 보내서 'the cats' 덩어리가 깨졌습니다.",
+        "b": "이 배열은 두 번째 the를 drink 앞에 두어 milk와 떨어뜨렸으므로 'the milk' 덩어리가 깨졌습니다.",
+        "c": "정답입니다. 'the cats', 'drink', 'the milk'의 덩어리가 모두 지켜졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "[the] 칩 두 개가 각각 어떤 낱말과 짝이 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-006",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 아이들이 노래 한 곡을 부른다.'\n낱말 칩: [song] [sing] [the] [children] [a]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The children sing song a.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "The children sing a song."
+      },
+      {
+        "id": "c",
+        "text": "The a children sing song.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'a song'은 한 덩어리이므로 a는 song 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 a를 song 뒤로 보내서 'a song' 덩어리가 깨졌습니다.",
+        "b": "정답입니다. 'the children', 'sing', 'a song'의 덩어리가 모두 지켜졌습니다.",
+        "c": "이 배열은 a를 문장 앞쪽 children 앞에 두어 song과 떨어뜨렸으므로 'a song' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [a]가 뜻 속의 어느 낱말과 한 덩어리가 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-007",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 농부들이 집 한 채를 짓는다.'\n낱말 칩: [build] [a] [farmers] [house] [the]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "the farmers build a house."
+      },
+      {
+        "id": "b",
+        "text": "the farmers a build house.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "farmers the build a house.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the farmers'와 'a house'는 각각 한 덩어리이므로 the는 farmers 바로 앞, a는 house 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "정답입니다. 'the farmers', 'build', 'a house'의 덩어리가 모두 지켜졌습니다.",
+        "b": "이 배열은 a를 build 앞에 두어 house와 떨어뜨렸으므로 'a house' 덩어리가 깨졌습니다.",
+        "c": "이 배열은 the를 farmers 뒤로 보내서 'the farmers' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [the]와 [a]가 각각 어느 낱말과 붙어 다녀야 하는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-008",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 아기들이 그 컵을 잡는다.'\n낱말 칩: [cup] [hold] [the] [babies] [the]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The babies hold cup the.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "The babies the hold cup.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "c",
+        "text": "The babies hold the cup."
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the babies'와 'the cup'은 각각 한 덩어리이므로 두 the는 babies와 cup 바로 앞에 하나씩 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 두 번째 the를 cup 뒤로 보내서 'the cup' 덩어리가 깨졌습니다.",
+        "b": "이 배열은 두 번째 the를 hold 앞에 두어 cup과 떨어뜨렸으므로 'the cup' 덩어리가 깨졌습니다.",
+        "c": "정답입니다. 'the babies', 'hold', 'the cup'의 덩어리가 모두 지켜졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "[the] 칩 두 개가 각각 어떤 낱말과 짝이 되는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-009",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 1
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "뜻: '그 일꾼들이 상자 하나를 나른다.'\n낱말 칩: [box] [the] [carry] [workers] [a]\n칩 5개를 모두 한 번씩 써서 바르게 배열한 문장은?",
+    "options": [
+      {
+        "id": "a",
+        "text": "the workers a carry box.",
+        "misconception": "article_detached_from_noun"
+      },
+      {
+        "id": "b",
+        "text": "the workers carry a box."
+      },
+      {
+        "id": "c",
+        "text": "workers carry a box the.",
+        "misconception": "article_detached_from_noun"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 'the workers'와 'a box'는 각각 한 덩어리이므로 the는 workers 바로 앞, a는 box 바로 앞에 있어야 합니다.",
+      "byOption": {
+        "a": "이 배열은 a를 carry 앞에 두어 box와 떨어뜨렸으므로 'a box' 덩어리가 깨졌습니다.",
+        "b": "정답입니다. 'the workers', 'carry', 'a box'의 덩어리가 모두 지켜졌습니다.",
+        "c": "이 배열은 the를 문장 끝으로 보내서 workers와 떨어뜨렸으므로 'the workers' 덩어리가 깨졌습니다."
+      }
+    },
+    "hints": {
+      "direction": "칩 [the]와 [a]가 각각 어느 낱말과 붙어 다녀야 하는지 생각해 보세요."
+    },
+    "id": "Q-L0-U02-010",
+    "variantGroup": "VG-L0-U02-CHUNK",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  }
+]

@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "object_pronoun_as_subject",
+    "skillId": "pronoun_case",
+    "category": "GRM",
+    "description": "목적격 대명사(me, him, her, us, them)를 주어 자리에 두거나 주어로 고른다."
+  },
+  {
+    "id": "subject_pronoun_as_object",
+    "skillId": "pronoun_case",
+    "category": "GRM",
+    "description": "주격 대명사(I, we, they)를 동작의 대상 자리에 두거나 목적어로 고른다."
+  },
+  {
+    "id": "article_detached_from_noun",
+    "skillId": "noun_phrase_chunk",
+    "category": "SYN",
+    "description": "관사(a, the)를 명사와 떼어 따로 두거나 명사 뒤에 둔다."
+  }
+]

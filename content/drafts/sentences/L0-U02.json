@@ -1,0 +1,192 @@
+[
+  {
+    "level": "L0",
+    "text": "The girls read a book.",
+    "tokens": [
+      "The",
+      "girls",
+      "read",
+      "a",
+      "book",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 소녀들이 책 한 권을 읽는다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-001",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The dogs see a cat.",
+    "tokens": [
+      "The",
+      "dogs",
+      "see",
+      "a",
+      "cat",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 개들이 고양이 한 마리를 본다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-002",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The boys play a game.",
+    "tokens": [
+      "The",
+      "boys",
+      "play",
+      "a",
+      "game",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 소년들이 게임을 한 판 한다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-003",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The birds eat the bread.",
+    "tokens": [
+      "The",
+      "birds",
+      "eat",
+      "the",
+      "bread",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 새들이 그 빵을 먹는다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-004",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The students open the door.",
+    "tokens": [
+      "The",
+      "students",
+      "open",
+      "the",
+      "door",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 학생들이 그 문을 연다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-005",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The cats drink the milk.",
+    "tokens": [
+      "The",
+      "cats",
+      "drink",
+      "the",
+      "milk",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 고양이들이 그 우유를 마신다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-006",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The children sing a song.",
+    "tokens": [
+      "The",
+      "children",
+      "sing",
+      "a",
+      "song",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 아이들이 노래 한 곡을 부른다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-007",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The farmers build a house.",
+    "tokens": [
+      "The",
+      "farmers",
+      "build",
+      "a",
+      "house",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 농부들이 집 한 채를 짓는다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-008",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The babies hold the cup.",
+    "tokens": [
+      "The",
+      "babies",
+      "hold",
+      "the",
+      "cup",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 아기들이 그 컵을 잡는다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-009",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "The workers carry a box.",
+    "tokens": [
+      "The",
+      "workers",
+      "carry",
+      "a",
+      "box",
+      "."
+    ],
+    "spans": [],
+    "translation": "그 일꾼들이 상자 하나를 나른다.",
+    "skills": [
+      "noun_phrase_chunk"
+    ],
+    "id": "S-L0-U02-010",
+    "reviewStatus": "draft"
+  }
+]

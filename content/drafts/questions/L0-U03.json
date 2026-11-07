@@ -1,0 +1,554 @@
+[
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 주어를 가리키는 말은 무엇인가요? \"They like him.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "him",
+        "misconception": "object_pronoun_as_subject"
+      },
+      {
+        "id": "b",
+        "text": "they"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 They는 동사 like 바로 앞 자리에 놓인 주격 대명사이므로 주어입니다.",
+      "byOption": {
+        "a": "이 문장에서 him은 동사 like 바로 뒤에 오는 목적격 대명사이므로 목적어이며, 주어가 아닙니다.",
+        "b": "정답입니다. 이 문장에서 They는 동사 like 바로 앞 자리에 놓인 주격 대명사이므로 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "동사와 그 앞부분을 살펴보고, 그 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-001",
+    "sentenceId": "S-L0-U03-001",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 주어를 가리키는 말은 무엇인가요? \"They help us.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "help",
+        "trap": "verb_as_subject"
+      },
+      {
+        "id": "b",
+        "text": "us",
+        "misconception": "object_pronoun_as_subject"
+      },
+      {
+        "id": "c",
+        "text": "they"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 They는 동사 help 앞에서 help라는 행동을 하는 쪽을 나타내는 주격 대명사이므로 주어입니다.",
+      "byOption": {
+        "a": "이 문장에서 help는 '돕다'라는 행동을 나타내는 동사입니다. 주어는 이 동사 앞에 놓인 말입니다.",
+        "b": "이 문장에서 us는 동사 help 뒤에 놓여 도움을 받는 대상을 나타내는 목적격 대명사이므로 목적어입니다. 주어가 아닙니다.",
+        "c": "정답입니다. 이 문장에서 They는 동사 help 앞 자리에 놓인 주격 대명사로, help라는 행동을 하는 쪽이므로 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "동사와 그 앞부분을 살펴보고, 그 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-002",
+    "sentenceId": "S-L0-U03-002",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 주어를 가리키는 말은 무엇인가요? \"I know her.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "i"
+      },
+      {
+        "id": "b",
+        "text": "her",
+        "misconception": "object_pronoun_as_subject"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 I는 동사 know 앞 자리에 놓인 주격 대명사이므로 주어입니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장에서 I는 동사 know 앞 자리에 놓인 주격 대명사이므로 주어입니다.",
+        "b": "이 문장에서 her는 동사 know 뒤 자리에 놓인 목적격 대명사이므로 목적어입니다. 주어가 아닙니다."
+      }
+    },
+    "hints": {
+      "direction": "동사와 그 앞부분을 살펴보고, 그 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-003",
+    "sentenceId": "S-L0-U03-003",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 주어를 가리키는 말은 무엇인가요? \"I see him.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "see",
+        "trap": "verb_as_subject"
+      },
+      {
+        "id": "b",
+        "text": "him",
+        "misconception": "object_pronoun_as_subject"
+      },
+      {
+        "id": "c",
+        "text": "I"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 I는 동사 see 바로 앞 자리에 놓인 주격 대명사이므로 주어입니다.",
+      "byOption": {
+        "a": "이 문장에서 see는 I 바로 뒤에 놓인 동사이므로 주어가 아닙니다.",
+        "b": "이 문장에서 him은 동사 see 뒤에 놓인 목적격 대명사로 see의 목적어이므로 주어가 아닙니다.",
+        "c": "정답입니다. 이 문장에서 I는 동사 see 앞 자리에 놓인 주격 대명사이므로 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "동사 see와 그 앞부분을 살펴보고, 그 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-004",
+    "sentenceId": "S-L0-U03-004",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장의 주어는 무엇인가요? \"We help her.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "her",
+        "misconception": "object_pronoun_as_subject"
+      },
+      {
+        "id": "b",
+        "text": "we"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 We는 동사 help 앞 자리에 놓인 주격 대명사이므로 주어입니다.",
+      "byOption": {
+        "a": "이 문장에서 her는 동사 help 뒤 자리에 놓인 목적격 대명사이므로 목적어입니다. 이 문장의 주어가 아닙니다.",
+        "b": "정답입니다. 이 문장에서 We는 동사 help 바로 앞 자리에 놓인 주격 대명사이므로 주어입니다."
+      }
+    },
+    "hints": {
+      "direction": "동사와 그 앞부분을 살펴보고, 그 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-005",
+    "sentenceId": "S-L0-U03-005",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 2
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 주어를 가리키는 말은 무엇인가요? \"They know her and him.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "they"
+      },
+      {
+        "id": "b",
+        "text": "her",
+        "misconception": "object_pronoun_as_subject"
+      },
+      {
+        "id": "c",
+        "text": "him",
+        "misconception": "object_pronoun_as_subject"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 They는 동사 know 바로 앞 자리에 놓인 주격 대명사이고 know와 짝을 이루므로 주어입니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장에서 They는 동사 know 바로 앞 자리에 놓인 주격 대명사이고, know와 짝을 이루어 '그들은 ~을 안다'를 만들므로 주어입니다.",
+        "b": "이 문장에서 her는 동사 know 뒤 자리에 놓인 목적격 대명사로, him과 함께 know의 목적어입니다. 이 문장에서는 주어가 아닙니다.",
+        "c": "이 문장에서 him은 동사 know 뒤 and 다음 자리에 놓인 목적격 대명사로, her와 함께 know의 목적어입니다. 이 문장에서는 주어가 아닙니다."
+      }
+    },
+    "hints": {
+      "direction": "먼저 동사 know를 찾고, 그 앞 자리에 놓인 대명사의 형태를 확인해 보세요.",
+      "range": [
+        0,
+        1
+      ]
+    },
+    "id": "Q-L0-U03-006",
+    "sentenceId": "S-L0-U03-006",
+    "variantGroup": "VG-L0-U03-SUBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작의 대상(무엇을·누구를)을 나타내는 말은 무엇인가요?\n\"He helps her.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "he",
+        "misconception": "subject_pronoun_as_object"
+      },
+      {
+        "id": "b",
+        "text": "her"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 her는 동사 helps 바로 뒤에 놓여 helps의 목적어 역할을 하는 목적격 대명사입니다.",
+      "byOption": {
+        "a": "이 문장에서 he는 동사 helps 앞, 문장 맨 앞에 놓인 주어(주격 대명사)라서 helps의 목적어가 아닙니다.",
+        "b": "정답입니다. 이 문장에서 her는 동사 helps 바로 뒤, 동사가 나타내는 동작을 받는 자리에 놓인 목적격 대명사로 helps의 목적어입니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        2
+      ]
+    },
+    "id": "Q-L0-U03-007",
+    "sentenceId": "S-L0-U03-007",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작의 대상(무엇을·누구를)을 나타내는 말은 무엇인가요?\n\"We love her.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "we",
+        "misconception": "subject_pronoun_as_object"
+      },
+      {
+        "id": "c",
+        "text": "her"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 her는 love 바로 뒤에 놓여 사랑하는 동작을 받는 대상이므로 목적격 대명사입니다.",
+      "byOption": {
+        "a": "이 문장에서 we는 love 앞, 문장 맨 앞에서 사랑하는 동작을 하는 쪽인 주어(주격)라서 대상이 아닙니다.",
+        "c": "정답입니다. 이 문장에서 her는 love 뒤에서 '그녀를'로 해석되는 목적격 대명사입니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        2
+      ]
+    },
+    "id": "Q-L0-U03-008",
+    "sentenceId": "S-L0-U03-008",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장의 목적어는 무엇인가요?\n\"They call us every day.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "they",
+        "misconception": "subject_pronoun_as_object"
+      },
+      {
+        "id": "b",
+        "text": "us"
+      },
+      {
+        "id": "c",
+        "text": "every day",
+        "misconception": "modifier_as_object"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 us는 동사 call 바로 뒤에 놓여 call의 목적어 역할을 하는 목적격 대명사입니다.",
+      "byOption": {
+        "a": "이 문장에서 they는 동사 call 앞, 문장 맨 앞에 놓인 주격 대명사로 주어입니다. 목적어가 아닙니다.",
+        "b": "정답입니다. 이 문장에서 us는 동사 call 바로 뒤에 놓인 목적격 대명사로 call의 목적어이며, '우리에게'로 해석됩니다.",
+        "c": "이 문장에서 every day는 us 뒤에 놓여 '매일'로 해석되며, 동사 call을 꾸며 때를 나타내는 수식어입니다. call의 목적어가 아닙니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        4
+      ]
+    },
+    "id": "Q-L0-U03-009",
+    "sentenceId": "S-L0-U03-009",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장의 목적어는 무엇인가요?\n\"We know them well.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "them"
+      },
+      {
+        "id": "b",
+        "text": "we",
+        "misconception": "subject_pronoun_as_object"
+      }
+    ],
+    "answer": "a",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 them은 동사 know 바로 뒤에 놓여 know의 목적어가 되는 목적격 대명사입니다.",
+      "byOption": {
+        "a": "정답입니다. 이 문장에서 them은 동사 know 바로 뒤에 놓인 목적격 대명사로, know의 목적어입니다.",
+        "b": "이 문장에서 We는 동사 know 앞, 문장 맨 앞에 놓인 주격 대명사로 주어입니다. know의 목적어가 아닙니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        3
+      ]
+    },
+    "id": "Q-L0-U03-010",
+    "sentenceId": "S-L0-U03-010",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장의 목적어는 무엇인가요?\n\"They miss me.\"",
+    "options": [
+      {
+        "id": "a",
+        "text": "they",
+        "misconception": "subject_pronoun_as_object"
+      },
+      {
+        "id": "b",
+        "text": "me"
+      }
+    ],
+    "answer": "b",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 me는 동사 miss 바로 뒤에 놓인 목적어이며, I의 목적격 형태입니다.",
+      "byOption": {
+        "a": "이 문장에서 they는 동사 miss 앞, 문장 맨 앞에 놓인 주어이고 주격 형태라서 목적어가 아닙니다.",
+        "b": "정답입니다. 이 문장에서 me는 동사 miss 바로 뒤에 놓여 '나를'로 해석되는 목적어이며, 주격 I가 아닌 목적격 me 형태로 쓰였습니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        2
+      ]
+    },
+    "id": "Q-L0-U03-011",
+    "sentenceId": "S-L0-U03-011",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  },
+  {
+    "type": "multiple_choice",
+    "readingType": "grammar",
+    "difficulty": 1,
+    "prompt": "다음 문장에서 동작의 대상(무엇을·누구를)을 나타내는 말은 무엇인가요?\n\"They like it.\"",
+    "options": [
+      {
+        "id": "b",
+        "text": "they",
+        "misconception": "subject_pronoun_as_object"
+      },
+      {
+        "id": "c",
+        "text": "it"
+      }
+    ],
+    "answer": "c",
+    "skills": [
+      "pronoun_case"
+    ],
+    "explanation": {
+      "summary": "이 문장에서 it은 동사 like 바로 뒤에 놓여 목적어 자리에 온 대명사입니다.",
+      "byOption": {
+        "b": "이 문장에서 they는 동사 like 앞, 문장 맨 앞에 놓인 주어(주격)라서 목적어가 아닙니다.",
+        "c": "정답입니다. 이 문장에서 it은 동사 like 바로 뒤에 놓여 '그것을'로 해석되는 목적어입니다."
+      }
+    },
+    "hints": {
+      "direction": "주어 다음에 이어지는 부분(동사와 그 뒤)을 살펴보세요.",
+      "range": [
+        1,
+        2
+      ]
+    },
+    "id": "Q-L0-U03-012",
+    "sentenceId": "S-L0-U03-012",
+    "variantGroup": "VG-L0-U03-OBJ",
+    "source": {
+      "type": "original",
+      "generatedBy": "ai_draft"
+    },
+    "reviewStatus": "draft",
+    "version": 3
+  }
+]

@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "pronoun_case",
+    "name": "주격·목적격 대명사 구별",
+    "category": "grammar",
+    "prerequisiteIds": [
+      "noun_identification"
+    ]
+  },
+  {
+    "id": "noun_phrase_chunk",
+    "name": "명사 덩어리 묶기",
+    "category": "grammar",
+    "prerequisiteIds": [
+      "noun_identification"
+    ]
+  }
+]

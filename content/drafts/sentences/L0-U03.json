@@ -1,0 +1,556 @@
+[
+  {
+    "level": "L0",
+    "text": "They like him.",
+    "tokens": [
+      "They",
+      "like",
+      "him",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "좋아한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그를"
+      }
+    ],
+    "translation": "그들은 그를 좋아한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-001",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They help us.",
+    "tokens": [
+      "They",
+      "help",
+      "us",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "돕는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "우리를"
+      }
+    ],
+    "translation": "그들은 우리를 돕는다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-002",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I know her.",
+    "tokens": [
+      "I",
+      "know",
+      "her",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "나는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "안다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "나는 그녀를 안다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-003",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "I see him.",
+    "tokens": [
+      "I",
+      "see",
+      "him",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "나는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "본다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그를"
+      }
+    ],
+    "translation": "나는 그를 본다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-004",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We help her.",
+    "tokens": [
+      "We",
+      "help",
+      "her",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "돕는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "우리는 그녀를 돕는다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-005",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They know her and him.",
+    "tokens": [
+      "They",
+      "know",
+      "her",
+      "and",
+      "him",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "안다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          4
+        ],
+        "gloss": "그녀와 그를"
+      }
+    ],
+    "translation": "그들은 그녀와 그를 안다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-006",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "He helps her.",
+    "tokens": [
+      "He",
+      "helps",
+      "her",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "돕는다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "그는 그녀를 돕는다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-007",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We love her.",
+    "tokens": [
+      "We",
+      "love",
+      "her",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "사랑한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그녀를"
+      }
+    ],
+    "translation": "우리는 그녀를 사랑한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-008",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They call us every day.",
+    "tokens": [
+      "They",
+      "call",
+      "us",
+      "every",
+      "day",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "전화한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "우리에게"
+      },
+      {
+        "id": "mod",
+        "role": "MODIFIER",
+        "range": [
+          3,
+          4
+        ],
+        "gloss": "매일"
+      }
+    ],
+    "translation": "그들은 매일 우리에게 전화한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-009",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "We know them well.",
+    "tokens": [
+      "We",
+      "know",
+      "them",
+      "well",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "우리는"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "안다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그들을"
+      }
+    ],
+    "translation": "우리는 그들을 잘 안다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-010",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They miss me.",
+    "tokens": [
+      "They",
+      "miss",
+      "me",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "그리워한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "나를"
+      }
+    ],
+    "translation": "그들은 나를 그리워한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-011",
+    "reviewStatus": "draft"
+  },
+  {
+    "level": "L0",
+    "text": "They like it.",
+    "tokens": [
+      "They",
+      "like",
+      "it",
+      "."
+    ],
+    "spans": [
+      {
+        "id": "subj",
+        "role": "SUBJECT",
+        "range": [
+          0,
+          0
+        ],
+        "gloss": "그들은"
+      },
+      {
+        "id": "verb",
+        "role": "MAIN_VERB",
+        "range": [
+          1,
+          1
+        ],
+        "gloss": "좋아한다"
+      },
+      {
+        "id": "obj",
+        "role": "OBJECT",
+        "range": [
+          2,
+          2
+        ],
+        "gloss": "그것을"
+      }
+    ],
+    "translation": "그들은 그것을 좋아한다.",
+    "skills": [
+      "pronoun_case"
+    ],
+    "id": "S-L0-U03-012",
+    "reviewStatus": "draft"
+  }
+]

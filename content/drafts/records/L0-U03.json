@@ -1,0 +1,588 @@
+[
+  {
+    "id": "pronoun_case",
+    "kind": "catalog",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "object_pronoun_as_subject",
+    "kind": "catalog",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "subject_pronoun_as_object",
+    "kind": "catalog",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-001",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-002",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-003",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-004",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-005",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-006",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U03-001",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-002",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "규칙 위반: distractor \"a\" trap \"verb_as_subject\" is not defined",
+      "AI 수정 2회",
+      "사전 검수: 발문의 '주어를 가리키는 말'은 '주어를 지칭하는 다른 말'로 오해될 수 있으므로 '주어인 말은 무엇인가요?'처럼 직접적으로 바꾸는 것이 좋습니다.",
+      "사전 검수: 해설 summary와 byOption c의 'help라는 행동을 하는 쪽', byOption b의 '도움을 받는 대상'은 역할을 의미로 설명하고 있어, 위치와 동사와의 관계로만 설명한다는 원칙에 맞게 고쳐야 합니다."
+    ],
+    "checks": {
+      "rules": "fail",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "발문의 '주어를 가리키는 말'은 '주어를 지칭하는 다른 말'로 오해될 수 있으므로 '주어인 말은 무엇인가요?'처럼 직접적으로 바꾸는 것이 좋습니다.",
+        "해설 summary와 byOption c의 'help라는 행동을 하는 쪽', byOption b의 '도움을 받는 대상'은 역할을 의미로 설명하고 있어, 위치와 동사와의 관계로만 설명한다는 원칙에 맞게 고쳐야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U03-003",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-004",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "규칙 위반: distractor \"a\" trap \"verb_as_subject\" is not defined",
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "fail",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-005",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-006",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: him",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "S-L0-U03-007",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-008",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-009",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 1회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-010",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: them",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-011",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: me",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "S-L0-U03-012",
+    "kind": "sentence",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  },
+  {
+    "id": "Q-L0-U03-007",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "AI 수정 2회",
+      "사전 검수: byOption.b의 '동사가 나타내는 동작을 받는 자리'라는 설명은 역할을 의미로 풀이하고 있어 위치와 동사와의 관계로 설명한다는 원칙과 맞지 않으므로 '동사 helps 바로 뒤 목적어 자리'처럼 위치 중심으로 고쳐야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "byOption.b의 '동사가 나타내는 동작을 받는 자리'라는 설명은 역할을 의미로 풀이하고 있어 위치와 동사와의 관계로 설명한다는 원칙과 맞지 않으므로 '동사 helps 바로 뒤 목적어 자리'처럼 위치 중심으로 고쳐야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U03-008",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "AI 수정 2회",
+      "사전 검수: 선택지가 a와 c 두 개뿐이고 id b가 비어 있어서 찍어도 맞힐 확률이 50%입니다. 동사 love를 오답 선택지로 넣어야 합니다.",
+      "사전 검수: byOption c의 해설이 love 뒤라는 위치와 함께 '그녀를'이라는 해석에 기대어 목적어를 설명합니다. 위치와 동사와의 관계로 설명한다는 원칙에 맞게 고쳐야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지가 a와 c 두 개뿐이고 id b가 비어 있어서 찍어도 맞힐 확률이 50%입니다. 동사 love를 오답 선택지로 넣어야 합니다.",
+        "byOption c의 해설이 love 뒤라는 위치와 함께 '그녀를'이라는 해석에 기대어 목적어를 설명합니다. 위치와 동사와의 관계로 설명한다는 원칙에 맞게 고쳐야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U03-009",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "규칙 위반: distractor \"c\" misconception \"modifier_as_object\" is not defined",
+      "AI 수정 2회",
+      "사전 검수: 선택지 c의 오개념 태그 modifier_as_object는 이 단원의 오개념 목록(subject_pronoun_as_object만 있음)에 없는 id이므로, 목록에 있는 오개념으로 바꾸거나 단원 목록에 먼저 추가해야 합니다."
+    ],
+    "checks": {
+      "rules": "fail",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지 c의 오개념 태그 modifier_as_object는 이 단원의 오개념 목록(subject_pronoun_as_object만 있음)에 없는 id이므로, 목록에 있는 오개념으로 바꾸거나 단원 목록에 먼저 추가해야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "Q-L0-U03-010",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: them",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "a",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-011",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "허용 어휘 밖: me",
+      "AI 수정 2회"
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "fail",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "b",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": []
+    }
+  },
+  {
+    "id": "Q-L0-U03-012",
+    "kind": "question",
+    "unitId": "L0-U03",
+    "status": "flagged",
+    "reasons": [
+      "AI 수정 2회",
+      "사전 검수: 선택지가 'they'와 'it' 두 개뿐이라 찍어도 50% 확률로 맞힐 수 있어 변별력이 낮습니다. 동사 'like' 같은 오답 선택지를 하나 더 넣어야 합니다.",
+      "사전 검수: 선택지 id가 b, c로 시작하고 a가 없습니다. 선택지 하나가 빠졌거나 지워진 것으로 보이니 id 구성을 확인해야 합니다."
+    ],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "pass",
+      "similarity": "pass"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": [],
+    "crossSolve": {
+      "answer": "c",
+      "agrees": true
+    },
+    "preReview": {
+      "issues": [
+        "선택지가 'they'와 'it' 두 개뿐이라 찍어도 50% 확률로 맞힐 수 있어 변별력이 낮습니다. 동사 'like' 같은 오답 선택지를 하나 더 넣어야 합니다.",
+        "선택지 id가 b, c로 시작하고 a가 없습니다. 선택지 하나가 빠졌거나 지워진 것으로 보이니 id 구성을 확인해야 합니다."
+      ]
+    }
+  },
+  {
+    "id": "L0-U03",
+    "kind": "unit",
+    "unitId": "L0-U03",
+    "status": "auto_checked",
+    "reasons": [],
+    "checks": {
+      "rules": "pass",
+      "vocab": "pass",
+      "tags": "n/a",
+      "similarity": "skipped"
+    },
+    "generatedAt": "2026-11-07T02:35:50.881Z",
+    "reports": []
+  }
+]
