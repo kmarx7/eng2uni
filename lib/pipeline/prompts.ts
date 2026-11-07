@@ -3,7 +3,7 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v5";
+export const PROMPT_VERSION = "content-v6";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
@@ -40,8 +40,10 @@ export const HOUSE_RULES = `House rules (deliberate, do not flag them):
 - Roles are explained by position and relation to the verb, not by meaning.
 - Misconception ids come from the unit's list given in the input; judge a tag by that list's description, not by its name.`;
 
-export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec): string {
-  const misconceptions = spec.catalog.misconceptions.filter((m) => group.misconceptionIds.includes(m.id));
+// approved: misconceptions approved for earlier units, which a group may reuse.
+export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec, approved: { id: string; description: string }[] = []): string {
+  const known = [...spec.catalog.misconceptions, ...approved];
+  const misconceptions = group.misconceptionIds.flatMap((id) => known.find((m) => m.id === id) ?? []);
   return JSON.stringify({
     task: "variant_group",
     unit: { id: spec.unitId, level: spec.levelId, title: spec.title, objectives: spec.objectives },

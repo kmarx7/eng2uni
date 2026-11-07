@@ -24,7 +24,9 @@ const REVISE_PROMPT = `${SYSTEM_PROMPT}
 Task "revise": a reviewer listed problems in one of your draft questions. Return the corrected question, fixing every listed problem and changing nothing else.
 - Keep the question type, the option ids and the misconception tags unless a problem is about them.
 - Return "sentence" only when "sentenceEditable" is true and a problem needs the sentence changed; keep its tokens, spans and translation consistent.
-- When "sentenceEditable" is false, fix the question without changing the sentence.`;
+- When "sentenceEditable" is false, fix the question without changing the sentence.
+- Keep the same number of options: replace a faulty option instead of deleting it.
+- "groupNote" is the unit's instruction for this question group (which spans to mark, how many options, what to avoid); follow it. Use only misconception ids listed in "misconceptions".`;
 
 // Reasons from the automatic checks worth sending back to the model.
 const CHECK_REASON = /^(규칙 위반|허용 어휘 밖|오답 오개념 누락|문장 번호 범위 밖)/;
@@ -61,6 +63,11 @@ export function revisionTargets(drafts: Drafts, maxVersion: number): RevisionTar
   });
 }
 
+export interface GroupContext {
+  note: string;
+  misconceptions: { id: string; description: string }[];
+}
+
 export interface ReviseOptions {
   contentDir: string;
   unitId: string;
@@ -70,6 +77,8 @@ export interface ReviseOptions {
   similarity: (items: { id: string; text: string }[]) => Promise<Map<string, SimilarityResult>>;
   limit?: number;
   maxVersion?: number;
+  // The spec's note and misconceptions for the question's group.
+  groupContext?: (question: Question) => GroupContext | undefined;
   now: Date;
   log: (line: string) => void;
 }
@@ -96,12 +105,20 @@ export async function runRevise(opts: ReviseOptions): Promise<ReviseResult> {
     if (opts.limit !== undefined && result.calls >= opts.limit) break;
     const { question, sentence, sentenceEditable, issues } = target;
     result.calls += 1;
+    const context = opts.groupContext?.(question);
     opts.log(`${question.id}: 수정 중 (지적 ${issues.length}건)`);
     const response = await opts.runner({
       model: opts.model,
       schema: jsonSchema(RevisionOutput),
       systemPrompt: REVISE_PROMPT,
-      input: JSON.stringify({ task: "revise", question: QuestionRevision.parse(question), sentence, sentenceEditable, issues }),
+      input: JSON.stringify({
+        task: "revise",
+        question: QuestionRevision.parse(question),
+        sentence,
+        sentenceEditable,
+        issues,
+        ...(context ? { groupNote: context.note, misconceptions: context.misconceptions } : {}),
+      }),
       timeoutMs: CALL_TIMEOUT_MS,
     });
     const parsed = response.ok ? RevisionOutput.safeParse(response.json) : null;

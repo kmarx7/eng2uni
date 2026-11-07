@@ -42,3 +42,14 @@ describe("outOfRange", () => {
     expect(outOfRange(["went"], new Set(["went"]))).toEqual([]);
   });
 });
+
+// L0-U03: the frequency table lists object pronouns under the subject form
+// (him → he), so "They like him." was flagged as off the word list.
+describe("object pronouns", () => {
+  it("count as their subject form", () => {
+    const allowed = new Set(["i", "he", "we", "they", "like"]);
+    expect(outOfRange(["They", "like", "him", "and", "me", "."], allowed)).toEqual(["and"]);
+    expect(outOfRange(["We", "like", "them", "."], allowed)).toEqual([]);
+    expect(outOfRange(["They", "like", "us", "."], allowed)).toEqual([]);
+  });
+});

@@ -227,7 +227,8 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
 
   for (const group of spec.generation.variantGroups) {
     if (unitQuestions().some((q) => q.variantGroup === group.id)) continue;
-    const output = await call(groupKey(group), group.id, buildGroupPrompt(spec, group), GroupOutput, groupOutputSchema());
+    const approvedMisconceptions = readJsonArray<{ id: string; description: string }>(path.join(contentDir, CATALOG_FILES.misconceptions));
+    const output = await call(groupKey(group), group.id, buildGroupPrompt(spec, group, approvedMisconceptions), GroupOutput, groupOutputSchema());
     if (!output) continue;
 
     const used = usedIds();

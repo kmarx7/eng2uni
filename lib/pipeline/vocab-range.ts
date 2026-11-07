@@ -21,6 +21,8 @@ const IRREGULAR: Record<string, string> = {
   knew: "know", known: "know", grew: "grow", wore: "wear", broke: "break", spoke: "speak", chose: "choose", rode: "ride",
   drove: "drive", fell: "fall", held: "hold", heard: "hear", lost: "lose", paid: "pay", built: "build", sent: "send",
   spent: "spend", understood: "understand", forgot: "forget", became: "become",
+  // Object pronouns: the frequency table lists them under the subject form.
+  me: "i", him: "he", us: "we", them: "they",
 };
 
 // Simple inflection bases plus the irregular table.
