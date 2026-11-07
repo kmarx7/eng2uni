@@ -34,5 +34,19 @@
       "object_identification"
     ],
     "reviewStatus": "approved"
+  },
+  {
+    "id": "noun_identification",
+    "name": "명사 알아보기",
+    "category": "grammar",
+    "prerequisiteIds": [],
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "verb_meaning",
+    "name": "동사의 뜻 알기",
+    "category": "grammar",
+    "prerequisiteIds": [],
+    "reviewStatus": "approved"
   }
 ]
