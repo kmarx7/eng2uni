@@ -111,6 +111,10 @@ export function unitOrder(unitId: string): number {
   return match ? Number(match[1]) : 0;
 }
 
+// Building and blank questions show their sentence in the prompt (as chips or with a
+// blank), so they link none: the screen would show the finished sentence above them.
+const unlinked = (g: VariantGroupSpec) => g.sentenceUse === "building" || g.sentenceUse === "blank";
+
 // Retires a group's unapproved drafts (its questions, the sentences only they use,
 // and for a building group its unlinked sentences) and the unit draft built from them.
 function retireGroups(contentDir: string, unitId: string, specs: VariantGroupSpec[]): void {
@@ -127,7 +131,7 @@ function retireGroups(contentDir: string, unitId: string, specs: VariantGroupSpe
   const kept = live.filter((q) => !redone.includes(q));
   const keptSentences = new Set([...kept, ...approvedQuestions].map((q) => q.sentenceId));
   const redoneSentences = new Set(redone.map((q) => q.sentenceId));
-  const buildingSkills = new Set(specs.filter((g) => g.sentenceUse === "building").map((g) => g.skillId));
+  const buildingSkills = new Set(specs.filter((g) => unlinked(g)).map((g) => g.skillId));
   const sentences = drafts.sentences.filter(
     (s) => s.reviewStatus !== "retired" && !keptSentences.has(s.id) && (redoneSentences.has(s.id) || (!live.some((q) => q.sentenceId === s.id) && s.skills.some((k) => buildingSkills.has(k)))),
   );
@@ -236,7 +240,7 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
     const questionIds = assignIds(spec.unitId, used, output.questions.length, "Q");
     // Students see a question's sentence above it, so a building group's question
     // (put the words in order) must not show the finished sentence or point into it.
-    const building = group.sentenceUse === "building";
+    const building = unlinked(group);
     const badIndex = new Map(
       output.questions.flatMap((q, i) => (building || sentenceIds[q.sentenceIndex] ? [] : [[questionIds[i], q.sentenceIndex] as const])),
     );
@@ -297,7 +301,7 @@ export async function runGenerate(opts: GenerateOptions): Promise<GenerateResult
       groups: spec.generation.variantGroups.map((g) => {
         const questions = questionsNow.filter((q) => q.variantGroup === g.id);
         const sentenceIds = new Set(questions.map((q) => q.sentenceId).filter((id) => id !== undefined));
-        if (g.sentenceUse === "building") for (const s of sentencesNow) if (!linked.has(s.id) && s.skills.includes(g.skillId)) sentenceIds.add(s.id);
+        if (unlinked(g)) for (const s of sentencesNow) if (!linked.has(s.id) && s.skills.includes(g.skillId)) sentenceIds.add(s.id);
         return { id: g.id, sentenceUse: g.sentenceUse, sentenceIds: [...sentenceIds], questionIds: questions.map((q) => q.id) };
       }),
     };
