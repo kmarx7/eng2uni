@@ -377,3 +377,40 @@ describe("catalogue already approved for another unit", () => {
     expect(existsSync(path.join(root, "content/drafts/skills.json"))).toBe(false);
   });
 });
+
+// L0-U04 (approved 2026-11-08): fill-in-the-blank questions put the sentence with a
+// blank in the prompt, so like building questions they must not show the full sentence.
+describe("blank groups", () => {
+  const contentDir = () => path.join(root, "content");
+  const blankSpec = {
+    ...spec,
+    generation: { ...spec.generation, variantGroups: [spec.generation.variantGroups[0], { ...spec.generation.variantGroups[1], sentenceUse: "blank" }] },
+  };
+  const withHints = { ...questionOut(), hints: { direction: "주어를 보세요", range: [0, 1] } };
+  const runnerWith = () => {
+    const calls: string[] = [];
+    const runner: ClaudeRunner = async ({ input }) => {
+      calls.push(input);
+      if (input.includes('"task":"unit"')) return { ok: true, json: unitOut };
+      return { ok: true, json: { sentences: [sentenceOut], questions: [withHints] } };
+    };
+    return { runner, calls };
+  };
+  beforeEach(() => writeFileSync(path.join(root, "content/specs/L0-U05.json"), JSON.stringify(blankSpec)));
+
+  it("links no sentence or hint range, and still gives the unit the group's sentences", async () => {
+    const { runner, calls } = runnerWith();
+    await run(runner);
+    const [, blank] = readDrafts(contentDir(), "L0-U05").questions;
+    expect(blank.sentenceId).toBeUndefined();
+    expect(blank.hints).toEqual({ direction: "주어를 보세요" });
+    const unitInput = JSON.parse(calls.find((c) => c.includes('"task":"unit"'))!);
+    expect(unitInput.drafts.find((g: { id: string }) => g.id === "VG-L0-U05-verb")).toMatchObject({ sentenceUse: "blank", sentenceIds: ["S-L0-U05-002"] });
+  });
+
+  it("retires a blank group's unlinked sentences on a redo", async () => {
+    await run(runnerWith().runner);
+    await runGenerate({ root, specPath: path.join(root, "content/specs/L0-U05.json"), dryRun: false, runner: runnerWith().runner, similarity, now, log: () => {}, redoGroups: ["VG-L0-U05-verb"] });
+    expect(readDrafts(contentDir(), "L0-U05").sentences.find((s) => s.id === "S-L0-U05-002")?.reviewStatus).toBe("retired");
+  });
+});

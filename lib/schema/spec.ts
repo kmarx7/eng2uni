@@ -12,8 +12,10 @@ export const VariantGroupSpec = z.object({
   misconceptionIds: z.array(Id).default([]),
   questionType: z.enum(["multiple_choice", "true_false"]),
   count: z.number().int().min(6),
-  // What the group's sentences are for: a tagging task, a building task, or only questions.
-  sentenceUse: z.enum(["tagging", "building", "question"]),
+  // What the group's sentences are for: a tagging task, a building task, only questions,
+  // or fill-in-the-blank questions (the prompt holds the sentence with a blank, so the
+  // question links no sentence; the full sentences serve role tagging). "blank" approved 2026-11-08.
+  sentenceUse: z.enum(["tagging", "building", "question", "blank"]),
   note: z.string().min(1),
 });
 

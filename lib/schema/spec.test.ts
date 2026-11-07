@@ -38,6 +38,12 @@ describe("UnitSpec", () => {
     expect(JSON.stringify(result.error?.issues)).toContain("count");
   });
 
+  // Approved 2026-11-08: fill-in-the-blank groups (L0-U04) whose questions must not show the finished sentence.
+  it("accepts a blank-sentence group", () => {
+    const blank = { ...spec, generation: { ...generation, variantGroups: [{ ...generation.variantGroups[0], sentenceUse: "blank" }] } };
+    expect(UnitSpec.safeParse(blank).success).toBe(true);
+  });
+
   it("accepts draft catalogue entries", () => {
     const parsed = UnitSpec.parse({
       ...spec,

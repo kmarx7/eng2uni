@@ -3,7 +3,7 @@
 import type { UnitSpec, VariantGroupSpec } from "@/lib/schema/spec";
 
 // Bump when a prompt changes so cached outputs are not reused.
-export const PROMPT_VERSION = "content-v6";
+export const PROMPT_VERSION = "content-v7";
 
 export const SYSTEM_PROMPT = `You write draft learning content for "English 90", a Korean high-school English reading course that prepares beginners for the CSAT (수능).
 Everything you write is a draft that a teacher reviews before any student sees it.
@@ -65,6 +65,11 @@ export function buildGroupPrompt(spec: UnitSpec, group: VariantGroupSpec, approv
             "The sentences are for a word-chip building task, and students do not see the sentence of these questions: each prompt must give everything needed (the Korean meaning and the word chips) and must not contain the finished English sentence. Do not set hints.range.",
           ]
         : []),
+      ...(group.sentenceUse === "blank"
+        ? [
+            "These are fill-in-the-blank questions, and students do not see the sentence of these questions: each prompt shows the sentence with a blank (___) where the answer goes and must not contain the finished sentence. Every option fits the blank. Do not set hints.range.",
+          ]
+        : []),
     ].join(" "),
   });
 }
@@ -83,7 +88,7 @@ export function buildUnitPrompt(spec: UnitSpec, ids: UnitPromptIds): string {
     drafts: ids.groups,
     output: [
       `Assemble lesson blocks with ids ${spec.unitId}-B01, ${spec.unitId}-B02, … in this order:`,
-      "concept (Korean explanation) → sentence_task role_tagging with the tagging sentences → sentence_task sentence_building with the building sentences → practice (1-2 questions) → assessment (at least 8 questions, mixing groups) → remedial per misconception (Korean body, 1-2 questions) → contrast when two misconceptions are easily confused.",
+      "concept (Korean explanation) → sentence_task role_tagging with the tagging sentences (and the blank sentences, which are the full sentences of fill-in-the-blank questions) → sentence_task sentence_building with the building sentences → practice (1-2 questions) → assessment (at least 8 questions, mixing groups) → remedial per misconception (Korean body, 1-2 questions) → contrast when two misconceptions are easily confused.",
       "Use only the given ids. A question appears in at most one block. Write instructions and bodies in Korean.",
     ].join(" "),
   });
