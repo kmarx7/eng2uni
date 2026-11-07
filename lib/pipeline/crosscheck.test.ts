@@ -6,7 +6,7 @@ import type { Question } from "@/lib/schema/question";
 import type { ReviewRecord } from "@/lib/schema/review-record";
 import type { AnnotatedSentence } from "@/lib/schema/sentence";
 import type { ClaudeRunner } from "./claude-cli";
-import { maskQuestion, runCrossCheck, runPreReview } from "./crosscheck";
+import { clearPreReviews, maskQuestion, runCrossCheck, runPreReview } from "./crosscheck";
 import { readDrafts, writeCatalogDrafts, writeDrafts } from "./draft-store";
 
 let dir: string;
@@ -139,6 +139,23 @@ describe("runPreReview", () => {
     const { runner, inputs } = runnerOf({ issues: [] });
     await review(runner);
     expect(JSON.parse(inputs[0]).misconceptions).toEqual([{ id: "verb_as_subject", description: "동사를 주어로 본다" }]);
+  });
+
+  it("sends the group's note so the reviewer judges against the unit's own instructions", async () => {
+    const { runner, inputs } = runnerOf({ issues: [] });
+    await runPreReview({ ...opts(runner), reviewerPrompt: "검수 기준", groupContext: () => ({ note: "spans: SUBJECT와 OBJECT만", misconceptions: [] }) });
+    expect(JSON.parse(inputs[0]).groupNote).toBe("spans: SUBJECT와 OBJECT만");
+  });
+
+  it("clearPreReviews drops old notes so they can be reviewed again, keeping check failures", async () => {
+    await review(runnerOf({ issues: ["x"] }).runner);
+    writeDrafts(dir, "L0-U05", { records: [{ ...questionRecord(), reasons: [...questionRecord().reasons, "허용 어휘 밖: zebra"] }] });
+    expect(clearPreReviews(dir, "L0-U05")).toEqual([question.id]);
+    expect(questionRecord()).toMatchObject({ status: "flagged", reasons: ["허용 어휘 밖: zebra"] });
+    expect(questionRecord().preReview).toBeUndefined();
+    writeDrafts(dir, "L0-U05", { records: [{ ...questionRecord(), reasons: ["사전 검수: y"], preReview: { issues: ["y"] } }] });
+    clearPreReviews(dir, "L0-U05");
+    expect(questionRecord()).toMatchObject({ status: "auto_checked", reasons: [] });
   });
 
   it("flags a failed call", async () => {
