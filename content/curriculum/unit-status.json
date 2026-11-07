@@ -1,9 +1,19 @@
 {
   "units": {
     "L0-U01": {
+      "status": "approved",
+      "updatedAt": "2026-11-07",
+      "note": "사람(kmarx) 승인 2026-11-07. 명세 content/specs/L0-U01.json 기준."
+    },
+    "L0-U02": {
       "status": "specified",
       "updatedAt": "2026-11-07",
-      "note": "curriculum-architect가 명세 작성. 다음 단계는 research-content 초안(사람이 다음 단원으로 확정한 뒤)."
+      "note": "curriculum-architect가 명세 작성. 초안(research-content)은 사람 확인 후 시작."
+    },
+    "L0-U03": {
+      "status": "specified",
+      "updatedAt": "2026-11-07",
+      "note": "curriculum-architect가 명세 작성. 초안(research-content)은 사람 확인 후 시작."
     },
     "L0-U05": {
       "status": "approved",

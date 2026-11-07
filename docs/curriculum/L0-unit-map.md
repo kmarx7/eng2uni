@@ -46,7 +46,7 @@ U05의 `prerequisiteSkills`는 지금 빈 배열이다. U01~U04가 생기면 U05
 
 ### L0-U02 명사 덩어리: 관사와 명사
 - 목표: a, the가 뒤의 명사와 한 덩어리로 움직인다는 것을 문장 조립으로 확인한다.
-- 과제: sentence_building. 칩 세 개(예: [girls] [the] [play])를 보여 주고 바른 어순 문장을 고른다. 오답은 관사를 명사에서 떼어 놓은 배열이다.
+- 과제: sentence_building. 뜻 '소녀들이 책 한 권을 읽는다'와 낱말 칩 [read] [girls] [the] [a] [book]을 보여 주고 바른 어순 문장 'The girls read a book.'을 고른다. 오답 두 개는 관사를 명사에서 떼어 놓은 배열(예: 'The girls read book a.')이다. 주어·목적어 명사 덩어리가 깨지지 않는 것이 이 단원의 핵심이다. 교사 예시 [reads / the girl / a book]은 3인칭 -s형을 써서 U04 이전 범위를 넘으므로 복수 주어와 기본형 동사로 바꿨다(명세 unverified 참조).
 - 근거: 승인본 오개념 article_as_word_class_confusion은 관사를 동사처럼 보는 오류다. 관사를 명사와 떼어 보는 오류는 그 앞 단계다 [가정].
 - 미검증: 3~5단어 문장에서 관사 덩어리 조립이 학생에게 실제로 어려운지 학생 데이터가 없다.
 
