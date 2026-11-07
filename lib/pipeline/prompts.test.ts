@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { UnitSpec } from "@/lib/schema/spec";
-import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt } from "./prompts";
+import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt, buildUnitPrompt } from "./prompts";
 
 // Rules added after the first L0-U05 trial run, where the pre-review flagged
 // answer hints in most question prompts, and the second trial, where it flagged
@@ -8,8 +8,8 @@ import { PROMPT_VERSION, SYSTEM_PROMPT, buildGroupPrompt } from "./prompts";
 // and the third, where it flagged general claims in explanations, options that
 // match two places and hint text that disagrees with its range (2026-11-05).
 describe("generation prompt", () => {
-  it("is a new version so cached v5 outputs are not reused", () => {
-    expect(PROMPT_VERSION).toBe("content-v6");
+  it("is a new version so cached v6 outputs are not reused", () => {
+    expect(PROMPT_VERSION).toBe("content-v7");
   });
 
   it.each([
@@ -56,5 +56,20 @@ describe("buildGroupPrompt misconceptions", () => {
       { id: "new_one", description: "새 오개념" },
       { id: "verb_as_subject", description: "동사를 주어로 고른다." },
     ]);
+  });
+});
+
+describe("buildGroupPrompt for blank groups", () => {
+  const spec = { unitId: "L0-U04", levelId: "L0", title: "t", objectives: [], catalog: { misconceptions: [] }, generation: { difficulty: 1, vocabRankMax: 6000 } } as unknown as UnitSpec;
+  const group = { id: "VG", skillId: "s", misconceptionIds: [], questionType: "multiple_choice", count: 6, sentenceUse: "blank", note: "n" } as never;
+
+  it("asks for the sentence with a blank in the prompt and never the finished sentence", () => {
+    const output = JSON.parse(buildGroupPrompt(spec, group)).output;
+    expect(output).toMatch(/blank \(___\)/);
+    expect(output).toMatch(/students do not see the sentence/);
+  });
+
+  it("tells the unit to use blank sentences for role tagging", () => {
+    expect(JSON.parse(buildUnitPrompt(spec, { groups: [] })).output).toMatch(/blank sentences/);
   });
 });
